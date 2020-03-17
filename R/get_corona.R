@@ -28,7 +28,7 @@ get_corona <- function(dir = "output/",
   # url
   message("Extraindo a url ...")
   url <- 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil'
-  res <- rvest::html_session(url, httr::timeout(30)) # aqui precisa adicionar msg de erro se o site tiver out
+  res <- rvest::html_session(url, httr::timeout(30))
   # para pegar a url verdadeira com os dados
   url2 <- rvest::html_nodes(res, "script") %>%
     magrittr::extract2(12) %>%
@@ -39,10 +39,12 @@ get_corona <- function(dir = "output/",
     .[2]
   # lendo json para uma lista
   message("extraindo os dados ...")
-  dados <- readLines(url2) %>%
+  dados <- xml2::read_html(url2) %>%
+    rvest::html_text() %>%
     # gambiarra porque dava erro para ler o json direto
     gsub("var database=", "", .) %>%
     jsonlite::fromJSON()
+  # AQUI PRECISA ADICIONAR MSG DE ERRO SE O OBJETO DADOS NAO É CRIADO
   # extraindo so braSil
   br <- dados$brazil
   br$id_date <- 1:nrow(br)

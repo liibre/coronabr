@@ -18,7 +18,8 @@ Imports:
     plyr,
     rlang,
     rvest,
-    stringr
+    stringr, 
+    xml2
 Suggests: 
     knitr,
     rmarkdown,

@@ -31,6 +31,6 @@ dados <- get_corona()
 ## Inspecionando os dados
 
 ```{r data}
-#head(dados)
+head(dados)
 ```
 
