@@ -1,0 +1,8 @@
+# R em geral
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+# dirs e arquivos
+output/
+script_corona.R

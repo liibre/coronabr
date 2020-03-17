@@ -1,0 +1,36 @@
+---
+title: "Download e visualização dos casos de corona vírus no Brasil"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{coronabr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Para instalar o pacote
+
+`remotes::install_github(liibre/coronabr)`
+
+## Carregando o pacote
+
+```{r load}
+#library(coronabr)
+devtools::load_all()
+```
+
+## Baixando os dados
+
+```{r downlaod}
+dados <- get_corona()
+```
+
+## Inspecionando os dados
+
+```{r data}
+#head(dados)
+```
+

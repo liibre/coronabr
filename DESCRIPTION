@@ -1,0 +1,26 @@
+Package: coronabr
+Type: Package
+Title: Download e visualização de dados do corona vírus
+Version: 0.1.0
+Author: Sara R Mortara & Andrea Sánchez-Tapia
+Maintainer: Sara R Mortara <saramortara@gmail.com>
+Description: Pacote desenvolvido por mulheres latinas para download 
+    e visualização dos dados de corona vírus no Brasil. 
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports:
+    dplyr,
+    httr,
+    jsonlite,
+    magrittr,
+    plyr,
+    rlang,
+    rvest,
+    stringr
+Suggests: 
+    knitr,
+    rmarkdown,
+    devtools
+VignetteBuilder: knitr
