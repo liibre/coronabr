@@ -48,7 +48,7 @@ df1$delta_cases <- df1$cases - lag(df1$cases)
 df1$diff_perc <- round(df1$delta_cases/df1$cases, 3) * 100
 df1$label <- paste(df1$diff_perc, "%")
 ggplot(df1, aes(x = date, y = delta_cases)) + 
-  geom_bar(stat = "identity") +
+  geom_bar(stat = "identity", alpha = .7) +
   coord_flip() +
   scale_x_date(date_breaks = "1 day") +
   scale_y_continuous(expand = c(0, 5)) +
@@ -62,4 +62,5 @@ ggplot(df1, aes(x = date, y = delta_cases)) +
 ```
 
 ## Número de casos por estado brasileiro
+
 
