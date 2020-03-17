@@ -1,0 +1,65 @@
+---
+title: "Visualização dos casos de corona vírus no Brasil"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{figs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+## Carregando pacotes necessários
+
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+
+## Contabilizando os casos por dia
+
+```{r}
+dados <- read.csv("output/corona_brasil.csv")
+dados$date <- as.Date(dados$date)
+df <- dados %>% 
+  select(-uid) %>%
+  group_by(date, id_date) %>%
+  summarise_all(sum)
+```
+
+```{r, echo = FALSE, fig.width = 6, fig.height = 3}
+df1 <- df %>% filter(date > '2020-02-25') 
+ggplot(df1, aes(x = date, y = cases)) + 
+  geom_line() +
+  geom_point() +
+  labs(x = "Data", 
+       y = "Número de casos confirmados", 
+       title = "Número de casos confirmados de corona vírus no Brasil") +
+  theme_minimal()
+```
+
+## Entendendo o aumento diário
+
+```{r, echo = FALSE, fig.width = 7.5, fig.height = 5}
+df1$delta_cases <- df1$cases - lag(df1$cases)
+df1$diff_perc <- round(df1$delta_cases/df1$cases, 3) * 100
+df1$label <- paste(df1$diff_perc, "%")
+ggplot(df1, aes(x = date, y = delta_cases)) + 
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  scale_x_date(date_breaks = "1 day") +
+  scale_y_continuous(expand = c(0, 5)) +
+  geom_text(aes(label = label), 
+            size = 2.5, 
+            hjust = 0) + 
+  labs(x = "Data", 
+       y = "% de aumento", 
+       title = "Porcentagem de aumento nos casos confirmados") +
+  theme_minimal()
+```
+
+## Número de casos por estado brasileiro
+

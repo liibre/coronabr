@@ -1,5 +1,5 @@
 ---
-title: "Download e visualização dos casos de corona vírus no Brasil"
+title: "Download dos casos de corona vírus no Brasil"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{coronabr}
@@ -20,6 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load}
 #library(coronabr)
 devtools::load_all()
+library(ggplot2)
 ```
 
 ## Baixando os dados
