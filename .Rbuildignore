@@ -2,3 +2,4 @@
 ^\.Rproj\.user$
 # my script
 script_corona.R
+data/

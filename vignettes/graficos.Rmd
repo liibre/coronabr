@@ -13,15 +13,16 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 ## Carregando pacotes necessários
 
-```{r}
+```{r pkgs}
 library(ggplot2)
 library(dplyr)
+library(rgdal)
 ```
 
 
 ## Contabilizando os casos por dia
 
-```{r}
+```{r dados}
 dados <- read.csv("output/corona_brasil.csv")
 dados$date <- as.Date(dados$date)
 df <- dados %>% 
@@ -30,7 +31,7 @@ df <- dados %>%
   summarise_all(sum)
 ```
 
-```{r, echo = FALSE, fig.width = 6, fig.height = 3}
+```{r fig-casos, echo = FALSE, fig.width = 6, fig.height = 3}
 df1 <- df %>% filter(date > '2020-02-25') 
 ggplot(df1, aes(x = date, y = cases)) + 
   geom_line() +
@@ -43,7 +44,7 @@ ggplot(df1, aes(x = date, y = cases)) +
 
 ## Entendendo o aumento diário
 
-```{r, echo = FALSE, fig.width = 7.5, fig.height = 5}
+```{r fig-perc, echo = FALSE, fig.width = 7.5, fig.height = 5}
 df1$delta_cases <- df1$cases - lag(df1$cases)
 df1$diff_perc <- round(df1$delta_cases/df1$cases, 3) * 100
 df1$label <- paste(df1$diff_perc, "%")
@@ -62,5 +63,21 @@ ggplot(df1, aes(x = date, y = delta_cases)) +
 ```
 
 ## Número de casos por estado brasileiro
+
+```{r mapa, echo = FALSE}
+df_uf <- dados %>% filter(date == max(date)) %>%
+  group_by(uid) %>%
+  summarise_at(vars(cases), sum)
+
+br <- readOGR("../data/Estados_do_Brasil/Brasil.shp", 
+              encoding = "UTF-8")
+
+mapa <- ggplot() +
+  geom_polygon(data = br, aes(x = long, y = lat, group = group), 
+               fill = "grey", alpha = 0.7, color = "white") +
+  #geom_point(aes(x = long, y = lat, size = cases, color = cases), apha = 0.9) +
+  theme_void()
+mapa
+```
 
 
