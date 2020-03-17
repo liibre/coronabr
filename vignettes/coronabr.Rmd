@@ -20,13 +20,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load}
 #library(coronabr)
 devtools::load_all()
-library(ggplot2)
 ```
 
 ## Baixando os dados
 
 ```{r downlaod}
-dados <- get_corona()
+dados <- get_corona(filename = "corona_brasil01")
 ```
 
 ## Inspecionando os dados
