@@ -54,7 +54,7 @@ get_corona <- function(dir = "output/",
               by = "id_date")
   df$date <-  as.Date(df$date, format = "%d/%m/%Y")
   new_df <- df %>%
-    dplyr::group_by(id_date, date, uid) %>%
+    dplyr::group_by(.data$id_date, .data$date, .data$uid) %>%
     dplyr::mutate_at(dplyr::vars(-dplyr::group_cols()), as.numeric) %>%
     dplyr::summarize_at(dplyr::vars(-dplyr::group_cols()), dplyr::funs(sum(., na.rm = TRUE)))
   message(paste0("salvando ", filename, ".csv em ", dir))
