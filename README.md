@@ -50,5 +50,3 @@ Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em de
 - Siga o **Atila Iamarino** no [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w), [Instagram](www.instagram.com/oatila), [twitter](https://twitter.com/oatila) ou [telegram](https://t.me/corona_atila). Tem também um [fórum brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita informação.
 
 Dúvidas, contribuições e sugestões, poste uma *issue* [aqui](https://github.com/liibre/coronabr/issues) ou nos encontre no twitter ([Andrea](https://twitter.com/SanchezTapiaA) e [Sara](https://twitter.com/mortarasara)).
-
-
