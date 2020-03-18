@@ -21,6 +21,7 @@ Imports:
     stringr, 
     xml2
 Suggests: 
+    brazilmaps,
     devtools,
     ggplot2,
     knitr,

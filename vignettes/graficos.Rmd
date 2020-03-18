@@ -21,6 +21,7 @@ library(dplyr)
 library(rgdal)
 library(sf)
 library(tmap)
+library(brazilmaps)
 ```
 
 
@@ -73,13 +74,14 @@ ggplot(df, aes(x = date, y = delta_cases)) +
 
 ```{r mapa, message = FALSE, fig.width = 6, fig.height = 6}
 df_uf <- dados %>% 
-  filter(date %in% c(min(date), max(date))) %>%
+  filter(date == max(date)) %>%
   group_by(uid, date) %>%
   summarise_at(vars(cases), sum) %>%
-  dplyr::rename(COD_UF = uid) %>%
-  dplyr::mutate(log_cases = log(cases + 1))
+  dplyr::rename(COD_UF = uid) #%>%
+  #dplyr::mutate(log_cases = log(cases + 1))
 
-br <- readOGR("../data/Estados_do_Brasil/Brasil.shp")
+br <- get_brmap(geo = "State",
+                   class = "sf")
 
 br_sf <- st_as_sf(br)
 
@@ -89,8 +91,7 @@ br_sf %>%  merge(df_uf) %>%
   #tm_polygons() +
   #tm_shape() +
   tm_symbols(size = "cases", col = "black") +
-  tm_facets(by = "date", free.coords = FALSE) +
-  NULL
+  tm_facets(by = "date", free.coords = FALSE)
 ```
 
 ## Evolução do número de casos por estado
@@ -102,7 +103,7 @@ df_date <- dados %>% filter(date > '2020-02-25') %>%
   dplyr::rename(COD_UF = uid) #%>%
   #dplyr::mutate(cases = log(cases + 1))
 
-all_map <- tm_shape(br) +
+all_map <- tm_shape(br_sf) +
   tm_borders() +
   tm_polygons() +
   br_sf %>%  merge(df_date) %>%
