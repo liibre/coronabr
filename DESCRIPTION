@@ -1,10 +1,13 @@
 Package: coronabr
 Type: Package
-Title: Downloadde dados do corona vírus
+Title: Download de dados do corona vírus
 Version: 0.1.0
-Author: 
-    Sara R Mortara
-    Andrea Sánchez-Tapia
+Authors@R: c(
+    person("Sara", "Mortara", email = "saramortara@gmail.com", 
+    role = c("aut", "cre"), comment = c(ORCID = "0000-0001-6221-7537")),
+    person("Andrea", "Sánchez-Tapia", email = "andreasancheztapia@gmail.com", 
+    role = c("aut"), comment = c(ORCID = "0000-0002-3521-4338"))
+    )
 Maintainer: Sara R Mortara <saramortara@gmail.com>
 Description: Pacote desenvolvido por mulheres latinas para download 
     dos dados de corona vírus no Brasil. 
