@@ -126,6 +126,7 @@ uf10 <- df_uf %>%
   filter(date == max(date), Casos > 9) %>%
   select(State)
 fig_uf <- df_uf %>% filter(State %in% uf10$State) %>% 
+  mutate(nome = reorder(nome, -Casos)) %>% 
   ggplot(aes(x = date, y = Casos, col = nome)) + 
   geom_line() +
   geom_point() +
