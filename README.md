@@ -45,7 +45,7 @@ Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em de
 
 - [Atualização mundial do número de casos](https://www.worldometers.info/coronavirus/)
 
-- [Dez considerações antes de criar mais um gráfico sobre o COVID-19 (em inglês)]( https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8])
+- [Dez considerações antes de criar mais um gráfico sobre o COVID-19 (em inglês)](https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8)
 
 - Siga o **Atila Iamarino** no [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w), [Instagram](www.instagram.com/oatila), [twitter](https://twitter.com/oatila) ou [telegram](https://t.me/corona_atila). Tem também um [fórum brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita informação.
 
