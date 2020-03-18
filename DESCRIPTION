@@ -1,6 +1,6 @@
 Package: coronabr
 Type: Package
-Title: Download de dados do corona vírus
+Title: Download de dados do coronavírus
 Version: 0.1.0
 Authors@R: c(
     person("Sara", "Mortara", email = "saramortara@gmail.com", 
@@ -10,7 +10,7 @@ Authors@R: c(
     )
 Maintainer: Sara R Mortara <saramortara@gmail.com>
 Description: Pacote desenvolvido por mulheres latinas para download 
-    dos dados de corona vírus no Brasil. 
+    dos casos registrados de coronavírus no Brasil. 
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

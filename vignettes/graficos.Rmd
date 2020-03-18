@@ -1,5 +1,5 @@
 ---
-title: "Visualização dos casos de corona vírus no Brasil"
+title: "Visualização dos casos registrados de coronavírus no Brasil"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{figs}
@@ -55,7 +55,7 @@ ggplot(df, aes(x = date, y = Casos, color = "red")) +
   geom_point(size = 2) +
   labs(x = "Data", 
        y = "Número de casos confirmados", 
-       title = "Número de casos confirmados de corona vírus no Brasil") +
+       title = "Número de casos confirmados de coronavírus no Brasil") +
   scale_x_date(date_breaks = "1 day", 
                date_labels = "%d/%m") +
   theme_minimal() +

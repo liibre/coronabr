@@ -18,8 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Carregando o pacote
 
 ```{r load}
-#library(coronabr)
-devtools::load_all()
+library(coronabr)
 ```
 
 ## Baixando os dados
