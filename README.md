@@ -28,4 +28,7 @@ Fazemos ciência aberta, democrática e reprodutível.
 
 ## Evolução do número de casos por estado
 
+![](https://github.com/liibre/coronabr/blob/master/vignettes/figs/anim.gif”){ width=70%}
+
+
 <img src="vignettes/figs/anim.gif" align="center" alt="" width="600" />
