@@ -187,7 +187,8 @@ anim <- tm_shape(br) +
              alpha = 0.7) +
   tm_facets(along = "date", free.coords = FALSE)
 
-anim
 # tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
 #                 width = 1200, height = 1200, res = 300)
 ```
+
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />

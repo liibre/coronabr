@@ -11,24 +11,21 @@ Fazemos ciência aberta, democrática e reprodutível.
 
 ## Crescimento nacional no número de casos
 
-<img src="docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
 
 
 ## Entendendo o aumento diário
 
-<img src="docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
 ## Número de casos por estado brasileiro
 
-<img src="docs/articles/graficos_files/figure-html/mapa-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa-1.png" align="center" alt="" width="600" />
 
 ## Crescimento do número de casos nos estados mais afetados
 
-<img src="docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
 
 ## Evolução do número de casos por estado
 
-![](https://github.com/liibre/coronabr/blob/master/vignettes/figs/anim.gif”){ width=70%}
-
-
-<img src="vignettes/figs/anim.gif" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
