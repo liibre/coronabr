@@ -50,7 +50,7 @@ df <- dados %>%
 ```
 
 ```{r fig-casos, fig.width=6}
-ggplot(df, aes(x = date, y = Casos, color = "red")) + 
+fig_casos <- ggplot(df, aes(x = date, y = Casos, color = "red")) + 
   geom_line(alpha = .7) +
   geom_point(size = 2) +
   labs(x = "Data", 
@@ -61,6 +61,8 @@ ggplot(df, aes(x = date, y = Casos, color = "red")) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90), 
         legend.position = "none")
+
+fig_casos
 ```
 
 
@@ -70,7 +72,7 @@ ggplot(df, aes(x = date, y = Casos, color = "red")) +
 df$delta_cases <- df$Casos - lag(df$Casos)
 df$diff_perc <- round(df$delta_cases/df$Casos, 3) * 100
 df$label <- paste(df$delta_cases, "%")
-ggplot(df, aes(x = date, y = delta_cases)) + 
+fig_perc <- ggplot(df, aes(x = date, y = delta_cases)) + 
   geom_bar(stat = "identity", alpha = .7, color = "red", fill = "red") +
   #coord_flip() 
   scale_x_date(date_breaks = "1 day", 
@@ -85,6 +87,8 @@ ggplot(df, aes(x = date, y = delta_cases)) +
        title = "Porcentagem de aumento nos casos confirmados") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90))
+
+fig_perc
 ```
 
 ## Número de casos por estado brasileiro
@@ -101,7 +105,7 @@ df_uf <- dados %>%
 br_sf <- st_as_sf(br) %>%  
   merge(df_uf)
   
-tm_shape(br_sf) +
+mapa <- tm_shape(br_sf) +
   tm_fill() +
   tm_borders() +
   #tm_shape() +
@@ -110,6 +114,8 @@ tm_shape(br_sf) +
              border.col = "red",
              scale = 2, 
              alpha = 0.7)
+
+mapa
 #tm_facets(by = "date", free.coords = FALSE)
 ```
 
@@ -119,7 +125,7 @@ tm_shape(br_sf) +
 uf10 <- df_uf %>% 
   filter(date == max(date), Casos > 9) %>%
   select(State)
-df_uf %>% filter(State %in% uf10$State) %>% 
+fig_uf <- df_uf %>% filter(State %in% uf10$State) %>% 
   ggplot(aes(x = date, y = Casos, col = nome)) + 
   geom_line() +
   geom_point() +
@@ -135,6 +141,8 @@ df_uf %>% filter(State %in% uf10$State) %>%
   theme(axis.text.x = element_text(angle = 90), 
         legend.title = element_text(size = 7), 
         legend.text = element_text(size = 7))
+
+fig_uf
 ```
 
 
@@ -183,5 +191,3 @@ anim
 # tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
 #                 width = 1200, height = 1200, res = 300)
 ```
-
-

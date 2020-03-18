@@ -57,7 +57,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/graficos.html">Visualização dos casos de corona vírus no Brasil</a>
+      <a href="../articles/graficos.html">Visualização dos casos registrados de coronavírus no Brasil</a>
     </li>
   </ul>
 </li>
@@ -93,14 +93,12 @@
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#carregando-o-pacote" class="anchor"></a>Carregando o pacote</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">#library(coronabr)</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/load_all.html">load_all</a></span>()</a></code></pre></div>
-<pre><code>## Loading coronabr</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(coronabr)</a></code></pre></div>
 </div>
 <div id="baixando-os-dados" class="section level2">
 <h2 class="hasAnchor">
 <a href="#baixando-os-dados" class="anchor"></a>Baixando os dados</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">dados &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona.html">get_corona</a></span>(<span class="dt">filename =</span> <span class="st">"corona_brasil01"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">dados &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona.html">get_corona</a></span>(<span class="dt">filename =</span> <span class="st">"corona_brasil01"</span>)</a></code></pre></div>
 <pre><code>## Extraindo a url ...</code></pre>
 <pre><code>## extraindo os dados ...</code></pre>
 <pre><code>## salvando corona_brasil01.csv em output/</code></pre>
@@ -108,7 +106,7 @@
 <div id="inspecionando-os-dados" class="section level2">
 <h2 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados)</a></code></pre></div>
 <pre><code>## # A tibble: 6 x 10
 ## # Groups:   id_date, date [1]
 ##   id_date date       uid   suspects refuses confirmado deads local cases
