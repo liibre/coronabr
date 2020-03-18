@@ -35,3 +35,4 @@ Suggests:
     sf,
     tmap
 VignetteBuilder: knitr
+BugReports: https://github.com/Model-R/modleR/issues

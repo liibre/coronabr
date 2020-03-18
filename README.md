@@ -2,12 +2,13 @@
 
 Disponibilizamos aqui um pacote de [R](https://www.r-project.org/) para fazer o download dados dos casos diários de coronavírus (COVID-19) do Min. da Saúde disponibilizados pelo [Ministério da Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil). 
 
-
 Importante lembrar que os dados são apenas os casos registrados e computados pelo Min. da Saúde. 
 
-Disponibilizamos aqui atualizações diárias dos gráficos. O código é aberto. Entre em [Get Started](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
+O código é aberto. Entre em [Get Started](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
 
-Fazemos ciência aberta, democrática e reprodutível. 
+Disponibilizamos aqui atualizações diárias dos gráficos. 
+
+Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Sugestões, entrem em contato conosco.
 
 ## Crescimento nacional no número de casos
 
@@ -29,3 +30,25 @@ Fazemos ciência aberta, democrática e reprodutível.
 ## Evolução do número de casos por estado
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+
+## Para saber mais:
+
+- [Observatório Covid-19 BR](https://covid19br.github.io/)
+
+- [Portal da Fiocruz](https://portal.fiocruz.br/coronavirus)
+
+- [Site oficial da Organização Mundial da Saúde (em inglês)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019)
+
+- [Tira dúvidas do Instituto Butantan](http://coronavirus.butantan.gov.br/)
+
+- [Banco de dados aberto COVID-19 (em inglês)](https://pages.semanticscholar.org/coronavirus-research])
+
+- [Atualização mundial do número de casos](https://www.worldometers.info/coronavirus/)
+
+- [Dez considerações antes de criar mais um gráfico sobre o COVID-19 (em inglês)]( https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8])
+
+- Siga o **Atila Iamarino** no [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w), [Instagram](www.instagram.com/oatila), [twitter](https://twitter.com/oatila) ou [telegram](https://t.me/corona_atila). Tem também um [fórum brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita informação.
+
+Dúvidas, contribuições e sugestões, poste uma *issue* [aqui](https://github.com/liibre/coronabr/issues) ou nos encontre no twitter ([Andrea](https://twitter.com/SanchezTapiaA) e [Sara](https://twitter.com/mortarasara)).
+
+
