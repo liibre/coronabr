@@ -3,4 +3,6 @@
 # my script
 script_corona.R
 # para site
-docs/
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

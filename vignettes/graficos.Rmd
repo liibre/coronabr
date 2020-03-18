@@ -167,7 +167,7 @@ all_map <- tm_shape(br) +
 ```
 
 
-```{r anim, eval = F, fig.show = FALSE}
+```{r anim, eval = T, fig.show = "animate"}
 anim <- tm_shape(br) +
   tm_borders() +
   tm_polygons() +
@@ -179,11 +179,9 @@ anim <- tm_shape(br) +
              alpha = 0.7) +
   tm_facets(along = "date", free.coords = FALSE)
 
-tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
-                width = 1200, height = 1200, res = 300)
-
+anim
+# tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
+#                 width = 1200, height = 1200, res = 300)
 ```
 
-<center>
-![](figs/anim.gif){width=70%}
-</center>
+

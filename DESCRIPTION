@@ -2,7 +2,9 @@ Package: coronabr
 Type: Package
 Title: Downloadde dados do corona vírus
 Version: 0.1.0
-Author: Sara R Mortara & Andrea Sánchez-Tapia
+Author: 
+    Sara R Mortara
+    Andrea Sánchez-Tapia
 Maintainer: Sara R Mortara <saramortara@gmail.com>
 Description: Pacote desenvolvido por mulheres latinas para download 
     dos dados de corona vírus no Brasil. 
