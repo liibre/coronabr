@@ -23,6 +23,7 @@ library(rgdal)
 library(sf)
 library(tmap)
 library(brazilmaps)
+library(gganimate)
 ```
 
 
@@ -125,14 +126,26 @@ mapa
 uf10 <- df_uf %>% 
   filter(date == max(date), Casos > 9) %>%
   select(State)
+
+# pra expandir o eixo x 
+hoje_mais_5_dias <- as.Date(format(Sys.time(), "%Y-%m-%d")) + 5
+
 fig_uf <- df_uf %>% filter(State %in% uf10$State) %>% 
   mutate(nome = reorder(nome, -Casos)) %>% 
-  ggplot(aes(x = date, y = Casos, col = nome)) + 
+  ggplot(aes(x = date, y = Casos, col = nome, group = nome)) + 
   geom_line() +
   geom_point() +
+  # parâmetros da animação começam aqui: {
+  transition_reveal(date) +
+  geom_segment(aes(xend = max(date), yend = Casos), linetype = 2) + 
+  geom_text(aes(x = max(date), label = nome), hjust = 0) +
+  coord_cartesian(clip = "off") +
+  # e terminam aqui: }
   labs(x = "Data", 
        y = "Número de casos confirmados", 
        title = "Estados com mais de 10 casos", 
+       # aqui muda a data em cada frame:
+       subtitle = "Data: {frame_along}",
        fill = "UF") +
   guides(color = guide_legend("UF")) +
   scale_color_brewer(palette = "Set2") +
@@ -141,7 +154,8 @@ fig_uf <- df_uf %>% filter(State %in% uf10$State) %>%
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90), 
         legend.title = element_text(size = 7), 
-        legend.text = element_text(size = 7))
+        legend.text = element_text(size = 7)) +
+  expand_limits(x = as.Date(hoje_mais_5_dias))
 
 fig_uf
 ```
