@@ -11,30 +11,21 @@ Fazemos ciência aberta, democrática e reprodutível.
 
 ## Crescimento nacional no número de casos
 
-<center>
-![](docs/articles/graficos_files/figure-html/fig-casos-1.png){width=70%}
-</center>
+<img src="docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
+
 
 ## Entendendo o aumento diário
 
-<center>
-![](docs/articles/graficos_files/figure-html/fig-perc-1.png){width=70%}
-</center>
+<img src="docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
 ## Número de casos por estado brasileiro
 
-<center>
-![](docs/articles/graficos_files/figure-html/mapa-1.png){width=70%}
-</center>
+<img src="docs/articles/graficos_files/figure-html/mapa-1.png" align="center" alt="" width="600" />
 
 ## Crescimento do número de casos nos estados mais afetados
 
-<center>
-![](docs/articles/graficos_files/figure-html/estados-1.png){width=70%}
-</center>
+<img src="docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
 
 ## Evolução do número de casos por estado
 
-<center>
-![](vignettes/figs/anim.gif){width=70%}
-</center>
+<img src="vignettes/figs/anim.gif" align="center" alt="" width="600" />
