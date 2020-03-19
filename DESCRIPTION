@@ -12,7 +12,7 @@ Maintainer: Sara R Mortara <saramortara@gmail.com>
 Description: Pacote desenvolvido por mulheres latinas para download 
     dos casos registrados de coronavírus no Brasil
 License: GPL (>= 3)
-URL: https://liibre.github.io/coronabr/index.html
+URL: https://liibre.github.io/coronabr/, https://github.com/liibre/coronabr
 BugReports: https://github.com/liibre/coronabr/issues
 Encoding: UTF-8
 LazyData: true

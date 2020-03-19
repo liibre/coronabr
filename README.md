@@ -4,7 +4,7 @@ Disponibilizamos aqui um pacote de [R](https://www.r-project.org/) para fazer o 
 
 É importante lembrar que os dados são apenas os casos registrados e computados pelo Ministério da Saúde e que a partir de dia 14/03/2020 só são contabilizados os casos graves que dão entrada no hospital, segundo diretivas da OMS. Isso significa que tem uma alta subnotificação.
 
-O código é aberto. Entre em [Get Started](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
+O código é aberto. Entre em [como usar](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
 
 Disponibilizamos aqui atualizações diárias dos gráficos.  Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.
 

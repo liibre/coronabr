@@ -1,1 +1,20 @@
 destination: docs
+navbar:
+  structure:
+    left:  [home, intro, reference, articles, tutorials, news]
+    right: [github]
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: funções
+      href: reference/index.html
+    intro:
+      text: como usar
+      href: articles/coronabr.html
+    articles:
+      text: artigos
+      menu:
+      - text: Visualização dos casos registrados de coronavírus no Brasil
+        href: articles/graficos.html
