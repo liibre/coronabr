@@ -5,7 +5,7 @@
 #' @param dir diretório onde salvar o arquivo
 #' @param filename nome do arquivo
 #'
-#' @importFrom  rvest html_session
+#' @importFrom rvest html_session
 #' @importFrom rvest html_nodes
 #' @importFrom httr timeout
 #' @importFrom stringr str_split
