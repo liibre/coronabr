@@ -5,62 +5,33 @@
 #' @param dir diretório onde salvar o arquivo
 #' @param filename nome do arquivo
 #'
-#' @importFrom rvest html_session
-#' @importFrom rvest html_nodes
-#' @importFrom httr timeout
-#' @importFrom stringr str_split
-#' @importFrom jsonlite fromJSON
-#' @importFrom utils write.csv
-#' @importFrom dplyr mutate_if
-#' @importFrom dplyr bind_rows
-#' @importFrom rlang .data
-#' @import magrittr
-#' @import plyr
-#'
 #' @export
 #'
-get_corona <- function(dir = "output/",
-                       filename = "corona_brasil"){
-  rlang::.data #precisa para usar vars no dplyr
-  if (!dir.exists(dir)) {
-    dir.create(dir)
-  }
-  # url
-  message("Extraindo a url ...")
-  url <- 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil'
-  res <- rvest::html_session(url, httr::timeout(30))
-  # para pegar a url verdadeira com os dados
-  url2 <- rvest::html_nodes(res, "script") %>%
-    magrittr::extract2(12) %>%
-    as.character() %>%
-    # para extrair so a url :facepalm:
-    stringr::str_split(., '"') %>%
-    unlist() %>%
-    .[2]
-  # lendo json para uma lista
-  message("extraindo os dados ...")
-  dados <- xml2::read_html(url2) %>%
-    rvest::html_text() %>%
-    # gambiarra porque dava erro para ler o json direto
-    gsub("var database=", "", .) %>%
-    jsonlite::fromJSON()
-  # AQUI PRECISA ADICIONAR MSG DE ERRO SE O OBJETO DADOS NAO É CRIADO
-  # extraindo so braSil
-  br <- dados$brazil
-  br$id_date <- 1:nrow(br)
-  vals <- br$values %>%
-    lapply(., dplyr::mutate_if, is.integer, as.character) %>%
-    dplyr::bind_rows(., .id = "id_date")
-  df <- merge(br[, c('date', 'id_date')],
-              vals[, !names(vals) %in% c('comments', 'broadcast')],
-              by = "id_date")
-  df$date <-  as.Date(df$date, format = "%d/%m/%Y")
-  new_df <- df %>%
-    dplyr::group_by(.data$id_date, .data$date, .data$uid) %>%
-    dplyr::mutate_at(dplyr::vars(-dplyr::group_cols()), as.numeric) %>%
-    dplyr::summarize_at(dplyr::vars(-dplyr::group_cols()), dplyr::funs(sum(., na.rm = TRUE)))
-  message(paste0("salvando ", filename, ".csv em ", dir))
-  utils::write.csv(new_df, paste0(dir, filename, ".csv"),
-                   row.names = FALSE)
+get_corona <- function(dir = "output/", filename = "corona_brasil") {
+  new_df <- "http://plataforma.saude.gov.br/novocoronavirus/resources/scripts/database.js" %>%
+    readr::read_file() %>%
+    stringr::str_remove("var database=") %>%
+    jsonlite::fromJSON() %>%
+    purrr::pluck("brazil") %>%
+    dplyr::mutate(values = purrr::map(values, dplyr::mutate_all, as.character)) %>%
+    tidyr::unnest(values) %>%
+    dplyr::mutate(date = lubridate::dmy(date)) %>%
+    dplyr::mutate(id_date = as.integer(as.factor(date))) %>%
+    dplyr::mutate(local = dplyr::if_else(local == "FALSE", "0", local)) %>%
+    tidyr::replace_na(list(
+      suspects = 0, refuses = 0,
+      confirmado = 0, deads = 0,
+      local = 0, cases = 0, deaths = 0)
+    ) %>%
+    dplyr::select(
+      id_date, date, uid, suspects, refuses, confirmado, deads,
+      local, cases, deaths
+    ) %>%
+    dplyr::mutate_at(
+      dplyr::vars(suspects, refuses, confirmado, deads, local, cases, deaths),
+      as.numeric
+    )
+  dir.create(dir, FALSE, TRUE)
+  utils::write.csv(new_df, paste0(dir, filename, ".csv"), row.names = FALSE)
   return(new_df)
 }
