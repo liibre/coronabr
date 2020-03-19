@@ -10,8 +10,10 @@ Authors@R: c(
     )
 Maintainer: Sara R Mortara <saramortara@gmail.com>
 Description: Pacote desenvolvido por mulheres latinas para download 
-    dos casos registrados de coronavírus no Brasil. 
+    dos casos registrados de coronavírus no Brasil
 License: GPL (>= 3)
+URL: https://liibre.github.io/coronabr/index.html
+BugReports: https://github.com/liibre/coronabr/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
@@ -35,4 +37,3 @@ Suggests:
     sf,
     tmap
 VignetteBuilder: knitr
-BugReports: https://github.com/liibre/coronabr/issues
