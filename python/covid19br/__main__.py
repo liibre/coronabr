@@ -1,4 +1,4 @@
-from covid19br.get_corona import fetch_data, parse_data
+from covid19br.corona import fetch_data, parse_data
 import pandas as pd
 
 raw_data = fetch_data()
