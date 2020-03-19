@@ -7,3 +7,8 @@
 output/
 script_corona.R
 Estados_do_Brasil/
+
+# python
+__pycache__
+.ipynb_checkpoints
+.mypy_cache
