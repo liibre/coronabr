@@ -93,13 +93,8 @@ def parse_data(data, parse_uf=True):
 
 
 def get_corona(dir="output/", filename=None, area="brazil", parse_uf=True):
-    if isinstance(area, list):
-        raw_data = fetch_data(dir=dir, filename=filename)
-        for a in area:
-            yield parse_data(raw_data[a], parse_uf=parse_uf if a == "brazil" else False)
-    else:
-        return pd.DataFrame(
-            parse_data(
-                fetch_data(dir=dir, filename=filename)[area], parse_uf=parse_uf
-            )
+    return pd.DataFrame(
+        parse_data(
+            fetch_data(dir=dir, filename=filename)[area], parse_uf=parse_uf
         )
+    )

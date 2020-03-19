@@ -1,1 +1,1 @@
-from covid19br.get_corona import get_corona, parse_data
+from covid19br.get_corona import get_corona, fetch_data, parse_data
