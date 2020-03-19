@@ -1,8 +1,8 @@
 # Dados do coronavírus no Brasil 
 
-Disponibilizamos aqui um pacote de [R](https://www.r-project.org/) para fazer o download dados dos casos diários de coronavírus (COVID-19) do Min. da Saúde disponibilizados pelo [Ministério da Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil). 
+Disponibilizamos aqui um pacote de [R](https://www.r-project.org/) para fazer o download de dados dos casos diários de coronavírus (COVID-19) disponibilizados pelo [Ministério da Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil). 
 
-Importante lembrar que os dados são apenas os casos registrados e computados pelo Min. da Saúde. 
+É importante lembrar que os dados são apenas os casos registrados e computados pelo Ministério da Saúde e que a partir de dia 14/03/2020 só são contabilizados os casos graves que dão entrada no hospital, segundo diretivas da OMS.
 
 O código é aberto. Entre em [Get Started](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
 
