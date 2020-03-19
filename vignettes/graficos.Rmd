@@ -68,7 +68,7 @@ fig_casos
 
 ## Entendendo o aumento diário
 
-```{r fig-perc, fig.width=6}
+```{r fig-perc, fig.width=6, fig.height=7}
 df$delta_cases <- df$Casos - lag(df$Casos)
 df$diff_perc <- round(df$delta_cases/df$Casos, 3) * 100
 df$label <- paste(df$delta_cases, "%")
@@ -188,8 +188,8 @@ anim <- tm_shape(br) +
              alpha = 0.7) +
   tm_facets(along = "date", free.coords = FALSE)
 
-# tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
-#                 width = 1200, height = 1200, res = 300)
+# tmap::tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
+#                width = 1200, height = 1200, res = 300)
 ```
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
