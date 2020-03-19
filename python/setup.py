@@ -7,6 +7,11 @@ setup(
     name="covid19br",
     version="0.1.0",
     packages=find_packages(),
+    install_requires=[
+        'requests',
+        'lxml',
+        'pandas'
+    ],
     py_modules=['covid19br'],
     license="GPL",
     classifiers=[
