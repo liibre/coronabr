@@ -10,6 +10,9 @@ Disponibilizamos aqui atualizações diárias dos gráficos.  Sabemos que deve h
 
 Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Sugestões, entrem em contato conosco.
 
+
+**ATENÇÃO:** O site do Min. da Saúde está em manutenção. Última atualização em 18/03/2020. 
+
 ## Crescimento nacional no número de casos
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
