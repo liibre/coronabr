@@ -23,13 +23,15 @@ library(coronabr)
 
 ## Baixando os dados
 
-```{r downlaod}
+```{r downlaod, error=TRUE}
 dados <- get_corona(filename = "corona_brasil01")
 ```
 
 ## Inspecionando os dados
 
 ```{r data}
-head(dados)
+if (exists("dados")) {
+tail(dados)
+}
 ```
 

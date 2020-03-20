@@ -23,11 +23,18 @@ get_corona <- function(dir = "output/",
   url <- 'http://plataforma.saude.gov.br/novocoronavirus/resources/scripts/database.js'
   # url
   message("Extraindo os dados ...")
-  dados <- xml2::read_html(url) %>%
+  tryCatch(
+    dados <- xml2::read_html(url) %>%
     rvest::html_text() %>%
     # gambiarra porque dava erro para ler o json direto
+    url %>%
     gsub("var database=", "", .) %>%
-    jsonlite::fromJSON()
+    jsonlite::fromJSON(encoding = "UTF-8"),
+    error = function(x) {}
+    )
+   if ( !exists("dados") ) {
+     stop("Falha no download dos dados :( Site do Min. da saude fora do ar!")
+  }
   # AQUI PRECISA ADICIONAR MSG DE ERRO SE O OBJETO DADOS NAO É CRIADO
   # extraindo so braSil
   br <- dados$brazil
