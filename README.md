@@ -36,6 +36,8 @@ Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em de
 
 ## Para saber mais:
 
+- [ferramenta em Python](https://github.com/endarthur/coronabr) criada a partir do nosso pacote por [Arthur Endlein](https://github.com/endarthur)
+
 - [covid19br](https://paternogbc.github.io/covid19br/index.html), o pacote de R [Gustavo Palermo](https://github.com/paternogbc) para acompanhar os dados de novos casos no Brasil
 
 - [Observatório Covid-19 BR](https://covid19br.github.io/)
