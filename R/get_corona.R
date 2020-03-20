@@ -5,9 +5,7 @@
 #' @param dir diretório onde salvar o arquivo
 #' @param filename nome do arquivo
 #'
-#' @importFrom rvest html_session
-#' @importFrom rvest html_nodes
-#' @importFrom httr timeout
+#' @importFrom rvest html_text
 #' @importFrom stringr str_split
 #' @importFrom jsonlite fromJSON
 #' @importFrom utils write.csv
@@ -21,25 +19,11 @@
 #'
 get_corona <- function(dir = "output/",
                        filename = "corona_brasil"){
-  rlang::.data #precisa para usar vars no dplyr
-  if (!dir.exists(dir)) {
-    dir.create(dir)
-  }
+  rlang::.data #para usar vars no dplyr
+  url <- 'http://plataforma.saude.gov.br/novocoronavirus/resources/scripts/database.js'
   # url
-  message("Extraindo a url ...")
-  url <- 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil'
-  res <- rvest::html_session(url, httr::timeout(30))
-  # para pegar a url verdadeira com os dados
-  url2 <- rvest::html_nodes(res, "script") %>%
-    magrittr::extract2(12) %>%
-    as.character() %>%
-    # para extrair so a url :facepalm:
-    stringr::str_split(., '"') %>%
-    unlist() %>%
-    .[2]
-  # lendo json para uma lista
-  message("extraindo os dados ...")
-  dados <- xml2::read_html(url2) %>%
+  message("Extraindo os dados ...")
+  dados <- xml2::read_html(url) %>%
     rvest::html_text() %>%
     # gambiarra porque dava erro para ler o json direto
     gsub("var database=", "", .) %>%
@@ -60,6 +44,9 @@ get_corona <- function(dir = "output/",
     dplyr::mutate_at(dplyr::vars(-dplyr::group_cols()), as.numeric) %>%
     dplyr::summarize_at(dplyr::vars(-dplyr::group_cols()), dplyr::funs(sum(., na.rm = TRUE)))
   message(paste0("salvando ", filename, ".csv em ", dir))
+  if (!dir.exists(dir)) {
+    dir.create(dir)
+  }
   utils::write.csv(new_df, paste0(dir, filename, ".csv"),
                    row.names = FALSE)
   return(new_df)
