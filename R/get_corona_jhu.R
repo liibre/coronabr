@@ -1,63 +1,40 @@
-# TODO: translate to pt-br
+#' Extrai dados mundiais de corona vírus
+#'
+#' Esta função extrai os valores compilados pela Johns Hopkins University (disponível em: 'https://github.com/CSSEGISandData/COVID-19') e salva o resultado no disco.
+#'
+#' @param dir diretório onde salvar o arquivo
+#' @param filename nome do arquivo
+#'
+#' @importFrom readr read_csv write_csv
+#' @importFrom glue glue
+#' @importFrom janitor clean_names
+#' @importFrom fs dir_create
+#' @import magrittr
+#'
+#' @export
+#'
+get_corona_jhu <- function(dir = "output", filename = "corona_jhu") {
 
-# TODO: finish doc
+  message(glue::glue("Criando diretorio {dir} ...\n\n"))
 
-# TODO: include packages via usethis::use_package()
+  message("Baixando dados atualizados ...\n\n")
 
-# TODO: devtools::check()
+  yesterday <- format(as.Date(Sys.Date() - 1, '%Y-%m-%d'), "%m-%d-%Y")
 
-get_corona_jhu <- function(last_update = TRUE, date = NULL) {
+  link <-
+    glue::glue("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday}.csv")
 
-  if (last_update && is.null(date) | last_update && !is.null(date)) {
+  covid_data <-
+    readr::read_csv(link) %>%
+    janitor::clean_names(dat = ., case = "snake")
 
-    message("Getting latest data ...\n\n")
+  fs::dir_create(dir)
 
-    yesterday <- format(as.Date(Sys.Date() - 1, '%Y-%m-%d'), "%m-%d-%Y")
+  message(glue::glue("Salvando {filename}.csv em {dir} ...\n\n"))
 
-    link <-
-      glue::glue("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday}.csv")
+  save_filename <- paste0(paste(dir, filename, sep = "/"), ".csv")
 
-    covid_data <-
-      readr::read_csv(link) %>%
-      janitor::clean_names(dat = ., case = "snake")
-
-  }
-
-  if (last_update == FALSE && !is.null(date)) {
-
-    date_begin <- format(as.Date("01-22-2020", '%m-%d-%Y'), "%m-%d-%Y")
-
-    date_end <- format(as.Date(Sys.Date() - 1, '%Y-%m-%d'), "%m-%d-%Y")
-
-    date_wanted <- format(as.Date(date, '%m-%d-%Y'), "%m-%d-%Y")
-
-    if (date_wanted < date_begin | date_wanted > date_end) {
-
-      message(glue::glue("Please provide a date between {date_begin} and {date_end}."))
-
-      covid_data <- NULL
-
-    } else {
-
-      message(glue::glue("Getting data from {date_wanted} ...\n\n"))
-
-      link <-
-        glue::glue("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{date_wanted}.csv")
-
-      covid_data <-
-        readr::read_csv(link) %>%
-        janitor::clean_names(dat = ., case = "snake")
-
-    }
-
-  }
-
-  if (!is.null(covid_data)) {
-
-    return(covid_data)
-
-  }
-
+  covid_data %>%
+    readr::write_csv(x = ., path = save_filename)
 
 }
-
