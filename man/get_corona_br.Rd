@@ -19,5 +19,5 @@ get_corona_br(dir = "output/", filename = "corona_brasil",
 \item{cidade_ibge_cod}{Numérico ou caractere. Código ibge do(s) município(s) brasileiro(s)}
 }
 \description{
-Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativose casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso) e salva o resultado no disco.
+Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco.
 }
