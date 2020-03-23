@@ -2,8 +2,8 @@
 #'
 #' Esta função extrai os valores compilados pelo ministério da Saúde do Brasil (disponível em: 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil') e salva o resultado no disco.
 #'
-#' @param dir diretório onde salvar o arquivo
-#' @param filename nome do arquivo
+#' @param dir Diretório onde salvar o arquivo
+#' @param filename Nome do arquivo
 #'
 #' @importFrom rvest html_text
 #' @importFrom stringr str_split
