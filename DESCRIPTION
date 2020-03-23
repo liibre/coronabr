@@ -21,7 +21,11 @@ LazyData: true
 RoxygenNote: 7.1.0
 Imports:
     dplyr,
+    fs,
+    ggplot2,
+    glue,
     httr,
+    janitor,
     jsonlite,
     magrittr,
     plyr,
@@ -29,15 +33,11 @@ Imports:
     rlang,
     rvest,
     stringr,
-    xml2,
-    fs,
-    glue,
-    janitor
+    xml2
 Suggests: 
     brazilmaps,
     devtools,
     gganimate,
-    ggplot2,
     knitr,
     rgdal,
     sf,

@@ -2,8 +2,7 @@
 #'
 #' Esta função extrai os valores compilados pela Johns Hopkins University (disponível em: 'https://github.com/CSSEGISandData/COVID-19') e salva o resultado no disco.
 #'
-#' @param dir diretório onde salvar o arquivo
-#' @param filename nome do arquivo
+#' @inheritParams get_corona
 #'
 #' @importFrom readr read_csv write_csv
 #' @importFrom glue glue
@@ -13,7 +12,8 @@
 #'
 #' @export
 #'
-get_corona_jhu <- function(dir = "output", filename = "corona_jhu") {
+get_corona_jhu <- function(dir = "output",
+                           filename = "corona_jhu") {
 
   message(glue::glue("Criando diretorio {dir} ...\n\n"))
 

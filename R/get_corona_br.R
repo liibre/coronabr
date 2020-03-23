@@ -7,6 +7,7 @@
 #' @param cidade Caractere indicando o(s) nome(s) do(s) município(s) brasileiro(s). Atenção, fornecer também o estado para evitar ambiguidade
 #' @param uf Caractere indicando a abreviação do(s) estado(s) brasileiro(s)
 #' @param cidade_ibge_cod Numérico ou caractere. Código ibge do(s) município(s) brasileiro(s)
+#' @param by_uf Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `cidade_ibge_cod`
 #'
 #' @importFrom dplyr filter
 #' @importFrom jsonlite fromJSON
@@ -14,13 +15,12 @@
 #' @importFrom rlang .data
 #' @import magrittr
 #'
-#' @export
-#'
 get_corona_br <- function(dir = "output/",
                           filename = "corona_brasil",
                           cidade = NULL,
                           uf = NULL,
-                          cidade_ibge_cod = NULL){
+                          cidade_ibge_cod = NULL,
+                          by_uf = FALSE){
   my_url <- 'https://brasil.io/api/dataset/covid19/caso/data'
   res <- jsonlite::fromJSON(my_url)$results
   if (!is.null(cidade) & is.null(uf)) {
@@ -55,6 +55,12 @@ get_corona_br <- function(dir = "output/",
    if (is.null(cidade) & is.null(cidade_ibge_cod) & is.null(uf)) {
      res <- res
    }
+  if (by_uf == TRUE) {
+    res <- res %>% filter(.data$place_type == "state")
+  }
+  # mudancas para facilitar plots
+  res$date <- as.Date(res$date)
+  res$state <- as.factor(res$state)
   if (!dir.exists(dir)) {
     dir.create(dir)
   }

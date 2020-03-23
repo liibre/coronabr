@@ -7,9 +7,9 @@
 get_corona_jhu(dir = "output", filename = "corona_jhu")
 }
 \arguments{
-\item{dir}{diretório onde salvar o arquivo}
+\item{dir}{Diretório onde salvar o arquivo}
 
-\item{filename}{nome do arquivo}
+\item{filename}{Nome do arquivo}
 }
 \description{
 Esta função extrai os valores compilados pela Johns Hopkins University (disponível em: 'https://github.com/CSSEGISandData/COVID-19') e salva o resultado no disco.
