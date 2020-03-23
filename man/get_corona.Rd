@@ -7,9 +7,9 @@
 get_corona(dir = "output/", filename = "corona_brasil")
 }
 \arguments{
-\item{dir}{diretório onde salvar o arquivo}
+\item{dir}{Diretório onde salvar o arquivo}
 
-\item{filename}{nome do arquivo}
+\item{filename}{Nome do arquivo}
 }
 \description{
 Esta função extrai os valores compilados pelo ministério da Saúde do Brasil (disponível em: 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil') e salva o resultado no disco.
