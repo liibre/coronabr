@@ -7,7 +7,7 @@
 #' @export
 #'
 #'
-fill_corona_br <- function(df){
+format_corona_br <- function(df){
   datas <- expand.grid(date =  seq(min(df$date), max(df$date), by = 1),
                        city_ibge_code = unique(df$city_ibge_code))
   datas$city_ibge_code <- as.character(datas$city_ibge_code)
