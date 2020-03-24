@@ -15,12 +15,12 @@ plot_corona_br <- function(df,
                            log = TRUE,
                            tipo = "numero") {
   # definindo data_max para plotr apenas atualizacoes completas
-  datas <- plyr::count(df$date)
+  datas <- plyr::count(df$date[df$confirmed > 0])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
-    data_max <- max(datas$x) - 1
+    data_max <- max(datas$x, na.rm = TRUE) - 1
   } else {
-    data_max <- max(datas$x)
+    data_max <- max(datas$x, na.rm = TRUE)
   }
   # nomes dos eixos
   xlab <- "Data"
@@ -28,7 +28,8 @@ plot_corona_br <- function(df,
   legenda <- "fonte: https://brasil.io/dataset/covid19/caso"
   df <- df %>%
     dplyr::group_by(., .data$date) %>%
-    dplyr::summarise_at(dplyr::vars(.data$confirmed, .data$deaths), .funs = sum) %>%
+    dplyr::summarise_at(dplyr::vars(.data$confirmed, .data$deaths),
+                        .funs = sum, na.rm = TRUE) %>%
     dplyr::filter(., .data$date <= data_max)
  # tipo = numero
   if (tipo == "numero") {
@@ -36,7 +37,9 @@ plot_corona_br <- function(df,
       df <- df %>% dplyr::mutate(confirmed = log(.data$confirmed))
       ylab <- paste(ylab, "(log)")
     }
-    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$date, y = .data$confirmed, color = "red")) +
+    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$date,
+                                          y = .data$confirmed,
+                                          color = "red")) +
       ggplot2::geom_line(alpha = .7) +
       ggplot2::geom_point(size = 2) +
       ggplot2::labs(x = xlab,

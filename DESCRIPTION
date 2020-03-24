@@ -35,6 +35,7 @@ Imports:
     rvest,
     sf,
     stringr,
+    tidyr,
     tmap,
     xml2
 Suggests: 
