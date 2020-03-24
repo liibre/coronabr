@@ -15,12 +15,12 @@ map_corona_br <- function(df,
                           prop_pop = TRUE){
   # puxando a data mais atualizada
   df$date <- as.Date(df$date)
-  datas <- plyr::count(df$date)
+  datas <- plyr::count(df$date[df$confirmed > 0])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
-    data_max <- max(datas$x) - 1
+    data_max <- max(datas$x, na.rm = TRUE) - 1
   } else {
-    data_max <- max(datas$x)
+    data_max <- max(datas$x, na.rm = TRUE)
   }
   df <- df %>%
     filter(.data$date == data_max)
@@ -38,7 +38,7 @@ map_corona_br <- function(df,
     tmap::tm_fill(col = "white") +
     tmap::tm_borders() +
     tmap::tm_shape(br_sf) +
-    tmap::tm_fill() +
+    tmap::tm_fill(colorNA = "white") +
     tmap::tm_borders() +
     if (prop_pop == TRUE) {
       tmap::tm_symbols(size = "Casos (por 100 mil hab.)",
