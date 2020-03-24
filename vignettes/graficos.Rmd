@@ -18,12 +18,6 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 
 ```{r pkgs}
 devtools::load_all()
-library(ggplot2)
-library(dplyr)
-library(rgdal)
-library(sf)
-library(tmap)
-library(brazilmaps)
 library(gganimate)
 ```
 
@@ -32,9 +26,7 @@ library(gganimate)
 
 ```{r get}
 dados <- get_corona_br(by_uf = TRUE)
-dados_jhu <- get_corona_jhu()
-br <- get_brmap(geo = "State",
-                class = "sf")
+#dados_jhu <- get_corona_jhu()
 ```
 
 
@@ -45,36 +37,24 @@ plot_corona_br(df = dados, log = FALSE)
 
 ## Entendendo o aumento diário
 
-```{r fig-perc, fig.width=6, fig.height=7}
+```{r fig-perc, fig.width=8, fig.height=11}
 plot_corona_br(df = dados, tipo = "aumento")
 ```
 
 ## Número de casos por estado brasileiro
 
-```{r mapa, message = FALSE}
-# df_uf <- dados %>% 
-#   group_by(uid, nome, date) %>%
-#   summarise_at(vars(Casos), sum) %>%
-#   ungroup() %>% 
-#   dplyr::rename(State = uid) %>%
-#   dplyr::mutate(log_cases = log(Casos + 1), 
-#                 State = as.factor(State))
-# 
-# br_sf <- st_as_sf(br) %>%  
-#   merge(df_uf)
-#   
-# mapa <- tm_shape(br_sf) +
-#   tm_fill() +
-#   tm_borders() +
-#   #tm_shape() +
-#   tm_symbols(size = "Casos", 
-#              col = "red", 
-#              border.col = "red",
-#              scale = 2, 
-#              alpha = 0.7)
-# 
-# mapa
-#tm_facets(by = "date", free.coords = FALSE)
+
+Um mapa com os dados do número de casos a cada 100.000 habitantes
+
+```{r mapa1, fig.height=3, fig.width=3}
+map_corona_br(df = dados)
+```
+
+Um mapa com o valor bruto no número de casos
+
+```{r mapa2, fig.height=3, fig.width=3}
+map_corona_br(df = dados, 
+           prop_pop = FALSE)
 ```
 
 ## Crescimento do número de casos nos estados mais afetados
@@ -144,47 +124,10 @@ plot_corona_br(df = dados, tipo = "aumento")
 
 ## Evolução do número de casos por estado
 
-```{r facet-map}
-# df_date <- dados %>% 
-#   group_by(uid, date) %>%
-#   summarise_at(vars(Casos), sum) %>%
-#   dplyr::rename(State = uid) #%>%
-#   #dplyr::mutate(cases = log(cases + 1))
-# 
-# date_sf <- st_as_sf(br) %>%  
-#   merge(df_date)
-# 
-# all_map <- tm_shape(br) +
-#   #tm_fill(col = "white") +
-#   tm_borders() +
-#   tm_polygons() +
-#   #br_sf %>%  merge(df_date) %>%
-#   tm_shape(date_sf) +
-#   tm_fill() +
-#   tm_borders() +
-#   tm_symbols(size = "Casos",
-#              border.col = "red", 
-#              col = "red", 
-#              scale = 1, 
-#              alpha = 0.7) +
-#   tm_facets(by = "date", free.coords = FALSE)
-```
-
 
 ```{r anim, eval = T, fig.show = "animate"}
-# anim <- tm_shape(br) +
-#   tm_borders() +
-#   tm_polygons() +
-#   tm_shape(date_sf) +
-#   tm_symbols(size = "Casos",
-#              border.col = "red", 
-#              col = "red",
-#              scale = 2,
-#              alpha = 0.7) +
-#   tm_facets(along = "date", free.coords = FALSE)
-
-# tmap::tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
-#                width = 1200, height = 1200, res = 300)
+#anim <- gif_corona_br(df = dados)
+# <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
 ```
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+
