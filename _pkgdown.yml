@@ -7,7 +7,6 @@ navbar:
     home:
       icon: fas fa-home fa-lg
       href: index.html
-      href: contributing.html
     reference:
       text: funções
       href: reference/index.html

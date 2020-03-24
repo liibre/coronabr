@@ -18,7 +18,7 @@ O código é aberto. Entre em [como usar](https://liibre.github.io/coronabr/arti
 
 Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.
 
-Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Sugestões, entrem em contato conosco. <!---  Para entender como contribuir, clique [aqui](). -->
+Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Sugestões, entrem em contato conosco. Para entender como contribuir, clique [aqui](https://liibre.github.io/coronabr/contributing.html).
 
 **ATENÇÃO:** O site do Min. da Saúde está em manutenção. Última atualização em 18/03/2020. Função `get_corona()` sem retorno. Veja `get_corona_br()` ou `get_corona_jhu()`. 
 
