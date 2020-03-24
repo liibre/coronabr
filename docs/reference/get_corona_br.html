@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Extrai dados de corona vírus para o Brasil de O Brasil em dados abertos — get_corona_br • coronabr</title>
+<title>Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos — get_corona_br • coronabr</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Extrai dados de corona vírus para o Brasil de O Brasil em dados abertos — get_corona_br" />
+<meta property="og:title" content="Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos — get_corona_br" />
 <meta property="og:description" content="Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco." />
 <meta name="twitter:card" content="summary" />
 
@@ -120,7 +120,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Extrai dados de corona vírus para o Brasil de O Brasil em dados abertos</h1>
+    <h1>Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos</h1>
     <small class="dont-index">Source: <a href='https://github.com/liibre/coronabr/blob/master/R/get_corona_br.R'><code>R/get_corona_br.R</code></a></small>
     <div class="hidden name"><code>get_corona_br.Rd</code></div>
     </div>
@@ -130,7 +130,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>get_corona_br</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"output/"</span>, <span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"corona_brasil"</span>,
-  <span class='kw'>cidade</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>uf</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>cidade_ibge_cod</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>by_uf</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>cidade</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>uf</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>ibge_cod</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>by_uf</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,19 +145,19 @@
     </tr>
     <tr>
       <th>cidade</th>
-      <td><p>Caractere indicando o(s) nome(s) do(s) município(s) brasileiro(s). Atenção, fornecer também o estado para evitar ambiguidade</p></td>
+      <td><p>Caractere indicando o(s) nome(s) do(s) município(s) brasileiro(s). Atenção, fornecer também o estado ou o código ibge para evitar ambiguidade. "Importados" extrai os casos importados, se disponíveis.</p></td>
     </tr>
     <tr>
       <th>uf</th>
       <td><p>Caractere indicando a abreviação do(s) estado(s) brasileiro(s)</p></td>
     </tr>
     <tr>
-      <th>cidade_ibge_cod</th>
-      <td><p>Numérico ou caractere. Código ibge do(s) município(s) brasileiro(s)</p></td>
+      <th>ibge_cod</th>
+      <td><p>Numérico ou caractere. Código ibge do(s) município(s) ou estado(s) brasileiro(s). O código dos municípios tem 7 cifras e o código dos estados 2</p></td>
     </tr>
     <tr>
       <th>by_uf</th>
-      <td><p>Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `cidade_ibge_cod`</p></td>
+      <td><p>Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município</p></td>
     </tr>
     </table>
 
