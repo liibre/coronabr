@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Extrai dados de corona vírus para o Brasil — get_corona • coronabr</title>
+<title>Gráfico do número de casos no Brasil ao longo do tempo — plot_corona_br • coronabr</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 
 
 
-<meta property="og:title" content="Extrai dados de corona vírus para o Brasil — get_corona" />
-<meta property="og:description" content="Esta função extrai os valores compilados pelo ministério da Saúde do Brasil (disponível em: 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil') e salva o resultado no disco." />
+<meta property="og:title" content="Gráfico do número de casos no Brasil ao longo do tempo — plot_corona_br" />
+<meta property="og:description" content="Esta função plota o crescimento no número de casos no Brasil ao longo do tempo. Há duas opções de gráfico, veja o argumento `tipo` para mais detalhes." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -120,27 +120,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Extrai dados de corona vírus para o Brasil</h1>
-    <small class="dont-index">Source: <a href='https://github.com/liibre/coronabr/blob/master/R/get_corona.R'><code>R/get_corona.R</code></a></small>
-    <div class="hidden name"><code>get_corona.Rd</code></div>
+    <h1>Gráfico do número de casos no Brasil ao longo do tempo</h1>
+    <small class="dont-index">Source: <a href='https://github.com/liibre/coronabr/blob/master/R/plot_corona_br.R'><code>R/plot_corona_br.R</code></a></small>
+    <div class="hidden name"><code>plot_corona_br.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Esta função extrai os valores compilados pelo ministério da Saúde do Brasil (disponível em: 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil') e salva o resultado no disco.</p>
+    <p>Esta função plota o crescimento no número de casos no Brasil ao longo do tempo. Há duas opções de gráfico, veja o argumento `tipo` para mais detalhes.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_corona</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"output/"</span>, <span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"corona_brasil"</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_corona_br</span>(<span class='no'>df</span>, <span class='kw'>log</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tipo</span> <span class='kw'>=</span> <span class='st'>"numero"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dir</th>
-      <td><p>Diretório onde salvar o arquivo</p></td>
+      <th>df</th>
+      <td><p>Data frame contendo o resultado da busca de `get_corona_br()`</p></td>
     </tr>
     <tr>
-      <th>filename</th>
-      <td><p>Nome do arquivo</p></td>
+      <th>log</th>
+      <td><p>Lógico. Se quer manter a escala log no eixo y do gráfico. Padrão log = TRUE. Apenas para `tipo = "numero"`</p></td>
+    </tr>
+    <tr>
+      <th>tipo</th>
+      <td><p>Caractere. Padrão `tipo = "numero"` para o número de casos ao longo do tempo. Usar `tipo = "aumento"` para plotar o aumento (em %) diário no número de casos</p></td>
     </tr>
     </table>
 
