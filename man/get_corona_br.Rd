@@ -2,27 +2,26 @@
 % Please edit documentation in R/get_corona_br.R
 \name{get_corona_br}
 \alias{get_corona_br}
-\title{Extrai dados de corona vírus para o Brasil de O Brasil em dados abertos}
+\title{Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos}
 \usage{
 get_corona_br(dir = "output/", filename = "corona_brasil",
-  cidade = NULL, uf = NULL, cidade_ibge_cod = NULL, by_uf = FALSE,
-  fill = TRUE)
+  cidade = NULL, uf = NULL, ibge_cod = NULL, by_uf = FALSE)
 }
 \arguments{
 \item{dir}{Diretório onde salvar o arquivo}
 
 \item{filename}{Nome do arquivo}
 
-\item{cidade}{Caractere indicando o(s) nome(s) do(s) município(s) brasileiro(s). Atenção, fornecer também o estado para evitar ambiguidade}
+\item{cidade}{Caractere indicando o(s) nome(s) do(s) município(s) brasileiro(s). Atenção, fornecer também o estado ou o código ibge para evitar ambiguidade. "Importados" extrai os casos importados, se disponíveis.}
 
 \item{uf}{Caractere indicando a abreviação do(s) estado(s) brasileiro(s)}
 
-\item{cidade_ibge_cod}{Numérico ou caractere. Código ibge do(s) município(s) brasileiro(s)}
+\item{ibge_cod}{Numérico ou caractere. Código ibge do(s) município(s) ou estado(s) brasileiro(s). O código dos municípios tem 7 cifras e o código dos estados 2}
 
-\item{by_uf}{Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `cidade_ibge_cod`}
+\item{by_uf}{Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município}
 
 \item{fill}{Lógico. Preencher lacuna de informação com o registro do boletim anterior? Padrão `fill = TRUE`}
 }
 \description{
-Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco. Dado que na ausência da emissão do boletim por alguma secretaria, a data é excluída das planilhas, incluímos a opção de preencher a lacuna com os dados do último boletim.
+Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco.
 }
