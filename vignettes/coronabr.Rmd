@@ -18,20 +18,32 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Carregando o pacote
 
 ```{r load}
-library(coronabr)
+#library(coronabr)
+devtools::load_all()
 ```
 
-## Baixando os dados
+### Baixando os dados apenas do Brasil
 
-```{r downlaod, error=TRUE}
-dados <- get_corona(filename = "corona_brasil01")
+Aqui está o exemplo usando a função `get_corona_br()` que extrai os dados do portal https://brasil.io/, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil. 
+
+```{r get-br, error=TRUE}
+dados <- get_corona_br(by_uf = TRUE)
 ```
 
-## Inspecionando os dados
+#### Inspecionando os dados
 
-```{r data}
-if (exists("dados")) {
-tail(dados)
-}
+```{r data-br}
+head(dados)
 ```
 
+### Baixando os dados mundiais
+
+```{r get-jhu}
+dados_jhu <- get_corona_jhu()
+```
+
+#### Inspecionando os dados mundiais
+
+```{r}
+head(dados_jhu)
+```

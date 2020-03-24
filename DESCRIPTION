@@ -18,26 +18,29 @@ URL: https://liibre.github.io/coronabr/, https://github.com/liibre/coronabr
 BugReports: https://github.com/liibre/coronabr/issues
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 Imports:
+    brazilmaps,
     dplyr,
+    fs,
+    ggplot2,
+    glue,
     httr,
+    janitor,
     jsonlite,
     magrittr,
     plyr,
     readr,
     rlang,
     rvest,
+    sf,
     stringr,
+    tmap,
     xml2
 Suggests: 
-    brazilmaps,
     devtools,
     gganimate,
-    ggplot2,
     knitr,
-    rgdal,
-    sf,
-    tmap
+    rgdal
 VignetteBuilder: 
     knitr

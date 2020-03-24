@@ -100,21 +100,68 @@
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#carregando-o-pacote" class="anchor"></a>Carregando o pacote</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(coronabr)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">#library(coronabr)</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/load_all.html">load_all</a></span>()</a></code></pre></div>
+<pre><code>## Loading coronabr</code></pre>
+<div id="baixando-os-dados-apenas-do-brasil" class="section level3">
+<h3 class="hasAnchor">
+<a href="#baixando-os-dados-apenas-do-brasil" class="anchor"></a>Baixando os dados apenas do Brasil</h3>
+<p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">dados &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="dt">by_uf =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div id="inspecionando-os-dados" class="section level4">
+<h4 class="hasAnchor">
+<a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados)</a></code></pre></div>
+<pre><code>##   city city_ibge_code confirmed confirmed_per_100k_inhabitants       date
+## 1 &lt;NA&gt;             12        17                        1.92758 2020-03-23
+## 2 &lt;NA&gt;             27         8                        0.23971 2020-03-23
+## 3 &lt;NA&gt;             16         1                        0.11824 2020-03-23
+## 4 &lt;NA&gt;             29        63                        0.42358 2020-03-23
+## 5 &lt;NA&gt;             23       164                        1.79587 2020-03-23
+## 6 &lt;NA&gt;             53       138                        4.57671 2020-03-23
+##   death_rate deaths estimated_population_2019 is_last place_type state
+## 1         NA      0                    881935    TRUE      state    AC
+## 2         NA      0                   3337357    TRUE      state    AL
+## 3         NA      0                    845731    TRUE      state    AP
+## 4         NA      0                  14873064    TRUE      state    BA
+## 5         NA      0                   9132078    TRUE      state    CE
+## 6         NA      0                   3015268    TRUE      state    DF</code></pre>
 </div>
-<div id="baixando-os-dados" class="section level2">
-<h2 class="hasAnchor">
-<a href="#baixando-os-dados" class="anchor"></a>Baixando os dados</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">dados &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona.html">get_corona</a></span>(<span class="dt">filename =</span> <span class="st">"corona_brasil01"</span>)</a></code></pre></div>
-<pre><code>## Extraindo os dados ...</code></pre>
-<pre><code>## Error in get_corona(filename = "corona_brasil01"): Falha no download dos dados :( Site do Min. da saude fora do ar!</code></pre>
 </div>
-<div id="inspecionando-os-dados" class="section level2">
-<h2 class="hasAnchor">
-<a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="cf">if</span> (<span class="kw"><a href="https://rdrr.io/r/base/exists.html">exists</a></span>(<span class="st">"dados"</span>)) {</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">tail</a></span>(dados)</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">}</a></code></pre></div>
+<div id="baixando-os-dados-mundiais" class="section level3">
+<h3 class="hasAnchor">
+<a href="#baixando-os-dados-mundiais" class="anchor"></a>Baixando os dados mundiais</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">dados_jhu &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</a></code></pre></div>
+<pre><code>## Criando diretorio output ...</code></pre>
+<pre><code>## Baixando dados atualizados ...</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   `Province/State` = col_character(),
+##   `Country/Region` = col_character(),
+##   `Last Update` = col_datetime(format = ""),
+##   Confirmed = col_double(),
+##   Deaths = col_double(),
+##   Recovered = col_double(),
+##   Latitude = col_double(),
+##   Longitude = col_double()
+## )</code></pre>
+<pre><code>## Salvando corona_jhu.csv em output ...</code></pre>
+<div id="inspecionando-os-dados-mundiais" class="section level4">
+<h4 class="hasAnchor">
+<a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados_jhu)</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 8
+##   province_state country_region last_update confirmed deaths recovered
+##   &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
+## 1 Hubei          China          2020-03-22…     67800   3144     59433
+## 2 &lt;NA&gt;           Italy          2020-03-22…     59138   5476      7024
+## 3 &lt;NA&gt;           Spain          2020-03-22…     28768   1772      2575
+## 4 &lt;NA&gt;           Germany        2020-03-22…     24873     94       266
+## 5 &lt;NA&gt;           Iran           2020-03-22…     21638   1685      7931
+## 6 France         France         2020-03-22…     16018    674      2200
+## # … with 2 more variables: latitude &lt;dbl&gt;, longitude &lt;dbl&gt;</code></pre>
+</div>
+</div>
 </div>
   </div>
 
@@ -126,8 +173,6 @@
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#para-instalar-o-pacote">Para instalar o pacote</a></li>
       <li><a href="#carregando-o-pacote">Carregando o pacote</a></li>
-      <li><a href="#baixando-os-dados">Baixando os dados</a></li>
-      <li><a href="#inspecionando-os-dados">Inspecionando os dados</a></li>
       </ul>
 </div>
       </div>
