@@ -1,12 +1,27 @@
-# Dados do coronavírus no Brasil 
+# Download de dados do coronavírus no Brasil
 
-Disponibilizamos aqui um pacote de [R](https://www.r-project.org/) para fazer o *download* de dados dos casos diários de coronavírus (COVID-19) disponibilizados pelo [Ministério da Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil). 
+__coronabr__ é um pacote de [R](https://www.r-project.org/) para fazer download e visualizar os dados dos casos diários de coronavírus (COVID-19) disponibilizados pelo [Ministério da Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil).
+Ele é desenvolvido por Sara R Mortara, Andrea Sánchez-Tapia e Karlo Guidoni Martins, mas está aberto a contribuições.
 
-É importante lembrar que os dados são apenas os casos registrados e computados pelo Ministério da Saúde e que a partir de dia 14/03/2020 só são contabilizados os casos graves que dão entrada no hospital, segundo diretivas da OMS. Isso significa que tem uma alta subnotificação.
+Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos alinhadxs com o manifest-no, refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados.
+Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomendamos que toda análise que possa ser feita o seja. Ao se tratar de uma situação de saúde pública delicada, visualizações, extrapolações, e predições devem ser feitas com todo cuidado, lembrando que a qualidade dos dados é incerta e que todo dado diz respeito a uma pessoa. No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados.
 
 O código é aberto. Entre em [como usar](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
 
-Disponibilizamos aqui atualizações diárias dos gráficos.  Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.
+
+- A partir de 14/03/20, a notificação de casos graves de covid-19 foca apenas nos casos graves que são atendidos nos hospitais.
+- A partir de 18/03/2020, a página original parou de funcionar e os boletins estão sendo divulgados em apresentações de powerpoint e PDFs. [Adriano Belisario](www.twitter.com/belisards) está fazendo a compilação manual destes dados [aqui](https://github.com/belisards/coronabr)
+<!--- A partir de 20/03/2020, a notificação exclui os casos suspeitos que vinham sendo divulgados.-->
+
+Outras fontes de dados estimando o número de casos no Brasil se encontram em:
+
+
+- [Observatório COVID-19 BR, grupo colaborativo de cientistas brasileirxs com previsões de crescimento do número de casos ](https://covid19br.github.io/index.html)
+- [John Hopkins Coronavirus COVID-19 Global Cases](https://coronavirus.jhu.edu/map.html), [github](https://github.com/CSSEGISandData/COVID-19)
+- https://www.worldometers.info/coronavirus/country/brazil/
+
+
+Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.
 
 Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Sugestões, entrem em contato conosco.
 

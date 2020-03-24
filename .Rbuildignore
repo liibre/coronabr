@@ -6,3 +6,4 @@ script_corona.R
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+contributing.md
