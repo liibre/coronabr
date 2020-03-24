@@ -8,7 +8,6 @@
 #' @param uf Caractere indicando a abreviação do(s) estado(s) brasileiro(s)
 #' @param ibge_cod Numérico ou caractere. Código ibge do(s) município(s) ou estado(s) brasileiro(s). O código dos municípios tem 7 cifras e o código dos estados 2
 #' @param by_uf Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município
-#' @param fill Lógico. Preencher lacuna de informação com o registro do boletim anterior? Padrão `fill = TRUE`
 #'
 #' @importFrom dplyr filter
 #' @importFrom jsonlite fromJSON
@@ -29,10 +28,10 @@ get_corona_br <- function(dir = "output/",
   }
   if (!is.null(cidade)) {
     if (sum(!cidade %in% unique(res$city)) > 0) {
-      stop("algum nome de municipio em 'city' invalido ou ainda não há dados/casos para essa cidade")
+      stop("algum nome de municipio em 'city' invalido ou ainda nao ha dados/casos para essa cidade")
     }
     if (sum(!uf %in% unique(res$state) > 0)) {
-      stop("algum nome de estado em 'state' invalido ou ainda não há dados/casos para essa cidade")
+      stop("algum nome de estado em 'state' invalido ou ainda nao ha dados/casos para essa cidade")
     }
     if (!is.null(cidade) & !is.null(uf)) {
       res <- res %>% dplyr::filter(.data$state %in% uf
@@ -43,7 +42,7 @@ get_corona_br <- function(dir = "output/",
   }
   if (!is.null(ibge_cod)) {
     if (sum(!ibge_cod %in% unique(res$city_ibge_code)) > 0) {
-      stop("algum codigo de municipio ou estado 'city_ibge_code' invalido")
+      stop("algum codigo de municipio ou estado 'ibge_code' invalido")
     } else {
       res <- res %>% dplyr::filter(.data$city_ibge_code %in% ibge_cod)
     }
