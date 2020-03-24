@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 devtools::load_all()
 ```
 
-### Baixando os dados apenas do brasil
+### Baixando os dados apenas do Brasil
 
 Aqui está o exemplo usando a função `get_corona_br()` que extrai os dados do portal https://brasil.io/, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil. 
 
@@ -33,9 +33,7 @@ dados <- get_corona_br(by_uf = TRUE)
 #### Inspecionando os dados
 
 ```{r data-br}
-if (exists("dados")) {
 head(dados)
-}
 ```
 
 ### Baixando os dados mundiais

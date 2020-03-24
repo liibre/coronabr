@@ -124,10 +124,12 @@ map_corona_br(df = dados,
 
 ## Evolução do número de casos por estado
 
-
 ```{r anim, eval = T, fig.show = "animate"}
-#anim <- gif_corona_br(df = dados)
-# <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+anim <- gif_corona_br(df = dados)
+tmap::tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
+                width = 1200, height = 1200, res = 300)
+# 
 ```
 
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
 

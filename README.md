@@ -24,7 +24,9 @@ Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em de
 
 ## Número de casos por estado brasileiro
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa-1-1.png" align="center" alt="" width="600" />
+
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa-1-2.png" align="center" alt="" width="600" />
 
 ## Crescimento do número de casos nos estados mais afetados
 
