@@ -7,7 +7,7 @@
 map_corona_br(df, prop_pop = TRUE)
 }
 \arguments{
-\item{df}{Data frame contendo o resultado da busca de `get_corona_br()`}
+\item{df}{Data frame formatado com a função `format_corona_br()`}
 
 \item{prop_pop}{Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE}
 }

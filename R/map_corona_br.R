@@ -2,8 +2,9 @@
 #'
 #' Esta função faz o mapa do número de casos por estado brasileiro.
 #'
-#' @inheritParams plot_corona_br
+#' @param df Data frame formatado com a função `format_corona_br()`
 #' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
+# @param anim Lógico. Retornar animação com evolução do número de casos ao longo do tempo: Padrão anim = FALSE
 #'
 #' @export
 #'
@@ -53,5 +54,9 @@ map_corona_br <- function(df,
                        scale = 2,
                        alpha = 0.7)
     }
+  #mapa <- mapa %+% subset(br_sf, .data$date == data_max)
+  # if (anim == TRUE) {
+  #   mapa <- mapa + tmap::tm_facets(along = "date", free.coords = FALSE)
+  # }
   mapa
 }
