@@ -60,13 +60,14 @@ map_corona_br <- function(df,
   if (anim == TRUE) {
      anim <- mapa +
        tmap::tm_facets(along = "date", free.coords = FALSE)
+     #ö: maybe animate here? i did that
+     anim <- tmap::tmap_animation(anim,
+                                  filename = "figs/anim.gif",
+                                  delay = 25,
+                                  width = 1200,
+                                  height = 1200,
+                                  restart.delay = 50)
      return(anim)
-     #ö: maybe animate here?
-     # tmap::tmap_animation(anim,
-     #                      filename = "figs/anim.gif",
-     #                      delay = 25,
-     #                      width = 1200, height = 1200,
-     #                      restart.delay = 100)
    }
   mapa
 }
