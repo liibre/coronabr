@@ -15,7 +15,9 @@
 #' @importFrom rlang .data
 #' @import magrittr
 #'
-get_corona_br <- function(dir = "output/",
+#' @export
+#'
+get_corona_br <- function(dir = "output",
                           filename = "corona_brasil",
                           cidade = NULL,
                           uf = NULL,
@@ -64,7 +66,7 @@ get_corona_br <- function(dir = "output/",
   if (!dir.exists(dir)) {
     dir.create(dir)
   }
-  utils::write.csv(res, paste0(dir, filename, ".csv"),
+  utils::write.csv(res, paste0(dir, "/", filename, ".csv"),
                    row.names = FALSE)
   return(res)
 }

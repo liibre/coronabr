@@ -4,7 +4,7 @@
 \alias{get_corona_br}
 \title{Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos}
 \usage{
-get_corona_br(dir = "output/", filename = "corona_brasil",
+get_corona_br(dir = "output", filename = "corona_brasil",
   cidade = NULL, uf = NULL, ibge_cod = NULL, by_uf = FALSE)
 }
 \arguments{
