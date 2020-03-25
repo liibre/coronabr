@@ -2,6 +2,7 @@
 
 export(format_corona_br)
 export(get_corona)
+export(get_corona_br)
 export(get_corona_jhu)
 export(gif_corona_br)
 export(map_corona_br)

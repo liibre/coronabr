@@ -3,11 +3,14 @@
 #' Dado que na ausência da emissão do boletim por alguma secretaria, a data é excluída das planilhas, incluímos a opção de preencher a lacuna com os dados do último boletim. O preenchimento é apenas para os municípios e estados com casos registrados.
 #'
 #' @inheritParams plot_corona_br
+#' @inheritParams get_corona_br
 #'
 #' @export
 #'
 #'
-format_corona_br <- function(df){
+format_corona_br <- function(df,
+                             filename = "corona_brasil_formated",
+                             dir = "output"){
   datas <- expand.grid(date =  seq(min(df$date), max(df$date), by = 1),
                        city_ibge_code = unique(df$city_ibge_code))
   datas$city_ibge_code <- as.character(datas$city_ibge_code)
@@ -27,5 +30,11 @@ format_corona_br <- function(df){
                   deaths = tidyr::replace_na(.data$deaths, 0),
                   death_rate = tidyr::replace_na(.data$death_rate, 0)) %>%
     dplyr::ungroup()
+
+  if (!dir.exists(dir)) {
+    dir.create(dir)
+  }
+  utils::write.csv(df_new, paste0(dir, "/", filename, ".csv"),
+                   row.names = FALSE)
   return(df_new)
 }

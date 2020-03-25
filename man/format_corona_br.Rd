@@ -4,10 +4,15 @@
 \alias{format_corona_br}
 \title{Preenche as datas vazias nos dados de COVID-19 do Brasil.io}
 \usage{
-format_corona_br(df)
+format_corona_br(df, filename = "corona_brasil_formated",
+  dir = "output")
 }
 \arguments{
 \item{df}{Data frame contendo o resultado da busca de `get_corona_br()`}
+
+\item{filename}{Nome do arquivo}
+
+\item{dir}{Diretório onde salvar o arquivo}
 }
 \description{
 Dado que na ausência da emissão do boletim por alguma secretaria, a data é excluída das planilhas, incluímos a opção de preencher a lacuna com os dados do último boletim. O preenchimento é apenas para os municípios e estados com casos registrados.
