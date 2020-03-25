@@ -17,7 +17,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 
 
 ```{r pkgs}
-devtools::load_all()
+library(coronabr)
+# devtools::load_all() #for testing
 library(gganimate)
 ```
 
@@ -47,14 +48,15 @@ plot_corona_br(df = dados, tipo = "aumento")
 Um mapa com os dados do número de casos a cada 100.000 habitantes
 
 ```{r mapa1, fig.height=3, fig.width=3}
-map_corona_br(df = dados)
+dados_format <- format_corona_br(dados)
+map_corona_br(df = dados_format)
 ```
 
 Um mapa com o valor bruto no número de casos
 
 ```{r mapa2, fig.height=3, fig.width=3}
-map_corona_br(df = dados, 
-           prop_pop = FALSE)
+mapa <- map_corona_br(df = dados_format, 
+                      prop_pop = FALSE)
 ```
 
 ## Crescimento do número de casos nos estados mais afetados
@@ -125,7 +127,8 @@ map_corona_br(df = dados,
 ## Evolução do número de casos por estado
 
 ```{r anim, eval = T, fig.show = "animate"}
-anim <- gif_corona_br(df = dados)
+anim <- gif_corona_br(df = dados_format)
+
 tmap::tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
                 width = 1200, height = 1200, res = 300)
 # 
