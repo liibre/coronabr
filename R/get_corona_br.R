@@ -23,8 +23,10 @@ get_corona_br <- function(dir = "output",
                           uf = NULL,
                           ibge_cod = NULL,
                           by_uf = FALSE){
-  my_url <- 'https://brasil.io/api/dataset/covid19/caso/data'
-  res <- jsonlite::fromJSON(my_url)$results
+  my_urls <- c('https://brasil.io/api/dataset/covid19/caso/data',
+               'https://brasil.io/api/dataset/covid19/caso/data?page=2')
+  res_list <- lapply(my_urls, function(x) jsonlite::fromJSON(x)$results)
+  res <- dplyr::bind_rows(res_list)
   if (!is.null(cidade) & is.null(uf)) {
     stop("Precisa fornecer um estado para evitar ambiguidade")
   }
