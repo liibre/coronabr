@@ -126,11 +126,18 @@ mapa <- map_corona_br(df = dados_format,
 
 ## Evolução do número de casos por estado
 
+```{r anim_test,fig.show = "animate"}
+anim <- map_corona_br(df = dados_format, 
+                      prop_pop = FALSE,
+                      anim = TRUE)
+```
+
 ```{r anim, eval = T, fig.show = "animate"}
 anim <- gif_corona_br(df = dados_format)
 
-tmap::tmap_animation(anim, filename = "figs/anim.gif", delay = 25, 
-                width = 1200, height = 1200, res = 300)
+tmap::tmap_animation(anim, filename = "figs/anim_old.gif", delay = 25, 
+                width = 1200, height = 1200,
+                restart.delay = 100)
 # 
 ```
 
