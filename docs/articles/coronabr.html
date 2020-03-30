@@ -112,19 +112,26 @@
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados)</a></code></pre></div>
 <pre><code>##   city city_ibge_code confirmed confirmed_per_100k_inhabitants       date
-## 1 &lt;NA&gt;             13        47                        1.13401 2020-03-24
-## 2 &lt;NA&gt;             29        76                        0.51099 2020-03-24
-## 3 &lt;NA&gt;             23       185                        2.02583 2020-03-24
-## 4 &lt;NA&gt;             53       161                        5.33949 2020-03-24
-## 5 &lt;NA&gt;             31       130                        0.61411 2020-03-24
-## 6 &lt;NA&gt;             50        24                        0.86362 2020-03-24
-##   death_rate deaths estimated_population_2019 is_last place_type state
-## 1         NA      0                   4144597    TRUE      state    AM
-## 2         NA      0                  14873064    TRUE      state    BA
-## 3         NA      0                   9132078    TRUE      state    CE
-## 4          1    161                   3015268    TRUE      state    DF
-## 5         NA      0                  21168791    TRUE      state    MG
-## 6         NA      0                   2778986    TRUE      state    MS</code></pre>
+## 1 &lt;NA&gt;             52        60                        0.85490 2020-03-30
+## 2 &lt;NA&gt;             15        21                        0.24410 2020-03-30
+## 3 &lt;NA&gt;             14        16                        2.64131 2020-03-30
+## 4 &lt;NA&gt;             12        34                        3.85516 2020-03-29
+## 5 &lt;NA&gt;             27        17                        0.50939 2020-03-29
+## 6 &lt;NA&gt;             13       140                        3.37789 2020-03-29
+##   death_rate deaths estimated_population_2019 is_last order_for_place
+## 1     0.0167      1                   7018354    TRUE              19
+## 2         NA      0                   8602865    TRUE              13
+## 3         NA      0                    605761    TRUE              10
+## 4         NA      0                    881935    TRUE              13
+## 5         NA      0                   3337357    TRUE              19
+## 6     0.0071      1                   4144597    TRUE              13
+##   place_type state
+## 1      state    GO
+## 2      state    PA
+## 3      state    RR
+## 4      state    AC
+## 5      state    AL
+## 6      state    AM</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -156,12 +163,12 @@
 <pre><code>## # A tibble: 6 x 12
 ##   fips  admin2 province_state country_region last_update   lat   long
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-03-23…  34.2  -82.5
-## 2 22001 Acadia Louisiana      US             2020-03-23…  30.3  -92.4
-## 3 51001 Accom… Virginia       US             2020-03-23…  37.8  -75.6
-## 4 16001 Ada    Idaho          US             2020-03-23…  43.5 -116. 
-## 5 19001 Adair  Iowa           US             2020-03-23…  41.3  -94.5
-## 6 21001 Adair  Kentucky       US             2020-03-23…  37.1  -85.3
+## 1 45001 Abbev… South Carolina US             2020-03-29…  34.2  -82.5
+## 2 22001 Acadia Louisiana      US             2020-03-29…  30.3  -92.4
+## 3 51001 Accom… Virginia       US             2020-03-29…  37.8  -75.6
+## 4 16001 Ada    Idaho          US             2020-03-29…  43.5 -116. 
+## 5 19001 Adair  Iowa           US             2020-03-29…  41.3  -94.5
+## 6 21001 Adair  Kentucky       US             2020-03-29…  37.1  -85.3
 ## # … with 5 more variables: confirmed &lt;dbl&gt;, deaths &lt;dbl&gt;, recovered &lt;dbl&gt;,
 ## #   active &lt;dbl&gt;, combined_key &lt;chr&gt;</code></pre>
 </div>
