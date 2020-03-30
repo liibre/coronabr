@@ -5,6 +5,7 @@
 #' @param df Data frame formatado com a função `format_corona_br()`
 #' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
 #' @param anim Lógico. Retornar animação com evolução do número de casos ao longo do tempo. Padrão anim = FALSE
+#' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
 #'
 #' @export
 #'
@@ -14,7 +15,8 @@
 
 map_corona_br <- function(df,
                           prop_pop = TRUE,
-                          anim = FALSE){
+                          anim = FALSE,
+                          dir = "figs"){
   # puxando a data mais atualizada
   df$date <- as.Date(df$date)
   datas <- plyr::count(df$date[df$confirmed > 0])
@@ -58,16 +60,19 @@ map_corona_br <- function(df,
                        alpha = 0.7)
     }
   if (anim == TRUE) {
-     anim <- mapa +
-       tmap::tm_facets(along = "date", free.coords = FALSE)
-     #ö: maybe animate here? i did that
-     anim <- tmap::tmap_animation(anim,
-                                  filename = "figs/anim.gif",
-                                  delay = 25,
-                                  width = 1200,
-                                  height = 1200,
-                                  restart.delay = 50)
-     return(anim)
-   }
+    anim <- mapa +
+      tmap::tm_facets(along = "date", free.coords = FALSE)
+    #ö: maybe animate here? i did that
+    if (!dir.exists(dir)) {
+      dir.create(dir)
+    }
+    anim <- tmap::tmap_animation(anim,
+                                 filename = paste0(dir, "/", "anim.gif"),
+                                 delay = 25,
+                                 width = 1200,
+                                 height = 1200,
+                                 restart.delay = 50)
+    return(anim)
+  }
   mapa
 }

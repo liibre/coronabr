@@ -4,7 +4,7 @@
 \alias{map_corona_br}
 \title{Mapa do número de casos por estado}
 \usage{
-map_corona_br(df, prop_pop = TRUE, anim = FALSE)
+map_corona_br(df, prop_pop = TRUE, anim = FALSE, dir = "figs")
 }
 \arguments{
 \item{df}{Data frame formatado com a função `format_corona_br()`}
@@ -12,6 +12,8 @@ map_corona_br(df, prop_pop = TRUE, anim = FALSE)
 \item{prop_pop}{Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE}
 
 \item{anim}{Lógico. Retornar animação com evolução do número de casos ao longo do tempo. Padrão anim = FALSE}
+
+\item{dir}{Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.}
 }
 \description{
 Esta função faz o mapa do número de casos por estado brasileiro.
