@@ -4,8 +4,14 @@
 \alias{get_corona_br}
 \title{Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos}
 \usage{
-get_corona_br(dir = "output", filename = "corona_brasil",
-  cidade = NULL, uf = NULL, ibge_cod = NULL, by_uf = FALSE)
+get_corona_br(
+  dir = "output",
+  filename = "corona_brasil",
+  cidade = NULL,
+  uf = NULL,
+  ibge_cod = NULL,
+  by_uf = FALSE
+)
 }
 \arguments{
 \item{dir}{Diretório onde salvar o arquivo}
@@ -21,5 +27,5 @@ get_corona_br(dir = "output", filename = "corona_brasil",
 \item{by_uf}{Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município}
 }
 \description{
-Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco.
+Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco e escreve um arquivo com os metadados da requisição (metadado_corona_br.csv).
 }

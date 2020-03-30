@@ -1,6 +1,6 @@
 #' Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos
 #'
-#' Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco.
+#' Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco e escreve um arquivo com os metadados da requisição (metadado_corona_br.csv).
 #'
 #' @inheritParams get_corona
 #'
@@ -10,7 +10,7 @@
 #' @param by_uf Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município
 #'
 #' @importFrom dplyr filter
-#' @importFrom jsonlite fromJSON
+#' @importFrom utils read.csv
 #' @importFrom utils write.csv
 #' @importFrom rlang .data
 #' @import magrittr
@@ -23,11 +23,18 @@ get_corona_br <- function(dir = "output",
                           uf = NULL,
                           ibge_cod = NULL,
                           by_uf = FALSE){
-  my_urls <- c('https://brasil.io/api/dataset/covid19/caso/data',
-               'https://brasil.io/api/dataset/covid19/caso/data?page=2')
-  res_list <- lapply(my_urls, function(x) jsonlite::fromJSON(x)$results)
-  res <- dplyr::bind_rows(res_list)
-  if (!is.null(cidade) & is.null(uf)) {
+  # my_urls <- c('https://brasil.io/api/dataset/covid19/caso/data',
+  #              'https://brasil.io/api/dataset/covid19/caso/data?page=2')
+  # res_list <- lapply(my_urls, function(x) jsonlite::fromJSON(x)$results)
+  # res <- dplyr::bind_rows(res_list)
+  # baixando direto o csv pq api retorna datas diferentes a casa requisicao
+  res <- utils::read.csv("https://brasil.io/dataset/covid19/caso?format=csv")
+  res$date <- as.Date(res$date)
+  # gravando metadados da requisicao
+  metadado <- data.frame(intervalo = paste(range(res$date), collapse = ";"),
+                         fonte = "https://brasil.io/dataset/covid19/caso",
+                         acesso_em = Sys.Date())
+    if (!is.null(cidade) & is.null(uf)) {
     stop("Precisa fornecer um estado para evitar ambiguidade")
   }
   if (!is.null(cidade)) {
@@ -69,6 +76,8 @@ get_corona_br <- function(dir = "output",
     dir.create(dir)
   }
   utils::write.csv(res, paste0(dir, "/", filename, ".csv"),
+                   row.names = FALSE)
+  utils::write.csv(metadado, paste0(dir, "/", "metadado_corona_br", ".csv"),
                    row.names = FALSE)
   return(res)
 }
