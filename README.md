@@ -12,7 +12,7 @@ Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomenda
 O código é aberto. Entre em [como usar](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
 
 - A partir de 14/03/20, a notificação de casos graves de covid-19 foca apenas nos casos graves que são atendidos nos hospitais.
-- A partir de 18/03/2020, a página original do Min. da Saúde parou de funcionar e os boletins estão sendo divulgados em apresentações de powerpoint e PDFs. [Adriano Belisario](www.twitter.com/belisards) está fazendo a compilação manual destes dados [aqui](https://github.com/belisards/coronabr)
+- A partir de 18/03/2020, a página original do Min. da Saúde parou de funcionar e os boletins estão sendo divulgados em apresentações de powerpoint e PDFs. [Adriano Belisario](https://www.twitter.com/belisards) está fazendo a compilação manual destes dados [aqui](https://github.com/belisards/coronabr)
 <!--- A partir de 20/03/2020, a notificação exclui os casos suspeitos que vinham sendo divulgados.-->
 
 
