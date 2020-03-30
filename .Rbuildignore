@@ -8,3 +8,4 @@ teste.R
 ^docs$
 ^pkgdown$
 contributing.md
+README.Rmd
