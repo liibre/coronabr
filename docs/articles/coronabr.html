@@ -111,27 +111,27 @@
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados)</a></code></pre></div>
-<pre><code>##   city city_ibge_code confirmed confirmed_per_100k_inhabitants       date
-## 1 &lt;NA&gt;             52        60                        0.85490 2020-03-30
-## 2 &lt;NA&gt;             15        21                        0.24410 2020-03-30
-## 3 &lt;NA&gt;             14        16                        2.64131 2020-03-30
-## 4 &lt;NA&gt;             12        34                        3.85516 2020-03-29
-## 5 &lt;NA&gt;             27        17                        0.50939 2020-03-29
-## 6 &lt;NA&gt;             13       140                        3.37789 2020-03-29
-##   death_rate deaths estimated_population_2019 is_last order_for_place
-## 1     0.0167      1                   7018354    TRUE              19
-## 2         NA      0                   8602865    TRUE              13
-## 3         NA      0                    605761    TRUE              10
-## 4         NA      0                    881935    TRUE              13
-## 5         NA      0                   3337357    TRUE              19
-## 6     0.0071      1                   4144597    TRUE              13
-##   place_type state
-## 1      state    GO
-## 2      state    PA
-## 3      state    RR
-## 4      state    AC
-## 5      state    AL
-## 6      state    AM</code></pre>
+<pre><code>##         date state city place_type confirmed deaths is_last
+## 1 2020-03-30    GO           state        60      1    True
+## 2 2020-03-30    PA           state        21      0    True
+## 3 2020-03-30    PB           state        15      0    True
+## 4 2020-03-30    RN           state        77      1    True
+## 5 2020-03-30    RR           state        16      0    True
+## 6 2020-03-29    AC           state        34      0    True
+##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
+## 1                   7018354             52                        0.85490
+## 2                   8602865             15                        0.24410
+## 3                   4018127             25                        0.37331
+## 4                   3506853             24                        2.19570
+## 5                    605761             14                        2.64131
+## 6                    881935             12                        3.85516
+##   death_rate
+## 1     0.0167
+## 2         NA
+## 3         NA
+## 4     0.0130
+## 5         NA
+## 6         NA</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
