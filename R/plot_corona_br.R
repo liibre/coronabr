@@ -1,4 +1,4 @@
-#' Gráfico do número de casos no Brasil ao longo do tempo
+#' Gráfico do número de casos no Brasil ao longo do tempo para os dados do Brasil.io
 #'
 #' Esta função plota o crescimento no número de casos no Brasil ao longo do tempo. Há duas opções de gráfico, veja o argumento `tipo` para mais detalhes.
 #'
@@ -15,7 +15,7 @@ plot_corona_br <- function(df,
                            log = TRUE,
                            tipo = "numero") {
   # definindo data_max para plotr apenas atualizacoes completas
-  datas <- plyr::count(df$date[df$confirmed > 0])
+  datas <- plyr::count(df$date[df$confirmed > 0 & !is.na(df$state)])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
     data_max <- max(datas$x, na.rm = TRUE) - 1

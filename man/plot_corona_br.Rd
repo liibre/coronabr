@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_corona_br.R
 \name{plot_corona_br}
 \alias{plot_corona_br}
-\title{Gráfico do número de casos no Brasil ao longo do tempo}
+\title{Gráfico do número de casos no Brasil ao longo do tempo para os dados do Brasil.io}
 \usage{
 plot_corona_br(df, log = TRUE, tipo = "numero")
 }

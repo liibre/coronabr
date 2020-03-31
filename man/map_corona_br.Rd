@@ -2,7 +2,7 @@
 % Please edit documentation in R/map_corona_br.R
 \name{map_corona_br}
 \alias{map_corona_br}
-\title{Mapa do número de casos por estado}
+\title{Mapa do número de casos por estado com os dados do Brasil.io}
 \usage{
 map_corona_br(df, prop_pop = TRUE, anim = FALSE, dir = "figs")
 }

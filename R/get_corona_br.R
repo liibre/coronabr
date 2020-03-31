@@ -1,4 +1,4 @@
-#' Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos
+#' Extrai dados de coronavírus para o Brasil de Brasil.io
 #'
 #' Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco e escreve um arquivo com os metadados da requisição (metadado_corona_br.csv).
 #'

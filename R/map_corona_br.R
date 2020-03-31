@@ -1,4 +1,4 @@
-#' Mapa do número de casos por estado
+#' Mapa do número de casos por estado com os dados do Brasil.io
 #'
 #' Esta função faz o mapa do número de casos por estado brasileiro.
 #'
@@ -18,8 +18,7 @@ map_corona_br <- function(df,
                           anim = FALSE,
                           dir = "figs"){
   # puxando a data mais atualizada
-  df$date <- as.Date(df$date)
-  datas <- plyr::count(df$date[df$confirmed > 0])
+  datas <- plyr::count(df$date[df$confirmed > 0 & !is.na(df$state)])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
     data_max <- max(datas$x, na.rm = TRUE) - 1

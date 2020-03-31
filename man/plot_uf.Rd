@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_uf.R
 \name{plot_uf}
 \alias{plot_uf}
-\title{Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io}
+\title{Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.io}
 \usage{
 plot_uf(df, tipo = "confirmed", n = 100)
 }
@@ -17,7 +17,7 @@ plot_uf(df, tipo = "confirmed", n = 100)
 objeto ggplot
 }
 \description{
-Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io
+Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.io
 }
 \examples{
 dados <- get_corona_br(by_uf = TRUE)

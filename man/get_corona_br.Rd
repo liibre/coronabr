@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_corona_br.R
 \name{get_corona_br}
 \alias{get_corona_br}
-\title{Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos}
+\title{Extrai dados de coronavírus para o Brasil de Brasil.io}
 \usage{
 get_corona_br(
   dir = "output",
