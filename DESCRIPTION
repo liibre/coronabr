@@ -37,10 +37,10 @@ Imports:
     stringr,
     tidyr,
     tmap,
-    xml2
+    xml2,
+    gganimate
 Suggests: 
     devtools,
-    gganimate,
     knitr,
     rgdal
 VignetteBuilder: 

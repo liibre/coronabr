@@ -4,11 +4,14 @@
 #' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = mortes` para o gráfico com o número de mortes
 #' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
 #' @param n Inteiro. Número mínimo de casos para comparação entre estados
-#'
-#' @importFrom dplyr group_by ungroup filter summarise_at mutate
-#' @importFrom stats reorder
+#' @param anim Lógico. Retornar animação com evolução do número de casos ao longo do tempo. Padrão anim = FALSE
+#' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
+
+#' @importFrom dplyr filter mutate
+#' @importFrom stats reorder setNames
 #' @import ggplot2
 #' @importFrom rlang .data
+#' @importFrom gganimate transition_reveal anim_save
 #'
 #' @return objeto ggplot
 #'
@@ -22,18 +25,9 @@
 plot_uf <- function(df,
                     prop_pop = TRUE,
                     tipo = "confirmed",
-                    n = 100) {
-  # prepara os dados
-  ## a funcao get_corona_br pode retorna apenas os estados,
-  ## esta funcao recebe o objeto so com estados e nao vai filtrar estados
-  # group_sum_data <- function(df, var) {
-  #   df %>%
-  #     group_by(.data$date, .data$state) %>%
-  #     summarise_at(vars("confirmed", "deaths"), ~ sum(.)) %>%
-  #     filter({{ var }} > n) %>%
-  #     ungroup() %>%
-  #     dplyr::mutate(state = reorder(.data$state, -.data$confirmed))
-  # }
+                    n = 100,
+                    anim = FALSE,
+                    dir = "figs") {
   # definindo data_max para plotar apenas atualizacoes completas
   datas <-
     as.data.frame(
@@ -78,12 +72,47 @@ plot_uf <- function(df,
           legend.text = element_text(size = 7))
   if (tipo == "casos") {
     state_plot <- state_plot
+
+    anim_plot <- state_plot %+%
+      gganimate::transition_reveal(.data$date) +
+      geom_segment(aes(xend = max(.data$date), yend = .data$confirmed), linetype = 2) +
+      geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
+      coord_cartesian(clip = "off")
+
+    file_name <- "anim_plot_uf_casos"
+
   }
   if (tipo == "mortes") {
     state_plot <- state_plot %+%
       aes(x = date, y = .data$deaths, colour = reorder(.data$state, -.data$deaths)) +
       labs(y = paste0("N", "\u00fa", "meros de mortes confirmadas"),
            x = "Data")
+    # só gera o plot
+    anim_plot <- state_plot %+%
+      gganimate::transition_reveal(.data$date) +
+      geom_segment(aes(xend = max(.data$date), yend = .data$deaths), linetype = 2) +
+      geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
+      coord_cartesian(clip = "off")
+
+    file_name <- "anim_plot_uf_mortes"
+
   }
+
+  if (anim == TRUE) {
+
+    if (!dir.exists(dir)) {
+      dir.create(dir)
+    }
+
+    message(paste0("Salvando anim na pasta ", dir, "/ ..."))
+
+    gganimate::anim_save(
+      filename = paste0(dir, "/", file_name, ".gif"),
+      animation = anim_plot
+    )
+
+  }
+
   print(state_plot)
+
 }
