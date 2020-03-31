@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_corona.R
 \name{get_corona}
 \alias{get_corona}
-\title{Extrai dados de corona vírus para o Brasil}
+\title{Extrai dados de coronavírus para o Brasil}
 \usage{
 get_corona(dir = "output/", filename = "corona_brasil")
 }

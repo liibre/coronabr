@@ -1,4 +1,4 @@
-#' Extrai dados de corona vírus para o Brasil
+#' Extrai dados de coronavírus para o Brasil
 #'
 #' Esta função extrai os valores compilados pelo ministério da Saúde do Brasil (disponível em: 'http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil') e salva o resultado no disco.
 #'
@@ -11,8 +11,8 @@
 #' @importFrom utils write.csv
 #' @importFrom dplyr mutate mutate_if bind_rows
 #' @importFrom rlang .data
-#' @import magrittr
-#' @import plyr
+#' @importFrom magrittr %>%
+#' @importFrom plyr .
 #'
 #' @export
 #'

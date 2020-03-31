@@ -1,4 +1,4 @@
-#' Extrai dados mundiais de corona vírus
+#' Extrai dados mundiais de coronavírus
 #'
 #' Esta função extrai os valores compilados pela Johns Hopkins University (disponível em: 'https://github.com/CSSEGISandData/COVID-19') e salva o resultado no disco.
 #'
@@ -8,7 +8,7 @@
 #' @importFrom glue glue
 #' @importFrom janitor clean_names
 #' @importFrom fs dir_create
-#' @import magrittr
+#' @importFrom magrittr %>%
 #'
 #' @export
 #'

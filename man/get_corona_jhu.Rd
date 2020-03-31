@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_corona_jhu.R
 \name{get_corona_jhu}
 \alias{get_corona_jhu}
-\title{Extrai dados mundiais de corona vírus}
+\title{Extrai dados mundiais de coronavírus}
 \usage{
 get_corona_jhu(dir = "output", filename = "corona_jhu")
 }

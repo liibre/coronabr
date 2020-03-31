@@ -13,7 +13,7 @@
 #' @importFrom utils read.csv
 #' @importFrom utils write.csv
 #' @importFrom rlang .data
-#' @import magrittr
+#' @importFrom magrittr %>%
 #'
 #' @export
 #'
