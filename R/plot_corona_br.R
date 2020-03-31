@@ -4,7 +4,7 @@
 #'
 #' @param df Data frame contendo o resultado da busca de `get_corona_br()`
 #' @param log Lógico. Se quer manter a escala log no eixo y do gráfico. Padrão log = TRUE. Apenas para `tipo = "numero"`
-#' @param tipo Caractere. Padrão `tipo = "numero"` para o número de casos ao longo do tempo. Usar `tipo = "aumento"` para plotar o aumento (em \%) diário no número de casos
+#' @param tipo Caractere. Padrão `tipo = "numero"` para o número de casos ao longo do tempo. Usar `tipo = "aumento"` para plotar o aumento diário no número de casos
 #'
 #' @export
 #'
@@ -54,23 +54,30 @@ plot_corona_br <- function(df,
   }
   if (tipo == "aumento") {
     df$delta_cases <- df$confirmed - dplyr::lag(df$confirmed)
-    df$diff_perc <- round(df$delta_cases/df$confirmed, 3) * 100
-    df$label <- paste(df$delta_cases, "%")
-    p <- ggplot2::ggplot(df,ggplot2::aes(x = .data$date, y = .data$delta_cases)) +
-      ggplot2::geom_bar(stat = "identity", alpha = .7, color = "red", fill = "red") +
+    # O.o tem valores negativos! por enquanto, deixei 0 nao bate com min saude
+    df$delta_cases <- ifelse(df$delta_cases < 0 , 0, df$delta_cases)
+    #df$diff_perc <- round(df$delta_cases/df$confirmed, 3) * 100
+    #df$label <- paste(df$delta_cases, "%")
+    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$date,
+                                          y = .data$delta_cases,
+                                          color = "red")) +
+      #ggplot2::geom_bar(stat = "identity", alpha = .7, color = "red", fill = "red")
+      ggplot2::geom_line(alpha = .7) +
+      ggplot2::geom_point(size = 2) +
       ggplot2::scale_x_date(date_breaks = "1 day",
                             date_labels = "%d/%m") +
-      ggplot2::scale_y_continuous(limits = c(0, max(df$delta_cases, na.rm = TRUE) + 3),
-                                  expand = c(0, 0)) +
-      ggplot2::geom_text(ggplot2::aes(label = .data$label),
-                         size = 2.5,
-                         vjust = -0.5) +
+      # ggplot2::scale_y_continuous(limits = c(0, max(df$delta_cases, na.rm = TRUE) + 3),
+      #                             expand = c(0, 0)) +
+      # ggplot2::geom_text(ggplot2::aes(label = .data$label),
+      #                    size = 2.5,
+      #                    vjust = -0.5) +
       ggplot2::labs(x = xlab,
-                    y = "% de aumento",
+                    y = "Casos novos por dia",
                     title = "Aumento nos casos de COVID-19 confirmados",
                     caption = legenda) +
       ggplot2::theme_minimal() +
-      ggplot2::theme(axis.text.x =  ggplot2::element_text(angle = 90))
+      ggplot2::theme(axis.text.x =  ggplot2::element_text(angle = 90),
+                     legend.position = "none")
   }
   p
 }
