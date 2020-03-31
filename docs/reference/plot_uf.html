@@ -129,7 +129,7 @@
     <p>Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.io</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_uf</span>(<span class='no'>df</span>, <span class='kw'>tipo</span> <span class='kw'>=</span> <span class='st'>"confirmed"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_uf</span>(<span class='no'>df</span>, <span class='kw'>prop_pop</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tipo</span> <span class='kw'>=</span> <span class='st'>"confirmed"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -137,6 +137,10 @@
     <tr>
       <th>df</th>
       <td><p>Data frame por estado formatado com a função `format_corona_br()`</p></td>
+    </tr>
+    <tr>
+      <th>prop_pop</th>
+      <td><p>Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE</p></td>
     </tr>
     <tr>
       <th>tipo</th>

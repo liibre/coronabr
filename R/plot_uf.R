@@ -2,6 +2,7 @@
 #'
 #' @param df Data frame por estado formatado com a função `format_corona_br()`
 #' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = mortes` para o gráfico com o número de mortes
+#' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
 #' @param n Inteiro. Número mínimo de casos para comparação entre estados
 #'
 #' @importFrom dplyr group_by ungroup filter summarise_at mutate
@@ -19,6 +20,7 @@
 #' @export
 #'
 plot_uf <- function(df,
+                    prop_pop = TRUE,
                     tipo = "confirmed",
                     n = 100) {
   # prepara os dados
@@ -43,6 +45,11 @@ plot_uf <- function(df,
   # função interna de plot
   states <- df$state[df$confirmed > n & df$date == data_max]
   # plot basico
+  if (prop_pop == TRUE) {
+    df <- df %>% dplyr::mutate(confirmed = .data$confirmed_per_100k_inhabitants)
+  } else {
+    df <- df
+  }
   state_plot <- df %>%
     dplyr::filter(.data$state %in% states & !is.na(.data$state)) %>%
     dplyr::mutate(state = reorder(.data$state, .data$confirmed)) %>%
@@ -72,6 +79,3 @@ plot_uf <- function(df,
   }
   print(state_plot)
 }
-
-
-

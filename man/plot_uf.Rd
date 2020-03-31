@@ -4,10 +4,12 @@
 \alias{plot_uf}
 \title{Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.io}
 \usage{
-plot_uf(df, tipo = "confirmed", n = 100)
+plot_uf(df, prop_pop = TRUE, tipo = "confirmed", n = 100)
 }
 \arguments{
 \item{df}{Data frame por estado formatado com a função `format_corona_br()`}
+
+\item{prop_pop}{Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE}
 
 \item{tipo}{Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = mortes` para o gráfico com o número de mortes}
 
