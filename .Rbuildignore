@@ -8,4 +8,5 @@ teste.R
 ^docs$
 ^pkgdown$
 contributing.md
+about.md
 README.Rmd

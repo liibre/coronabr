@@ -62,6 +62,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="about.html">sobre</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -94,40 +97,54 @@
 <a href="https://brasil.io/dataset/covid19/caso">Brasil em dados libertos</a>;</li>
 <li><a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a></li>
 </ul>
-<p>Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos alinhadxs com o <a href="https://www.manifestno.com/">manifest-no</a>, refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados. Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomendamos que toda análise que possa ser feita o seja. Ao se tratar de uma situação de saúde pública delicada, visualizações, extrapolações, e predições devem ser feitas com todo cuidado, lembrando que a qualidade dos dados é incerta e que todo dado diz respeito a uma pessoa. No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para uma previsão a curto prazo do crescimento no número de casos veja <a href="https://covid19br.github.io/index.html">aqui</a> (portal de <strong>qualidade</strong> um grupo colaborativo de cientistas brasileirxs).</p>
+<div id="nosso-objetivo" class="section level2">
+<h2 class="hasAnchor">
+<a href="#nosso-objetivo" class="anchor"></a>Nosso objetivo</h2>
+<p>O nosso objetivo é facilitar o acesso aos dados de diferentes fontes, usando ferramentas de acesso aberto e que permitam reprodutibilidade.</p>
 <p>O código é aberto. Entre em <a href="https://liibre.github.io/coronabr/articles/coronabr.html">como usar</a> para um exemplo de como utilizar o pacote. Compartilhe.</p>
+<p>Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.</p>
+<p>Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Sugestões, entrem em contato conosco. Para entender como contribuir, clique <a href="https://liibre.github.io/coronabr/contributing.html">aqui</a>.</p>
+</div>
+<div id="sobre-os-dados" class="section level2">
+<h2 class="hasAnchor">
+<a href="#sobre-os-dados" class="anchor"></a>Sobre os dados</h2>
+<p>Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos alinhadxs com o <a href="https://www.manifestno.com/">manifest-no</a>, refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados.</p>
+<p>Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomendamos que toda análise que possa ser feita o seja. Ao se tratar de uma situação de saúde pública delicada, visualizações, extrapolações, e predições devem ser feitas com todo cuidado, lembrando que a qualidade dos dados é incerta e que todo dado diz respeito a uma pessoa.</p>
+<p>No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para uma modelos <strong>responsáveis</strong> de previsão do crescimento no número de casos veja o <a href="https://covid19br.github.io/index.html">Observatório COVID-19 Brasil</a> (um grupo colaborativo de cientistas brasileirxs) e o <a href="https://covid-19-risk.github.io/map/brazil/pt/">Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil</a>.</p>
 <ul>
-<li>A partir de 14/03/20, a notificação de casos graves de covid-19 foca apenas nos casos graves que são atendidos nos hospitais.</li>
+<li>A partir de 14/03/20, a notificação de casos graves de COVID-19 foca apenas nos casos graves que são atendidos nos hospitais.</li>
 <li>A partir de 18/03/2020, a página original do Min. da Saúde parou de funcionar e os boletins estão sendo divulgados em apresentações de powerpoint e PDFs. <a href="https://www.twitter.com/belisards">Adriano Belisario</a> está fazendo a compilação manual destes dados <a href="https://github.com/belisards/coronabr">aqui</a> <!--- A partir de 20/03/2020, a notificação exclui os casos suspeitos que vinham sendo divulgados.-->
 </li>
 </ul>
-<p>Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.</p>
-<p>Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Sugestões, entrem em contato conosco. Para entender como contribuir, clique <a href="https://liibre.github.io/coronabr/contributing.html">aqui</a>.</p>
-<p><strong>ATENÇÃO:</strong> O site do Min. da Saúde está em manutenção. Última atualização em 18/03/2020. Função <code><a href="reference/get_corona.html">get_corona()</a></code> sem retorno. Veja <code><a href="reference/get_corona_br.html">get_corona_br()</a></code> ou <code><a href="reference/get_corona_jhu.html">get_corona_jhu()</a></code>.</p>
-<div id="crescimento-nacional-no-numero-de-casos" class="section level2">
+</div>
+<div id="visualizando-os-dados" class="section level2">
 <h2 class="hasAnchor">
-<a href="#crescimento-nacional-no-numero-de-casos" class="anchor"></a>Crescimento nacional no número de casos</h2>
+<a href="#visualizando-os-dados" class="anchor"></a>Visualizando os dados</h2>
+<div id="crescimento-nacional-no-numero-de-casos" class="section level3">
+<h3 class="hasAnchor">
+<a href="#crescimento-nacional-no-numero-de-casos" class="anchor"></a>Crescimento nacional no número de casos</h3>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600"></p>
 </div>
-<div id="entendendo-o-aumento-diario" class="section level2">
-<h2 class="hasAnchor">
-<a href="#entendendo-o-aumento-diario" class="anchor"></a>Entendendo o aumento diário</h2>
+<div id="entendendo-o-aumento-diario" class="section level3">
+<h3 class="hasAnchor">
+<a href="#entendendo-o-aumento-diario" class="anchor"></a>Entendendo o aumento diário</h3>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600"></p>
 </div>
-<div id="numero-de-casos-por-estado-brasileiro" class="section level2">
-<h2 class="hasAnchor">
-<a href="#numero-de-casos-por-estado-brasileiro" class="anchor"></a>Número de casos por estado brasileiro</h2>
+<div id="numero-de-casos-por-estado-brasileiro" class="section level3">
+<h3 class="hasAnchor">
+<a href="#numero-de-casos-por-estado-brasileiro" class="anchor"></a>Número de casos por estado brasileiro</h3>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600"></p>
 </div>
-<div id="crescimento-do-numero-de-casos-nos-estados-mais-afetados" class="section level2">
-<h2 class="hasAnchor">
-<a href="#crescimento-do-numero-de-casos-nos-estados-mais-afetados" class="anchor"></a>Crescimento do número de casos nos estados mais afetados</h2>
+<div id="crescimento-do-numero-de-casos-nos-estados-mais-afetados" class="section level3">
+<h3 class="hasAnchor">
+<a href="#crescimento-do-numero-de-casos-nos-estados-mais-afetados" class="anchor"></a>Crescimento do número de casos nos estados mais afetados</h3>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600"></p>
 </div>
-<div id="evolucao-do-numero-de-casos-por-estado" class="section level2">
-<h2 class="hasAnchor">
-<a href="#evolucao-do-numero-de-casos-por-estado" class="anchor"></a>Evolução do número de casos por estado</h2>
+<div id="evolucao-do-numero-de-casos-por-estado" class="section level3">
+<h3 class="hasAnchor">
+<a href="#evolucao-do-numero-de-casos-por-estado" class="anchor"></a>Evolução do número de casos por estado</h3>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600"></p>
+</div>
 </div>
 <div id="para-saber-mais" class="section level2">
 <h2 class="hasAnchor">
@@ -136,6 +153,7 @@
 <li><p>Dados compilados pelo <a href="https://github.com/turicas/">Álvaro Justen</a> e colaboradores <a href="https://brasil.io/dataset/covid19/caso">aqui</a></p></li>
 <li><p><a href="https://coronavirus.jhu.edu/map.html">John Hopkins Coronavirus COVID-19 Global Cases</a></p></li>
 <li><p><a href="https://covid19br.github.io/">Observatório Covid-19 BR</a></p></li>
+<li><p><a href="https://covid-19-risk.github.io/map/brazil/pt/">Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil</a></p></li>
 <li><p><a href="https://paternogbc.github.io/covid19br/index.html">covid19br</a>, o pacote de R <a href="https://github.com/paternogbc">Gustavo Palermo</a> para acompanhar os dados de novos casos no Brasil</p></li>
 <li><p><a href="https://portal.fiocruz.br/coronavirus">Portal da Fiocruz</a></p></li>
 <li><p><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">Site oficial da Organização Mundial da Saúde (em inglês)</a></p></li>
