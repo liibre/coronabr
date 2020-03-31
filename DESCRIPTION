@@ -22,6 +22,7 @@ RoxygenNote: 7.1.0
 Imports:
     brazilmaps,
     dplyr,
+    plyr,
     fs,
     ggplot2,
     glue,
@@ -29,7 +30,6 @@ Imports:
     janitor,
     jsonlite,
     magrittr,
-    plyr,
     readr,
     rlang,
     rvest,

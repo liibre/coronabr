@@ -9,8 +9,7 @@
 #' @importFrom stringr str_split
 #' @importFrom jsonlite fromJSON
 #' @importFrom utils write.csv
-#' @importFrom dplyr mutate_if
-#' @importFrom dplyr bind_rows
+#' @importFrom dplyr mutate mutate_if bind_rows
 #' @importFrom rlang .data
 #' @import magrittr
 #' @import plyr
