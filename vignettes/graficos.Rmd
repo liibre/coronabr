@@ -17,8 +17,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 
 
 ```{r pkgs}
-library(coronabr)
-#devtools::load_all() #for development
+#library(coronabr)
+devtools::load_all() #for development
 library(gganimate)
 ```
 
