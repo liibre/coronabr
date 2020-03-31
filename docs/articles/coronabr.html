@@ -100,44 +100,45 @@
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#carregando-o-pacote" class="anchor"></a>Carregando o pacote</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(coronabr)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#devtools::load_all() #for testing</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(coronabr)</a></code></pre></div>
+<pre><code>## Warning: replacing previous import 'plyr::mutate' by 'dplyr::mutate' when
+## loading 'coronabr'</code></pre>
 <div id="baixando-os-dados-apenas-do-brasil" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-apenas-do-brasil" class="anchor"></a>Baixando os dados apenas do Brasil</h3>
 <p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">dados &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="dt">by_uf =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">dados &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="dt">by_uf =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados)</a></code></pre></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-03-30    GO           state        60      1    True
-## 2 2020-03-30    PA           state        21      0    True
-## 3 2020-03-30    PB           state        15      0    True
-## 4 2020-03-30    RN           state        77      1    True
-## 5 2020-03-30    RR           state        16      0    True
-## 6 2020-03-29    AC           state        34      0    True
+## 1 2020-03-30    AC           state        41      0    True
+## 2 2020-03-30    AL           state        17      0    True
+## 3 2020-03-30    AM           state       151      1    True
+## 4 2020-03-30    AP           state         8      0    True
+## 5 2020-03-30    BA           state       176      1    True
+## 6 2020-03-30    CE           state       382      5    True
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                   7018354             52                        0.85490
-## 2                   8602865             15                        0.24410
-## 3                   4018127             25                        0.37331
-## 4                   3506853             24                        2.19570
-## 5                    605761             14                        2.64131
-## 6                    881935             12                        3.85516
+## 1                    881935             12                        4.64887
+## 2                   3337357             27                        0.50939
+## 3                   4144597             13                        3.64330
+## 4                    845731             16                        0.94593
+## 5                  14873064             29                        1.18335
+## 6                   9132078             23                        4.18306
 ##   death_rate
-## 1     0.0167
+## 1         NA
 ## 2         NA
-## 3         NA
-## 4     0.0130
-## 5         NA
-## 6         NA</code></pre>
+## 3     0.0066
+## 4         NA
+## 5     0.0057
+## 6     0.0131</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-mundiais" class="anchor"></a>Baixando os dados mundiais</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">dados_jhu &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">dados_jhu &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</a></code></pre></div>
 <pre><code>## Criando diretorio output ...</code></pre>
 <pre><code>## Baixando dados atualizados ...</code></pre>
 <pre><code>## Parsed with column specification:
@@ -159,16 +160,16 @@
 <div id="inspecionando-os-dados-mundiais" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados_jhu)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(dados_jhu)</a></code></pre></div>
 <pre><code>## # A tibble: 6 x 12
 ##   fips  admin2 province_state country_region last_update   lat   long
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-03-29…  34.2  -82.5
-## 2 22001 Acadia Louisiana      US             2020-03-29…  30.3  -92.4
-## 3 51001 Accom… Virginia       US             2020-03-29…  37.8  -75.6
-## 4 16001 Ada    Idaho          US             2020-03-29…  43.5 -116. 
-## 5 19001 Adair  Iowa           US             2020-03-29…  41.3  -94.5
-## 6 21001 Adair  Kentucky       US             2020-03-29…  37.1  -85.3
+## 1 45001 Abbev… South Carolina US             2020-03-30…  34.2  -82.5
+## 2 22001 Acadia Louisiana      US             2020-03-30…  30.3  -92.4
+## 3 51001 Accom… Virginia       US             2020-03-30…  37.8  -75.6
+## 4 16001 Ada    Idaho          US             2020-03-30…  43.5 -116. 
+## 5 19001 Adair  Iowa           US             2020-03-30…  41.3  -94.5
+## 6 21001 Adair  Kentucky       US             2020-03-30…  37.1  -85.3
 ## # … with 5 more variables: confirmed &lt;dbl&gt;, deaths &lt;dbl&gt;, recovered &lt;dbl&gt;,
 ## #   active &lt;dbl&gt;, combined_key &lt;chr&gt;</code></pre>
 </div>

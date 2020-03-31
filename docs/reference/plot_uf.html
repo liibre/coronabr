@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • coronabr</title>
+<title>Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io — plot_uf • coronabr</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io — plot_uf" />
+<meta property="og:description" content="Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -116,84 +118,54 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io</h1>
+    <small class="dont-index">Source: <a href='https://github.com/liibre/coronabr/blob/master/R/plot_uf.R'><code>R/plot_uf.R</code></a></small>
+    <div class="hidden name"><code>plot_uf.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>plot_uf</span>(<span class='no'>df</span>, <span class='kw'>tipo</span> <span class='kw'>=</span> <span class='st'>"confirmed"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="format_corona_br.html">format_corona_br()</a></code> </p>
-        </td>
-        <td><p>Preenche as datas vazias nos dados de COVID-19 do Brasil.io</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_corona.html">get_corona()</a></code> </p>
-        </td>
-        <td><p>Extrai dados de corona vírus para o Brasil</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_corona_br.html">get_corona_br()</a></code> </p>
-        </td>
-        <td><p>Extrai dados de coronavírus para o Brasil de O Brasil em dados abertos</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_corona_jhu.html">get_corona_jhu()</a></code> </p>
-        </td>
-        <td><p>Extrai dados mundiais de corona vírus</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="gif_corona_br.html">gif_corona_br()</a></code> </p>
-        </td>
-        <td><p>Mapa do número de casos por estado</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="map_corona_br.html">map_corona_br()</a></code> </p>
-        </td>
-        <td><p>Mapa do número de casos por estado</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_corona_br.html">plot_corona_br()</a></code> </p>
-        </td>
-        <td><p>Gráfico do número de casos no Brasil ao longo do tempo</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plot_uf.html">plot_uf()</a></code> </p>
-        </td>
-        <td><p>Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil io</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>df</th>
+      <td><p>Data frame por estado formatado com a função `format_corona_br()`</p></td>
+    </tr>
+    <tr>
+      <th>tipo</th>
+      <td><p>Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = mortes` para o gráfico com o número de mortes</p></td>
+    </tr>
+    <tr>
+      <th>n</th>
+      <td><p>Inteiro. Número mínimo de casos para comparação entre estados</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>objeto ggplot</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>dados</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_corona_br.html'>get_corona_br</a></span>(<span class='kw'>by_uf</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='no'>dados_format</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='format_corona_br.html'>format_corona_br</a></span>(<span class='no'>dados</span>)
+<span class='fu'>plot_uf</span>(<span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>dados</span>)</div><div class='img'><img src='plot_uf-1.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
