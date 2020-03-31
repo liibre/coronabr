@@ -1,7 +1,7 @@
 
 # Download de dados do coronavírus no Brasil
 
-<img src="./vignettes/liibre.png" align="right" alt="" width="120" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120" />
 
 **coronabr** é um pacote de [R](https://www.r-project.org/) para fazer
 download e visualizar os dados dos casos diários de coronavírus
