@@ -56,7 +56,7 @@ plot_uf <- function(df,
   }
   state_plot <- df %>%
     dplyr::filter(.data$state %in% states & !is.na(.data$state)) %>%
-    dplyr::mutate(state = reorder(.data$state, .data$confirmed)) %>%
+    dplyr::mutate(state = reorder(.data$state, -.data$confirmed)) %>%
     ggplot(aes(x = .data$date, y = .data$confirmed, colour = .data$state)) +
     geom_line() +
     geom_point() +
@@ -78,7 +78,7 @@ plot_uf <- function(df,
   }
   if (tipo == "mortes") {
     state_plot <- state_plot %+%
-      aes(x = date, y = .data$deaths, colour = .data$state) +
+      aes(x = date, y = .data$deaths, colour = reorder(.data$state, -.data$deaths)) +
       labs(y = paste0("N", "\u00fa", "meros de mortes confirmadas"),
            x = "Data")
   }
