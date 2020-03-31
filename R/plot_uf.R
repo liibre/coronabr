@@ -42,8 +42,10 @@ plot_uf <- function(df,
   } else {
     data_max <- max(datas$x, na.rm = TRUE)
   }
-  # função interna de plot
+  # selecionando os estados para plotar
   states <- df$state[df$confirmed > n & df$date == data_max]
+  # fonte
+  legenda <- "fonte: https://brasil.io/dataset/covid19/caso"
   # plot basico
   if (prop_pop == TRUE) {
     df <- df %>% dplyr::mutate(confirmed = .data$confirmed_per_100k_inhabitants)
@@ -59,7 +61,8 @@ plot_uf <- function(df,
     labs(x = "Data",
          y = paste0("N", "\u00fa", "meros de casos confirmados"),
          title = paste0("Estados com mais de ", n, " casos"),
-         fill = "UF") +
+         fill = "UF",
+         caption = legenda) +
     guides(color = guide_legend("UF")) +
     scale_x_date(date_breaks = "1 day",
                  date_labels = "%d/%m") +
