@@ -35,7 +35,9 @@ plot_uf <- function(df,
   #     dplyr::mutate(state = reorder(.data$state, -.data$confirmed))
   # }
   # definindo data_max para plotar apenas atualizacoes completas
-  datas <- plyr::count(df$date[df$confirmed > 0 & !is.na(df$state)])
+  datas <- as.data.frame(table(df$date[df$confirmed > 0 & !is.na(df$state)]), stringsAsFactors = FALSE) %>%
+    setNames(c("x", "freq")) %>%
+    mutate(x = as.Date(x))
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
     data_max <- max(datas$x, na.rm = TRUE) - 1
