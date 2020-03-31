@@ -19,7 +19,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r load}
 library(coronabr)
-#devtools::load_all() #for testing
 ```
 
 ### Baixando os dados apenas do Brasil

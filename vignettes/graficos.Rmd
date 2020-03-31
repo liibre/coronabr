@@ -17,8 +17,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE,
 
 
 ```{r pkgs}
-#library(coronabr)
-devtools::load_all() #for testing
+library(coronabr)
+#devtools::load_all() #for development
 library(gganimate)
 ```
 
@@ -62,6 +62,11 @@ map_corona_br(df = dados_format,
 ## Crescimento do número de casos nos estados mais afetados
 
 ```{r estados, fig.width=6}
+plot_uf(df = dados_format)
+```
+
+
+```{r estados-old, fig.width=6}
 # uf10 <- df_uf %>% 
 #   filter(date == max(date), Casos > 9) %>%
 #   select(State)
