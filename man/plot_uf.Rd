@@ -35,6 +35,6 @@ Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.
 \examples{
 dados <- get_corona_br(by_uf = TRUE)
 dados_format <- format_corona_br(dados)
-plot_uf(df = dados)
+plot_uf(df = dados_format)
 
 }
