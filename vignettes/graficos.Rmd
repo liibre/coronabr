@@ -1,5 +1,5 @@
 ---
-title: "Visualização dos casos registrados de coronavírus no Brasil"
+title: "Visualização dos casos registrados de COVID-19 no Brasil"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{figs}
@@ -36,7 +36,7 @@ plot_corona_br(df = dados, log = FALSE)
 
 ## Entendendo o aumento diário
 
-```{r fig-perc, fig.width=8, fig.height=11}
+```{r fig-perc, fig.width=6}
 plot_corona_br(df = dados, tipo = "aumento")
 ```
 
@@ -69,7 +69,7 @@ plot_uf(df = dados_format)
 ```{r anim_test, fig.show = "animate"}
 anim <- map_corona_br(df = dados_format,
                       anim = TRUE, 
-                      dir = "../figs")
+                      dir = "figs")
 ```
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />

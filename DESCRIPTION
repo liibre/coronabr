@@ -13,7 +13,7 @@ Authors@R: c(
     role = c("ctb"))
     )
 Maintainer: Sara R Mortara <saramortara@gmail.com>
-Description: Pacote desenvolvido por mulheres latinas para download 
+Description: Pacote desenvolvido por latinecs para download 
     dos casos registrados de coronavírus no Brasil.
 License: GPL (>= 3)
 URL: https://liibre.github.io/coronabr/, https://github.com/liibre/coronabr

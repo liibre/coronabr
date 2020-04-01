@@ -57,7 +57,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/graficos.html">Visualização dos casos registrados de coronavírus no Brasil</a>
+      <a href="../articles/graficos.html">Visualização dos casos registrados de COVID-19 no Brasil</a>
+    </li>
+    <li>
+      <a href="../articles/lac.html">Caos de COVID-19 na América Latina e Caribe</a>
     </li>
   </ul>
 </li>
@@ -114,26 +117,26 @@
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-03-31    AC           state        42      0    True
-## 2 2020-03-31    AL           state        18      1    True
-## 3 2020-03-31    AP           state        10      0    True
-## 4 2020-03-31    BA           state       217      2    True
-## 5 2020-03-31    CE           state       401      7    True
-## 6 2020-03-31    DF           state       333      3    True
+## 1 2020-04-01    AP           state        11      0    True
+## 2 2020-04-01    PA           state        40      0    True
+## 3 2020-03-31    AC           state        42      0    True
+## 4 2020-03-31    AL           state        18      1    True
+## 5 2020-03-31    AM           state       175      3    True
+## 6 2020-03-31    AP           state        10      0   False
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                    881935             12                        4.76226
-## 2                   3337357             27                        0.53935
-## 3                    845731             16                        1.18241
-## 4                  14873064             29                        1.45901
-## 5                   9132078             23                        4.39111
-## 6                   3015268             53                       11.04379
+## 1                    845731             16                        1.30065
+## 2                   8602865             15                        0.46496
+## 3                    881935             12                        4.76226
+## 4                   3337357             27                        0.53935
+## 5                   4144597             13                        4.22236
+## 6                    845731             16                        1.18241
 ##   death_rate
 ## 1         NA
-## 2     0.0556
+## 2         NA
 ## 3         NA
-## 4     0.0092
-## 5     0.0175
-## 6     0.0090</code></pre>
+## 4     0.0556
+## 5     0.0171
+## 6         NA</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -165,12 +168,12 @@
 <pre><code>## # A tibble: 6 x 12
 ##   fips  admin2 province_state country_region last_update   lat   long
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-03-30…  34.2  -82.5
-## 2 22001 Acadia Louisiana      US             2020-03-30…  30.3  -92.4
-## 3 51001 Accom… Virginia       US             2020-03-30…  37.8  -75.6
-## 4 16001 Ada    Idaho          US             2020-03-30…  43.5 -116. 
-## 5 19001 Adair  Iowa           US             2020-03-30…  41.3  -94.5
-## 6 21001 Adair  Kentucky       US             2020-03-30…  37.1  -85.3
+## 1 45001 Abbev… South Carolina US             2020-03-31…  34.2  -82.5
+## 2 22001 Acadia Louisiana      US             2020-03-31…  30.3  -92.4
+## 3 51001 Accom… Virginia       US             2020-03-31…  37.8  -75.6
+## 4 16001 Ada    Idaho          US             2020-03-31…  43.5 -116. 
+## 5 19001 Adair  Iowa           US             2020-03-31…  41.3  -94.5
+## 6 29001 Adair  Missouri       US             2020-03-31…  40.2  -92.6
 ## # … with 5 more variables: confirmed &lt;dbl&gt;, deaths &lt;dbl&gt;, recovered &lt;dbl&gt;,
 ## #   active &lt;dbl&gt;, combined_key &lt;chr&gt;</code></pre>
 </div>
