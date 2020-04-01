@@ -24,7 +24,7 @@
 #'
 plot_uf <- function(df,
                     prop_pop = TRUE,
-                    tipo = "confirmed",
+                    tipo = "casos",
                     n = 100,
                     anim = FALSE,
                     dir = "figs") {

@@ -31,6 +31,13 @@ em desenvolvimento. Sugestões, entrem em contato conosco. Para entender
 como contribuir, clique
 [aqui](https://liibre.github.io/coronabr/contributing.html).
 
+## Aviso\!
+
+Os dados são referentes aos casos notificados. É sabido que neste
+momento há um acúmulo de testes para COVID-19 sem resultados. Assim,
+mais do que nunca, os números que vemos são das **notificações** e não
+refletem a epidemia em si.
+
 ## Sobre os dados
 
 Antes de mais nada, declaramos nossa postura alinhada com as ideias de

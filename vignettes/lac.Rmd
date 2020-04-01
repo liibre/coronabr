@@ -18,7 +18,6 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
 ```{r pkgs}
 library(coronabr)
 library(tmap)
-library(tmaptools)
 ```
 
 Para visualizar os dados em um mapa, vamos carregar o shapefile do mundo do pacote **tmap** e selecionar os países da América Latina e Caribe. 
@@ -57,7 +56,7 @@ covid_lac$confirmed_per100k <- covid_lac$confirmed/covid_lac$pop_est * 1000000
 
 E agora sim, vamos visualizar os dados em um mapa dinâmico. 
 
-```{r map}
+```{r map, results = TRUE}
 tmap_mode("view")
 tm <- tm_shape(covid_lac) +
   tm_polygons("confirmed_per100k", 
@@ -73,12 +72,5 @@ tm <- tm_shape(covid_lac) +
                          "200 a 300")) +
   tmap_style("col_blind")
 tm
-
-tmap_save(tm, filename = "covid_lac.html")
-
 ```
 
-
-```{r}
-htmltools::includeHTML("covid_lac.html")
-```

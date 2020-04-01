@@ -63,7 +63,6 @@ map_corona_br(df = dados_format,
 plot_uf(df = dados_format)
 ```
 
-
 ## Evolução do número de casos por estado
 
 ```{r anim_test, fig.show = "animate"}

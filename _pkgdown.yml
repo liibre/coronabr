@@ -18,7 +18,7 @@ navbar:
       menu:
       - text: Visualização dos casos registrados de COVID-19 no Brasil
         href: articles/graficos.html
-      - text: Caos de COVID-19 na América Latina e Caribe
+      - text: Casos de COVID-19 na América Latina e Caribe
         href: articles/lac.html
     news:
       text: sobre
