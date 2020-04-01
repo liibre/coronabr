@@ -9,7 +9,7 @@ vignette: >
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, 
-                      warning = FALSE, results = FALSE, 
+                      warning = FALSE, results = TRUE, 
                       comment = FALSE, 
                       fig.width = 5, 
                       fig.height = 5)
@@ -62,6 +62,14 @@ map_corona_br(df = dados_format,
 ```{r estados, fig.width=6}
 plot_uf(df = dados_format)
 ```
+
+Com opção de animação
+
+```{r, echo = TRUE, eval = FALSE}
+plot_uf(df = dados_format, anim = TRUE)
+```
+
+![](figs/anim_plot_uf_casos.gif)
 
 ## Evolução do número de casos por estado
 
