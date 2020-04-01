@@ -1,0 +1,56 @@
+language: r
+
+sudo: false
+
+before_install: 
+  - sudo apt-get update && sudo apt-get --reinstall install -qq language-pack-gnome-pt language-pack-pt-base
+  - sudo apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev libgdal-dev bwidget libgdal-dev libgdal1-dev libgeos-dev libgeos++-dev libgsl0-dev libproj-dev libspatialite-dev netcdf-bin libgmp3-dev libudunits2-dev
+
+before_script: 
+  - export TZ=America/Sao_Paulo
+
+env:
+    global:
+        - LANG=pt_BR.UTF-8
+        - LC_ALL=pt_BR.UTF-8
+
+script: make all
+
+cache: packages
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
+
+r_packages:
+  - brazilmaps
+  - dplyr
+  - plyr
+  - fs
+  - ggplot2
+  - glue
+  - httr
+  - janitor
+  - jsonlite
+  - magrittr
+  - readr
+  - rlang
+  - rvest
+  - sf
+  - stringr
+  - tidyr
+  - tmap
+  - xml2
+  - gganimat
+  - devtools
+  - knitr
+  - rgdal
+  - magick
+  - gifski
+
+os:
+  - linux

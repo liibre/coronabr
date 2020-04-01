@@ -10,3 +10,5 @@ teste.R
 contributing.md
 about.md
 README.Rmd
+Makefile
+.travis.yml
