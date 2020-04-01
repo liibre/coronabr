@@ -16,10 +16,11 @@
 #' @return objeto ggplot
 #'
 #' @examples
+#' \dontrun{
 #' dados <- get_corona_br(by_uf = TRUE)
 #' dados_format <- format_corona_br(dados)
 #' plot_uf(df = dados_format)
-#'
+#' }
 #' @export
 #'
 plot_uf <- function(df,
