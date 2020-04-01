@@ -8,7 +8,9 @@ Authors@R: c(
     person("Andrea", "Sánchez-Tapia", email = "andreasancheztapia@gmail.com", 
     role = c("aut"), comment = c(ORCID = "0000-0002-3521-4338")), 
     person("Karlo", "Guidoni Martins", email = "kguidonimartins@gmail.com",
-    role = c("aut"), comment = c(ORCID = "0000-0002-8458-8467"))
+    role = c("aut"), comment = c(ORCID = "0000-0002-8458-8467")),
+    person("Julio", "Trecenti", 
+    role = c("ctb"))
     )
 Maintainer: Sara R Mortara <saramortara@gmail.com>
 Description: Pacote desenvolvido por mulheres latinas para download 

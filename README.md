@@ -130,5 +130,5 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 Dúvidas, contribuições e sugestões, poste uma *issue*
 [aqui](https://github.com/liibre/coronabr/issues) ou nos encontre no
-twitter ( [Sara](https://twitter.com/mortarasara),
-[Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo]() ).
+twitter ([Sara](https://twitter.com/mortarasara),
+[Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo]()).
