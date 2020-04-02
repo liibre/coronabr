@@ -12,4 +12,3 @@ about.md
 README.Rmd
 Makefile
 .travis.yml
-^tic\.R$
