@@ -10,4 +10,5 @@ make_gif:
 	  file.remove(list.files(path = 'output', pattern = '*.csv', full.names = TRUE), recursive = TRUE)}"
 
 build_deploy: make_gif
-	Rscript -e "devtools::build_site(path = '.', encoding = 'UTF-8')"
+	Rscript -e "options(encoding = "UTF-8"); \
+	devtools::build_site(path = '.')"
