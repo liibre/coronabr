@@ -1,14 +1,4 @@
-all: build_deploy make_gif
+all: build_site
 
-make_gif:
-	Rscript -e "devtools::load_all(); \
-	dados <- get_corona_br(by_uf = TRUE); \
-	dados_format <- format_corona_br(dados); \
-	plot_uf(df = dados_format, anim = TRUE, dir = 'vignettes/figs'); \
-	if (file.exists('Rplots.pdf')) {; \
-	  file.remove('Rplots.pdf'); \
-	  file.remove(list.files(path = 'output', pattern = '*.csv', full.names = TRUE), recursive = TRUE)}"
-
-build_deploy: make_gif
-	Rscript -e "rmarkdown::render('README.Rmd', encoding = 'UTF-8'); \
-	devtools::build_site(path = '.')"
+build_site: 
+	Rscript -e "pkgdown::build_site(pkg = '.')"

@@ -8,6 +8,8 @@ before_install:
 
 cache: packages
 
+script: make all
+
 matrix:
   include:
   - r: devel
@@ -15,10 +17,11 @@ matrix:
     before_deploy: Rscript -e 'remotes::install_cran("pkgdown")'
     deploy:
       provider: pages
-      script: Rscript -e 'pkgdown::deploy_site_github()'
       skip_cleanup: true
-      github_token: $TRAVIS_DEPLOY_KEY
+      github_token: $GITHUB_TOKEN
       keep_history: true
+      on:
+        branch: master
 
 after_success:
   - Rscript -e 'devtools::install()'
