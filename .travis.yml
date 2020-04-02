@@ -8,11 +8,8 @@ before_install:
 
 before_script: 
   - export TZ=America/Sao_Paulo
-
-env:
-    global:
-        - LANG=pt_BR.UTF-8
-        - LC_ALL=pt_BR.UTF-8
+  - export LANG=pt_BR.UTF-8
+  - export LC_ALL=pt_BR.UTF-8
 
 script: make all
 
