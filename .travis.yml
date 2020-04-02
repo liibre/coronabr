@@ -1,4 +1,4 @@
-  language: r
+language: r
 
 sudo: false
 
@@ -20,8 +20,6 @@ matrix:
       github_token: $GITHUB_TOKEN
       keep_history: true
 
-after_success:
-  - Rscript -e 'devtools::install()'
 
 r_packages:
   - brazilmaps
