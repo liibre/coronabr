@@ -50,6 +50,7 @@ r_packages:
   - knitr
   - rgdal
   - gifski
+  - pkgdown
  
 os:
   - linux
