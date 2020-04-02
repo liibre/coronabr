@@ -45,12 +45,10 @@ r_packages:
   - tidyr
   - tmap
   - xml2
-  - gganimat
+  - gganimate
   - devtools
   - knitr
   - rgdal
-  - magick
-  - gifski
-
+ 
 os:
   - linux
