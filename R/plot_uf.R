@@ -12,6 +12,7 @@
 #' @import ggplot2
 #' @importFrom rlang .data
 #' @importFrom gganimate transition_reveal anim_save
+#' @import gifski
 #'
 #' @return objeto ggplot
 #'

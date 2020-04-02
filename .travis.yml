@@ -49,6 +49,7 @@ r_packages:
   - devtools
   - knitr
   - rgdal
+  - gifski
  
 os:
   - linux

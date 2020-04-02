@@ -40,7 +40,8 @@ Imports:
     tidyr,
     tmap,
     xml2,
-    gganimate
+    gganimate,
+    gifski
 Suggests: 
     devtools,
     knitr,
