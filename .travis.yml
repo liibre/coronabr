@@ -45,6 +45,9 @@ r_packages:
   - rgdal
   - gifski
   - pkgdown
+  - webshot
+  - rmarkdown
+  - remotes
 
 os:
   - linux
