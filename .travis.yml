@@ -10,6 +10,11 @@ cache: packages
 
 script: make all
 
+env:
+    global:
+        - LANG=pt_BR.UTF-8
+        - LC_ALL=pt_BR.UTF-8
+
 matrix:
   include:
   - r: devel
