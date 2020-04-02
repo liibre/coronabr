@@ -3,7 +3,7 @@ language: r
 sudo: false
 
 before_install:
-  - sudo apt-get update
+  - sudo apt-get update --reinstall install -qq language-pack-gnome-pt language-pack-pt-base
   - sudo apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev libgdal-dev bwidget libgdal-dev libgdal1-dev libgeos-dev libgeos++-dev libgsl0-dev libproj-dev libspatialite-dev netcdf-bin libgmp3-dev libudunits2-dev cargo
 
 cache: packages
