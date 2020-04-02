@@ -2,22 +2,23 @@ language: r
 
 sudo: false
 
-before_install: 
+before_install:
   - sudo apt-get update
   - sudo apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev libgdal-dev bwidget libgdal-dev libgdal1-dev libgeos-dev libgeos++-dev libgsl0-dev libproj-dev libspatialite-dev netcdf-bin libgmp3-dev libudunits2-dev cargo
 
-script: make all
-
 cache: packages
 
+before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
+
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  provider: script
+  script: Rscript -e 'pkgdown::deploy_site_github()'
   keep_history: true
-  local-dir: docs
-  on:
-    branch: master
+  skip_cleanup: true
+
+after_success:
+  - Rscript -e 'devtools::install()'
+  - Rscript -e 'pkgdown::build_site()'
 
 r_packages:
   - brazilmaps
@@ -44,6 +45,6 @@ r_packages:
   - rgdal
   - gifski
   - pkgdown
- 
+
 os:
   - linux
