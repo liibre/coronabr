@@ -17,7 +17,7 @@ matrix:
       provider: pages
       script: Rscript -e 'pkgdown::deploy_site_github()'
       skip_cleanup: true
-      github_token: $GITHUB_TOKEN
+      github_token: $TRAVIS_DEPLOY_KEY
       keep_history: true
 
 after_success:
