@@ -3,13 +3,8 @@ language: r
 sudo: false
 
 before_install: 
-  - sudo apt-get update && sudo apt-get --reinstall install -qq language-pack-gnome-pt language-pack-pt-base
+  - sudo apt-get update
   - sudo apt-get -y install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev libgdal-dev bwidget libgdal-dev libgdal1-dev libgeos-dev libgeos++-dev libgsl0-dev libproj-dev libspatialite-dev netcdf-bin libgmp3-dev libudunits2-dev cargo
-
-before_script: 
-  - export TZ=America/Sao_Paulo
-  - export LANG=pt_BR.UTF-8
-  - export LC_ALL=pt_BR.UTF-8
 
 script: make all
 
