@@ -1,5 +1,5 @@
 ---
-title: "Download dos casos de coronavírus no Brasil"
+title: "Download dos casos de COVID-19 no Brasil"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{coronabr}

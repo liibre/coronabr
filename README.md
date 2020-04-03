@@ -1,9 +1,7 @@
 
-# Download de dados do coronavírus no Brasil
+# Download de dados de COVID-19 no Brasil
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120" />
-
-[![Build Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis-ci.com/liibre/coronabr)
 
 **coronabr** é um pacote de [R](https://www.r-project.org/) para fazer
 download e visualizar os dados dos casos diários de coronavírus
