@@ -26,7 +26,7 @@ Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em de
 
 ## Aviso!
 
-Os dados são referentes aos casos notificados. É sabido que neste momento há um acúmulo de testes para COVID-19 sem resultados. Assim, mais do que nunca, os números que vemos são das **notificações** e não refletem a epidemia em si.
+Os dados são referentes aos casos notificados. É sabido que neste momento há um acúmulo de testes para COVID-19 sem resultados. Assim, mais do que nunca, os números que vemos são das **notificações** e não refletem a epidemia em si. 
 
 ## Sobre os dados
 
@@ -41,6 +41,8 @@ No Brasil, a notificação de casos carrega consigo vieses espaciais, econômico
 <!--- A partir de 20/03/2020, a notificação exclui os casos suspeitos que vinham sendo divulgados.-->
 
 ## Visualizando os dados 
+
+Importante lembrar que desde 27/03/2020 tem muitos testes sem resultados e que os dados não refletem a epidemia e sim as notificações - e que essas estão atrasadas devido ao atraso no resultado dos testes. 
 
 ### Crescimento nacional no número de casos
 

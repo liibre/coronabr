@@ -75,6 +75,11 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 ## Visualizando os dados
 
+Importante lembrar que desde 27/03/2020 tem muitos testes sem resultados
+e que os dados não refletem a epidemia e sim as notificações - e que
+essas estão atrasadas devido ao atraso no resultado dos
+testes.
+
 ### Crescimento nacional no número de casos
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
