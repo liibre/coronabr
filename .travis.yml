@@ -8,7 +8,7 @@ before_install:
 
 cache: packages
 
-script: make all
+#script: make all
 
 env:
     global:
