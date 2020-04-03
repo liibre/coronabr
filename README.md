@@ -1,4 +1,7 @@
 
+[![Build
+Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis-ci.com/liibre/coronabr)
+
 # Download de dados de COVID-19 no Brasil
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120" />
