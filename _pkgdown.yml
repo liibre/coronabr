@@ -20,6 +20,8 @@ navbar:
         href: articles/graficos.html
       - text: Casos de COVID-19 na América Latina e Caribe
         href: articles/lac.html
+      - text: Cosos de COVID-19 en América Latina y el Caribe
+        href: articles/lac_es.html
     news:
       text: sobre
       href: about.html

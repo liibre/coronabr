@@ -1,13 +1,13 @@
 ---
-  title: "Visualización de casos registrados de COVID-19 en América Latina y el Caribe"
+title: "Visualización de casos registrados de COVID-19 en América Latina y el Caribe"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{lac}
-%\VignetteEngine{knitr::rmarkdown}
-%\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{lac_es}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-  ```{r setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       warning = FALSE, results = FALSE,
                       comment = FALSE,
