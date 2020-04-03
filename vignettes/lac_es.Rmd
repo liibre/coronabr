@@ -20,7 +20,7 @@ library(coronabr)
 library(tmap)
 ```
 
-Para ver los datos en un mapa, cargaremos el *shapefile* mundial desde el paquete **tmap** y seleccionaremos los países de América Latina el Caribe.
+Para ver los datos en un mapa, cargaremos el *shapefile* mundial desde el paquete **tmap** y seleccionaremos los países de América Latina y el Caribe.
 
 ```{r shp}
 # carregando o shapefile do mundo
