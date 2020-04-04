@@ -1,20 +1,40 @@
-destination: docs
+url: https://liibre.github.io/coronabr
+
+template:
+  params:
+    bootswatch: cosmo
+    ganalytics: UA-162786964-1
+
+# para organizar a pag de funcoes
+reference:
+
+  - title: Ministério da Saúde
+    contents:
+    - get_corona
+
+  - title: Brasil.io
+    contents:
+    - get_corona_br
+    - format_corona_br
+    - plot_corona_br
+    - map_corona_br
+    - plot_uf
+
+  - title: John Hopkins University
+    contents:
+    - get_corona_jhu
+
+# configuracao geral da barra de navegacao
 navbar:
-  structure:
-    left:  [home, intro, reference, articles, tutorials, news]
-    right: [github]
-  components:
-    home:
+  title: ~
+  type: default
+  left:
+    - text:
       icon: fas fa-home fa-lg
       href: index.html
-    reference:
-      text: funções
+    - text: funções
       href: reference/index.html
-    intro:
-      text: como usar
-      href: articles/coronabr.html
-    articles:
-      text: artigos
+    - text: artigos
       menu:
       - text: Visualização dos casos registrados de COVID-19 no Brasil
         href: articles/graficos.html
@@ -22,9 +42,5 @@ navbar:
         href: articles/lac.html
       - text: Casos de COVID-19 en América Latina y el Caribe
         href: articles/lac_es.html
-    news:
-      text: sobre
+    - text: sobre
       href: about.html
-template:
- params:
-  ganalytics: UA-162786964-1

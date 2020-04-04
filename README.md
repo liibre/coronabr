@@ -32,7 +32,7 @@ comparações entre regiões e países dependem de muitas variáveis.
 Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho
 em desenvolvimento. Sugestões, entrem em contato conosco. Para entender
 como contribuir, clique
-[aqui](https://liibre.github.io/coronabr/CONTRIBUTING.html).
+[aqui](https://liibre.github.io/coronabr/docs/CONTRIBUTING.html).
 
 ## Aviso\!
 
