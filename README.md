@@ -2,6 +2,8 @@
 [![Build
 Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis-ci.com/liibre/coronabr)
 
+<!--html_preserve-->
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162786964-1"></script>
@@ -13,6 +15,8 @@ Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis
 
   gtag('config', 'UA-162786964-1');
 </script>
+
+<!--/html_preserve-->
 
 # Download de dados de COVID-19 no Brasil
 
