@@ -25,3 +25,6 @@ navbar:
     news:
       text: sobre
       href: about.html
+template:
+ params:
+  ganalytics: UA-162786964-1
