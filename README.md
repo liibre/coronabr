@@ -30,8 +30,7 @@ deve haver maneiras responsáveis de apresentar estes dados e que as
 comparações entre regiões e países dependem de muitas variáveis.
 
 Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho
-em desenvolvimento. Sugestões, entrem em contato conosco. Para entender
-como contribuir, clique
+em desenvolvimento. Para entender como contribuir, clique
 [aqui](https://liibre.github.io/coronabr/docs/CONTRIBUTING.html).
 
 ## Aviso\!
@@ -63,15 +62,27 @@ econômicos e de classe que não podem ser ignorados. Para uma modelos
 da propagação da COVID-19 por contágio comunitário no
 Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
+### Nota sobre os dados disponibilizados pelo Ministério da Saúde
+
   - A partir de 14/03/20, a notificação de casos graves de COVID-19 foca
     apenas nos casos graves que são atendidos nos hospitais.
-  - A partir de 18/03/2020, a página original do Min. da Saúde parou de
-    funcionar e os boletins estão sendo divulgados em apresentações de
-    powerpoint e PDFs. [Adriano
-    Belisario](https://www.twitter.com/belisards) está fazendo a
-    compilação manual destes dados
-    [aqui](https://github.com/belisards/coronabr)
-    <!--- A partir de 20/03/2020, a notificação exclui os casos suspeitos que vinham sendo divulgados.-->
+  - Até 2020-03-18 o ministério de saúde brasileiro disponibilizou os
+    dados de casos de coronavirus COVID-19 discriminados por estado na
+    página
+    <http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil>
+  - Entre 2020-03-18 e 2020-03-25, a página original do Ministério da
+    Saúde parou de funcionar e os dados de casos de coronavirus
+    COVID-19 discriminados por estado foram divulgados em apresentações
+    de powerpoint e PDFs no blog do Ministério. [Adriano
+    Belisario](https://www.twitter.com/belisards) fez a compilação
+    manual destes dados [neste
+    repositório](https://github.com/belisards/coronabr)
+  - A partir de 2020-03-26 o ministério de saúde brasileiro
+    disponibilizou os dados de casos de coronavirus COVID-19 na página
+    <https://covid.saude.gov.br/>
+  - A partir de 28-03-2020 a opção de fazer download da série histórica
+    por casos voltou a estar disponível. **Estamos implementando de novo
+    a função que disponibiliza esses dados**
 
 ## Visualizando os dados
 
@@ -144,6 +155,8 @@ testes.
     informação.
 
 Dúvidas, contribuições e sugestões, poste uma *issue*
-[aqui](https://github.com/liibre/coronabr/issues) ou nos encontre no
-twitter ([Sara](https://twitter.com/mortarasara),
-[Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo]()).
+[aqui](https://github.com/liibre/coronabr/issues), escreva-nos um
+[email](mailto:liibrelab@gmail.com) ou nos encontre no twitter
+([Sara](https://twitter.com/mortarasara),
+[Andrea](https://twitter.com/SanchezTapiaA) ou
+[Karlo](https://twitter.com/kguidonimartins)).

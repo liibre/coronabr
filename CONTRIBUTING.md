@@ -42,7 +42,7 @@ Xs mantenedorxs do projeto são responsáveis por determinar e clarificar os pad
 
 Xs mantenedorxs do projeto têm o direito e a responsabilidade de remover, editar ou rejeitar comentários, commits, código, edições à _wiki_, _issues_ e outras contribuições que não estiverem alinhadas com este Código de Conduta, e de banir temporaria ou permanentemente qualquer contribuidor por outros comportamentos considerados inadequados, ameaçadores, ofensivos ou danosos.
 
-Este tipo de comportamentos podem ser denunciados contatando xs desenvolvedorxs do projeto via  email. Toda denúncia será revisada, investigada e respondida. A resposta deverá ser apropriada às circunstâncias. A equipe do projeto está obrigada a manter a confidencialidade e respeitar a privacidade dx denunciante. 
+Este tipo de comportamentos podem ser denunciados contatando xs desenvolvedorxs do projeto via [email](mailto:liibrelab@gmail.com). Toda denúncia será revisada, investigada e respondida. A resposta deverá ser apropriada às circunstâncias. A equipe do projeto está obrigada a manter a confidencialidade e respeitar a privacidade dx denunciante. 
 Mais detalhes e decisões poderão ser postados separadamente e acrescentados a este código de conduta. 
 
 Mantenedorxs de projeto que não seguirem ou velarem pela aplicação do código de conduta de boa fé poderão ser removidxs temporaria ou permanentemente e outras repercussões serão determinadas pelxs demais participantes da coordenação do projeto.
