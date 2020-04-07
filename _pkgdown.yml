@@ -10,7 +10,8 @@ reference:
 
   - title: Ministério da Saúde
     contents:
-    - get_corona
+    - get_corona_minsaude
+    - plot_corona_minsaude
 
   - title: Brasil.io
     contents:
@@ -38,6 +39,8 @@ navbar:
       menu:
       - text: Visualização dos casos registrados de COVID-19 no Brasil
         href: articles/graficos.html
+      - text: Dados do Ministério da Saúde
+        href: articles/minsaude.html
       - text: Casos de COVID-19 na América Latina e Caribe
         href: articles/lac.html
       - text: Casos de COVID-19 en América Latina y el Caribe

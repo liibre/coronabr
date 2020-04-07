@@ -16,7 +16,7 @@ get_corona_br(
 \arguments{
 \item{dir}{Diretório onde salvar o arquivo}
 
-\item{filename}{Nome do arquivo}
+\item{filename}{Nome do arquivo, valor predeterminado "minsaude"}
 
 \item{cidade}{Caractere indicando o(s) nome(s) do(s) município(s) brasileiro(s). Atenção, fornecer também o estado ou o código ibge para evitar ambiguidade. "Importados" extrai os casos importados, se disponíveis.}
 

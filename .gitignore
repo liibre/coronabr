@@ -8,4 +8,5 @@ script_corona.R
 teste.R
 # gerados pelas vignettes
 docs/articles/lac_files/
+docs/articles/lac_es_files/
 
