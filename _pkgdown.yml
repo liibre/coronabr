@@ -34,6 +34,8 @@ navbar:
       href: index.html
     - text: funções
       href: reference/index.html
+    - text: como usar
+      href: articles/coronabr.html
     - text: artigos
       menu:
       - text: Visualização dos casos registrados de COVID-19 no Brasil
