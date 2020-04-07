@@ -52,6 +52,9 @@
 <li>
   <a href="../reference/index.html">funções</a>
 </li>
+<li>
+  <a href="../articles/coronabr.html">como usar</a>
+</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     artigos
@@ -119,8 +122,8 @@
 <div id="baixando-os-dados-apenas-do-brasil" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-apenas-do-brasil" class="anchor"></a>Baixando os dados apenas do Brasil</h3>
-<p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
+<p>Aqui está o exemplo usando a função <code><a href="https://liibre.github.io/coronabr/reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
@@ -151,7 +154,7 @@
 <div id="baixando-os-dados-mundiais" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-mundiais" class="anchor"></a>Baixando os dados mundiais</h3>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">dados_jhu</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">dados_jhu</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/get_corona_jhu.html">get_corona_jhu</a></span>()</pre></body></html></div>
 <pre><code>## Criando diretorio output ...</code></pre>
 <pre><code>## Baixando dados atualizados ...</code></pre>
 <pre><code>## Parsed with column specification:
@@ -177,12 +180,12 @@
 <pre><code>## # A tibble: 6 x 12
 ##   fips  admin2 province_state country_region last_update   lat   long confirmed
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-04-05…  34.2  -82.5         6
-## 2 22001 Acadia Louisiana      US             2020-04-05…  30.3  -92.4        75
-## 3 51001 Accom… Virginia       US             2020-04-05…  37.8  -75.6        11
-## 4 16001 Ada    Idaho          US             2020-04-05…  43.5 -116.        385
-## 5 19001 Adair  Iowa           US             2020-04-05…  41.3  -94.5         1
-## 6 21001 Adair  Kentucky       US             2020-04-05…  37.1  -85.3         3
+## 1 45001 Abbev… South Carolina US             2020-04-06…  34.2  -82.5         6
+## 2 22001 Acadia Louisiana      US             2020-04-06…  30.3  -92.4        79
+## 3 51001 Accom… Virginia       US             2020-04-06…  37.8  -75.6        11
+## 4 16001 Ada    Idaho          US             2020-04-06…  43.5 -116.        402
+## 5 19001 Adair  Iowa           US             2020-04-06…  41.3  -94.5         1
+## 6 21001 Adair  Kentucky       US             2020-04-06…  37.1  -85.3         3
 ## # … with 4 more variables: deaths &lt;dbl&gt;, recovered &lt;dbl&gt;, active &lt;dbl&gt;,
 ## #   combined_key &lt;chr&gt;</code></pre>
 </div>

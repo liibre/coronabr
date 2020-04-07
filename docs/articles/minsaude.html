@@ -52,6 +52,9 @@
 <li>
   <a href="../reference/index.html">funções</a>
 </li>
+<li>
+  <a href="../articles/coronabr.html">como usar</a>
+</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     artigos
@@ -119,13 +122,13 @@
 <div id="baixando-os-dados-oficiais-do-ministério-da-saúde" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-oficiais-do-minist%C3%A9rio-da-sa%C3%BAde" class="anchor"></a>Baixando os dados oficiais do ministério da saúde</h3>
-<p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> que extrai os dados do portal <a href="https://covid.saude.gov.br" class="uri">https://covid.saude.gov.br</a>, usando o csv disponibilizado diariamente na página.</p>
+<p>Aqui está o exemplo usando a função <code><a href="https://liibre.github.io/coronabr/reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> que extrai os dados do portal <a href="https://covid.saude.gov.br" class="uri">https://covid.saude.gov.br</a>, usando o csv disponibilizado diariamente na página.</p>
 <p>Os dados podem ser procurados para todos os estados, ou para só um, ou para vários, usando o parâmetro uf e o código de duas letras de cada estado (ex. “PI”)</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">todos_estados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">todos_estados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/get_corona_minsaude.html">get_corona_minsaude</a></span>()</pre></body></html></div>
 <pre><code>## salvando minsaude.csv em output</code></pre>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">rj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="st">"RJ"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">rj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="st">"RJ"</span>)</pre></body></html></div>
 <pre><code>## salvando minsaude.csv em output</code></pre>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">sprj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"SP"</span>, <span class="st">"RJ"</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">sprj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"SP"</span>, <span class="st">"RJ"</span>))</pre></body></html></div>
 <pre><code>## salvando minsaude.csv em output</code></pre>
 </div>
 <div id="inspecionando-os-dados" class="section level3">
@@ -184,7 +187,7 @@
 <div id="plotando-os-dados-de-minsaúde" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plotando-os-dados-de-minsa%C3%BAde" class="anchor"></a>Plotando os dados de Minsaúde</h3>
-<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="../reference/plot_corona_minsaude.html">plot_corona_minsaude</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">sprj</span>,
+<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="https://liibre.github.io/coronabr/reference/plot_corona_minsaude.html">plot_corona_minsaude</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">sprj</span>,
                      <span class="kw">log</span> <span class="kw">=</span> <span class="no">T</span>,
                      <span class="kw">tipo</span> <span class="kw">=</span> <span class="st">"numero"</span>)</pre></body></html></div>
 <p><img src="minsaude_files/figure-html/unnamed-chunk-1-1.png" width="576"></p>

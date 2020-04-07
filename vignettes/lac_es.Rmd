@@ -58,9 +58,8 @@ covid_lac$confirmed_per100k <- covid_lac$confirmed/covid_lac$pop_est * 1000000
 Y ahora, visualicemos los datos en un mapa dinámico.
 
 ```{r map, results = TRUE, fig.width = 8}
-tmap_mode("plot")
-tm <- tm_shape(covid_lac,
-               projection=4326) +
+tmap_mode("view")
+tm <- tm_shape(covid_lac) +
   tm_polygons("confirmed_per100k", 
               title = "Casos por 100 mil hab.",
               breaks = c(0, 10, 20, 30, 40, 50, 100, 200, 400, 600), 

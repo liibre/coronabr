@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120" />
 
-Somos pesquisadores(as) preocupados com a democratização de ferramentas e dados porque acreditamos em uma ciência aberta e para todxs. Declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos alinhadxs com o [manifest-no](https://www.manifestno.com/), refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados. Nos juntamos para criar o <span style="color:red"> liibre </span>, nosso <span style="color:red">l</span>aboratório <span style="color:red">i</span>maginário de <span style="color:red">i</span>nformática da <span style="color:red">b</span>iodiversidade e <span style="color:red">r</span>eprodutibilidade em <span style="color:red">e</span>cologia.
+Somos pesquisadorxs preocupadxs com a democratização de ferramentas e dados porque acreditamos em uma ciência aberta e para todxs. Declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos alinhadxs com o [manifest-no](https://www.manifestno.com/), refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados. Nos juntamos para criar o <span style="color:red"> liibre </span>, nosso <span style="color:red">l</span>aboratório <span style="color:red">i</span>maginário de <span style="color:red">i</span>nformática da <span style="color:red">b</span>iodiversidade e <span style="color:red">r</span>eprodutibilidade em <span style="color:red">e</span>cologia.
 
 ### Sara Mortara [![alt text][1.1]][1] [![alt text][2.1]][2]
 

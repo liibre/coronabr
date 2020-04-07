@@ -52,6 +52,9 @@
 <li>
   <a href="../reference/index.html">funções</a>
 </li>
+<li>
+  <a href="../articles/coronabr.html">como usar</a>
+</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     artigos
@@ -111,39 +114,39 @@
 <div id="crescimento-nacional-no-número-de-casos" class="section level2">
 <h2 class="hasAnchor">
 <a href="#crescimento-nacional-no-n%C3%BAmero-de-casos" class="anchor"></a>Crescimento nacional no número de casos</h2>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 <span class="co">#dados_jhu &lt;- get_corona_jhu()</span></pre></body></html></div>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/plot_corona_br.html">plot_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados</span>, <span class="kw">log</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://liibre.github.io/coronabr/reference/plot_corona_br.html">plot_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados</span>, <span class="kw">log</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
 <p><img src="graficos_files/figure-html/fig-casos-1.png" width="576"></p>
 </div>
 <div id="entendendo-o-aumento-diário" class="section level2">
 <h2 class="hasAnchor">
 <a href="#entendendo-o-aumento-di%C3%A1rio" class="anchor"></a>Entendendo o aumento diário</h2>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="../reference/plot_corona_br.html">plot_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados</span>, <span class="kw">tipo</span> <span class="kw">=</span> <span class="st">"aumento"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://liibre.github.io/coronabr/reference/plot_corona_br.html">plot_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados</span>, <span class="kw">tipo</span> <span class="kw">=</span> <span class="st">"aumento"</span>)</pre></body></html></div>
 <p><img src="graficos_files/figure-html/fig-perc-1.png" width="576"></p>
 </div>
 <div id="número-de-casos-por-estado-brasileiro" class="section level2">
 <h2 class="hasAnchor">
 <a href="#n%C3%BAmero-de-casos-por-estado-brasileiro" class="anchor"></a>Número de casos por estado brasileiro</h2>
 <p>Um mapa com os dados do número de casos a cada 100.000 habitantes</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">dados_format</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/format_corona_br.html">format_corona_br</a></span>(<span class="no">dados</span>)
-<span class="fu"><a href="../reference/map_corona_br.html">map_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">dados_format</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/format_corona_br.html">format_corona_br</a></span>(<span class="no">dados</span>)
+<span class="fu"><a href="https://liibre.github.io/coronabr/reference/map_corona_br.html">map_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>)</pre></body></html></div>
 <p><img src="graficos_files/figure-html/mapa1-1.png" width="288"></p>
 <p>Um mapa com o valor bruto no número de casos</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="../reference/map_corona_br.html">map_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>,
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="https://liibre.github.io/coronabr/reference/map_corona_br.html">map_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>,
               <span class="kw">prop_pop</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
 <p><img src="graficos_files/figure-html/mapa2-1.png" width="288"></p>
 </div>
 <div id="crescimento-do-número-de-casos-nos-estados-mais-afetados" class="section level2">
 <h2 class="hasAnchor">
 <a href="#crescimento-do-n%C3%BAmero-de-casos-nos-estados-mais-afetados" class="anchor"></a>Crescimento do número de casos nos estados mais afetados</h2>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="../reference/plot_uf.html">plot_uf</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="https://liibre.github.io/coronabr/reference/plot_uf.html">plot_uf</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>)</pre></body></html></div>
 <p><img src="graficos_files/figure-html/estados-1.png" width="576"></p>
 </div>
 <div id="evolução-do-número-de-casos-por-estado" class="section level2">
 <h2 class="hasAnchor">
 <a href="#evolu%C3%A7%C3%A3o-do-n%C3%BAmero-de-casos-por-estado" class="anchor"></a>Evolução do número de casos por estado</h2>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">anim</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/map_corona_br.html">map_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>,
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">anim</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://liibre.github.io/coronabr/reference/map_corona_br.html">map_corona_br</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">dados_format</span>,
                       <span class="kw">anim</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
                       <span class="kw">dir</span> <span class="kw">=</span> <span class="st">"figs"</span>)</pre></body></html></div>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600"></p>
