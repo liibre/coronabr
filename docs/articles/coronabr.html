@@ -66,6 +66,9 @@
       <a href="../articles/graficos.html">Visualização dos casos registrados de COVID-19 no Brasil</a>
     </li>
     <li>
+      <a href="../articles/minsaude.html">Dados do Ministério da Saúde</a>
+    </li>
+    <li>
       <a href="../articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
     </li>
     <li>
@@ -156,11 +159,11 @@
 <pre><code>## Baixando dados atualizados ...</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
-##   FIPS = col_character(),
+##   FIPS = col_double(),
 ##   Admin2 = col_character(),
 ##   Province_State = col_character(),
 ##   Country_Region = col_character(),
-##   Last_Update = col_datetime(format = ""),
+##   Last_Update = col_character(),
 ##   Lat = col_double(),
 ##   Long_ = col_double(),
 ##   Confirmed = col_double(),
@@ -175,14 +178,14 @@
 <a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_jhu</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 6 x 12
-##   fips  admin2 province_state country_region last_update   lat   long
-##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-04-06…  34.2  -82.5
-## 2 22001 Acadia Louisiana      US             2020-04-06…  30.3  -92.4
-## 3 51001 Accom… Virginia       US             2020-04-06…  37.8  -75.6
-## 4 16001 Ada    Idaho          US             2020-04-06…  43.5 -116. 
-## 5 19001 Adair  Iowa           US             2020-04-06…  41.3  -94.5
-## 6 21001 Adair  Kentucky       US             2020-04-06…  37.1  -85.3
+##    fips admin2 province_state country_region last_update   lat   long
+##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
+## 1 45001 Abbev… South Carolina US             4/6/20 23:…  34.2  -82.5
+## 2 22001 Acadia Louisiana      US             4/6/20 23:…  30.3  -92.4
+## 3 51001 Accom… Virginia       US             4/6/20 23:…  37.8  -75.6
+## 4 16001 Ada    Idaho          US             4/6/20 23:…  43.5 -116. 
+## 5 19001 Adair  Iowa           US             4/6/20 23:…  41.3  -94.5
+## 6 21001 Adair  Kentucky       US             4/6/20 23:…  37.1  -85.3
 ## # … with 5 more variables: confirmed &lt;dbl&gt;, deaths &lt;dbl&gt;, recovered &lt;dbl&gt;,
 ## #   active &lt;dbl&gt;, combined_key &lt;chr&gt;</code></pre>
 </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • coronabr</title>
+<title>Gráfico do número de casos de COVID-19 no Brasil para os dados do Ministério da Saúde — plot_corona_minsaude • coronabr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Gráfico do número de casos de COVID-19 no Brasil para os dados do Ministério da Saúde — plot_corona_minsaude" />
+<meta property="og:description" content="Esta função plota o crescimento no número de casos no Brasil ao longo do tempo. Há duas opções de gráfico, veja o argumento `tipo` para mais detalhes." />
 
 
 
@@ -68,7 +69,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -144,26 +145,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Gráfico do número de casos de COVID-19 no Brasil para os dados do Ministério da Saúde</h1>
+    <small class="dont-index">Source: <a href='https://github.com/liibre/coronabr/blob/master/R/plot_corona_minsaude.R'><code>R/plot_corona_minsaude.R</code></a></small>
+    <div class="hidden name"><code>plot_corona_minsaude.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="coronabr.html">Download dos casos de COVID-19 no Brasil</a></dt>
-        <dd></dt>
-        <dt><a href="graficos.html">Visualização dos casos registrados de COVID-19 no Brasil</a></dt>
-        <dd></dt>
-        <dt><a href="lac.html">Visualização dos casos registrados de COVID-19 na América Latina</a></dt>
-        <dd></dt>
-        <dt><a href="lac_es.html">Visualización de casos registrados de COVID-19 en América Latina y el Caribe</a></dt>
-        <dd></dt>
-        <dt><a href="minsaude.html">Download dos casos de COVID-19 no Brasil - Minsaúde</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Esta função plota o crescimento no número de casos no Brasil ao longo do tempo. Há duas opções de gráfico, veja o argumento `tipo` para mais detalhes.</p>
     </div>
+
+    <pre class="usage"><span class='fu'>plot_corona_minsaude</span>(<span class='no'>df</span>, <span class='kw'>log</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tipo</span> <span class='kw'>=</span> <span class='st'>"numero"</span>)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>df</th>
+      <td><p>Data frame contendo o resultado da busca de `get_corona_minsaude()`</p></td>
+    </tr>
+    <tr>
+      <th>log</th>
+      <td><p>Lógico. Se quer manter a escala log no eixo y do gráfico. Padrão log = TRUE. Apenas para `tipo = "numero"`</p></td>
+    </tr>
+    <tr>
+      <th>tipo</th>
+      <td><p>Caractere. Padrão `tipo = "numero"` para o número de casos ao longo do tempo. Usar `tipo = "aumento"` para plotar o aumento diário no número de casos</p></td>
+    </tr>
+    </table>
+
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
