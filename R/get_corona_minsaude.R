@@ -14,7 +14,6 @@
 #' @importFrom magrittr %>%
 #' @importFrom plyr .
 #' @importFrom lubridate as_date
-#' @importFrom chron month.day.year
 #'
 #' @export
 #'
@@ -34,22 +33,23 @@ get_corona_minsaude <- function(dir = "output",
     '[['("url")
   #url <- "https://covid.saude.gov.br"
   #date <- format(Sys.Date(), "%Y%m%d")
-  res <- utils::read.csv2(url,stringsAsFactors = FALSE)
+  res <- utils::read.csv2(url, stringsAsFactors = FALSE, fileEncoding = "latin1")
   #datas boas
   #dplyr::mutate(date = lubridate::as_date(as.character(.data$data),
      #                                       tz = "America/Sao_Paulo")
       #                                      format = "%d/%m/%Y")) %>%
   #datas de excel
-  datas <- chron::month.day.year(jul = res$data, origin. = c(1, 1,1900))
-  res$date <- as.Date(
-  paste(datas$year, datas$month, datas$day, sep = "-"))
- res <- res %>% dplyr::select(-.data$data)
+  # datas <- chron::month.day.year(jul = res$data, origin. = c(1, 1, 1900))
+  # res$date <- as.Date(
+  #   paste(datas$year, datas$month, datas$day, sep = "-"))
+  # res <- res %>% dplyr::select(-.data$data)
+  res$date <- lubridate::dmy(res$date)
   # gravando metadados da requisicao
   metadado <- data.frame(intervalo = paste(range(res$date), collapse = ";"),
                          fonte = url,
                          acesso_em = Sys.Date())
   if (!is.null(uf)) {
-    res <- res %>% dplyr::filter(.data$estado %in% uf)
+    res <- res %>% dplyr::filter(.data$sigla %in% uf)
   }
 
   message(paste0("salvando ", filename, ".csv em ", dir))
