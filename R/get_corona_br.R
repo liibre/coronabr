@@ -2,7 +2,7 @@
 #'
 #' Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco e escreve um arquivo com os metadados da requisição (metadado_corona_br.csv).
 #'
-#' @inheritParams get_corona
+#' @inheritParams get_corona_minsaude
 #'
 #' @param cidade Caractere indicando o(s) nome(s) do(s) município(s) brasileiro(s). Atenção, fornecer também o estado ou o código ibge para evitar ambiguidade. "Importados" extrai os casos importados, se disponíveis.
 #' @param uf Caractere indicando a abreviação do(s) estado(s) brasileiro(s)

@@ -2,7 +2,7 @@
 #'
 #' Esta função extrai os valores compilados pela Johns Hopkins University (disponível em: 'https://github.com/CSSEGISandData/COVID-19') e salva o resultado no disco.
 #'
-#' @inheritParams get_corona
+#' @inheritParams get_corona_minsaude
 #'
 #' @importFrom readr read_csv write_csv
 #' @importFrom glue glue

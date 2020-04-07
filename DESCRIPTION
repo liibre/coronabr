@@ -23,6 +23,7 @@ LazyData: true
 RoxygenNote: 7.1.0
 Imports:
     brazilmaps,
+    chron,
     dplyr,
     fs,
     ggplot2,
@@ -32,6 +33,7 @@ Imports:
     httr,
     janitor,
     jsonlite,
+    lubridate,
     magrittr,
     plyr,
     readr,

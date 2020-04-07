@@ -9,7 +9,7 @@ format_corona_br(df, filename = "corona_brasil_formated", dir = "output")
 \arguments{
 \item{df}{Data frame contendo o resultado da busca de `get_corona_br()`}
 
-\item{filename}{Nome do arquivo}
+\item{filename}{Nome do arquivo, valor predeterminado "minsaude"}
 
 \item{dir}{Diretório onde salvar o arquivo}
 }

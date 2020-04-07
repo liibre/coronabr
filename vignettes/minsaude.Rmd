@@ -1,0 +1,55 @@
+---
+title: "Download dos casos de COVID-19 no Brasil - Minsaúde"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{minsaude}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+## Para instalar o pacote
+
+`remotes::install_github("liibre/coronabr")`
+
+## Carregando o pacote
+
+```{r load}
+devtools::load_all()
+#library(coronabr)
+```
+
+### Baixando os dados oficiais do ministério da saúde
+
+Aqui está o exemplo usando a função `get_corona_minsaude()` que extrai os dados do portal https://covid.saude.gov.br, usando o csv disponibilizado diariamente na página. 
+
+Os dados podem ser procurados para todos os estados, ou para só um, ou para vários, usando o parâmetro uf e o código de duas letras de cada estado (ex. "PI")
+
+```{r get-br, error=TRUE}
+todos_estados <- get_corona_minsaude()
+rj <- get_corona_minsaude(uf = "RJ")
+sprj <- get_corona_minsaude(uf = c("SP", "RJ"))
+```
+
+### Inspecionando os dados
+
+```{r data-br}
+head(todos_estados)
+head(rj)
+unique(rj$estado)
+head(sprj)
+unique(sprj$estado)
+```
+
+### Plotando os dados de Minsaúde
+
+
+```{r, fig.width= 6, fig.height=6}
+plot_corona_minsaude(df = sprj,
+                     log = T,
+                     tipo = "numero")
+```
+
