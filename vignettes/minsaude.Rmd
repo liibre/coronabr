@@ -18,8 +18,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 ## Carregando o pacote
 
 ```{r load}
-devtools::load_all()
-#library(coronabr)
+library(coronabr)
 ```
 
 ### Baixando os dados oficiais do ministério da saúde
