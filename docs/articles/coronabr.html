@@ -63,6 +63,9 @@
       <a href="../articles/graficos.html">Visualização dos casos registrados de COVID-19 no Brasil</a>
     </li>
     <li>
+      <a href="../articles/minsaude.html">Dados do Ministério da Saúde</a>
+    </li>
+    <li>
       <a href="../articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
     </li>
     <li>
@@ -123,26 +126,26 @@
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-04-04    AC           state        46      0    True
-## 2 2020-04-04    AL           state        23      2    True
-## 3 2020-04-04    AM           state       311     12    True
-## 4 2020-04-04    AP           state        28      1    True
-## 5 2020-04-04    BA           state       336      7    True
-## 6 2020-04-04    DF           state       456      7    True
+## 1 2020-04-06    AC           state        50      1    True
+## 2 2020-04-06    AL           state        31      2    True
+## 3 2020-04-06    AM           state       532     19    True
+## 4 2020-04-06    AP           state        39      3    True
+## 5 2020-04-06    BA           state       437     10    True
+## 6 2020-04-06    DF           state       485     10    True
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                    881935             12                        5.21580
-## 2                   3337357             27                        0.68917
-## 3                   4144597             13                        7.50375
-## 4                    845731             16                        3.31075
-## 5                  14873064             29                        2.25912
-## 6                   3015268             53                       15.12303
+## 1                    881935             12                        5.66935
+## 2                   3337357             27                        0.92888
+## 3                   4144597             13                       12.83599
+## 4                    845731             16                        4.61140
+## 5                  14873064             29                        2.93820
+## 6                   3015268             53                       16.08481
 ##   death_rate
-## 1         NA
-## 2     0.0870
-## 3     0.0386
-## 4     0.0357
-## 5     0.0208
-## 6     0.0154</code></pre>
+## 1     0.0200
+## 2     0.0645
+## 3     0.0357
+## 4     0.0769
+## 5     0.0229
+## 6     0.0206</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -174,12 +177,12 @@
 <pre><code>## # A tibble: 6 x 12
 ##   fips  admin2 province_state country_region last_update   lat   long confirmed
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-04-04…  34.2  -82.5         6
-## 2 22001 Acadia Louisiana      US             2020-04-04…  30.3  -92.4        65
-## 3 51001 Accom… Virginia       US             2020-04-04…  37.8  -75.6         8
-## 4 16001 Ada    Idaho          US             2020-04-04…  43.5 -116.        360
-## 5 19001 Adair  Iowa           US             2020-04-04…  41.3  -94.5         1
-## 6 21001 Adair  Kentucky       US             2020-04-04…  37.1  -85.3         3
+## 1 45001 Abbev… South Carolina US             2020-04-05…  34.2  -82.5         6
+## 2 22001 Acadia Louisiana      US             2020-04-05…  30.3  -92.4        75
+## 3 51001 Accom… Virginia       US             2020-04-05…  37.8  -75.6        11
+## 4 16001 Ada    Idaho          US             2020-04-05…  43.5 -116.        385
+## 5 19001 Adair  Iowa           US             2020-04-05…  41.3  -94.5         1
+## 6 21001 Adair  Kentucky       US             2020-04-05…  37.1  -85.3         3
 ## # … with 4 more variables: deaths &lt;dbl&gt;, recovered &lt;dbl&gt;, active &lt;dbl&gt;,
 ## #   combined_key &lt;chr&gt;</code></pre>
 </div>
