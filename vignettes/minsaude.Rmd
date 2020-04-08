@@ -18,8 +18,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 ## Carregando o pacote
 
 ```{r load}
-devtools::load_all()
-#library(coronabr)
+library(coronabr)
 ```
 
 ### Baixando os dados oficiais do ministério da saúde
@@ -39,9 +38,9 @@ sprj <- get_corona_minsaude(uf = c("SP", "RJ"))
 ```{r data-br}
 head(todos_estados)
 head(rj)
-unique(rj$estado)
+unique(rj$sigla)
 head(sprj)
-unique(sprj$estado)
+unique(sprj$sigla)
 ```
 
 ### Plotando os dados de Minsaúde
