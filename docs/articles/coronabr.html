@@ -129,26 +129,26 @@
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-04-07    AC           state        50      1    True
-## 2 2020-04-07    AM           state       636     23    True
-## 3 2020-04-07    BA           state       462     14    True
-## 4 2020-04-07    CE           state      1188     40    True
-## 5 2020-04-07    DF           state       503     12    True
-## 6 2020-04-07    ES           state       227      6    True
+## 1 2020-04-09    AC           state        62      2    True
+## 2 2020-04-09    AL           state        37      3    True
+## 3 2020-04-09    AM           state       899     40    True
+## 4 2020-04-09    AP           state       110      2    True
+## 5 2020-04-09    BA           state       568     19    True
+## 6 2020-04-09    DF           state       527     13    True
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                    881935             12                        5.66935
-## 2                   4144597             13                       15.34528
-## 3                  14873064             29                        3.10629
-## 4                   9132078             23                       13.00909
-## 5                   3015268             53                       16.68177
-## 6                   4018650             32                        5.64866
+## 1                    881935             12                        7.03000
+## 2                   3337357             27                        1.10866
+## 3                   4144597             13                       21.69089
+## 4                    845731             16                       13.00650
+## 5                  14873064             29                        3.81898
+## 6                   3015268             53                       17.47772
 ##   death_rate
-## 1     0.0200
-## 2     0.0362
-## 3     0.0303
-## 4     0.0337
-## 5     0.0239
-## 6     0.0264</code></pre>
+## 1     0.0323
+## 2     0.0811
+## 3     0.0445
+## 4     0.0182
+## 5     0.0335
+## 6     0.0247</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -159,11 +159,11 @@
 <pre><code>## Baixando dados atualizados ...</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
-##   FIPS = col_double(),
+##   FIPS = col_character(),
 ##   Admin2 = col_character(),
 ##   Province_State = col_character(),
 ##   Country_Region = col_character(),
-##   Last_Update = col_character(),
+##   Last_Update = col_datetime(format = ""),
 ##   Lat = col_double(),
 ##   Long_ = col_double(),
 ##   Confirmed = col_double(),
@@ -178,16 +178,16 @@
 <a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_jhu</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 6 x 12
-##    fips admin2 province_state country_region last_update   lat   long confirmed
-##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             4/6/20 23:…  34.2  -82.5         6
-## 2 22001 Acadia Louisiana      US             4/6/20 23:…  30.3  -92.4        79
-## 3 51001 Accom… Virginia       US             4/6/20 23:…  37.8  -75.6        11
-## 4 16001 Ada    Idaho          US             4/6/20 23:…  43.5 -116.        402
-## 5 19001 Adair  Iowa           US             4/6/20 23:…  41.3  -94.5         1
-## 6 21001 Adair  Kentucky       US             4/6/20 23:…  37.1  -85.3         3
-## # … with 4 more variables: deaths &lt;dbl&gt;, recovered &lt;dbl&gt;, active &lt;dbl&gt;,
-## #   combined_key &lt;chr&gt;</code></pre>
+##   fips  admin2 province_state country_region last_update   lat   long
+##   &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
+## 1 45001 Abbev… South Carolina US             2020-04-09…  34.2  -82.5
+## 2 22001 Acadia Louisiana      US             2020-04-09…  30.3  -92.4
+## 3 51001 Accom… Virginia       US             2020-04-09…  37.8  -75.6
+## 4 16001 Ada    Idaho          US             2020-04-09…  43.5 -116. 
+## 5 19001 Adair  Iowa           US             2020-04-09…  41.3  -94.5
+## 6 21001 Adair  Kentucky       US             2020-04-09…  37.1  -85.3
+## # … with 5 more variables: confirmed &lt;dbl&gt;, deaths &lt;dbl&gt;, recovered &lt;dbl&gt;,
+## #   active &lt;dbl&gt;, combined_key &lt;chr&gt;</code></pre>
 </div>
 </div>
 </div>

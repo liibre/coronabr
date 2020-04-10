@@ -25,7 +25,7 @@ O código é aberto. Entre em [como usar](https://liibre.github.io/coronabr/arti
 
 Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.
 
-Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Para entender como contribuir, clique [aqui](https://liibre.github.io/coronabr/docs/CONTRIBUTING.html).
+Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Para entender como contribuir, clique [aqui](https://liibre.github.io/coronabr/CONTRIBUTING.html).
 
 ## Aviso!
 
@@ -41,16 +41,17 @@ No Brasil, a notificação de casos carrega consigo vieses espaciais, econômico
 
 ### Nota sobre os dados disponibilizados pelo Ministério da Saúde
 
-+ A partir de 14/03/20, a notificação de casos graves de COVID-19 foca apenas nos casos graves que são atendidos nos hospitais.
++ A partir de 2020-03-14, a notificação de casos graves de COVID-19 foca apenas nos casos graves que são atendidos nos hospitais.
 + Até 2020-03-18 o ministério de saúde brasileiro disponibilizou os dados de casos de coronavirus COVID-19 discriminados por estado na página http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil
 + Entre 2020-03-18 e 2020-03-25, a página original do Ministério da Saúde parou de funcionar e os dados de casos de coronavirus COVID-19 discriminados por estado foram divulgados em apresentações de powerpoint e PDFs no blog do Ministério. [Adriano Belisario](https://www.twitter.com/belisards) fez a compilação manual destes dados [neste repositório](https://github.com/belisards/coronabr)
 + A partir de 2020-03-26 o ministério de saúde brasileiro disponibilizou os dados de casos de coronavirus COVID-19 na página https://covid.saude.gov.br/
-+ A partir de 28-03-2020 a opção de fazer download da série histórica por casos voltou a estar disponível. __Estamos implementando de novo a função que disponibiliza esses dados__
-
++ A partir de 2020-03-28 a opção de fazer download da série histórica por casos voltou a estar disponível. Depois disso, o padrão vem mudado diariamente, mas agora temos uma função estável `get_corona_minsaude()` para o download desses dados (instruções de como usar [aqui](https://liibre.github.io/coronabr/articles/minsaude.html)). 
 
 ## Visualizando os dados 
 
-Importante lembrar que desde 27/03/2020 tem muitos testes sem resultados e que os dados não refletem a epidemia e sim as notificações - e que essas estão atrasadas devido ao atraso no resultado dos testes. 
+Importante lembrar que desde 2020-03-27 tem muitos testes sem resultados e que os dados não refletem a epidemia e sim as notificações - e que essas estão atrasadas devido ao atraso no resultado dos testes. 
+
+Entre [aqui](https://liibre.github.io/coronabr/articles/lac.html) para acompanhar os casos na América Latina (versão em espanhol [aqui](https://liibre.github.io/coronabr/articles/lac_es.html))
 
 ### Crescimento nacional no número de casos
 
@@ -85,7 +86,6 @@ Importante lembrar que desde 27/03/2020 tem muitos testes sem resultados e que o
 
 - [covid19br](https://paternogbc.github.io/covid19br/index.html), o pacote de R [Gustavo Palermo](https://github.com/paternogbc) para acompanhar os dados de novos casos no Brasil
 
-
 - [Portal da Fiocruz](https://portal.fiocruz.br/coronavirus)
 
 - [Site oficial da Organização Mundial da Saúde (em inglês)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019)
@@ -100,4 +100,4 @@ Importante lembrar que desde 27/03/2020 tem muitos testes sem resultados e que o
 
 - Siga o **Atila Iamarino** no [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w), [Instagram](www.instagram.com/oatila), [twitter](https://twitter.com/oatila) ou [telegram](https://t.me/corona_atila). Tem também um [fórum brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita informação.
 
-Dúvidas, contribuições e sugestões, poste uma *issue* [aqui](https://github.com/liibre/coronabr/issues), escreva-nos um [email](mailto:liibrelab@gmail.com) ou nos encontre no twitter ([Sara](https://twitter.com/mortarasara), [Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo](https://twitter.com/kguidonimartins)).
+Dúvidas, contribuições e sugestões, poste uma *issue* [aqui](https://github.com/liibre/coronabr/issues), escreva-nos um [e-mail](mailto:liibrelab@gmail.com) ou nos encontre no twitter ([Sara](https://twitter.com/mortarasara), [Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo](https://twitter.com/kguidonimartins)).
