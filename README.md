@@ -31,7 +31,7 @@ comparações entre regiões e países dependem de muitas variáveis.
 
 Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho
 em desenvolvimento. Para entender como contribuir, clique
-[aqui](https://liibre.github.io/coronabr/docs/CONTRIBUTING.html).
+[aqui](https://liibre.github.io/coronabr/CONTRIBUTING.html).
 
 ## Aviso\!
 
@@ -64,8 +64,8 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 ### Nota sobre os dados disponibilizados pelo Ministério da Saúde
 
-  - A partir de 14/03/20, a notificação de casos graves de COVID-19 foca
-    apenas nos casos graves que são atendidos nos hospitais.
+  - A partir de 2020-03-14, a notificação de casos graves de COVID-19
+    foca apenas nos casos graves que são atendidos nos hospitais.
   - Até 2020-03-18 o ministério de saúde brasileiro disponibilizou os
     dados de casos de coronavirus COVID-19 discriminados por estado na
     página
@@ -80,16 +80,22 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
   - A partir de 2020-03-26 o ministério de saúde brasileiro
     disponibilizou os dados de casos de coronavirus COVID-19 na página
     <https://covid.saude.gov.br/>
-  - A partir de 28-03-2020 a opção de fazer download da série histórica
-    por casos voltou a estar disponível. **Estamos implementando de novo
-    a função que disponibiliza esses dados**
+  - A partir de 2020-03-28 a opção de fazer download da série histórica
+    por casos voltou a estar disponível. Depois disso, o padrão vem
+    mudado diariamente, mas agora temos uma função estável
+    `get_corona_minsaude()` para o download desses dados (instruções de
+    como usar
+    [aqui](https://liibre.github.io/coronabr/articles/minsaude.html)).
 
 ## Visualizando os dados
 
-Importante lembrar que desde 27/03/2020 tem muitos testes sem resultados
+Importante lembrar que desde 2020-03-27 tem muitos testes sem resultados
 e que os dados não refletem a epidemia e sim as notificações - e que
-essas estão atrasadas devido ao atraso no resultado dos
-testes.
+essas estão atrasadas devido ao atraso no resultado dos testes.
+
+Entre [aqui](https://liibre.github.io/coronabr/articles/lac.html) para
+acompanhar os casos na América Latina (versão em espanhol
+[aqui](https://liibre.github.io/coronabr/articles/lac_es.html))
 
 ### Crescimento nacional no número de casos
 
@@ -156,7 +162,7 @@ testes.
 
 Dúvidas, contribuições e sugestões, poste uma *issue*
 [aqui](https://github.com/liibre/coronabr/issues), escreva-nos um
-[email](mailto:liibrelab@gmail.com) ou nos encontre no twitter
+[e-mail](mailto:liibrelab@gmail.com) ou nos encontre no twitter
 ([Sara](https://twitter.com/mortarasara),
 [Andrea](https://twitter.com/SanchezTapiaA) ou
 [Karlo](https://twitter.com/kguidonimartins)).
