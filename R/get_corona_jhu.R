@@ -9,6 +9,7 @@
 #' @importFrom janitor clean_names
 #' @importFrom fs dir_create
 #' @importFrom magrittr %>%
+#' @importFrom stats setNames
 #'
 #' @export
 #'
@@ -26,7 +27,7 @@ get_corona_jhu <- function(dir = "output",
 
   covid_data <-
     readr::read_csv(link) %>%
-    janitor::clean_names(dat = ., case = "snake")
+    setNames(tolower(gsub("_$", "", names(.))))
 
   fs::dir_create(dir)
 
