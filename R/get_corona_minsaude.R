@@ -43,9 +43,9 @@ get_corona_minsaude <- function(dir = "output",
   # res$date <- as.Date(
   #   paste(datas$year, datas$month, datas$day, sep = "-"))
   # res <- res %>% dplyr::select(-.data$data)
-  res$date <- lubridate::dmy(res$date)
+  res$date <- lubridate::dmy(res$data)
   # gravando metadados da requisicao
-  metadado <- data.frame(intervalo = paste(range(res$date), collapse = ";"),
+  metadado <- data.frame(intervalo = paste(range(res$data), collapse = ";"),
                          fonte = url,
                          acesso_em = Sys.Date())
   if (!is.null(uf)) {
