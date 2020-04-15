@@ -43,13 +43,13 @@ get_corona_minsaude <- function(dir = "output",
   # res$date <- as.Date(
   #   paste(datas$year, datas$month, datas$day, sep = "-"))
   # res <- res %>% dplyr::select(-.data$data)
-  res$date <- lubridate::dmy(res$data)
+  res$date <- lubridate::as_date(res$data)
   # gravando metadados da requisicao
   metadado <- data.frame(intervalo = paste(range(res$data), collapse = ";"),
                          fonte = url,
                          acesso_em = Sys.Date())
   if (!is.null(uf)) {
-    res <- res %>% dplyr::filter(.data$sigla %in% uf)
+    res <- res %>% dplyr::filter(.data$estado %in% uf)
   }
 
   message(paste0("salvando ", filename, ".csv em ", dir))
