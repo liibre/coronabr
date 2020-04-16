@@ -55,7 +55,7 @@ e predições devem ser feitas com todo cuidado, lembrando que a qualidade
 dos dados é incerta e que todo dado diz respeito a uma pessoa.
 
 No Brasil, a notificação de casos carrega consigo vieses espaciais,
-econômicos e de classe que não podem ser ignorados. Para uma modelos
+econômicos e de classe que não podem ser ignorados. Para ver modelos
 **responsáveis** de previsão do crescimento no número de casos veja o
 [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html)
 (um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão

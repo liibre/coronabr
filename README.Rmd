@@ -37,7 +37,7 @@ Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciên
 
 Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomendamos que toda análise que possa ser feita o seja. Ao se tratar de uma situação de saúde pública delicada, visualizações, extrapolações, e predições devem ser feitas com todo cuidado, lembrando que a qualidade dos dados é incerta e que todo dado diz respeito a uma pessoa. 
 
-No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para uma modelos **responsáveis** de previsão do crescimento no número de casos veja o [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html) (um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
+No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para ver modelos **responsáveis** de previsão do crescimento no número de casos veja o [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html) (um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 ### Nota sobre os dados disponibilizados pelo Ministério da Saúde
 

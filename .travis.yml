@@ -19,7 +19,6 @@ matrix:
   include:
   - r: devel
   - r: release
-    before_deploy: Rscript -e 'remotes::install_cran("pkgdown")'
     deploy:
       provider: pages
       skip_cleanup: true
