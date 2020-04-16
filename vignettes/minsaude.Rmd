@@ -48,7 +48,13 @@ unique(sprj$sigla)
 
 
 ```{r, fig.width= 6, fig.height=6}
-plot_corona_minsaude(df = sprj,
+plot_corona_minsaude(df = todos_estados,
+                     log = FALSE,
+                     tipo = "numero")
+```
+
+```{r, fig.width= 6, fig.height=6}
+plot_corona_minsaude(df = todos_estados,
                      log = T,
                      tipo = "numero")
 ```
