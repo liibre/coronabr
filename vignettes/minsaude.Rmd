@@ -9,7 +9,6 @@ vignette: >
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
-devtools::load_all()
 ```
 
 ## Para instalar o pacote
@@ -18,7 +17,7 @@ devtools::load_all()
 
 ## Carregando o pacote
 
-```{r load, eval = FALSE}
+```{r load, eval = TRUE}
 library(coronabr)
 ```
 
@@ -39,9 +38,9 @@ sprj <- get_corona_minsaude(uf = c("SP", "RJ"))
 ```{r data-br}
 head(todos_estados)
 head(rj)
-unique(rj$sigla)
+unique(rj$estado)
 head(sprj)
-unique(sprj$sigla)
+unique(sprj$estado)
 ```
 
 ### Plotando os dados de Minsaúde

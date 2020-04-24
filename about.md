@@ -10,7 +10,7 @@ Bióloga interessada em padrões gerais de diversidade, informática da biodiver
 
 ### Andrea Sánchez-Tapia [![alt text][1.1]][3] [![alt text][2.1]][4]
 
-Bióloga colombiana formada no Brasil, interessada em ciência aberta, responsável e reprodutível. Pesquisadora pós-doutoral do Núcleo de Computação Científica do [Jardim Botânico do Rio de Janeiro](http://dipeq.jbrj.gov.br/).
+Bióloga pela Universidad Nacional de Colombia, com mestrado e doutorado no Brasil (UFRJ-JBRJ). Interessada em ciência aberta, responsável e reprodutível. Pesquisadora pós-doutoral do Núcleo de Computação Científica do [Jardim Botânico do Rio de Janeiro](http://dipeq.jbrj.gov.br/).
 
 ### Karlo Guidoni Martins [![alt text][1.1]][5] [![alt text][2.1]][6]
 
