@@ -12,7 +12,7 @@ download e visualizar os dados dos casos diários de coronavírus
 
   - [Ministério da
     Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil);
-  - [Brasil em dados libertos](https://brasil.io/dataset/covid19/caso);
+  - [O Brasil em dados libertos](https://brasil.io/dataset/covid19/caso);
   - [Johns Hopkins
     University](https://github.com/CSSEGISandData/COVID-19)
 
@@ -44,7 +44,7 @@ refletem a epidemia em si.
 
 Antes de mais nada, declaramos nossa postura alinhada com as ideias de
 uma ciência de dados responsável, compromissada e feminista. Somos
-alinhadxs com o [manifest-no](https://www.manifestno.com/), refutamos
+alinhados com o [manifest-no](https://www.manifestno.com/), refutamos
 regimes de dados prejudiciais e nos comprometemos a novos futuros de
 dados.
 
@@ -58,7 +58,7 @@ No Brasil, a notificação de casos carrega consigo vieses espaciais,
 econômicos e de classe que não podem ser ignorados. Para ver modelos
 **responsáveis** de previsão do crescimento no número de casos veja o
 [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html)
-(um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão
+(um grupo colaborativo de cientistas brasileiros) e o [Mapa de previsão
 da propagação da COVID-19 por contágio comunitário no
 Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
@@ -67,18 +67,18 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
   - A partir de 2020-03-14, a notificação de casos graves de COVID-19
     foca apenas nos casos graves que são atendidos nos hospitais.
   - Até 2020-03-18 o ministério de saúde brasileiro disponibilizou os
-    dados de casos de coronavirus COVID-19 discriminados por estado na
+    dados de casos de coronavírus COVID-19 discriminados por estado na
     página
     <http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil>
   - Entre 2020-03-18 e 2020-03-25, a página original do Ministério da
-    Saúde parou de funcionar e os dados de casos de coronavirus
+    Saúde parou de funcionar e os dados de casos de coronavírus
     COVID-19 discriminados por estado foram divulgados em apresentações
     de powerpoint e PDFs no blog do Ministério. [Adriano
     Belisario](https://www.twitter.com/belisards) fez a compilação
     manual destes dados [neste
     repositório](https://github.com/belisards/coronabr)
   - A partir de 2020-03-26 o ministério de saúde brasileiro
-    disponibilizou os dados de casos de coronavirus COVID-19 na página
+    disponibilizou os dados de casos de coronavírus COVID-19 na página
     <https://covid.saude.gov.br/>
   - A partir de 2020-03-28 a opção de fazer download da série histórica
     por casos voltou a estar disponível. Depois disso, o padrão vem
