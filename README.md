@@ -10,11 +10,9 @@ Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis
 download e visualizar os dados dos casos diários de coronavírus
 (COVID-19) disponibilizados por diferentes fontes:
 
-  - [Ministério da
-    Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil);
+  - [Ministério da Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil);
   - [O Brasil em dados libertos](https://brasil.io/dataset/covid19/caso);
-  - [Johns Hopkins
-    University](https://github.com/CSSEGISandData/COVID-19)
+  - [Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19)
 
 ## Nosso objetivo
 
@@ -44,7 +42,7 @@ refletem a epidemia em si.
 
 Antes de mais nada, declaramos nossa postura alinhada com as ideias de
 uma ciência de dados responsável, compromissada e feminista. Somos
-alinhados com o [manifest-no](https://www.manifestno.com/), refutamos
+alinhadxs com o [manifest-no](https://www.manifestno.com/), refutamos
 regimes de dados prejudiciais e nos comprometemos a novos futuros de
 dados.
 
@@ -58,7 +56,7 @@ No Brasil, a notificação de casos carrega consigo vieses espaciais,
 econômicos e de classe que não podem ser ignorados. Para ver modelos
 **responsáveis** de previsão do crescimento no número de casos veja o
 [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html)
-(um grupo colaborativo de cientistas brasileiros) e o [Mapa de previsão
+(um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão
 da propagação da COVID-19 por contágio comunitário no
 Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
