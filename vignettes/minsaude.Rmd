@@ -1,5 +1,5 @@
 ---
-title: "Download dos casos de COVID-19 no Brasil - Minsaúde"
+title: "Download dos casos de COVID-19 no Brasil - Ministério da Saúde"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{minsaude}
@@ -11,15 +11,20 @@ vignette: >
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 ```
 
+
 ## Para instalar o pacote
 
+```{r install, eval = FALSE}
 `remotes::install_github("liibre/coronabr")`
+```
+
 
 ## Carregando o pacote
 
 ```{r load, eval = TRUE}
-library(coronabr)
+library("coronabr")
 ```
+
 
 ### Baixando os dados oficiais do ministério da saúde
 
@@ -27,11 +32,12 @@ Aqui está o exemplo usando a função `get_corona_minsaude()` que extrai os dad
 
 Os dados podem ser procurados para todos os estados, ou para só um, ou para vários, usando o parâmetro uf e o código de duas letras de cada estado (ex. "PI")
 
-```{r get-br, error=TRUE}
+```{r get-br, error = TRUE}
 todos_estados <- get_corona_minsaude()
 rj <- get_corona_minsaude(uf = "RJ")
 sprj <- get_corona_minsaude(uf = c("SP", "RJ"))
 ```
+
 
 ### Inspecionando os dados
 
@@ -43,18 +49,14 @@ head(sprj)
 unique(sprj$estado)
 ```
 
-### Plotando os dados de Minsaúde
 
+### Plotando os dados do Ministério da Saúde do Brasil
 
-```{r, fig.width= 6, fig.height=6}
-plot_corona_minsaude(df = todos_estados,
-                     log = FALSE,
-                     tipo = "numero")
+```{r, fig.width= 6, fig.height = 6}
+plot_corona_minsaude(df = todos_estados, log = FALSE, tipo = "numero")
 ```
 
-```{r, fig.width= 6, fig.height=6}
-plot_corona_minsaude(df = todos_estados,
-                     log = T,
-                     tipo = "numero")
+```{r, fig.width= 6, fig.height = 6}
+plot_corona_minsaude(df = todos_estados, log = TRUE, tipo = "numero")
 ```
 
