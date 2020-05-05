@@ -1,5 +1,5 @@
 ---
-title: "Visualização dos casos registrados de COVID-19 no Brasil"
+title: "Visualização dos casos de COVID-19 registrados no Brasil"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{figs}
@@ -17,59 +17,65 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
 
 
 ```{r pkgs}
-library(coronabr)
+library("coronabr")
 ```
 
 
-## Crescimento nacional no número de casos
+## Crescimento no número de casos
 
 ```{r get}
 dados <- get_corona_br(by_uf = TRUE)
-#dados_jhu <- get_corona_jhu()
 ```
 
 
 ```{r fig-casos, fig.width=6}
-plot_corona_br(df = dados, log = FALSE)
+# Aumento cumulativo no número de casos
+plot_corona_br(df = dados, log = FALSE, tipo = "numero")
 ```
 
-
-## Entendendo o aumento diário
 
 ```{r fig-perc, fig.width=6}
-plot_corona_br(df = dados, tipo = "aumento")
+# Aumento diário no número de casos
+plot_corona_br(df = dados, log = FALSE, tipo = "aumento")
 ```
 
-## Número de casos por estado brasileiro
+
+## Número de casos por unidade federativa (estado)
 
 
-Um mapa com os dados do número de casos a cada 100.000 habitantes
+```{r prep1,}
+# primeiro, completar as datas faltantes com valores anteriores para permitir gerar o gráfico
+dados_formatados <- format_corona_br(dados)
+```
+
 
 ```{r mapa1, fig.height=3, fig.width=3}
-dados_format <- format_corona_br(dados)
-map_corona_br(df = dados_format)
+# Um mapa com os dados do número de casos a cada 100.000 habitantes
+map_corona_br(df = dados_formatados)
 ```
 
-Um mapa com o valor bruto no número de casos
 
 ```{r mapa2, fig.height=3, fig.width=3}
-map_corona_br(df = dados_format, 
-              prop_pop = FALSE)
+# Um mapa com o valor bruto do número de casos
+map_corona_br(df = dados_formatados, prop_pop = FALSE)
 ```
 
-## Crescimento do número de casos nos estados mais afetados
+
+## Crescimento no número de casos nos estados mais afetados
 
 ```{r estados, fig.width=6}
-plot_uf(df = dados_format)
+plot_uf(df = dados_formatados)
 ```
 
-## Evolução do número de casos por estado
+
+## Evolução diária no número de casos por estado
 
 ```{r anim_test, fig.show = "animate"}
-anim <- map_corona_br(df = dados_format,
-                      anim = TRUE, 
-                      dir = "figs")
+anim <- map_corona_br(df = dados_formatados, anim = TRUE, dir = "figs")
 ```
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
 
+## Nota
+
+O programa ImageMagick deve estar instalado no computador para que a função acima `map_corona_br()` seja efetuada.
