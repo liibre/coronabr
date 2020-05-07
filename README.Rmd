@@ -11,9 +11,9 @@ output: github_document
 
 __coronabr__ é um pacote de [R](https://www.r-project.org/) para fazer download e visualizar os dados dos casos diários de coronavírus (COVID-19) disponibilizados por diferentes fontes:
 
-- [Ministério da Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil)
+- [Ministério da Saúde do Brasil](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil)
 
-- [Brasil em dados libertos](https://brasil.io/dataset/covid19/caso)
+- Grupo colaborativo [O Brasil em dados libertos](https://brasil.io/dataset/covid19/caso)
 
 - [Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19)
 
@@ -31,7 +31,7 @@ Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em de
 
 ## Aviso!
 
-Os dados são referentes aos casos notificados. É sabido que neste momento há um acúmulo de testes para COVID-19 sem resultados. Assim, mais do que nunca, os números que vemos são das **notificações** e não refletem a epidemia em si.
+Os dados são referentes aos casos notificados. É sabido que neste momento há um acúmulo de testes para COVID-19 sem resultados. Assim, mais do que nunca, os números que vemos são das __notificações__ e não refletem a epidemia em si.
 
 
 ## Sobre os dados
@@ -40,7 +40,7 @@ Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciên
 
 Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomendamos que toda análise que possa ser feita o seja. Ao se tratar de uma situação de saúde pública delicada, visualizações, extrapolações, e predições devem ser feitas com todo cuidado, lembrando que a qualidade dos dados é incerta e que todo dado diz respeito a uma pessoa.
 
-No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para ver modelos **responsáveis** de previsão do crescimento no número de casos veja o [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html) (um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
+No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para ver modelos __responsáveis__ de previsão do crescimento no número de casos veja o [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html) (um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 
 ### Nota sobre os dados disponibilizados pelo Ministério da Saúde
@@ -106,13 +106,13 @@ Entre [aqui](https://liibre.github.io/coronabr/articles/lac.html) para acompanha
 
 - [Tira dúvidas do Instituto Butantan](http://coronavirus.butantan.gov.br/)
 
-- [Banco de dados aberto COVID-19 (em inglês)](https://pages.semanticscholar.org/coronavirus-research])
+- [Banco de dados aberto COVID-19 (em inglês)](https://pages.semanticscholar.org/coronavirus-research)
 
 - [Atualização mundial do número de casos](https://www.worldometers.info/coronavirus/)
 
 - [Dez considerações antes de criar mais um gráfico sobre o COVID-19 (em inglês)](https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8)
 
-- Siga o **Atila Iamarino** no [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w), [Instagram](www.instagram.com/oatila), [twitter](https://twitter.com/oatila) ou [telegram](https://t.me/corona_atila). Tem também um [fórum brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita informação.
+- Siga o __Atila Iamarino__ no [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w), [Instagram](www.instagram.com/oatila), [twitter](https://twitter.com/oatila) ou [telegram](https://t.me/corona_atila). Tem também um [fórum brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita informação
 
 ## Dúvidas, contribuições e sugestões?
 Poste uma *issue* [aqui](https://github.com/liibre/coronabr/issues), escreva-nos um [e-mail](mailto:liibrelab@gmail.com) ou nos encontre no twitter ([Sara](https://twitter.com/mortarasara), [Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo](https://twitter.com/kguidonimartins)).
