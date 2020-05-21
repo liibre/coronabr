@@ -14,6 +14,7 @@
 #' @importFrom magrittr %>%
 #' @importFrom plyr .
 #' @importFrom lubridate as_date
+#' @importFrom readxl read_excel
 #'
 #' @export
 #'
@@ -31,9 +32,17 @@ get_corona_minsaude <- function(dir = "output",
     '[['(1) %>%
     '[['("arquivo") %>%
     '[['("url")
+
+  tmp_data <- file.path(tempdir(), "temporary_data.xlsx")
+
+  utils::download.file(url, tmp_data)
+
+  res <- readxl::read_excel(path = tmp_data, guess_max = 10e6) %>%
+    dplyr::mutate_at(dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))), ~ as.numeric(.))
+
   #url <- "https://covid.saude.gov.br"
   #date <- format(Sys.Date(), "%Y%m%d")
-  res <- utils::read.csv2(url, stringsAsFactors = FALSE, fileEncoding = "latin1")
+  # res <- utils::read.csv2(url, stringsAsFactors = FALSE, fileEncoding = "latin1")
   #datas boas
   #dplyr::mutate(date = lubridate::as_date(as.character(.data$data),
      #                                       tz = "America/Sao_Paulo")
