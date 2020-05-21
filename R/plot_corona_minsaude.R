@@ -15,7 +15,7 @@ plot_corona_minsaude <- function(df,
                                  log = TRUE,
                                  tipo = "numero") {
   # definindo data_max para plotar apenas atualizacoes completas
-  datas <- plyr::count(df$date[df$casosAcumulados > 0 & !is.na(df$estado)])
+  datas <- plyr::count(df$date[df$casosAcumulado > 0 & !is.na(df$estado)])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
     data_max <- max(datas$x, na.rm = TRUE) - 1
@@ -28,17 +28,17 @@ plot_corona_minsaude <- function(df,
   legenda <- "fonte: https://covid.saude.gov.br"
   df <- df %>%
     dplyr::group_by(., .data$date) %>%
-    dplyr::summarise_at(dplyr::vars(.data$casosAcumulados, .data$obitosAcumulados),
+    dplyr::summarise_at(dplyr::vars(.data$casosAcumulado, .data$obitosAcumulado),
                         .funs = sum, na.rm = TRUE) %>%
     dplyr::filter(., .data$date <= data_max)
   # tipo = numero
   if (tipo == "numero") {
     if (log == TRUE) {
-      df <- df %>% dplyr::mutate(casosAcumulados = log(.data$casosAcumulados))
+      df <- df %>% dplyr::mutate(casosAcumulado = log(.data$casosAcumulado))
       ylab <- paste(ylab, "(log)")
     }
     p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$date,
-                                          y = .data$casosAcumulados,
+                                          y = .data$casosAcumulado,
                                           color = "red")) +
       ggplot2::geom_line(alpha = .7) +
       ggplot2::geom_point(size = 2) +
@@ -53,7 +53,7 @@ plot_corona_minsaude <- function(df,
                      legend.position = "none")
   }
   if (tipo == "aumento") {
-    df$delta_cases <- df$casosAcumulados - dplyr::lag(df$casosAcumulados)
+    df$delta_cases <- df$casosAcumulado - dplyr::lag(df$casosAcumulado)
     # O.o tem valores negativos! por enquanto, deixei 0 nao bate com min saude
     df$delta_cases <- ifelse(df$delta_cases < 0 , 0, df$delta_cases)
     #df$diff_perc <- round(df$delta_cases/df$confirmed, 3) * 100
