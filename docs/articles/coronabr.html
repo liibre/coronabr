@@ -97,7 +97,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="coronabr_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil</h1>
@@ -113,7 +113,7 @@
 <div id="para-instalar-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#para-instalar-o-pacote" class="anchor"></a>Para instalar o pacote</h2>
-<p><code><a href="https://rdrr.io/pkg/remotes/man/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
+<p><code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
 </div>
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
@@ -129,26 +129,26 @@
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-04-23    AL           state       324     22    True
-## 2 2020-04-23    AM           state      2888    234    True
-## 3 2020-04-23    AP           state       555     16    True
-## 4 2020-04-23    BA           state      1845     62    True
-## 5 2020-04-23    CE           state      4702    271    True
-## 6 2020-04-23    DF           state       968     26    True
+## 1 2020-05-20    AL           state      4437    251    True
+## 2 2020-05-20    AM           state     23704   1561    True
+## 3 2020-05-20    AP           state      4549    142    True
+## 4 2020-05-20    DF           state      5271     78    True
+## 5 2020-05-20    ES           state      8495    346    True
+## 6 2020-05-20    GO           state      2049     78    True
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                   3337357             27                        9.70828
-## 2                   4144597             13                       69.68108
-## 3                    845731             16                       65.62370
-## 4                  14873064             29                       12.40498
-## 5                   9132078             23                       51.48883
-## 6                   3015268             53                       32.10328
+## 1                   3337357             27                      132.94952
+## 2                   4144597             13                      571.92533
+## 3                    845731             16                      537.87788
+## 4                   3015268             53                      174.81033
+## 5                   4018650             32                      211.38940
+## 6                   7018354             52                       29.19488
 ##   death_rate
-## 1     0.0679
-## 2     0.0810
-## 3     0.0288
-## 4     0.0336
-## 5     0.0576
-## 6     0.0269</code></pre>
+## 1     0.0566
+## 2     0.0659
+## 3     0.0312
+## 4     0.0148
+## 5     0.0407
+## 6     0.0381</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -180,12 +180,12 @@
 <pre><code>## # A tibble: 6 x 12
 ##    fips admin2 province_state country_region last_update   lat   long confirmed
 ##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-04-22…  34.2  -82.5        22
-## 2 22001 Acadia Louisiana      US             2020-04-22…  30.3  -92.4       117
-## 3 51001 Accom… Virginia       US             2020-04-22…  37.8  -75.6        59
-## 4 16001 Ada    Idaho          US             2020-04-22…  43.5 -116.        622
-## 5 19001 Adair  Iowa           US             2020-04-22…  41.3  -94.5         1
-## 6 21001 Adair  Kentucky       US             2020-04-22…  37.1  -85.3        60
+## 1 45001 Abbev… South Carolina US             2020-05-21…  34.2  -82.5        36
+## 2 22001 Acadia Louisiana      US             2020-05-21…  30.3  -92.4       262
+## 3 51001 Accom… Virginia       US             2020-05-21…  37.8  -75.6       709
+## 4 16001 Ada    Idaho          US             2020-05-21…  43.5 -116.        792
+## 5 19001 Adair  Iowa           US             2020-05-21…  41.3  -94.5         6
+## 6 21001 Adair  Kentucky       US             2020-05-21…  37.1  -85.3        94
 ## # … with 4 more variables: deaths &lt;dbl&gt;, recovered &lt;dbl&gt;, active &lt;dbl&gt;,
 ## #   combined_key &lt;chr&gt;</code></pre>
 </div>
@@ -208,7 +208,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

@@ -97,7 +97,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="minsaude_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil - Minsaúde</h1>
@@ -113,7 +113,7 @@
 <div id="para-instalar-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#para-instalar-o-pacote" class="anchor"></a>Para instalar o pacote</h2>
-<p><code><a href="https://rdrr.io/pkg/remotes/man/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
+<p><code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
 </div>
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
@@ -135,52 +135,46 @@
 <h3 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h3>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">todos_estados</span>)</pre></body></html></div>
-<pre><code>##   regiao estado       data casosNovos casosAcumulados obitosNovos
-## 1  Norte     RO 2020-01-30          0               0           0
-## 2  Norte     RO 2020-01-31          0               0           0
-## 3  Norte     RO 2020-02-01          0               0           0
-## 4  Norte     RO 2020-02-02          0               0           0
-## 5  Norte     RO 2020-02-03          0               0           0
-## 6  Norte     RO 2020-02-04          0               0           0
-##   obitosAcumulados       date
-## 1                0 2020-01-30
-## 2                0 2020-01-31
-## 3                0 2020-02-01
-## 4                0 2020-02-02
-## 5                0 2020-02-03
-## 6                0 2020-02-04</code></pre>
+<pre><code>## # A tibble: 6 x 15
+##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data 
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;
+## 1 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 2 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 3 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 4 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 5 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 6 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## # … with 7 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
+## #   casosAcumulado &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
+## #   emAcompanhamentoNovos &lt;dbl&gt;, date &lt;date&gt;</code></pre>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">rj</span>)</pre></body></html></div>
-<pre><code>##    regiao estado       data casosNovos casosAcumulados obitosNovos
-## 1 Sudeste     RJ 2020-01-30          0               0           0
-## 2 Sudeste     RJ 2020-01-31          0               0           0
-## 3 Sudeste     RJ 2020-02-01          0               0           0
-## 4 Sudeste     RJ 2020-02-02          0               0           0
-## 5 Sudeste     RJ 2020-02-03          0               0           0
-## 6 Sudeste     RJ 2020-02-04          0               0           0
-##   obitosAcumulados       date
-## 1                0 2020-01-30
-## 2                0 2020-01-31
-## 3                0 2020-02-01
-## 4                0 2020-02-02
-## 5                0 2020-02-03
-## 6                0 2020-02-04</code></pre>
+<pre><code>## # A tibble: 6 x 15
+##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data 
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;
+## 1 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 2 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 3 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 4 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 5 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 6 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## # … with 7 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
+## #   casosAcumulado &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
+## #   emAcompanhamentoNovos &lt;dbl&gt;, date &lt;date&gt;</code></pre>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">rj</span>$<span class="no">estado</span>)</pre></body></html></div>
 <pre><code>## [1] "RJ"</code></pre>
 <div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">sprj</span>)</pre></body></html></div>
-<pre><code>##    regiao estado       data casosNovos casosAcumulados obitosNovos
-## 1 Sudeste     RJ 2020-01-30          0               0           0
-## 2 Sudeste     RJ 2020-01-31          0               0           0
-## 3 Sudeste     RJ 2020-02-01          0               0           0
-## 4 Sudeste     RJ 2020-02-02          0               0           0
-## 5 Sudeste     RJ 2020-02-03          0               0           0
-## 6 Sudeste     RJ 2020-02-04          0               0           0
-##   obitosAcumulados       date
-## 1                0 2020-01-30
-## 2                0 2020-01-31
-## 3                0 2020-02-01
-## 4                0 2020-02-02
-## 5                0 2020-02-03
-## 6                0 2020-02-04</code></pre>
+<pre><code>## # A tibble: 6 x 15
+##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data 
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;
+## 1 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 2 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 3 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 4 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 5 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## 6 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
+## # … with 7 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
+## #   casosAcumulado &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
+## #   emAcompanhamentoNovos &lt;dbl&gt;, date &lt;date&gt;</code></pre>
 <div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">sprj</span>$<span class="no">estado</span>)</pre></body></html></div>
 <pre><code>## [1] "RJ" "SP"</code></pre>
 </div>
@@ -214,7 +208,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
