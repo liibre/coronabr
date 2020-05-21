@@ -11,4 +11,5 @@ contributing.md
 about.md
 README.Rmd
 Makefile
+dev.mk
 .travis.yml
