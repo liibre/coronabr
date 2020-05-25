@@ -104,17 +104,20 @@ acompanhar os casos na América Latina (versão em espanhol
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
-### Número de casos por estado brasileiro
-
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
-
 ### Crescimento do número de casos nos estados mais afetados
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
 
+<!---
+### Número de casos por estado brasileiro
+
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
+
 ### Evolução do número de casos por estado
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+
+-->
 
 ## Para saber mais:
 

@@ -69,17 +69,20 @@ Entre [aqui](https://liibre.github.io/coronabr/articles/lac.html) para acompanha
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
-### Número de casos por estado brasileiro
-
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
-
 ### Crescimento do número de casos nos estados mais afetados
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
 
+<!---
+### Número de casos por estado brasileiro
+
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
+
 ### Evolução do número de casos por estado
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+
+-->
 
 ## Para saber mais:
 
@@ -107,4 +110,4 @@ Entre [aqui](https://liibre.github.io/coronabr/articles/lac.html) para acompanha
 
 - Siga o **Atila Iamarino** no [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w), [Instagram](www.instagram.com/oatila), [twitter](https://twitter.com/oatila) ou [telegram](https://t.me/corona_atila). Tem também um [fórum brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita informação.
 
-Dúvidas, contribuições e sugestões, poste uma *issue* [aqui](https://github.com/liibre/coronabr/issues), escreva-nos um [e-mail](mailto:liibrelab@gmail.com) ou nos encontre no twitter ([Sara](https://twitter.com/mortarasara), [Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo](https://twitter.com/kguidonimartins)).
+Dúvidas, contribuições e sugestões, poste um *issue* [aqui](https://github.com/liibre/coronabr/issues), escreva-nos um [e-mail](mailto:liibrelab@gmail.com) ou nos encontre no twitter ([Sara](https://twitter.com/mortarasara), [Andrea](https://twitter.com/SanchezTapiaA) ou [Karlo](https://twitter.com/kguidonimartins)).
