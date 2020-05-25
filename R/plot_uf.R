@@ -4,15 +4,12 @@
 #' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = mortes` para o gráfico com o número de mortes
 #' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
 #' @param n Inteiro. Número mínimo de casos para comparação entre estados
-#' @param anim Lógico. Retornar animação com evolução do número de casos ao longo do tempo. Padrão anim = FALSE
 #' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
 
 #' @importFrom dplyr filter mutate
 #' @importFrom stats reorder setNames
 #' @import ggplot2
 #' @importFrom rlang .data
-#' @importFrom gganimate transition_reveal anim_save
-#' @import gifski
 #'
 #' @return objeto ggplot
 #'
@@ -27,8 +24,7 @@
 plot_uf <- function(df,
                     prop_pop = TRUE,
                     tipo = "casos",
-                    n = 100,
-                    anim = FALSE,
+                    n = 1500,
                     dir = "figs") {
   # definindo data_max para plotar apenas atualizacoes completas
   datas <-
@@ -75,13 +71,13 @@ plot_uf <- function(df,
   if (tipo == "casos") {
     state_plot <- state_plot
 
-    anim_plot <- state_plot %+%
-      gganimate::transition_reveal(.data$date) +
-      geom_segment(aes(xend = max(.data$date), yend = .data$confirmed), linetype = 2) +
-      geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
-      coord_cartesian(clip = "off")
-
-    file_name <- "anim_plot_uf_casos"
+    # anim_plot <- state_plot %+%
+    #   gganimate::transition_reveal(.data$date) +
+    #   geom_segment(aes(xend = max(.data$date), yend = .data$confirmed), linetype = 2) +
+    #   geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
+    #   coord_cartesian(clip = "off")
+    #
+    # file_name <- "anim_plot_uf_casos"
 
   }
   if (tipo == "mortes") {
@@ -89,31 +85,31 @@ plot_uf <- function(df,
       aes(x = date, y = .data$deaths, colour = reorder(.data$state, -.data$deaths)) +
       labs(y = paste0("N", "\u00fa", "meros de mortes confirmadas"),
            x = "Data")
-    # só gera o plot
-    anim_plot <- state_plot %+%
-      gganimate::transition_reveal(.data$date) +
-      geom_segment(aes(xend = max(.data$date), yend = .data$deaths), linetype = 2) +
-      geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
-      coord_cartesian(clip = "off")
-
-    file_name <- "anim_plot_uf_mortes"
-
-  }
-
-  if (anim == TRUE) {
-
-    if (!dir.exists(dir)) {
-      dir.create(dir)
-    }
-
-    message(paste0("Salvando anim na pasta ", dir, "/ ..."))
-
-    gganimate::anim_save(
-      filename = paste0(dir, "/", file_name, ".gif"),
-      animation = anim_plot
-    )
+    # # só gera o plot
+    # anim_plot <- state_plot %+%
+    #   gganimate::transition_reveal(.data$date) +
+    #   geom_segment(aes(xend = max(.data$date), yend = .data$deaths), linetype = 2) +
+    #   geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
+    #   coord_cartesian(clip = "off")
+    #
+    # file_name <- "anim_plot_uf_mortes"
 
   }
+
+  # if (anim == TRUE) {
+  #
+  #   if (!dir.exists(dir)) {
+  #     dir.create(dir)
+  #   }
+  #
+  #   message(paste0("Salvando anim na pasta ", dir, "/ ..."))
+  #
+  #   gganimate::anim_save(
+  #     filename = paste0(dir, "/", file_name, ".gif"),
+  #     animation = anim_plot
+  #   )
+  #
+  # }
 
   print(state_plot)
 
