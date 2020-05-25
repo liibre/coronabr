@@ -13,10 +13,11 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       comment = FALSE, 
                       fig.width = 5, 
                       fig.height = 5)
+devtools::load_all()
 ```
 
 
-```{r pkgs}
+```{r pkgns, eval = FALSE}
 library(coronabr)
 ```
 

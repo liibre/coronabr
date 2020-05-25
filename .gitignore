@@ -6,5 +6,7 @@
 # dirs e arquivos
 script_corona.R
 teste.R
+# outputs das vinhetas
+vignettes/output/
 
 

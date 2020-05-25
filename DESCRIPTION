@@ -25,12 +25,9 @@ Remotes:
     r-spatial/lwgeom,
     rpradosiqueira/brazilmaps
 Imports:
-    brazilmaps,
     dplyr,
     fs,
     ggplot2,
-    gganimate,
-    gifski,
     glue,
     httr,
     janitor,
@@ -45,13 +42,11 @@ Imports:
     sf,
     stringr,
     tidyr,
-    tmap,
     readxl,
     webshot,
     xml2
 Suggests: 
     devtools,
-    knitr,
-    rgdal
+    knitr
 VignetteBuilder: 
     knitr
