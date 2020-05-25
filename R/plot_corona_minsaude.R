@@ -46,8 +46,8 @@ plot_corona_minsaude <- function(df,
                     y = ylab,
                     title = "Casos confirmados de COVID-19 no Brasil",
                     caption = legenda) +
-      ggplot2::scale_x_date(date_breaks = "1 day",
-                            date_labels = "%d/%m") +
+      ggplot2::scale_x_date(date_breaks = "15 day",
+                            date_labels = "%d/%b") +
       ggplot2::theme_minimal() +
       ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90),
                      legend.position = "none")
