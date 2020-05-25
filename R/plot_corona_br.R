@@ -47,9 +47,9 @@ plot_corona_br <- function(df,
                     title = "Casos confirmados de COVID-19 no Brasil",
                     caption = legenda) +
       ggplot2::scale_x_date(date_breaks = "15 day",
-                            date_labels = "%b/%y") +
+                            date_labels = "%d/%b") +
       ggplot2::theme_minimal() +
-      ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90),
+      ggplot2::theme(#axis.text.x = ggplot2::element_text(angle = 90),
                      legend.position = "none")
   }
   if (tipo == "aumento") {
