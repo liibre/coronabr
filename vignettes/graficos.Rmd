@@ -47,12 +47,12 @@ Um mapa com os dados do número de casos a cada 100.000 habitantes
 
 ```{r mapa1, fig.height=3, fig.width=3}
 dados_format <- format_corona_br(dados)
-map_corona_br(df = dados_format)
 ```
 
 Um mapa com o valor bruto no número de casos
 
-```{r mapa2, fig.height=3, fig.width=3}
+```{r mapa2, fig.height=3, fig.width=3, echo = FALSE, eval = FALSE}
+map_corona_br(df = dados_format)
 map_corona_br(df = dados_format, 
               prop_pop = FALSE)
 ```
@@ -65,7 +65,7 @@ plot_uf(df = dados_format)
 
 ## Evolução do número de casos por estado
 
-```{r anim_test, fig.show = "animate"}
+```{r anim_test, fig.show = "animate", echo = FALSE, eval = FALSE}
 anim <- map_corona_br(df = dados_format,
                       anim = TRUE, 
                       dir = "figs")
