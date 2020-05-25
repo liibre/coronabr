@@ -30,10 +30,6 @@ matrix:
 after_success:
   - Rscript -e 'devtools::install()'
 
-r_github_packages:
-  - r-spatial/lwgeom
-  - rpradosiqueira/brazilmaps
-
 r_packages:
   - brazilmaps
   - dplyr
