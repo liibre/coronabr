@@ -31,7 +31,6 @@ after_success:
   - Rscript -e 'devtools::install()'
 
 r_packages:
-  - brazilmaps
   - dplyr
   - plyr
   - fs
