@@ -19,17 +19,24 @@ __coronabr__ é um pacote de [R](https://www.r-project.org/) para fazer download
 
 ## Nosso objetivo
 
-O nosso objetivo é facilitar o acesso aos dados de diferentes fontes, usando ferramentas de acesso aberto e que permitam reprodutibilidade.
+O nosso objetivo é facilitar o acesso aos dados de diferentes fontes,
+usando ferramentas de acesso aberto e que permitam reprodutibilidade.
 
-O código é aberto. Entre em [como usar](https://liibre.github.io/coronabr/articles/coronabr.html) para um exemplo de como utilizar o pacote. Compartilhe. 
+O código é aberto. Entre em [como
+usar](https://liibre.github.io/coronabr/articles/coronabr.html) para um
+exemplo de como utilizar o pacote. Compartilhe.
 
-Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.
+Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho
+em desenvolvimento. Para entender como contribuir, clique
+[aqui](https://liibre.github.io/coronabr/CONTRIBUTING.html).
 
-Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Para entender como contribuir, clique [aqui](https://liibre.github.io/coronabr/CONTRIBUTING.html).
+## Aviso\!
 
-## Aviso!
+Disponibilizamos aqui atualizações dos gráficos. Sabemos que
+deve haver maneiras responsáveis de apresentar estes dados e que as
+comparações entre regiões e países dependem de muitas variáveis.
 
-Os dados são referentes aos casos notificados. É sabido que neste momento há um acúmulo de testes para COVID-19 sem resultados. Assim, mais do que nunca, os números que vemos são das **notificações** e não refletem a epidemia em si. 
+Os dados são referentes aos casos notificados. É sabido que temos subnotificação e atraso nas notificações. Assim, mais do que nunca, não refletem a epidemia em si.
 
 ## Sobre os dados
 
