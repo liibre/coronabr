@@ -1,18 +1,19 @@
-#' Mapa do número de casos por estado com os dados do Brasil.io
-#'
-#' Esta função faz o mapa do número de casos por estado brasileiro.
-#'
-#' @param df Data frame formatado com a função `format_corona_br()`
-#' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
-#' @param anim Lógico. Retornar animação com evolução do número de casos ao longo do tempo. Padrão anim = FALSE
-#' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
-#'
-#' @export
-#'
-#' @importFrom brazilmaps get_brmap
-#' @importFrom sf st_as_sf
-#' @importFrom rlang .data
+---
+title: "Mapa de COVID-19 no Brasil"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mapas}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Fazendo um mapa a partir dos dados do Brasil.io
+
+```{r}
 map_corona_br <- function(df,
                           prop_pop = TRUE,
                           anim = FALSE,
@@ -75,3 +76,6 @@ map_corona_br <- function(df,
   }
   mapa
 }
+```
+
+
