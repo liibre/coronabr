@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       warning = FALSE, results = TRUE, 
                       comment = FALSE, 
                       fig.width = 5, 
-                      fig.height = 5)
+                      fig.height = 5, eval = FALSE)
 devtools::load_all()
 ```
 
