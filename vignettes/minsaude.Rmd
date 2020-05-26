@@ -54,7 +54,7 @@ plot_corona_minsaude(df = todos_estados,
 
 ```{r, fig.width= 6, fig.height=6}
 plot_corona_minsaude(df = todos_estados,
-                     log = T,
+                     log = TRUE,
                      tipo = "numero")
 ```
 
