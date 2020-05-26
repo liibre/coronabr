@@ -41,24 +41,14 @@ plot_corona_br(df = dados, log = FALSE)
 plot_corona_br(df = dados, tipo = "aumento")
 ```
 
-## Número de casos por estado brasileiro
+## Casos por estado brasileiro
 
-
-Um mapa com os dados do número de casos a cada 100.000 habitantes
+Para fazer o gráfico por estados, precisamos antes formatar os dados. 
 
 ```{r mapa1, fig.height=3, fig.width=3}
 dados_format <- format_corona_br(dados)
 ```
 
-
-```{r mapa2, fig.height=3, fig.width=3, echo = FALSE, eval = FALSE}
-#Um mapa com o valor bruto no número de casos
-map_corona_br(df = dados_format)
-map_corona_br(df = dados_format, 
-              prop_pop = FALSE)
-```
-
-## Crescimento do número de casos nos estados mais afetados
 
 ```{r estados, fig.width=6}
 plot_uf(df = dados_format)
