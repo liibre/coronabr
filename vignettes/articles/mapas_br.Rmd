@@ -79,7 +79,7 @@ br_sf <- sf::st_as_sf(br) %>%
 
 E agora fazendo o mapa com o pacote __tmap__.
 
-```{r}
+```{r mapa, fig.width = 4, fig.height = 6}
 # mapa
 mapa <- tm_shape(br_sf) +
   tm_fill() +
@@ -94,6 +94,12 @@ mapa
 
 ```
 
+É possível também fazer um mapa interativo, apenas mudando o tipo de saída em tmap.
+
+```{r}
+tmap_mode("view")
+mapa
+```
 
 
 ```{r echo = FALSE, eval = FALSE}
