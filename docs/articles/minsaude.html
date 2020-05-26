@@ -57,7 +57,7 @@
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    artigos
+    mais exemplos e mapas
      
     <span class="caret"></span>
   </a>
@@ -69,10 +69,10 @@
       <a href="../articles/minsaude.html">Dados do Ministério da Saúde</a>
     </li>
     <li>
-      <a href="../articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
+      <a href="../articles/articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
     </li>
     <li>
-      <a href="../articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
+      <a href="../articles/articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
     </li>
   </ul>
 </li>
@@ -97,7 +97,7 @@
 
       
 
-      </header><script src="minsaude_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil - Minsaúde</h1>
@@ -135,7 +135,7 @@
 <h3 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h3>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">todos_estados</span>)</pre></body></html></div>
-<pre><code>## # A tibble: 6 x 15
+<pre><code>## # A tibble: 6 x 17
 ##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data 
 ##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;
 ## 1 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
@@ -144,11 +144,12 @@
 ## 4 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
 ## 5 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
 ## 6 Brasil &lt;NA&gt;   &lt;NA&gt;      76    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
-## # … with 7 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
-## #   casosAcumulado &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
-## #   emAcompanhamentoNovos &lt;dbl&gt;, date &lt;date&gt;</code></pre>
+## # … with 9 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
+## #   casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;,
+## #   obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;, emAcompanhamentoNovos &lt;dbl&gt;,
+## #   date &lt;date&gt;</code></pre>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">rj</span>)</pre></body></html></div>
-<pre><code>## # A tibble: 6 x 15
+<pre><code>## # A tibble: 6 x 17
 ##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data 
 ##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;
 ## 1 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
@@ -157,13 +158,14 @@
 ## 4 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
 ## 5 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
 ## 6 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
-## # … with 7 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
-## #   casosAcumulado &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
-## #   emAcompanhamentoNovos &lt;dbl&gt;, date &lt;date&gt;</code></pre>
+## # … with 9 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
+## #   casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;,
+## #   obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;, emAcompanhamentoNovos &lt;dbl&gt;,
+## #   date &lt;date&gt;</code></pre>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">rj</span>$<span class="no">estado</span>)</pre></body></html></div>
 <pre><code>## [1] "RJ"</code></pre>
 <div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">sprj</span>)</pre></body></html></div>
-<pre><code>## # A tibble: 6 x 15
+<pre><code>## # A tibble: 6 x 17
 ##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data 
 ##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;           &lt;chr&gt;
 ## 1 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
@@ -172,9 +174,10 @@
 ## 4 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
 ## 5 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
 ## 6 Sudes… RJ     &lt;NA&gt;      33    &lt;NA&gt;   &lt;NA&gt;           &lt;NA&gt;            2020…
-## # … with 7 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
-## #   casosAcumulado &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
-## #   emAcompanhamentoNovos &lt;dbl&gt;, date &lt;date&gt;</code></pre>
+## # … with 9 more variables: semanaEpi &lt;chr&gt;, populacaoTCU2019 &lt;chr&gt;,
+## #   casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;,
+## #   obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;, emAcompanhamentoNovos &lt;dbl&gt;,
+## #   date &lt;date&gt;</code></pre>
 <div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">sprj</span>$<span class="no">estado</span>)</pre></body></html></div>
 <pre><code>## [1] "RJ" "SP"</code></pre>
 </div>
@@ -186,7 +189,7 @@
                      <span class="kw">tipo</span> <span class="kw">=</span> <span class="st">"numero"</span>)</pre></body></html></div>
 <p><img src="minsaude_files/figure-html/unnamed-chunk-1-1.png" width="576"></p>
 <div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="../reference/plot_corona_minsaude.html">plot_corona_minsaude</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">todos_estados</span>,
-                     <span class="kw">log</span> <span class="kw">=</span> <span class="no">T</span>,
+                     <span class="kw">log</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
                      <span class="kw">tipo</span> <span class="kw">=</span> <span class="st">"numero"</span>)</pre></body></html></div>
 <p><img src="minsaude_files/figure-html/unnamed-chunk-2-1.png" width="576"></p>
 </div>

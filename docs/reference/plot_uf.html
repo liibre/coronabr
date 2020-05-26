@@ -102,7 +102,7 @@
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    artigos
+    mais exemplos e mapas
      
     <span class="caret"></span>
   </a>
@@ -114,10 +114,10 @@
       <a href="../articles/minsaude.html">Dados do Ministério da Saúde</a>
     </li>
     <li>
-      <a href="../articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
+      <a href="../articles/articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
     </li>
     <li>
-      <a href="../articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
+      <a href="../articles/articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
     </li>
   </ul>
 </li>
@@ -154,14 +154,7 @@
     <p>Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.io</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_uf</span>(
-  <span class='no'>df</span>,
-  <span class='kw'>prop_pop</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>tipo</span> <span class='kw'>=</span> <span class='st'>"casos"</span>,
-  <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>anim</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"figs"</span>
-)</pre>
+    <pre class="usage"><span class='fu'>plot_uf</span>(<span class='no'>df</span>, <span class='kw'>prop_pop</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tipo</span> <span class='kw'>=</span> <span class='st'>"casos"</span>, <span class='kw'>n</span> <span class='kw'>=</span> <span class='fl'>1500</span>, <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"figs"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -181,10 +174,6 @@
     <tr>
       <th>n</th>
       <td><p>Inteiro. Número mínimo de casos para comparação entre estados</p></td>
-    </tr>
-    <tr>
-      <th>anim</th>
-      <td><p>Lógico. Retornar animação com evolução do número de casos ao longo do tempo. Padrão anim = FALSE</p></td>
     </tr>
     <tr>
       <th>dir</th>
