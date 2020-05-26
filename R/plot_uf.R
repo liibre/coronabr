@@ -42,7 +42,7 @@ plot_uf <- function(df,
   # selecionando os estados para plotar
   states <- df$state[df$confirmed > n & df$date == data_max]
   # fonte
-  legenda <- "fonte: https://brasil.io/dataset/covid19/caso"
+  legenda <- "Fonte: https://brasil.io/dataset/covid19/caso"
   # plot basico
   if (prop_pop == TRUE) {
     df <- df %>% dplyr::mutate(confirmed = .data$confirmed_per_100k_inhabitants)
@@ -61,11 +61,11 @@ plot_uf <- function(df,
          fill = "UF",
          caption = legenda) +
     guides(color = guide_legend("UF")) +
-    scale_x_date(date_breaks = "1 day",
-                 date_labels = "%d/%m") +
+    scale_x_date(date_breaks = "15 day",
+                 date_labels = "%d/%b") +
     scale_color_viridis_d() +
     theme_minimal() +
-    theme(axis.text.x = element_text(angle = 90),
+    theme(#axis.text.x = element_text(angle = 90),
           legend.title = element_text(size = 7),
           legend.text = element_text(size = 7))
   if (tipo == "casos") {
