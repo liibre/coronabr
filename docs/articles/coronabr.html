@@ -57,7 +57,7 @@
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    artigos
+    mais exemplos e mapas
      
     <span class="caret"></span>
   </a>
@@ -69,10 +69,10 @@
       <a href="../articles/minsaude.html">Dados do Ministério da Saúde</a>
     </li>
     <li>
-      <a href="../articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
+      <a href="../articles/articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
     </li>
     <li>
-      <a href="../articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
+      <a href="../articles/articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
     </li>
   </ul>
 </li>
@@ -97,7 +97,7 @@
 
       
 
-      </header><script src="coronabr_files/header-attrs-2.1/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil</h1>
@@ -129,26 +129,26 @@
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-05-20    AL           state      4437    251    True
-## 2 2020-05-20    AM           state     23704   1561    True
-## 3 2020-05-20    AP           state      4549    142    True
-## 4 2020-05-20    DF           state      5271     78    True
-## 5 2020-05-20    ES           state      8495    346    True
-## 6 2020-05-20    GO           state      2049     78    True
+## 1 2020-05-25    AL           state      6682    337    True
+## 2 2020-05-25    AP           state      6584    168    True
+## 3 2020-05-25    GO           state      2515     96    True
+## 4 2020-05-25    PE           state     28366   2248    True
+## 5 2020-05-25    RS           state      6559    197    True
+## 6 2020-05-25    SC           state      6875    109    True
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                   3337357             27                      132.94952
-## 2                   4144597             13                      571.92533
-## 3                    845731             16                      537.87788
-## 4                   3015268             53                      174.81033
-## 5                   4018650             32                      211.38940
-## 6                   7018354             52                       29.19488
+## 1                   3337357             27                      200.21832
+## 2                    845731             16                      778.49813
+## 3                   7018354             52                       35.83461
+## 4                   9557071             26                      296.80642
+## 5                  11377239             43                       57.65019
+## 6                   7164788             42                       95.95539
 ##   death_rate
-## 1     0.0566
-## 2     0.0659
-## 3     0.0312
-## 4     0.0148
-## 5     0.0407
-## 6     0.0381</code></pre>
+## 1     0.0504
+## 2     0.0255
+## 3     0.0382
+## 4     0.0792
+## 5     0.0300
+## 6     0.0159</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -180,12 +180,12 @@
 <pre><code>## # A tibble: 6 x 12
 ##    fips admin2 province_state country_region last_update   lat   long confirmed
 ##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-05-21…  34.2  -82.5        36
-## 2 22001 Acadia Louisiana      US             2020-05-21…  30.3  -92.4       262
-## 3 51001 Accom… Virginia       US             2020-05-21…  37.8  -75.6       709
-## 4 16001 Ada    Idaho          US             2020-05-21…  43.5 -116.        792
-## 5 19001 Adair  Iowa           US             2020-05-21…  41.3  -94.5         6
-## 6 21001 Adair  Kentucky       US             2020-05-21…  37.1  -85.3        94
+## 1 45001 Abbev… South Carolina US             2020-05-25…  34.2  -82.5        35
+## 2 22001 Acadia Louisiana      US             2020-05-25…  30.3  -92.4       291
+## 3 51001 Accom… Virginia       US             2020-05-25…  37.8  -75.6       727
+## 4 16001 Ada    Idaho          US             2020-05-25…  43.5 -116.        796
+## 5 19001 Adair  Iowa           US             2020-05-25…  41.3  -94.5         8
+## 6 21001 Adair  Kentucky       US             2020-05-25…  37.1  -85.3        96
 ## # … with 4 more variables: deaths &lt;dbl&gt;, recovered &lt;dbl&gt;, active &lt;dbl&gt;,
 ## #   combined_key &lt;chr&gt;</code></pre>
 </div>
