@@ -1,7 +1,7 @@
-#' Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.io
+#' Plot o número de casos (confirmados ou óbitos) por Estados com dados do Brasil.io
 #'
 #' @param df Data frame por estado formatado com a função `format_corona_br()`
-#' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = mortes` para o gráfico com o número de mortes
+#' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = "obitos"` para o gráfico com o número de óbitos
 #' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
 #' @param n Inteiro. Número mínimo de casos para comparação entre estados
 #' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
@@ -73,10 +73,10 @@ plot_uf <- function(df,
       labs(y = paste0("N", "\u00fa", "meros de casos confirmados"),
            x = "Data")
   }
-  if (tipo == "mortes") {
+  if (tipo == "obitos") {
     state_plot <- state_plot %+%
       aes(x = .data$date, y = .data$deaths, colour = reorder(.data$state, -.data$deaths)) +
-      labs(y = paste0("N", "\u00fa", "meros de mortes confirmadas"),
+      labs(y = paste0("N", "\u00fa", "meros de obitos confirmadas"),
            x = "Data")
 
   }
