@@ -18,7 +18,6 @@ reference:
     - get_corona_br
     - format_corona_br
     - plot_corona_br
-    - map_corona_br
     - plot_uf
 
   - title: John Hopkins University
@@ -37,15 +36,15 @@ navbar:
       href: reference/index.html
     - text: como usar
       href: articles/coronabr.html
-    - text: artigos
+    - text: mais exemplos e mapas
       menu:
       - text: Visualização dos casos registrados de COVID-19 no Brasil
         href: articles/graficos.html
       - text: Dados do Ministério da Saúde
         href: articles/minsaude.html
       - text: Casos de COVID-19 na América Latina e Caribe
-        href: articles/lac.html
+        href: articles/articles/lac.html
       - text: Casos de COVID-19 en América Latina y el Caribe
-        href: articles/lac_es.html
+        href: articles/articles/lac_es.html
     - text: sobre
       href: about.html
