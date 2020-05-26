@@ -47,8 +47,9 @@ dados_format <- format_corona_br(dados)
 
 Como os dados são atualizados o tempo todo, o código abaixo seleciona a data com entrada de dados mais completa. 
 
-```{r data, eval = FALSE, echo = FALSE}
-# Pegando a data máxima
+```{r data}
+# Pegando a data mais recente com os dados completos
+# pode ser a data máxima, ou anterior à máxima
 datas <- plyr::count(dados_format$date[dados_format$confirmed > 0 
                                        & !is.na(dados_format$state)])
 datas$lag <- datas$freq - dplyr::lag(datas$freq)
@@ -65,7 +66,9 @@ Aqui vamos mudar os nomes das colunas para facilitar a junção dos dados e o pl
 # proporcao de casos por 100k
 dados_format <- dados_format %>% 
   rename(`Casos (por 100 mil hab.)` = confirmed_per_100k_inhabitants,
-         State = city_ibge_code)
+         State = city_ibge_code) %>%
+  # filtra para ultima data
+  filter(date == data_max)
 # carregando shapefile br
 br <- brazilmaps::get_brmap(geo = "State",
                             class = "sf")
@@ -85,7 +88,7 @@ mapa <- tm_shape(br_sf) +
              col = "red",
              border.col = "red",
              scale = 2,
-             alpha = 0.7)
+             alpha = 0.5)
 
 mapa
 
