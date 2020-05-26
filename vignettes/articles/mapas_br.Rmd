@@ -64,11 +64,12 @@ Aqui vamos mudar os nomes das colunas para facilitar a junção dos dados e o pl
 
 ```{r}
 # proporcao de casos por 100k
-dados_format <- dados_format %>% 
-  rename(`Casos (por 100 mil hab.)` = confirmed_per_100k_inhabitants,
+dados_format <- dados_format %>%
+  # renomeia colunas e arredonda casos
+  mutate(`Casos (por 100 mil hab.)` = round(confirmed_per_100k_inhabitants),
          State = city_ibge_code) %>%
   # filtra para ultima data
-  filter(date == data_max)
+  filter(date == data_max) 
 # carregando shapefile br
 br <- brazilmaps::get_brmap(geo = "State",
                             class = "sf")
@@ -82,7 +83,7 @@ E agora fazendo o mapa com o pacote __tmap__.
 ```{r mapa, fig.width = 4, fig.height = 6}
 # mapa
 mapa <- tm_shape(br_sf) +
-  tm_fill() +
+  #tm_fill() +
   tm_borders() +
   tm_symbols(size = "Casos (por 100 mil hab.)",
              col = "red",
@@ -90,7 +91,7 @@ mapa <- tm_shape(br_sf) +
              scale = 2,
              alpha = 0.5)
 
-mapa
+mapa + tm_fill(alpha = .7)
 
 ```
 
