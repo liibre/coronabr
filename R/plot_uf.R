@@ -6,7 +6,7 @@
 #' @param n Inteiro. Número mínimo de casos para comparação entre estados
 #' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
 
-#' @importFrom dplyr filter mutate
+#' @importFrom dplyr filter mutate glimpse
 #' @importFrom stats reorder setNames
 #' @import ggplot2
 #' @importFrom rlang .data

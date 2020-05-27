@@ -17,7 +17,7 @@ devtools::load_all()
 ```
 
 
-```{r pkgns, eval = FALSE}
+```{r pkgs, eval = FALSE}
 library(coronabr)
 ```
 
@@ -49,10 +49,21 @@ Para fazer o gráfico por estados, precisamos antes formatar os dados.
 dados_format <- format_corona_br(dados)
 ```
 
+Tentando fazer o gráfico de estados funcionar: 
+
+1. `plot_uf()`
 
 ```{r estados, fig.width=6}
 plot_uf(df = dados_format)
 ```
+
+2. `plot_uf_edit()`
+
+```{r estados2, fig.width=6}
+plot_uf2(df = dados_format)
+```
+
+
 
 
 ```{r anim_test, fig.show = "animate", echo = FALSE, eval = FALSE}

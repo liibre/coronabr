@@ -6,26 +6,20 @@
 #' @param n Inteiro. Número mínimo de casos para comparação entre estados
 #' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
 
-#' @importFrom dplyr filter mutate
+#' @importFrom dplyr filter mutate glimpse
 #' @importFrom stats reorder setNames
 #' @import ggplot2
-#' @importFrom rlang 
+#' @importFrom rlang .data
 #'
 #' @return objeto ggplot
 #'
-#' @examples
-#' \dontrun{
-#' dados <- get_corona_br(by_uf = TRUE)
-#' dados_format <- format_corona_br(df)
-#' plot_uf(df = dados_format)
-#' }
 #' @export
 #'
-plot_uf <- function(df,
-                    prop_pop = TRUE,
-                    tipo = "casos",
-                    n_casos = 1500,
-                    n_obitos = 100) {
+plot_uf2 <- function(df,
+                     prop_pop = TRUE,
+                     tipo = "casos",
+                     n_casos = 1500,
+                     n_obitos = 100) {
 
   # if (prop_pop == TRUE) {
   #   df <- df %>% dplyr::mutate(confirmed = confirmed_per_100k_inhabitants)
