@@ -49,7 +49,7 @@ plot_uf <- function(df,
   } else {
     df <- df
   }
-
+  glimpse(df)
   state_plot <- df %>%
     dplyr::filter(.data$state %in% states & !is.na(.data$state)) %>%
     ggplot(aes(x = date, y = .data$confirmed, colour = .data$state)) +
@@ -58,7 +58,7 @@ plot_uf <- function(df,
     labs(title = paste0("Estados com mais de ", n, " casos"),
          fill = "UF",
          caption = legenda) +
-    guides(color = guide_legend("UF")) +
+    # guides(color = guide_legend("UF")) +
     scale_x_date(date_breaks = "15 day",
                  date_labels = "%d/%b") +
     scale_color_viridis_d() +
@@ -69,7 +69,7 @@ plot_uf <- function(df,
 
   if (tipo == "casos") {
     state_plot <- state_plot %+%
-      aes(x = .data$date, y = .data$deaths, colour = reorder(.data$state, -.data$confirmed)) +
+      aes(x = .data$date, y = .data$confirmed, colour = reorder(.data$state, -.data$confirmed)) +
       labs(y = paste0("N", "\u00fa", "meros de casos confirmados"),
            x = "Data")
   }
