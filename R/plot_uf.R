@@ -9,6 +9,7 @@
 #' @importFrom stats reorder setNames
 #' @import ggplot2
 #' @importFrom rlang .data
+#' @importFrom stats na.omit
 #'
 #' @return objeto ggplot
 #'
@@ -30,12 +31,12 @@ plot_uf <- function(df,
   df$state <- as.character(df$state)
   if (tipo == "casos") {
     df$var <- df$confirmed
-    leg_y <- "Número de casos confirmados"
+    leg_y <- paste0("N", "\u00fa", "mero de casos confirmados")
   } else {
     df$var <- df$deaths
-    leg_y <- "Número de óbitos confirmados"
+    leg_y <- paste0("N", "\u00fa", "mero de ", "\u00f3", "bitos confirmados")
   }
-
+  leg_x <- "Data"
   # filtra os n estados
   df.max <- df[df$date == max(df$date), ]
   estados <- as.character(df.max$state[order(df.max$var, decreasing = TRUE)[1:n]])
@@ -46,12 +47,12 @@ plot_uf <- function(df,
 
     state_plot <- df %>%
       ggplot() +
-      aes(x = date,
-          y = var,
-          colour = reorder(state, -var)) +
+      aes(x = .data$date,
+          y = .data$var,
+          colour = reorder(.data$state, -.data$var)) +
       geom_line() +
       geom_point() +
-      labs(y = leg_y)
+      labs(y = leg_y, x = leg_x) +
       guides(color = guide_legend("UF")) +
       scale_x_date(date_breaks = "15 day",
                    date_labels = "%d/%b") +
@@ -66,12 +67,12 @@ plot_uf <- function(df,
 
     state_plot <- df %>%
       ggplot() +
-      aes(x = date,
-          y = var,
-          colour = reorder(state, -var)) +
+      aes(x = .data$date,
+          y = .data$var,
+          colour = reorder(.data$state, -.data$var)) +
       geom_line() +
       geom_point() +
-      labs(y = leg_y) +
+      labs(y = leg_y, x = leg_x) +
       guides(color = guide_legend("UF")) +
       scale_x_date(date_breaks = "15 day",
                    date_labels = "%d/%b") +

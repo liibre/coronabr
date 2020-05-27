@@ -4,7 +4,7 @@
 \alias{plot_uf}
 \title{Plot o número de casos (confirmados ou óbitos) por Estados com dados do Brasil.io}
 \usage{
-plot_uf(df, prop_pop = TRUE, tipo = "casos", n = 1500, dir = "figs")
+plot_uf(df, prop_pop = TRUE, tipo = "casos", n = 10)
 }
 \arguments{
 \item{df}{Data frame por estado formatado com a função `format_corona_br()`}
@@ -13,9 +13,7 @@ plot_uf(df, prop_pop = TRUE, tipo = "casos", n = 1500, dir = "figs")
 
 \item{tipo}{Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = "obitos"` para o gráfico com o número de óbitos}
 
-\item{n}{Inteiro. Número mínimo de casos para comparação entre estados}
-
-\item{dir}{Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.}
+\item{n}{Inteiro. Número mínimo de estados para o gráfico}
 }
 \value{
 objeto ggplot
