@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 library(coronabr)
 ```
 
-### Baixando os dados oficiais do ministério da saúde
+### Baixando os dados oficiais do Ministério da Saúde
 
 Aqui está o exemplo usando a função `get_corona_minsaude()` que extrai os dados do portal https://covid.saude.gov.br, usando o csv disponibilizado diariamente na página. 
 
@@ -43,7 +43,7 @@ head(sprj)
 unique(sprj$estado)
 ```
 
-### Plotando os dados de Minsaúde
+### Plotando os dados do Ministério da Saúde
 
 
 ```{r, fig.width= 6, fig.height=6}
@@ -52,9 +52,9 @@ plot_corona_minsaude(df = todos_estados,
                      tipo = "numero")
 ```
 
+
 ```{r, fig.width= 6, fig.height=6}
 plot_corona_minsaude(df = todos_estados,
-                     log = T,
+                     log = TRUE,
                      tipo = "numero")
 ```
-

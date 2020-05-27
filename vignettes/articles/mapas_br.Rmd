@@ -1,0 +1,171 @@
+---
+title: "Mapa de COVID-19 no Brasil"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mapas}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+devtools::load_all()
+library(dplyr)
+library(brazilmaps)
+library(sf)
+library(tmap)
+```
+
+Primeiro, vamos baixar os dados do Brasil.io por UF. Além dos pacotes coronabr e tmap, vamos carregar bibliotecas para lidar com mapas: __brazilmaps__, __sf__ e __tmap__. Atenção: A partir da versão do R 4.0, o pacote __brazilmaps__ deve ser instalado via github usando o pacote __remotes__.
+
+```{r pkg, eval = FALSE}
+library(coronabr)
+library(dplyr)
+library(brazilmaps) #usar remotes::instal_github("rpradosiqueira/brazilmaps")
+library(sf)
+library(tmap)
+```
+
+## Baixando os dados
+
+Com a função `get_corona_br` é possível baixar os dados do portal Brasil.io. Usando o argumento `by_uf = TRUE`
+
+
+```{r dados}
+dados <- get_corona_br(by_uf = TRUE)
+```
+
+## Formatando os dados
+
+A função `format_corona_br()` formata os dados para fazer um plot com o número de casos a cada 100.000 habitantes.
+
+```{r formata}
+dados_format <- format_corona_br(dados)
+```
+
+## Um mapa com o número de casos a cada 100 mil hab
+
+Como os dados são atualizados o tempo todo, o código abaixo seleciona a data com entrada de dados mais completa. 
+
+```{r data}
+# Pegando a data mais recente com os dados completos
+# pode ser a data máxima, ou anterior à máxima
+datas <- plyr::count(dados_format$date[dados_format$confirmed > 0 
+                                       & !is.na(dados_format$state)])
+datas$lag <- datas$freq - dplyr::lag(datas$freq)
+if (datas$lag[which.max(datas$x)] < 0) {
+  data_max <- max(datas$x, na.rm = TRUE) - 1
+} else {
+  data_max <- max(datas$x, na.rm = TRUE)
+}
+```
+
+Aqui vamos mudar os nomes das colunas para facilitar a junção dos dados e o plot.
+
+```{r}
+# proporcao de casos por 100k
+dados_format <- dados_format %>%
+  # renomeia colunas e arredonda casos
+  mutate(`Casos (por 100 mil hab.)` = round(confirmed_per_100k_inhabitants),
+         State = city_ibge_code) %>%
+  # filtra para ultima data
+  filter(date == data_max) 
+# carregando shapefile br
+br <- brazilmaps::get_brmap(geo = "State",
+                            class = "sf")
+# fazendo o merge dos dados e shapefile
+br_sf <- sf::st_as_sf(br) %>%
+  merge(dados_format, by = "State")
+```
+
+E agora fazendo o mapa com o pacote __tmap__.
+
+```{r mapa, fig.width = 4, fig.height = 6}
+# mapa
+mapa <- tm_shape(br_sf) +
+  #tm_fill() +
+  tm_borders() +
+  tm_symbols(size = "Casos (por 100 mil hab.)",
+             col = "red",
+             border.col = "red",
+             scale = 2,
+             alpha = 0.5)
+
+mapa + tm_fill(alpha = .7)
+
+```
+
+É possível também fazer um mapa interativo, apenas mudando o tipo de saída em tmap.
+
+```{r}
+tmap_mode("view")
+mapa
+```
+
+
+```{r echo = FALSE, eval = FALSE}
+map_corona_br <- function(df,
+                          prop_pop = TRUE,
+                          anim = FALSE,
+                          dir = "figs"){
+  # puxando a data mais atualizada
+  datas <- plyr::count(df$date[df$confirmed > 0 & !is.na(df$state)])
+  datas$lag <- datas$freq - dplyr::lag(datas$freq)
+  if (datas$lag[which.max(datas$x)] < 0) {
+    data_max <- max(datas$x, na.rm = TRUE) - 1
+  } else {
+    data_max <- max(datas$x, na.rm = TRUE)
+  }
+  if (anim == FALSE) {
+  df <- df %>%
+    filter(.data$date == data_max)
+  }
+  df$Casos <- df$confirmed
+  # proporcao de casos por 100k
+  df$`Casos (por 100 mil hab.)` <- df$confirmed_per_100k_inhabitants
+  df$State <- df$city_ibge_code
+  br <- brazilmaps::get_brmap(geo = "State",
+                              class = "sf")
+
+  br_sf <- sf::st_as_sf(br) %>%
+    merge(df, by = "State")
+  # mapa
+  mapa <- tmap::tm_shape(br) +
+    tmap::tm_fill(col = "white") +
+    tmap::tm_borders() +
+    tmap::tm_shape(br_sf) +
+    tmap::tm_fill(colorNA = "white") +
+    tmap::tm_borders() +
+    if (prop_pop == TRUE) {
+      tmap::tm_symbols(size = "Casos (por 100 mil hab.)",
+                       col = "red",
+                       border.col = "red",
+                       scale = 2,
+                       alpha = 0.7)
+    } else {
+      tmap::tm_symbols(size = "Casos",
+                       col = "red",
+                       border.col = "red",
+                       scale = 2,
+                       alpha = 0.7)
+    }
+  if (anim == TRUE) {
+    anim <- mapa +
+      tmap::tm_facets(along = "date", free.coords = FALSE)
+    #ö: maybe animate here? i did that
+    if (!dir.exists(dir)) {
+      dir.create(dir)
+    }
+    anim <- tmap::tmap_animation(anim,
+                                 filename = paste0(dir, "/", "anim.gif"),
+                                 delay = 25,
+                                 width = 1200,
+                                 height = 1200,
+                                 restart.delay = 50)
+    return(anim)
+  }
+  mapa
+}
+```
+
+

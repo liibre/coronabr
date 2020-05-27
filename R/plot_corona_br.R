@@ -25,7 +25,7 @@ plot_corona_br <- function(df,
   # nomes dos eixos
   xlab <- "Data"
   ylab <- "Casos confirmados"
-  legenda <- "fonte: https://brasil.io/dataset/covid19/caso"
+  legenda <- "Fonte: https://brasil.io/dataset/covid19/caso"
   df <- df %>%
     dplyr::group_by(., .data$date) %>%
     dplyr::summarise_at(dplyr::vars(.data$confirmed, .data$deaths),
@@ -46,10 +46,10 @@ plot_corona_br <- function(df,
                     y = ylab,
                     title = "Casos confirmados de COVID-19 no Brasil",
                     caption = legenda) +
-      ggplot2::scale_x_date(date_breaks = "1 day",
-                            date_labels = "%d/%m") +
+      ggplot2::scale_x_date(date_breaks = "15 day",
+                            date_labels = "%d/%b") +
       ggplot2::theme_minimal() +
-      ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90),
+      ggplot2::theme(#axis.text.x = ggplot2::element_text(angle = 90),
                      legend.position = "none")
   }
   if (tipo == "aumento") {
@@ -64,8 +64,8 @@ plot_corona_br <- function(df,
       #ggplot2::geom_bar(stat = "identity", alpha = .7, color = "red", fill = "red")
       ggplot2::geom_line(alpha = .7) +
       ggplot2::geom_point(size = 2) +
-      ggplot2::scale_x_date(date_breaks = "1 day",
-                            date_labels = "%d/%m") +
+      ggplot2::scale_x_date(date_breaks = "15 day",
+                            date_labels = "%d/%b") +
       # ggplot2::scale_y_continuous(limits = c(0, max(df$delta_cases, na.rm = TRUE) + 3),
       #                             expand = c(0, 0)) +
       # ggplot2::geom_text(ggplot2::aes(label = .data$label),
@@ -76,7 +76,7 @@ plot_corona_br <- function(df,
                     title = "Aumento nos casos de COVID-19 confirmados",
                     caption = legenda) +
       ggplot2::theme_minimal() +
-      ggplot2::theme(axis.text.x =  ggplot2::element_text(angle = 90),
+      ggplot2::theme(#axis.text.x =  ggplot2::element_text(angle = 90),
                      legend.position = "none")
   }
   p

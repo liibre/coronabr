@@ -13,10 +13,11 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       comment = FALSE, 
                       fig.width = 5, 
                       fig.height = 5)
+devtools::load_all()
 ```
 
 
-```{r pkgs}
+```{r pkgs, eval = FALSE}
 library(coronabr)
 ```
 
@@ -25,7 +26,6 @@ library(coronabr)
 
 ```{r get}
 dados <- get_corona_br(by_uf = TRUE)
-#dados_jhu <- get_corona_jhu()
 ```
 
 
@@ -40,36 +40,50 @@ plot_corona_br(df = dados, log = FALSE)
 plot_corona_br(df = dados, tipo = "aumento")
 ```
 
-## Número de casos por estado brasileiro
+## Casos por estado brasileiro
 
 
-Um mapa com os dados do número de casos a cada 100.000 habitantes
-
-```{r mapa1, fig.height=3, fig.width=3}
+```{r mapa1, fig.height=3, fig.width=3, echo = F, eval = F}
+#Para fazer o gráfico por estados, precisamos antes formatar os dados. 
 dados_format <- format_corona_br(dados)
-map_corona_br(df = dados_format)
+
+#dados %>% group_by(state, date) %>% 
+ # filter(date == "2020-05-25") %>% 
+  #summarize(confirmed_per_100k_inhabitants) %>% 
+  #arrange(desc(confirmed_per_100k_inhabitants))
 ```
 
-Um mapa com o valor bruto no número de casos
-
-```{r mapa2, fig.height=3, fig.width=3}
-map_corona_br(df = dados_format, 
-              prop_pop = FALSE)
-```
-
-## Crescimento do número de casos nos estados mais afetados
+### Gráfico proporcional ao tamanho populacional (Casos por 100 mil habitantes)
 
 ```{r estados, fig.width=6}
-plot_uf(df = dados_format)
+plot_uf(df = dados, n = 7)
 ```
 
-## Evolução do número de casos por estado
+### Gráfico com o número bruto de notificações
 
-```{r anim_test, fig.show = "animate"}
-anim <- map_corona_br(df = dados_format,
-                      anim = TRUE, 
-                      dir = "figs")
+```{r estados2, fig.width=6}
+plot_uf(df = dados, prop_pop = FALSE, n = 7)
 ```
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+### Gráfico com o número bruto de óbitos
+
+```{r obitos, fig.width=6}
+plot_uf(df = dados, tipo = "obitos", prop_pop = FALSE, n = 7)
+```
+
+
+### Gráfico com o número de óbitos por 100 mil habitantes
+
+```{r obitos_prop, fig.width=6}
+plot_uf(df = dados, tipo = "obitos", prop_pop = TRUE, n = 7)
+```
+
+### Comparando estados específicos
+
+```{r comp_estados, fig.width=6}
+plot_uf(df = dados, 
+        tipo = "casos",
+        prop_pop = TRUE,
+        estados = c("AM", "CE", "PE", "SP"))
+```
 

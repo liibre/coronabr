@@ -2,17 +2,17 @@
 [![Build
 Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis-ci.com/liibre/coronabr)
 
-# Download de dados de COVID-19 no Brasil
+# *Download* de dados de COVID-19 no Brasil
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120" />
 
 **coronabr** é um pacote de [R](https://www.r-project.org/) para fazer
-download e visualizar os dados dos casos diários de coronavírus
+*download* e visualizar os dados dos casos diários de coronavírus
 (COVID-19) disponibilizados por diferentes fontes:
 
   - [Ministério da
     Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil);
-  - [Brasil em dados libertos](https://brasil.io/dataset/covid19/caso);
+  - [Brasil I/O](https://brasil.io/dataset/covid19/caso);
   - [Johns Hopkins
     University](https://github.com/CSSEGISandData/COVID-19)
 
@@ -25,19 +25,18 @@ O código é aberto. Entre em [como
 usar](https://liibre.github.io/coronabr/articles/coronabr.html) para um
 exemplo de como utilizar o pacote. Compartilhe.
 
-Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que
-deve haver maneiras responsáveis de apresentar estes dados e que as
-comparações entre regiões e países dependem de muitas variáveis.
-
 Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho
 em desenvolvimento. Para entender como contribuir, clique
 [aqui](https://liibre.github.io/coronabr/CONTRIBUTING.html).
 
 ## Aviso\!
 
-Os dados são referentes aos casos notificados. É sabido que neste
-momento há um acúmulo de testes para COVID-19 sem resultados. Assim,
-mais do que nunca, os números que vemos são das **notificações** e não
+Disponibilizamos aqui atualizações dos gráficos. Sabemos que deve haver
+maneiras responsáveis de apresentar estes dados e que as comparações
+entre regiões e países dependem de muitas variáveis.
+
+Os dados são referentes aos casos notificados. É sabido que temos
+subnotificação e atraso nas notificações. Assim, mais do que nunca, não
 refletem a epidemia em si.
 
 ## Sobre os dados
@@ -77,14 +76,14 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
     Belisario](https://www.twitter.com/belisards) fez a compilação
     manual destes dados [neste
     repositório](https://github.com/belisards/coronabr)
-  - A partir de 2020-03-26 o ministério de saúde brasileiro
+  - A partir de 2020-03-26 o Ministério de Saúde brasileiro
     disponibilizou os dados de casos de coronavirus COVID-19 na página
     <https://covid.saude.gov.br/>
-  - A partir de 2020-03-28 a opção de fazer download da série histórica
-    por casos voltou a estar disponível. Depois disso, o padrão vem
-    mudado diariamente, mas agora temos uma função estável
-    `get_corona_minsaude()` para o download desses dados (instruções de
-    como usar
+  - A partir de 2020-03-28 a opção de fazer *download* da série
+    histórica por casos voltou a estar disponível. Depois disso, o
+    padrão vem mudado frequentemente, mas agora temos uma função
+    estável `get_corona_minsaude()` para o *download* desses dados
+    (instruções de como usar
     [aqui](https://liibre.github.io/coronabr/articles/minsaude.html)).
 
 ## Visualizando os dados
@@ -105,27 +104,31 @@ acompanhar os casos na América Latina (versão em espanhol
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
-### Número de casos por estado brasileiro
-
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
-
 ### Crescimento do número de casos nos estados mais afetados
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
+
+<!---
+### Número de casos por estado brasileiro
+
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
 
 ### Evolução do número de casos por estado
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
 
+-->
+
 ## Para saber mais:
 
-  - Dados compilados pelo [Álvaro Justen](https://github.com/turicas/) e
-    colaboradores [aqui](https://brasil.io/dataset/covid19/caso)
+  - [Observatório Covid-19 BR](https://covid19br.github.io/)
+
+  - Dados compilados pelo Brasil I/O, [Álvaro
+    Justen](https://github.com/turicas/) e colaboradores
+    [aqui](https://brasil.io/dataset/covid19/caso)
 
   - [John Hopkins Coronavirus COVID-19 Global
     Cases](https://coronavirus.jhu.edu/map.html)
-
-  - [Observatório Covid-19 BR](https://covid19br.github.io/)
 
   - [Mapa de previsão da propagação da COVID-19 por contágio comunitário
     no Brasil](https://covid-19-risk.github.io/map/brazil/pt/)
@@ -160,7 +163,13 @@ acompanhar os casos na América Latina (versão em espanhol
     brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita
     informação.
 
-Dúvidas, contribuições e sugestões, poste uma *issue*
+  - Siga também o canal **Peixe Babel** no
+    [GitHub](https://github.com/peixebabel),
+    [youtube](https://www.youtube.com/CanalPeixeBabel),
+    [twitter](https://twitter.com/canalpeixebabel),
+    [Instagram](https://www.instagram.com/canalpeixebabel/).
+
+Dúvidas, contribuições e sugestões, poste um *issue*
 [aqui](https://github.com/liibre/coronabr/issues), escreva-nos um
 [e-mail](mailto:liibrelab@gmail.com) ou nos encontre no twitter
 ([Sara](https://twitter.com/mortarasara),

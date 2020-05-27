@@ -1,18 +1,16 @@
-#' Plot o número de casos (confirmados ou mortes) por Estados com dados do Brasil.io
+#' Plot o número de casos (confirmados ou óbitos) por Estados com dados do Brasil.io
 #'
 #' @param df Data frame por estado formatado com a função `format_corona_br()`
-#' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = mortes` para o gráfico com o número de mortes
-#' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
-#' @param n Inteiro. Número mínimo de casos para comparação entre estados
-#' @param anim Lógico. Retornar animação com evolução do número de casos ao longo do tempo. Padrão anim = FALSE
-#' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
-
-#' @importFrom dplyr filter mutate
+#' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = "obitos"` para o gráfico com o número de óbitos
+#' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE.
+#' @param n Inteiro. Número mínimo de estados para o gráfico
+#' @param estados Caractere. Quais estados plotar (ex. c("PI", "CE"))
+#'
+#' @importFrom dplyr filter mutate glimpse
 #' @importFrom stats reorder setNames
 #' @import ggplot2
 #' @importFrom rlang .data
-#' @importFrom gganimate transition_reveal anim_save
-#' @import gifski
+#' @importFrom stats na.omit
 #'
 #' @return objeto ggplot
 #'
@@ -27,94 +25,51 @@
 plot_uf <- function(df,
                     prop_pop = TRUE,
                     tipo = "casos",
-                    n = 100,
-                    anim = FALSE,
-                    dir = "figs") {
-  # definindo data_max para plotar apenas atualizacoes completas
-  datas <-
-    as.data.frame(
-      table(df$date[df$confirmed > 0 & !is.na(df$state)]), stringsAsFactors = FALSE
-    ) %>%
-    setNames(c("x", "freq")) %>%
-    mutate(x = as.Date(x))
-  datas$lag <- datas$freq - dplyr::lag(datas$freq)
-  if (datas$lag[which.max(datas$x)] < 0) {
-    data_max <- max(datas$x, na.rm = TRUE) - 1
-  } else {
-    data_max <- max(datas$x, na.rm = TRUE)
-  }
-  # selecionando os estados para plotar
-  states <- df$state[df$confirmed > n & df$date == data_max]
-  # fonte
-  legenda <- "fonte: https://brasil.io/dataset/covid19/caso"
-  # plot basico
-  if (prop_pop == TRUE) {
-    df <- df %>% dplyr::mutate(confirmed = .data$confirmed_per_100k_inhabitants)
-  } else {
-    df <- df
-  }
-  state_plot <- df %>%
-    dplyr::filter(.data$state %in% states & !is.na(.data$state)) %>%
-    dplyr::mutate(state = reorder(.data$state, -.data$confirmed)) %>%
-    ggplot(aes(x = .data$date, y = .data$confirmed, colour = .data$state)) +
-    geom_line() +
-    geom_point() +
-    labs(x = "Data",
-         y = paste0("N", "\u00fa", "meros de casos confirmados"),
-         title = paste0("Estados com mais de ", n, " casos"),
-         fill = "UF",
-         caption = legenda) +
-    guides(color = guide_legend("UF")) +
-    scale_x_date(date_breaks = "1 day",
-                 date_labels = "%d/%m") +
-    scale_color_viridis_d() +
-    theme_minimal() +
-    theme(axis.text.x = element_text(angle = 90),
-          legend.title = element_text(size = 7),
-          legend.text = element_text(size = 7))
+                    n = 10,
+                    estados = NULL) {
+
+
+  # remove na
+  df <- na.omit(df)
+  df$state <- as.character(df$state)
   if (tipo == "casos") {
-    state_plot <- state_plot
-
-    anim_plot <- state_plot %+%
-      gganimate::transition_reveal(.data$date) +
-      geom_segment(aes(xend = max(.data$date), yend = .data$confirmed), linetype = 2) +
-      geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
-      coord_cartesian(clip = "off")
-
-    file_name <- "anim_plot_uf_casos"
-
-  }
-  if (tipo == "mortes") {
-    state_plot <- state_plot %+%
-      aes(x = date, y = .data$deaths, colour = reorder(.data$state, -.data$deaths)) +
-      labs(y = paste0("N", "\u00fa", "meros de mortes confirmadas"),
-           x = "Data")
-    # só gera o plot
-    anim_plot <- state_plot %+%
-      gganimate::transition_reveal(.data$date) +
-      geom_segment(aes(xend = max(.data$date), yend = .data$deaths), linetype = 2) +
-      geom_text(aes(x = max(.data$date), label = .data$state), hjust = 0) +
-      coord_cartesian(clip = "off")
-
-    file_name <- "anim_plot_uf_mortes"
-
-  }
-
-  if (anim == TRUE) {
-
-    if (!dir.exists(dir)) {
-      dir.create(dir)
+    df$var <- df$confirmed
+    leg_y <- paste0("N", "\u00fa", "mero de casos confirmados")
+    if (prop_pop) {
+      leg_y <- paste(leg_y, "por cem mil habitantes")
+      df$var <- df$confirmed_per_100k_inhabitants
     }
-
-    message(paste0("Salvando anim na pasta ", dir, "/ ..."))
-
-    gganimate::anim_save(
-      filename = paste0(dir, "/", file_name, ".gif"),
-      animation = anim_plot
-    )
-
+  } else {
+    df$var <- df$deaths
+    leg_y <- paste0("N", "\u00fa", "mero de ", "\u00f3", "bitos confirmados")
+    if (prop_pop) {
+      leg_y <- paste(leg_y, "por cem mil habitantes")
+      df$var <- df$deaths/df$estimated_population_2019 * 100000
+    }
   }
+  leg_x <- "Data"
+  # filtra os n estados
+  df.max <- df[df$date == max(df$date), ]
+  #select states after setting df$var and only have one code for plot
 
+  if (is.null(estados) & !is.null(n)) {
+  estados <- as.character(df.max$state[order(df.max$var, decreasing = TRUE)[1:n]])
+  }
+  df <- df[df$state %in% estados, ]
+  state_plot <- df %>%
+      ggplot() +
+      aes(x = .data$date,
+          y = .data$var,
+          colour = reorder(.data$state, -.data$var)) +
+      geom_line() +
+      geom_point() +
+      labs(y = leg_y, x = leg_x) +
+      guides(color = guide_legend("UF")) +
+      scale_x_date(date_breaks = "15 day",
+                   date_labels = "%d/%b") +
+      scale_color_viridis_d() +
+      theme_minimal() +
+      theme(legend.title = element_text(size = 7),
+            legend.text = element_text(size = 7))
   print(state_plot)
-
 }
