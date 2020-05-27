@@ -58,7 +58,7 @@
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    artigos
+    mais exemplos e mapas
      
     <span class="caret"></span>
   </a>
@@ -70,10 +70,10 @@
       <a href="articles/minsaude.html">Dados do Ministério da Saúde</a>
     </li>
     <li>
-      <a href="articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
+      <a href="articles/articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
     </li>
     <li>
-      <a href="articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
+      <a href="articles/articles/lac_es.html">Casos de COVID-19 en América Latina y el Caribe</a>
     </li>
   </ul>
 </li>
@@ -106,12 +106,12 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#download-de-dados-de-covid-19-no-brasil" class="anchor"></a>Download de dados de COVID-19 no Brasil</h1></div>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120"></p>
-<p><strong>coronabr</strong> é um pacote de <a href="https://www.r-project.org/">R</a> para fazer download e visualizar os dados dos casos diários de coronavírus (COVID-19) disponibilizados por diferentes fontes:</p>
+<p><strong>coronabr</strong> é um pacote de <a href="https://www.r-project.org/">R</a> para fazer <em>download</em> e visualizar os dados dos casos diários de coronavírus (COVID-19) disponibilizados por diferentes fontes:</p>
 <ul>
 <li>
 <a href="http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil">Ministério da Saúde</a>;</li>
 <li>
-<a href="https://brasil.io/dataset/covid19/caso">Brasil em dados libertos</a>;</li>
+<a href="https://brasil.io/dataset/covid19/caso">Brasil I/O</a>;</li>
 <li><a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a></li>
 </ul>
 <div id="nosso-objetivo" class="section level2">
@@ -119,20 +119,20 @@
 <a href="#nosso-objetivo" class="anchor"></a>Nosso objetivo</h2>
 <p>O nosso objetivo é facilitar o acesso aos dados de diferentes fontes, usando ferramentas de acesso aberto e que permitam reprodutibilidade.</p>
 <p>O código é aberto. Entre em <a href="https://liibre.github.io/coronabr/articles/coronabr.html">como usar</a> para um exemplo de como utilizar o pacote. Compartilhe.</p>
-<p>Disponibilizamos aqui atualizações diárias dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.</p>
 <p>Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho em desenvolvimento. Para entender como contribuir, clique <a href="https://liibre.github.io/coronabr/CONTRIBUTING.html">aqui</a>.</p>
 </div>
 <div id="aviso" class="section level2">
 <h2 class="hasAnchor">
 <a href="#aviso" class="anchor"></a>Aviso!</h2>
-<p>Os dados são referentes aos casos notificados. É sabido que neste momento há um acúmulo de testes para COVID-19 sem resultados. Assim, mais do que nunca, os números que vemos são das <strong>notificações</strong> e não refletem a epidemia em si.</p>
+<p>Disponibilizamos aqui atualizações dos gráficos. Sabemos que deve haver maneiras responsáveis de apresentar estes dados e que as comparações entre regiões e países dependem de muitas variáveis.</p>
+<p>Os dados são referentes aos casos notificados. É sabido que temos subnotificação e atraso nas notificações. Assim, mais do que nunca, não refletem a epidemia em si.</p>
 </div>
 <div id="sobre-os-dados" class="section level2">
 <h2 class="hasAnchor">
 <a href="#sobre-os-dados" class="anchor"></a>Sobre os dados</h2>
 <p>Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos alinhadxs com o <a href="https://www.manifestno.com/">manifest-no</a>, refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados.</p>
 <p>Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomendamos que toda análise que possa ser feita o seja. Ao se tratar de uma situação de saúde pública delicada, visualizações, extrapolações, e predições devem ser feitas com todo cuidado, lembrando que a qualidade dos dados é incerta e que todo dado diz respeito a uma pessoa.</p>
-<p>No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para uma modelos <strong>responsáveis</strong> de previsão do crescimento no número de casos veja o <a href="https://covid19br.github.io/index.html">Observatório COVID-19 Brasil</a> (um grupo colaborativo de cientistas brasileirxs) e o <a href="https://covid-19-risk.github.io/map/brazil/pt/">Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil</a>.</p>
+<p>No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para ver modelos <strong>responsáveis</strong> de previsão do crescimento no número de casos veja o <a href="https://covid19br.github.io/index.html">Observatório COVID-19 Brasil</a> (um grupo colaborativo de cientistas brasileirxs) e o <a href="https://covid-19-risk.github.io/map/brazil/pt/">Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil</a>.</p>
 <div id="nota-sobre-os-dados-disponibilizados-pelo-ministerio-da-saude" class="section level3">
 <h3 class="hasAnchor">
 <a href="#nota-sobre-os-dados-disponibilizados-pelo-ministerio-da-saude" class="anchor"></a>Nota sobre os dados disponibilizados pelo Ministério da Saúde</h3>
@@ -142,9 +142,9 @@
 </li>
 <li>Entre 2020-03-18 e 2020-03-25, a página original do Ministério da Saúde parou de funcionar e os dados de casos de coronavirus COVID-19 discriminados por estado foram divulgados em apresentações de powerpoint e PDFs no blog do Ministério. <a href="https://www.twitter.com/belisards">Adriano Belisario</a> fez a compilação manual destes dados <a href="https://github.com/belisards/coronabr">neste repositório</a>
 </li>
-<li>A partir de 2020-03-26 o ministério de saúde brasileiro disponibilizou os dados de casos de coronavirus COVID-19 na página <a href="https://covid.saude.gov.br/" class="uri">https://covid.saude.gov.br/</a>
+<li>A partir de 2020-03-26 o Ministério de Saúde brasileiro disponibilizou os dados de casos de coronavirus COVID-19 na página <a href="https://covid.saude.gov.br/" class="uri">https://covid.saude.gov.br/</a>
 </li>
-<li>A partir de 2020-03-28 a opção de fazer download da série histórica por casos voltou a estar disponível. Depois disso, o padrão vem mudado diariamente, mas agora temos uma função estável <code><a href="reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> para o download desses dados (instruções de como usar <a href="https://liibre.github.io/coronabr/articles/minsaude.html">aqui</a>).</li>
+<li>A partir de 2020-03-28 a opção de fazer <em>download</em> da série histórica por casos voltou a estar disponível. Depois disso, o padrão vem mudado frequentemente, mas agora temos uma função estável <code><a href="reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> para o <em>download</em> desses dados (instruções de como usar <a href="https://liibre.github.io/coronabr/articles/minsaude.html">aqui</a>).</li>
 </ul>
 </div>
 </div>
@@ -163,29 +163,29 @@
 <a href="#entendendo-o-aumento-diario" class="anchor"></a>Entendendo o aumento diário</h3>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600"></p>
 </div>
-<div id="numero-de-casos-por-estado-brasileiro" class="section level3">
-<h3 class="hasAnchor">
-<a href="#numero-de-casos-por-estado-brasileiro" class="anchor"></a>Número de casos por estado brasileiro</h3>
-<p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600"></p>
-</div>
 <div id="crescimento-do-numero-de-casos-nos-estados-mais-afetados" class="section level3">
 <h3 class="hasAnchor">
 <a href="#crescimento-do-numero-de-casos-nos-estados-mais-afetados" class="anchor"></a>Crescimento do número de casos nos estados mais afetados</h3>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600"></p>
-</div>
-<div id="evolucao-do-numero-de-casos-por-estado" class="section level3">
-<h3 class="hasAnchor">
-<a href="#evolucao-do-numero-de-casos-por-estado" class="anchor"></a>Evolução do número de casos por estado</h3>
-<p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600"></p>
+<!---
+### Número de casos por estado brasileiro
+
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
+
+### Evolução do número de casos por estado
+
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+
+-->
 </div>
 </div>
 <div id="para-saber-mais" class="section level2">
 <h2 class="hasAnchor">
 <a href="#para-saber-mais" class="anchor"></a>Para saber mais:</h2>
 <ul>
-<li><p>Dados compilados pelo <a href="https://github.com/turicas/">Álvaro Justen</a> e colaboradores <a href="https://brasil.io/dataset/covid19/caso">aqui</a></p></li>
-<li><p><a href="https://coronavirus.jhu.edu/map.html">John Hopkins Coronavirus COVID-19 Global Cases</a></p></li>
 <li><p><a href="https://covid19br.github.io/">Observatório Covid-19 BR</a></p></li>
+<li><p>Dados compilados pelo Brasil I/O, <a href="https://github.com/turicas/">Álvaro Justen</a> e colaboradores <a href="https://brasil.io/dataset/covid19/caso">aqui</a></p></li>
+<li><p><a href="https://coronavirus.jhu.edu/map.html">John Hopkins Coronavirus COVID-19 Global Cases</a></p></li>
 <li><p><a href="https://covid-19-risk.github.io/map/brazil/pt/">Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil</a></p></li>
 <li><p><a href="https://paternogbc.github.io/covid19br/index.html">covid19br</a>, o pacote de R <a href="https://github.com/paternogbc">Gustavo Palermo</a> para acompanhar os dados de novos casos no Brasil</p></li>
 <li><p><a href="https://portal.fiocruz.br/coronavirus">Portal da Fiocruz</a></p></li>
@@ -195,8 +195,9 @@
 <li><p><a href="https://www.worldometers.info/coronavirus/">Atualização mundial do número de casos</a></p></li>
 <li><p><a href="https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8">Dez considerações antes de criar mais um gráfico sobre o COVID-19 (em inglês)</a></p></li>
 <li><p>Siga o <strong>Atila Iamarino</strong> no <a href="https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w">youtube</a>, <a href="www.instagram.com/oatila">Instagram</a>, <a href="https://twitter.com/oatila">twitter</a> ou <a href="https://t.me/corona_atila">telegram</a>. Tem também um <a href="https://www.reddit.com/r/coronabr/">fórum brasileiro de reddit</a> com muita informação.</p></li>
+<li><p>Siga também o canal <strong>Peixe Babel</strong> no <a href="https://github.com/peixebabel">GitHub</a>, <a href="https://www.youtube.com/CanalPeixeBabel">youtube</a>, <a href="https://twitter.com/canalpeixebabel">twitter</a>, <a href="https://www.instagram.com/canalpeixebabel/">Instagram</a>.</p></li>
 </ul>
-<p>Dúvidas, contribuições e sugestões, poste uma <em>issue</em> <a href="https://github.com/liibre/coronabr/issues">aqui</a>, escreva-nos um <a href="mailto:liibrelab@gmail.com">e-mail</a> ou nos encontre no twitter (<a href="https://twitter.com/mortarasara">Sara</a>, <a href="https://twitter.com/SanchezTapiaA">Andrea</a> ou <a href="https://twitter.com/kguidonimartins">Karlo</a>).</p>
+<p>Dúvidas, contribuições e sugestões, poste um <em>issue</em> <a href="https://github.com/liibre/coronabr/issues">aqui</a>, escreva-nos um <a href="mailto:liibrelab@gmail.com">e-mail</a> ou nos encontre no twitter (<a href="https://twitter.com/mortarasara">Sara</a>, <a href="https://twitter.com/SanchezTapiaA">Andrea</a> ou <a href="https://twitter.com/kguidonimartins">Karlo</a>).</p>
 </div>
 </div>
 
@@ -249,7 +250,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
