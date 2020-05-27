@@ -35,7 +35,6 @@ r_github_packages:
   - rpradosiqueira/brazilmaps
 
 r_packages:
-  - brazilmaps
   - dplyr
   - plyr
   - fs
