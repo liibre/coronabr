@@ -106,12 +106,12 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#download-de-dados-de-covid-19-no-brasil" class="anchor"></a>Download de dados de COVID-19 no Brasil</h1></div>
 <p><img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120"></p>
-<p><strong>coronabr</strong> é um pacote de <a href="https://www.r-project.org/">R</a> para fazer download e visualizar os dados dos casos diários de coronavírus (COVID-19) disponibilizados por diferentes fontes:</p>
+<p><strong>coronabr</strong> é um pacote de <a href="https://www.r-project.org/">R</a> para fazer <em>download</em> e visualizar os dados dos casos diários de coronavírus (COVID-19) disponibilizados por diferentes fontes:</p>
 <ul>
 <li>
 <a href="http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil">Ministério da Saúde</a>;</li>
 <li>
-<a href="https://brasil.io/dataset/covid19/caso">Brasil em dados libertos</a>;</li>
+<a href="https://brasil.io/dataset/covid19/caso">Brasil I/O</a>;</li>
 <li><a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a></li>
 </ul>
 <div id="nosso-objetivo" class="section level2">
@@ -142,9 +142,9 @@
 </li>
 <li>Entre 2020-03-18 e 2020-03-25, a página original do Ministério da Saúde parou de funcionar e os dados de casos de coronavirus COVID-19 discriminados por estado foram divulgados em apresentações de powerpoint e PDFs no blog do Ministério. <a href="https://www.twitter.com/belisards">Adriano Belisario</a> fez a compilação manual destes dados <a href="https://github.com/belisards/coronabr">neste repositório</a>
 </li>
-<li>A partir de 2020-03-26 o ministério de saúde brasileiro disponibilizou os dados de casos de coronavirus COVID-19 na página <a href="https://covid.saude.gov.br/" class="uri">https://covid.saude.gov.br/</a>
+<li>A partir de 2020-03-26 o Ministério de Saúde brasileiro disponibilizou os dados de casos de coronavirus COVID-19 na página <a href="https://covid.saude.gov.br/" class="uri">https://covid.saude.gov.br/</a>
 </li>
-<li>A partir de 2020-03-28 a opção de fazer download da série histórica por casos voltou a estar disponível. Depois disso, o padrão vem mudado diariamente, mas agora temos uma função estável <code><a href="reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> para o download desses dados (instruções de como usar <a href="https://liibre.github.io/coronabr/articles/minsaude.html">aqui</a>).</li>
+<li>A partir de 2020-03-28 a opção de fazer <em>download</em> da série histórica por casos voltou a estar disponível. Depois disso, o padrão vem mudado frequentemente, mas agora temos uma função estável <code><a href="reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> para o <em>download</em> desses dados (instruções de como usar <a href="https://liibre.github.io/coronabr/articles/minsaude.html">aqui</a>).</li>
 </ul>
 </div>
 </div>
@@ -183,9 +183,9 @@
 <h2 class="hasAnchor">
 <a href="#para-saber-mais" class="anchor"></a>Para saber mais:</h2>
 <ul>
-<li><p>Dados compilados pelo <a href="https://github.com/turicas/">Álvaro Justen</a> e colaboradores <a href="https://brasil.io/dataset/covid19/caso">aqui</a></p></li>
-<li><p><a href="https://coronavirus.jhu.edu/map.html">John Hopkins Coronavirus COVID-19 Global Cases</a></p></li>
 <li><p><a href="https://covid19br.github.io/">Observatório Covid-19 BR</a></p></li>
+<li><p>Dados compilados pelo Brasil I/O, <a href="https://github.com/turicas/">Álvaro Justen</a> e colaboradores <a href="https://brasil.io/dataset/covid19/caso">aqui</a></p></li>
+<li><p><a href="https://coronavirus.jhu.edu/map.html">John Hopkins Coronavirus COVID-19 Global Cases</a></p></li>
 <li><p><a href="https://covid-19-risk.github.io/map/brazil/pt/">Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil</a></p></li>
 <li><p><a href="https://paternogbc.github.io/covid19br/index.html">covid19br</a>, o pacote de R <a href="https://github.com/paternogbc">Gustavo Palermo</a> para acompanhar os dados de novos casos no Brasil</p></li>
 <li><p><a href="https://portal.fiocruz.br/coronavirus">Portal da Fiocruz</a></p></li>
@@ -195,8 +195,9 @@
 <li><p><a href="https://www.worldometers.info/coronavirus/">Atualização mundial do número de casos</a></p></li>
 <li><p><a href="https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8">Dez considerações antes de criar mais um gráfico sobre o COVID-19 (em inglês)</a></p></li>
 <li><p>Siga o <strong>Atila Iamarino</strong> no <a href="https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w">youtube</a>, <a href="www.instagram.com/oatila">Instagram</a>, <a href="https://twitter.com/oatila">twitter</a> ou <a href="https://t.me/corona_atila">telegram</a>. Tem também um <a href="https://www.reddit.com/r/coronabr/">fórum brasileiro de reddit</a> com muita informação.</p></li>
+<li><p>Siga também o canal <strong>Peixe Babel</strong> no <a href="https://github.com/peixebabel">GitHub</a>, <a href="https://www.youtube.com/CanalPeixeBabel">youtube</a>, <a href="https://twitter.com/canalpeixebabel">twitter</a>, <a href="https://www.instagram.com/canalpeixebabel/">Instagram</a>.</p></li>
 </ul>
-<p>Dúvidas, contribuições e sugestões, poste uma <em>issue</em> <a href="https://github.com/liibre/coronabr/issues">aqui</a>, escreva-nos um <a href="mailto:liibrelab@gmail.com">e-mail</a> ou nos encontre no twitter (<a href="https://twitter.com/mortarasara">Sara</a>, <a href="https://twitter.com/SanchezTapiaA">Andrea</a> ou <a href="https://twitter.com/kguidonimartins">Karlo</a>).</p>
+<p>Dúvidas, contribuições e sugestões, poste um <em>issue</em> <a href="https://github.com/liibre/coronabr/issues">aqui</a>, escreva-nos um <a href="mailto:liibrelab@gmail.com">e-mail</a> ou nos encontre no twitter (<a href="https://twitter.com/mortarasara">Sara</a>, <a href="https://twitter.com/SanchezTapiaA">Andrea</a> ou <a href="https://twitter.com/kguidonimartins">Karlo</a>).</p>
 </div>
 </div>
 
@@ -249,7 +250,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

@@ -113,7 +113,7 @@
 <div id="para-instalar-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#para-instalar-o-pacote" class="anchor"></a>Para instalar o pacote</h2>
-<p><code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
+<p><code><a href="https://rdrr.io/pkg/remotes/man/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
 </div>
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
@@ -122,33 +122,33 @@
 <div id="baixando-os-dados-apenas-do-brasil" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-apenas-do-brasil" class="anchor"></a>Baixando os dados apenas do Brasil</h3>
-<p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
+<p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal Brasil I/O <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-05-25    AL           state      6682    337    True
-## 2 2020-05-25    AP           state      6584    168    True
-## 3 2020-05-25    GO           state      2515     96    True
-## 4 2020-05-25    PE           state     28366   2248    True
-## 5 2020-05-25    RS           state      6559    197    True
-## 6 2020-05-25    SC           state      6875    109    True
+## 1 2020-05-25    AC           state      4501     97    True
+## 2 2020-05-25    AL           state      6682    337    True
+## 3 2020-05-25    AP           state      6584    168    True
+## 4 2020-05-25    BA           state     14204    477    True
+## 5 2020-05-25    CE           state     36185   2493    True
+## 6 2020-05-25    DF           state      6930    114    True
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                   3337357             27                      200.21832
-## 2                    845731             16                      778.49813
-## 3                   7018354             52                       35.83461
-## 4                   9557071             26                      296.80642
-## 5                  11377239             43                       57.65019
-## 6                   7164788             42                       95.95539
+## 1                    881935             12                      510.35507
+## 2                   3337357             27                      200.21832
+## 3                    845731             16                      778.49813
+## 4                  14873064             29                       95.50151
+## 5                   9132078             23                      396.24059
+## 6                   3015268             53                      229.83032
 ##   death_rate
-## 1     0.0504
-## 2     0.0255
-## 3     0.0382
-## 4     0.0792
-## 5     0.0300
-## 6     0.0159</code></pre>
+## 1     0.0216
+## 2     0.0504
+## 3     0.0255
+## 4     0.0336
+## 5     0.0689
+## 6     0.0165</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -180,12 +180,12 @@
 <pre><code>## # A tibble: 6 x 12
 ##    fips admin2 province_state country_region last_update   lat   long confirmed
 ##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
-## 1 45001 Abbev… South Carolina US             2020-05-25…  34.2  -82.5        35
-## 2 22001 Acadia Louisiana      US             2020-05-25…  30.3  -92.4       291
-## 3 51001 Accom… Virginia       US             2020-05-25…  37.8  -75.6       727
-## 4 16001 Ada    Idaho          US             2020-05-25…  43.5 -116.        796
-## 5 19001 Adair  Iowa           US             2020-05-25…  41.3  -94.5         8
-## 6 21001 Adair  Kentucky       US             2020-05-25…  37.1  -85.3        96
+## 1 45001 Abbev… South Carolina US             2020-05-27…  34.2  -82.5        35
+## 2 22001 Acadia Louisiana      US             2020-05-27…  30.3  -92.4       395
+## 3 51001 Accom… Virginia       US             2020-05-27…  37.8  -75.6       758
+## 4 16001 Ada    Idaho          US             2020-05-27…  43.5 -116.        796
+## 5 19001 Adair  Iowa           US             2020-05-27…  41.3  -94.5         7
+## 6 21001 Adair  Kentucky       US             2020-05-27…  37.1  -85.3        96
 ## # … with 4 more variables: deaths &lt;dbl&gt;, recovered &lt;dbl&gt;, active &lt;dbl&gt;,
 ## #   combined_key &lt;chr&gt;</code></pre>
 </div>
@@ -208,7 +208,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
