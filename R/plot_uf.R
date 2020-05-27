@@ -3,9 +3,8 @@
 #' @param df Data frame por estado formatado com a função `format_corona_br()`
 #' @param tipo Variável a ser exibida no eixo y. Padrão `tipo = "casos"` para mostrar os casos confirmados. Use `tipo = "obitos"` para o gráfico com o número de óbitos
 #' @param prop_pop Lógico. Exibir gráfico com número de casos proporcional à população? Padrão prop_pop = TRUE
-#' @param n Inteiro. Número mínimo de casos para comparação entre estados
-#' @param dir Caractere. Nome do diretório onde salvar a animação. Usar apenas se anim = TRUE.
-
+#' @param n Inteiro. Número mínimo de estados para o gráfico
+#'
 #' @importFrom dplyr filter mutate glimpse
 #' @importFrom stats reorder setNames
 #' @import ggplot2
@@ -22,62 +21,64 @@
 #' @export
 #'
 plot_uf <- function(df,
-                    prop_pop = TRUE,
-                    tipo = "casos",
-                    n = 1500,
-                    dir = "figs") {
-  # definindo data_max para plotar apenas atualizacoes completas
-  datas <-
-    as.data.frame(
-      table(df$date[df$confirmed > 0 & !is.na(df$state)]), stringsAsFactors = FALSE
-    ) %>%
-    setNames(c("x", "freq")) %>%
-    mutate(x = as.Date(x))
-  datas$lag <- datas$freq - dplyr::lag(datas$freq)
-  if (datas$lag[which.max(datas$x)] < 0) {
-    data_max <- max(datas$x, na.rm = TRUE) - 1
+                     prop_pop = TRUE,
+                     tipo = "casos",
+                     n = 10) {
+
+  # remove na
+  df <- na.omit(df)
+  df$state <- as.character(df$state)
+  if (tipo == "casos") {
+    df$var <- df$confirmed
+    leg_y <- "Número de casos confirmados"
   } else {
-    data_max <- max(datas$x, na.rm = TRUE)
+    df$var <- df$deaths
+    leg_y <- "Número de óbitos confirmados"
   }
-  # selecionando os estados para plotar
-  states <- df$state[df$confirmed > n & df$date == data_max]
-  # fonte
-  legenda <- "Fonte: https://brasil.io/dataset/covid19/caso"
-  # plot basico
-  if (prop_pop == TRUE) {
-    df <- df %>% dplyr::mutate(confirmed = .data$confirmed_per_100k_inhabitants)
-  } else {
-    df <- df
-  }
-  glimpse(df)
-  state_plot <- df %>%
-    dplyr::filter(.data$state %in% states & !is.na(.data$state)) %>%
-    ggplot(aes(x = date, y = .data$confirmed, colour = .data$state)) +
-    geom_line() +
-    geom_point() +
-    labs(title = paste0("Estados com mais de ", n, " casos"),
-         fill = "UF",
-         caption = legenda) +
-    # guides(color = guide_legend("UF")) +
-    scale_x_date(date_breaks = "15 day",
-                 date_labels = "%d/%b") +
-    scale_color_viridis_d() +
-    theme_minimal() +
-    theme(#axis.text.x = element_text(angle = 90),
-          legend.title = element_text(size = 7),
-          legend.text = element_text(size = 7))
+
+  # filtra os n estados
+  df.max <- df[df$date == max(df$date), ]
+  estados <- as.character(df.max$state[order(df.max$var, decreasing = TRUE)[1:n]])
+  df <- df[df$state %in% estados, ]
 
   if (tipo == "casos") {
-    state_plot <- state_plot %+%
-      aes(x = .data$date, y = .data$confirmed, colour = reorder(.data$state, -.data$confirmed)) +
-      labs(y = paste0("N", "\u00fa", "meros de casos confirmados"),
-           x = "Data")
+    if (prop_pop) df$var <- df$confirmed_per_100k_inhabitants
+
+    state_plot <- df %>%
+      ggplot() +
+      aes(x = date,
+          y = var,
+          colour = reorder(state, -var)) +
+      geom_line() +
+      geom_point() +
+      labs(y = leg_y)
+      guides(color = guide_legend("UF")) +
+      scale_x_date(date_breaks = "15 day",
+                   date_labels = "%d/%b") +
+      scale_color_viridis_d() +
+      theme_minimal() +
+      theme(legend.title = element_text(size = 7),
+            legend.text = element_text(size = 7))
+
   }
+
   if (tipo == "obitos") {
-    state_plot <- state_plot %+%
-      aes(x = .data$date, y = .data$deaths, colour = reorder(.data$state, -.data$deaths)) +
-      labs(y = paste0("N", "\u00fa", "meros de obitos confirmadas"),
-           x = "Data")
+
+    state_plot <- df %>%
+      ggplot() +
+      aes(x = date,
+          y = var,
+          colour = reorder(state, -var)) +
+      geom_line() +
+      geom_point() +
+      labs(y = leg_y) +
+      guides(color = guide_legend("UF")) +
+      scale_x_date(date_breaks = "15 day",
+                   date_labels = "%d/%b") +
+      scale_color_viridis_d() +
+      theme_minimal() +
+      theme(legend.title = element_text(size = 7),
+            legend.text = element_text(size = 7))
 
   }
 
