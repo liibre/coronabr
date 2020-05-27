@@ -61,15 +61,25 @@ tmap_mode("view")
 tm <- tm_shape(covid_lac) +
   tm_polygons("confirmed_per100k", 
               title = "Casos por 100 mil hab.", 
-              breaks = c(0, 50, 100, 150, 200, 400, 600, 1000, 1100), 
-              labels = c("0 a 50", 
-                         "50 a 100",
+              breaks = c(0,
+                         100,
+                         150,
+                         200,
+                         400,
+                         600, 
+                         1000,
+                         2000,
+                         4000,
+                         5000), 
+              labels = c("0 a 100", 
                          "100 a 150",
                          "150 a 200",
                          "200 a 400",
                          "400 a 600",
                          "600 a 1000",
-                         ">1000"
+                         "1000 a 2000",
+                         "2000 a 4000",
+                         ">4000"
                          )) +
   tmap_style("col_blind")
 tm

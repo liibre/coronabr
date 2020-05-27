@@ -26,7 +26,6 @@ library(coronabr)
 
 ```{r get}
 dados <- get_corona_br(by_uf = TRUE)
-#dados_jhu <- get_corona_jhu()
 ```
 
 
@@ -43,33 +42,48 @@ plot_corona_br(df = dados, tipo = "aumento")
 
 ## Casos por estado brasileiro
 
-Para fazer o gráfico por estados, precisamos antes formatar os dados. 
 
-```{r mapa1, fig.height=3, fig.width=3}
+```{r mapa1, fig.height=3, fig.width=3, echo = F, eval = F}
+#Para fazer o gráfico por estados, precisamos antes formatar os dados. 
 dados_format <- format_corona_br(dados)
+
+#dados %>% group_by(state, date) %>% 
+ # filter(date == "2020-05-25") %>% 
+  #summarize(confirmed_per_100k_inhabitants) %>% 
+  #arrange(desc(confirmed_per_100k_inhabitants))
 ```
 
-Gráfico proporcional ao tamanho populacional (Casos por 100 mil habitantes):
+### Gráfico proporcional ao tamanho populacional (Casos por 100 mil habitantes)
 
 ```{r estados, fig.width=6}
-plot_uf(df = dados_format)
+plot_uf(df = dados, n = 7)
 ```
 
-Gráfico com o número bruto de notificações:
+### Gráfico com o número bruto de notificações
 
 ```{r estados2, fig.width=6}
-plot_uf(df = dados_format, prop_pop = FALSE)
+plot_uf(df = dados, prop_pop = FALSE, n = 7)
+```
+
+### Gráfico com o número bruto de óbitos
+
+```{r obitos, fig.width=6}
+plot_uf(df = dados, tipo = "obitos", prop_pop = FALSE, n = 7)
 ```
 
 
+### Gráfico com o número de óbitos por 100 mil habitantes
 
+```{r obitos_prop, fig.width=6}
+plot_uf(df = dados, tipo = "obitos", prop_pop = TRUE, n = 7)
+```
 
-```{r anim_test, fig.show = "animate", echo = FALSE, eval = FALSE}
-## Evolução do número de casos por estado
-anim <- map_corona_br(df = dados_format,
-                      anim = TRUE, 
-                      dir = "figs")
-#<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/anim.gif" align="center" alt="" width="600" />
+### Comparando estados específicos
 
+```{r comp_estados, fig.width=6}
+plot_uf(df = dados, 
+        tipo = "casos",
+        prop_pop = TRUE,
+        estados = c("AM", "CE", "PE", "SP"))
 ```
 

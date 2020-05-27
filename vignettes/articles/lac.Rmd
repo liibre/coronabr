@@ -20,7 +20,7 @@ library(coronabr)
 library(tmap)
 ```
 
-Para visualizar os dados em um mapa, vamos carregar o shapefile do mundo do pacote **tmap** e selecionar os países da América Latina e Caribe. 
+Para visualizar os dados em um mapa, vamos carregar o _shapefile_ do mundo do pacote **tmap** e selecionar os países da América Latina e Caribe. 
 
 ```{r shp}
 # carregando o shapefile do mundo
@@ -33,7 +33,7 @@ lac <- World[World$continent %in% c("South America", "North America")
 
 ```
 
-Agora vamos baixar a última atualzação dos dados curados pela [*John Hopkins University*](https://github.com/CSSEGISandData/COVID-19).
+Agora vamos baixar a última atualização dos dados curados pela [*John Hopkins University*](https://github.com/CSSEGISandData/COVID-19).
 
 ```{r dados}
 # baixando os dados de covid-19 para o mundo
@@ -47,7 +47,7 @@ lac$country_region[lac$country_region == "Dominican Rep."] <- "Dominican Republi
 dados_lac <- dados_jhu[dados_jhu$country_region %in% lac$country_region, ]
 ```
 
-Para fazer visualizar os dados no mapa, precisamos juntar os dados de casos de COVID-19 na América Latina e Caribe com os dados do shapefile para a região. 
+Para fazer visualizar os dados no mapa, precisamos juntar os dados de casos de COVID-19 na América Latina e Caribe com os dados do _shapefile_ para a região. 
 
 ```{r merge}
 covid_lac <- merge(lac, dados_lac, by = "country_region")
@@ -61,15 +61,25 @@ tmap_mode("view")
 tm <- tm_shape(covid_lac) +
   tm_polygons("confirmed_per100k", 
               title = "Casos por 100 mil hab.", 
-              breaks = c(0, 50, 100, 150, 200, 400, 600, 1000, 1100), 
-              labels = c("0 a 50", 
-                         "50 a 100",
+              breaks = c(0,
+                         100,
+                         150,
+                         200,
+                         400,
+                         600, 
+                         1000,
+                         2000,
+                         4000,
+                         5000), 
+              labels = c("0 a 100", 
                          "100 a 150",
                          "150 a 200",
                          "200 a 400",
                          "400 a 600",
                          "600 a 1000",
-                         ">1000"
+                         "1000 a 2000",
+                         "2000 a 4000",
+                         ">4000"
                          )) +
   tmap_style("col_blind")
 tm
