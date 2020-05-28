@@ -69,6 +69,9 @@
       <a href="../articles/minsaude.html">Dados do Ministério da Saúde</a>
     </li>
     <li>
+      <a href="../articles/articles/mapas_br.html">Mapa dos casos registrados de COVID-19 no Brasil com tmap</a>
+    </li>
+    <li>
       <a href="../articles/articles/lac.html">Casos de COVID-19 na América Latina e Caribe</a>
     </li>
     <li>
@@ -113,7 +116,7 @@
 <div id="para-instalar-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#para-instalar-o-pacote" class="anchor"></a>Para instalar o pacote</h2>
-<p><code><a href="https://rdrr.io/pkg/remotes/man/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
+<p><code><a href="https://remotes.r-lib.org/reference/install_github.html">remotes::install_github("liibre/coronabr")</a></code></p>
 </div>
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
@@ -125,11 +128,11 @@
 <p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> que extrai os dados do portal <a href="https://covid.saude.gov.br" class="uri">https://covid.saude.gov.br</a>, usando o csv disponibilizado diariamente na página.</p>
 <p>Os dados podem ser procurados para todos os estados, ou para só um, ou para vários, usando o parâmetro uf e o código de duas letras de cada estado (ex. “PI”)</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">todos_estados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>()</pre></body></html></div>
-<pre><code>## salvando minsaude.csv em output</code></pre>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">rj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="st">"RJ"</span>)</pre></body></html></div>
-<pre><code>## salvando minsaude.csv em output</code></pre>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">sprj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"SP"</span>, <span class="st">"RJ"</span>))</pre></body></html></div>
-<pre><code>## salvando minsaude.csv em output</code></pre>
+<pre><code>## salvando minsaude.csv em outputs</code></pre>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">rj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="st">"RJ"</span>, <span class="kw">filename</span> <span class="kw">=</span> <span class="st">"minsaude_RJ"</span>)</pre></body></html></div>
+<pre><code>## salvando minsaude_RJ.csv em outputs</code></pre>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">sprj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"SP"</span>, <span class="st">"RJ"</span>), <span class="kw">filename</span> <span class="kw">=</span> <span class="st">"minsaude_SP-RJ"</span>)</pre></body></html></div>
+<pre><code>## salvando minsaude_SP-RJ.csv em outputs</code></pre>
 </div>
 <div id="inspecionando-os-dados" class="section level3">
 <h3 class="hasAnchor">
@@ -211,7 +214,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
