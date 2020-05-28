@@ -4,7 +4,7 @@
 \alias{format_corona_br}
 \title{Preenche as datas vazias nos dados de COVID-19 do Brasil.io}
 \usage{
-format_corona_br(df, filename = "corona_brasil_formated", dir = "output")
+format_corona_br(df, filename = "corona_brasil_formated", dir = "outputs")
 }
 \arguments{
 \item{df}{Data frame contendo o resultado da busca de `get_corona_br()`}
