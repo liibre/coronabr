@@ -13,12 +13,11 @@
 #' @importFrom utils read.csv write.csv
 #' @importFrom magrittr %>%
 #' @importFrom plyr .
-#' @importFrom lubridate as_date
 #' @importFrom readxl read_excel
 #'
 #' @export
 #'
-get_corona_minsaude <- function(dir = "output",
+get_corona_minsaude <- function(dir = "outputs",
                                 filename = "minsaude",
                                 uf = NULL) {
   rlang::.data #para usar vars no dplyr
@@ -52,7 +51,7 @@ get_corona_minsaude <- function(dir = "output",
   # res$date <- as.Date(
   #   paste(datas$year, datas$month, datas$day, sep = "-"))
   # res <- res %>% dplyr::select(-.data$data)
-  res$date <- lubridate::as_date(res$data)
+  res$date <- as.Date(res$data)
   # gravando metadados da requisicao
   metadado <- data.frame(intervalo = paste(range(res$data), collapse = ";"),
                          fonte = url,
@@ -62,16 +61,14 @@ get_corona_minsaude <- function(dir = "output",
   }
 
   message(paste0("salvando ", filename, ".csv em ", dir))
-  if (!dir.exists(dir)) {
-    dir.create(dir)
-  }
+
+  if (!dir.exists(dir)) dir.create(dir)
+
   utils::write.csv(res,
-                   paste0(dir, "/", filename,
-                          paste(uf, collapse = "-"), ".csv"),
+                   paste0(dir, "/", filename, ".csv"),
                    row.names = FALSE)
   utils::write.csv(metadado,
-                   paste0(dir, "/", "metadado_minsaude",
-                          paste(uf, collapse = "-"), ".csv"),
+                   paste0(dir, "/", filename, "_metadado.csv"),
                    row.names = FALSE)
   return(res)
 }

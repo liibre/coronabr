@@ -4,7 +4,7 @@
 \alias{get_corona_minsaude}
 \title{Extrai dados de COVID-19 para o Brasil da página do Ministério da Saúde}
 \usage{
-get_corona_minsaude(dir = "output", filename = "minsaude", uf = NULL)
+get_corona_minsaude(dir = "outputs", filename = "minsaude", uf = NULL)
 }
 \arguments{
 \item{dir}{Diretório onde salvar o arquivo}

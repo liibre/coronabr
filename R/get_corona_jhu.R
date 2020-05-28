@@ -4,38 +4,43 @@
 #'
 #' @inheritParams get_corona_minsaude
 #'
-#' @importFrom readr read_csv write_csv
-#' @importFrom glue glue
-#' @importFrom janitor clean_names
-#' @importFrom fs dir_create
 #' @importFrom magrittr %>%
 #' @importFrom stats setNames
 #'
 #' @export
 #'
-get_corona_jhu <- function(dir = "output",
+get_corona_jhu <- function(dir = "outputs",
                            filename = "corona_jhu") {
-
-  message(glue::glue("Criando diretorio {dir} ...\n\n"))
 
   message("Baixando dados atualizados ...\n\n")
 
   yesterday <- format(as.Date(Sys.Date() - 1, '%Y-%m-%d'), "%m-%d-%Y")
 
   link <-
-    glue::glue("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/{yesterday}.csv")
+    paste0("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/",
+           yesterday, ".csv")
 
   covid_data <-
-    readr::read_csv(link) %>%
+    read.csv(link) %>%
     setNames(tolower(gsub("_$", "", names(.))))
 
-  fs::dir_create(dir)
+  # metadado
+  # gravando metadados da requisicao
+  metadado <- data.frame(ultima_atualizacao = unique(covid_data$last_update),
+                         fonte = "https://coronavirus.jhu.edu",
+                         acesso_em = Sys.Date())
 
-  message(glue::glue("Salvando {filename}.csv em {dir} ...\n\n"))
+  if (!dir.exists(dir)) dir.create(dir)
 
-  save_filename <- paste0(paste(dir, filename, sep = "/"), ".csv")
+  message(paste0("salvando ", filename, ".csv em ", dir))
 
-  covid_data %>%
-    readr::write_csv(x = ., path = save_filename)
+  save_filename <- paste0(dir, "/", filename, ".csv")
+
+  write.csv(covid_data, save_filename, row.names = FALSE)
+  write.csv(metadado,
+            paste0(dir, "/", filename, "_metadado.csv"),
+            row.names = FALSE)
+
+  return(covid_data)
 
 }

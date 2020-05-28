@@ -10,14 +10,13 @@
 #' @param by_uf Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município
 #'
 #' @importFrom dplyr filter
-#' @importFrom utils read.csv
-#' @importFrom utils write.csv
+#' @importFrom utils read.csv write.csv
 #' @importFrom rlang .data
 #' @importFrom magrittr %>%
 #'
 #' @export
 #'
-get_corona_br <- function(dir = "output",
+get_corona_br <- function(dir = "outputs",
                           filename = "corona_brasil",
                           cidade = NULL,
                           uf = NULL,
@@ -72,12 +71,14 @@ get_corona_br <- function(dir = "output",
   # mudancas para facilitar plots
   res$date <- as.Date(res$date)
   res$state <- as.factor(res$state)
-  if (!dir.exists(dir)) {
-    dir.create(dir)
-  }
+
+  message(paste0("salvando ", filename, ".csv em ", dir))
+
+  if (!dir.exists(dir)) dir.create(dir)
+
   utils::write.csv(res, paste0(dir, "/", filename, ".csv"),
                    row.names = FALSE)
-  utils::write.csv(metadado, paste0(dir, "/", "metadado_corona_br", ".csv"),
+  utils::write.csv(metadado, paste0(dir, "/", filename, "_metadado", ".csv"),
                    row.names = FALSE)
   return(res)
 }

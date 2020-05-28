@@ -9,6 +9,7 @@ vignette: >
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+devtools::load_all()
 ```
 
 ## Para instalar o pacote
@@ -17,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
 
 ## Carregando o pacote
 
-```{r load, eval = TRUE}
+```{r load, eval = FALSE}
 library(coronabr)
 ```
 
@@ -29,8 +30,8 @@ Os dados podem ser procurados para todos os estados, ou para só um, ou para vá
 
 ```{r get-br, error=TRUE}
 todos_estados <- get_corona_minsaude()
-rj <- get_corona_minsaude(uf = "RJ")
-sprj <- get_corona_minsaude(uf = c("SP", "RJ"))
+rj <- get_corona_minsaude(uf = "RJ", filename = "minsaude_RJ")
+sprj <- get_corona_minsaude(uf = c("SP", "RJ"), filename = "minsaude_SP-RJ")
 ```
 
 ### Inspecionando os dados

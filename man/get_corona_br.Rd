@@ -5,7 +5,7 @@
 \title{Extrai dados de coronavírus para o Brasil de Brasil.io}
 \usage{
 get_corona_br(
-  dir = "output",
+  dir = "outputs",
   filename = "corona_brasil",
   cidade = NULL,
   uf = NULL,

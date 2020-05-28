@@ -4,7 +4,7 @@
 \alias{get_corona_jhu}
 \title{Extrai dados mundiais de coronavírus}
 \usage{
-get_corona_jhu(dir = "output", filename = "corona_jhu")
+get_corona_jhu(dir = "outputs", filename = "corona_jhu")
 }
 \arguments{
 \item{dir}{Diretório onde salvar o arquivo}

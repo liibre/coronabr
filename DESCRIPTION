@@ -26,26 +26,19 @@ Remotes:
     rpradosiqueira/brazilmaps
 Imports:
     dplyr,
-    fs,
     ggplot2,
-    glue,
     httr,
-    janitor,
     jsonlite,
-    lubridate,
     magrittr,
     plyr,
-    readr,
     rlang,
-    rmarkdown,
     rvest,
-    sf,
     stringr,
-    tidyr,
     readxl,
-    webshot,
+    tidyr,
     xml2
 Suggests: 
+    rmarkdown,
     devtools,
     knitr
 VignetteBuilder: 
