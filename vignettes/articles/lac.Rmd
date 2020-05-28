@@ -13,9 +13,11 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       comment = FALSE, 
                       fig.width = 6, 
                       fig.height = 6)
+devtools::load_all()
+library(tmap)
 ```
 
-```{r pkgs}
+```{r pkgs, echo = FALSE}
 library(coronabr)
 library(tmap)
 ```
@@ -45,13 +47,15 @@ lac$country_region <- as.character(lac$name)
 lac$country_region[lac$country_region == "Dominican Rep."] <- "Dominican Republic"
 # selecionando apenas países da lac
 dados_lac <- dados_jhu[dados_jhu$country_region %in% lac$country_region, ]
+# agregando dados por país
+df_lac <- aggregate(confirmed ~ country_region, data = dados_lac, FUN = sum)
 ```
 
 Para fazer visualizar os dados no mapa, precisamos juntar os dados de casos de COVID-19 na América Latina e Caribe com os dados do _shapefile_ para a região. 
 
 ```{r merge}
-covid_lac <- merge(lac, dados_lac, by = "country_region")
-covid_lac$confirmed_per100k <- covid_lac$confirmed/covid_lac$pop_est * 100000
+covid_lac <- merge(lac, df_lac, by = "country_region")
+covid_lac$confirmed_per100k <- (covid_lac$confirmed/covid_lac$pop_est) * 100000
 ```
 
 E agora sim, vamos visualizar os dados em um mapa dinâmico. 

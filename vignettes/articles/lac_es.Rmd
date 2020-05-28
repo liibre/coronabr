@@ -13,9 +13,11 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE,
                       comment = FALSE,
                       fig.width = 6,
                       fig.height = 6)
+devtools::load_all()
+library(tmap)
 ```
 
-```{r pkgs}
+```{r pkgs, eval = FALSE}
 library(coronabr)
 library(tmap)
 ```
@@ -45,12 +47,14 @@ lac$country_region <- as.character(lac$name)
 lac$country_region[lac$country_region == "Dominican Rep."] <- "Dominican Republic"
 # selecionando apenas países da lac
 dados_lac <- dados_jhu[dados_jhu$country_region %in% lac$country_region, ]
+# agregando dados por país
+df_lac <- aggregate(confirmed ~ country_region, data = dados_lac, FUN = sum)
 ```
 
 Para mostrar los datos en el mapa, necesitamos combinar los datos de los casos de COVID-19 en América Latina y el Caribe con los datos del *shapefile* de la región.
 
 ```{r merge}
-covid_lac <- merge(lac, dados_lac, by = "country_region")
+covid_lac <- merge(lac, df_lac, by = "country_region")
 covid_lac$confirmed_per100k <- covid_lac$confirmed/covid_lac$pop_est * 100000
 ```
 
