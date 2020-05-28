@@ -42,6 +42,8 @@ navbar:
         href: articles/graficos.html
       - text: Dados do Ministério da Saúde
         href: articles/minsaude.html
+      - text: Mapa dos casos registrados de COVID-19 no Brasil com tmap
+        href: articles/articles/mapas_br.html
       - text: Casos de COVID-19 na América Latina e Caribe
         href: articles/articles/lac.html
       - text: Casos de COVID-19 en América Latina y el Caribe

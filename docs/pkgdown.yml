@@ -1,6 +1,6 @@
 pandoc: 2.3.1
-pkgdown: 1.5.1.9000
-pkgdown_sha: fcc120d996055519db89f37f0097af7ce25d6641
+pkgdown: 1.5.1
+pkgdown_sha: ~
 articles:
   lac: articles/lac.html
   lac_es: articles/lac_es.html
@@ -8,7 +8,7 @@ articles:
   coronabr: coronabr.html
   graficos: graficos.html
   minsaude: minsaude.html
-last_built: 2020-05-27T17:36Z
+last_built: 2020-05-28T22:10Z
 urls:
   reference: https://liibre.github.io/coronabr/reference
   article: https://liibre.github.io/coronabr/articles
