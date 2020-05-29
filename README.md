@@ -81,9 +81,10 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
     <https://covid.saude.gov.br/>
   - A partir de 2020-03-28 a opção de fazer *download* da série
     histórica por casos voltou a estar disponível. Depois disso, o
-    padrão vem mudado frequentemente, mas agora temos uma função
-    estável `get_corona_minsaude()` para o *download* desses dados
-    (instruções de como usar
+    padrão tem mudado frequentemente, inclusive no formato de
+    disponibilização dos dados que agora é em .xls e não mais .csv.
+    Neste momento, temos uma função estável `get_corona_minsaude()` para
+    o *download* desses dados (instruções de como usar
     [aqui](https://liibre.github.io/coronabr/articles/minsaude.html)).
 
 ## Visualizando os dados
@@ -96,22 +97,22 @@ Entre [aqui](https://liibre.github.io/coronabr/articles/lac.html) para
 acompanhar os casos na América Latina (versão em espanhol
 [aqui](https://liibre.github.io/coronabr/articles/lac_es.html))
 
-### Crescimento nacional no número de casos
+### Crescimento nacional no número de casos de COVID-19
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
 
-### Entendendo o aumento diário
+### Entendendo o aumento diário de COVID-19
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
-### Crescimento do número de casos nos estados mais afetados
+### Crescimento do número de casos de COVID-19 nos estados mais afetados
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
 
 <!---
 ### Número de casos por estado brasileiro
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articlfes/graficos_files/figure-html/mapa1-1.png" align="center" alt="" width="600" />
 
 ### Evolução do número de casos por estado
 
