@@ -133,26 +133,26 @@
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
 <pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-05-27    AL           state      7580    368    True
-## 2 2020-05-27    AM           state     33508   1891    True
-## 3 2020-05-27    AP           state      7619    183    True
-## 4 2020-05-27    BA           state     15070    531    True
-## 5 2020-05-27    CE           state     37275   2671    True
-## 6 2020-05-27    DF           state      7761    133    True
+## 1 2020-05-28    AL           state      8056    385    True
+## 2 2020-05-28    AP           state      8152    198    True
+## 3 2020-05-28    CE           state     37821   2733    True
+## 4 2020-05-28    DF           state      8300    142    True
+## 5 2020-05-28    GO           state      3101    115    True
+## 6 2020-05-28    MG           state      8686    255    True
 ##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                   3337357             27                       227.1258
-## 2                   4144597             13                       808.4743
-## 3                    845731             16                       900.8775
-## 4                  14873064             29                       101.3241
-## 5                   9132078             23                       408.1765
-## 6                   3015268             53                       257.3901
+## 1                   3337357             27                      241.38862
+## 2                    845731             16                      963.89987
+## 3                   9132078             23                      414.15546
+## 4                   3015268             53                      275.26575
+## 5                   7018354             52                       44.18415
+## 6                  21168791             31                       41.03210
 ##   death_rate
-## 1     0.0485
-## 2     0.0564
-## 3     0.0240
-## 4     0.0352
-## 5     0.0717
-## 6     0.0171</code></pre>
+## 1     0.0478
+## 2     0.0243
+## 3     0.0723
+## 4     0.0171
+## 5     0.0371
+## 6     0.0294</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-mundiais" class="section level3">
@@ -166,18 +166,18 @@
 <a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_jhu</span>)</pre></body></html></div>
 <pre><code>##    fips    admin2 province_state country_region         last_update      lat
-## 1 45001 Abbeville South Carolina             US 2020-05-28 02:32:31 34.22333
-## 2 22001    Acadia      Louisiana             US 2020-05-28 02:32:31 30.29506
-## 3 51001  Accomack       Virginia             US 2020-05-28 02:32:31 37.76707
-## 4 16001       Ada          Idaho             US 2020-05-28 02:32:31 43.45266
-## 5 19001     Adair           Iowa             US 2020-05-28 02:32:31 41.33076
-## 6 21001     Adair       Kentucky             US 2020-05-28 02:32:31 37.10460
+## 1 45001 Abbeville South Carolina             US 2020-05-29 02:32:50 34.22333
+## 2 22001    Acadia      Louisiana             US 2020-05-29 02:32:50 30.29506
+## 3 51001  Accomack       Virginia             US 2020-05-29 02:32:50 37.76707
+## 4 16001       Ada          Idaho             US 2020-05-29 02:32:50 43.45266
+## 5 19001     Adair           Iowa             US 2020-05-29 02:32:50 41.33076
+## 6 21001     Adair       Kentucky             US 2020-05-29 02:32:50 37.10460
 ##         long confirmed deaths recovered active                  combined_key
-## 1  -82.46171        35      0         0     35 Abbeville, South Carolina, US
-## 2  -92.41420       397     22         0    375         Acadia, Louisiana, US
-## 3  -75.63235       780     12         0    768        Accomack, Virginia, US
-## 4 -116.24155       798     22         0    776                Ada, Idaho, US
-## 5  -94.47106         7      0         0      7               Adair, Iowa, US
+## 1  -82.46171        37      0         0     37 Abbeville, South Carolina, US
+## 2  -92.41420       401     22         0    379         Acadia, Louisiana, US
+## 3  -75.63235       807     12         0    795        Accomack, Virginia, US
+## 4 -116.24155       803     22         0    781                Ada, Idaho, US
+## 5  -94.47106         8      0         0      8               Adair, Iowa, US
 ## 6  -85.28130        96     19         0     77           Adair, Kentucky, US</code></pre>
 </div>
 </div>
