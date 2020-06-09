@@ -2,6 +2,17 @@
 [![Build
 Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis-ci.com/liibre/coronabr)
 
+<font color="red"> **Urgente:** devido ao apagão de dados realizado pelo
+Ministério da Saúde, o acesso a informações confiáveis relativas à
+COVID-19 depende atualmente do portal Brasil I/O, que está unificando os
+dados das diferentes Secretarias Estaduais de Saúde desde dia
+17/03/2020. A página do projeto é esta <https://brasil.io/covid19/> e o
+link para o apoia.se é <https://apoia.se/brasilio>. Brasil I/O está
+coordenado por Álvaro Justen <https://twitter.com/turicas>. Recomendamos
+usar apenas a função `get_corona_br()` até o acesso a dados confiáveis
+estabilizar.
+</font>
+
 # Download de dados de COVID-19 no Brasil
 
 <img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120" />
