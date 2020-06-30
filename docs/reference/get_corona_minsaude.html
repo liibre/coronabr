@@ -159,7 +159,12 @@
 (disponíveis em: 'https://covid.saude.gov.br/') e salva o resultado no disco.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_corona_minsaude</span>(<span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"outputs"</span>, <span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"minsaude"</span>, <span class='kw'>uf</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_corona_minsaude</span>(
+  <span class='kw'>dir</span> <span class='kw'>=</span> <span class='st'>"outputs"</span>,
+  <span class='kw'>filename</span> <span class='kw'>=</span> <span class='st'>"minsaude"</span>,
+  <span class='kw'>uf</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>save</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -175,6 +180,10 @@
     <tr>
       <th>uf</th>
       <td><p>Caractere indicando a abreviação do(s) estado(s) brasileiro(s)</p></td>
+    </tr>
+    <tr>
+      <th>save</th>
+      <td><p>Lógico. Salva os dados na pasta `dir`</p></td>
     </tr>
     </table>
 

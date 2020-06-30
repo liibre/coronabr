@@ -2,7 +2,7 @@
 title: "Visualización de casos registrados de COVID-19 en América Latina y el Caribe"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{lac_es}
+  %\VignetteIndexEntry{Visualización de casos registrados de COVID-19 en América Latina y el Caribe}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

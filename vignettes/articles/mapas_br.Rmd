@@ -2,7 +2,7 @@
 title: "Mapa de COVID-19 no Brasil"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{mapas}
+  %\VignetteIndexEntry{Mapa de COVID-19 no Brasil}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -21,7 +21,7 @@ Primeiro, vamos baixar os dados do Brasil.io por UF. Além dos pacotes coronabr 
 ```{r pkg, eval = FALSE}
 library(coronabr)
 library(dplyr)
-library(brazilmaps) #usar remotes::instal_github("rpradosiqueira/brazilmaps")
+library(brazilmaps) #usar remotes::install_github("rpradosiqueira/brazilmaps")
 library(sf)
 library(tmap)
 ```
@@ -40,7 +40,7 @@ dados <- get_corona_br(by_uf = TRUE)
 A função `format_corona_br()` formata os dados para fazer um plot com o número de casos a cada 100.000 habitantes.
 
 ```{r formata}
-dados_format <- format_corona_br(dados)
+#at <- format_corona_br(dados)
 ```
 
 ## Um mapa com o número de casos a cada 100 mil hab
@@ -50,8 +50,8 @@ Como os dados são atualizados o tempo todo, o código abaixo seleciona a data c
 ```{r data}
 # Pegando a data mais recente com os dados completos
 # pode ser a data máxima, ou anterior à máxima
-datas <- plyr::count(dados_format$date[dados_format$confirmed > 0 
-                                       & !is.na(dados_format$state)])
+datas <- plyr::count(dados$date[dados$last_available_confirmed > 0 
+                                       & !is.na(dados$state)])
 datas$lag <- datas$freq - dplyr::lag(datas$freq)
 if (datas$lag[which.max(datas$x)] < 0) {
   data_max <- max(datas$x, na.rm = TRUE) - 1
@@ -64,9 +64,9 @@ Aqui vamos mudar os nomes das colunas para facilitar a junção dos dados e o pl
 
 ```{r}
 # proporcao de casos por 100k
-dados_format <- dados_format %>%
+dados_format <- dados %>%
   # renomeia colunas e arredonda casos
-  mutate(`Casos (por 100 mil hab.)` = round(confirmed_per_100k_inhabitants),
+  mutate(`Casos (por 100 mil hab.)` = round(last_available_confirmed_per_100k_inhabitants),
          State = city_ibge_code) %>%
   # filtra para ultima data
   filter(date == data_max) 
@@ -104,12 +104,13 @@ mapa
 
 
 ```{r echo = FALSE, eval = FALSE}
+df <- dados
 map_corona_br <- function(df,
                           prop_pop = TRUE,
                           anim = FALSE,
                           dir = "figs"){
   # puxando a data mais atualizada
-  datas <- plyr::count(df$date[df$confirmed > 0 & !is.na(df$state)])
+  datas <- plyr::count(df$date[df$last_available_confirmed > 0 & !is.na(df$state)])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
     data_max <- max(datas$x, na.rm = TRUE) - 1
@@ -120,9 +121,9 @@ map_corona_br <- function(df,
   df <- df %>%
     filter(.data$date == data_max)
   }
-  df$Casos <- df$confirmed
+  df$Casos <- df$last_available_confirmed
   # proporcao de casos por 100k
-  df$`Casos (por 100 mil hab.)` <- df$confirmed_per_100k_inhabitants
+  df$`Casos (por 100 mil hab.)` <- df$last_available_confirmed_per_100k_inhabitants
   df$State <- df$city_ibge_code
   br <- brazilmaps::get_brmap(geo = "State",
                               class = "sf")

@@ -163,7 +163,8 @@
   <span class='kw'>cidade</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>uf</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>ibge_cod</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>by_uf</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+  <span class='kw'>by_uf</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>save</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -192,6 +193,10 @@
     <tr>
       <th>by_uf</th>
       <td><p>Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município</p></td>
+    </tr>
+    <tr>
+      <th>save</th>
+      <td><p>Lógico. Salva os dados na pasta `dir`</p></td>
     </tr>
     </table>
 
