@@ -42,17 +42,6 @@ plot_corona_br(df = dados, tipo = "aumento")
 
 ## Casos por estado brasileiro
 
-
-```{r mapa1, fig.height=3, fig.width=3, echo = F, eval = F}
-#Para fazer o gráfico por estados, precisamos antes formatar os dados. 
-dados_format <- format_corona_br(dados)
-
-#dados %>% group_by(state, date) %>% 
- # filter(date == "2020-05-25") %>% 
-  #summarize(confirmed_per_100k_inhabitants) %>% 
-  #arrange(desc(confirmed_per_100k_inhabitants))
-```
-
 ### Gráfico proporcional ao tamanho populacional (Casos por 100 mil habitantes)
 
 ```{r estados, fig.width=6}
