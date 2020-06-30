@@ -6,6 +6,7 @@
 #' @param dir Diretório onde salvar o arquivo
 #' @param filename Nome do arquivo, valor predeterminado "minsaude"
 #' @param uf Caractere indicando a abreviação do(s) estado(s) brasileiro(s)
+#' @param save Lógico. Salva os dados na pasta `dir`
 #'
 #' @importFrom utils write.csv
 #' @importFrom dplyr mutate_if bind_rows left_join
@@ -19,7 +20,8 @@
 #'
 get_corona_minsaude <- function(dir = "outputs",
                                 filename = "minsaude",
-                                uf = NULL) {
+                                uf = NULL,
+                                save = TRUE) {
   rlang::.data #para usar vars no dplyr
   #get original data and format it
   url <-
@@ -36,8 +38,8 @@ get_corona_minsaude <- function(dir = "outputs",
 
   utils::download.file(url, tmp_data)
 
-  res <- readxl::read_excel(path = tmp_data, guess_max = 10e6) %>%
-    dplyr::mutate_at(dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))), ~ as.numeric(.))
+  res <- readxl::read_excel(path = tmp_data, guess_max = 10e6)
+  res <- dplyr::mutate_at(res, dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))), ~ as.numeric(.))
 
   #url <- "https://covid.saude.gov.br"
   #date <- format(Sys.Date(), "%Y%m%d")
@@ -60,6 +62,7 @@ get_corona_minsaude <- function(dir = "outputs",
     res <- res %>% dplyr::filter(.data$estado %in% uf)
   }
 
+  if (save) {
   message(paste0("salvando ", filename, ".csv em ", dir))
 
   if (!dir.exists(dir)) dir.create(dir)
@@ -71,4 +74,5 @@ get_corona_minsaude <- function(dir = "outputs",
                    paste0(dir, "/", filename, "_metadado.csv"),
                    row.names = FALSE)
   return(res)
+  }
 }

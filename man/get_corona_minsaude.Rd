@@ -4,7 +4,12 @@
 \alias{get_corona_minsaude}
 \title{Extrai dados de COVID-19 para o Brasil da página do Ministério da Saúde}
 \usage{
-get_corona_minsaude(dir = "outputs", filename = "minsaude", uf = NULL)
+get_corona_minsaude(
+  dir = "outputs",
+  filename = "minsaude",
+  uf = NULL,
+  save = TRUE
+)
 }
 \arguments{
 \item{dir}{Diretório onde salvar o arquivo}
@@ -12,6 +17,8 @@ get_corona_minsaude(dir = "outputs", filename = "minsaude", uf = NULL)
 \item{filename}{Nome do arquivo, valor predeterminado "minsaude"}
 
 \item{uf}{Caractere indicando a abreviação do(s) estado(s) brasileiro(s)}
+
+\item{save}{Lógico. Salva os dados na pasta `dir`}
 }
 \description{
 Esta função extrai os valores compilados pelo Ministério da Saúde do Brasil

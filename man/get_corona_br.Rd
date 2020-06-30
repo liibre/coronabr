@@ -10,7 +10,8 @@ get_corona_br(
   cidade = NULL,
   uf = NULL,
   ibge_cod = NULL,
-  by_uf = FALSE
+  by_uf = FALSE,
+  save = TRUE
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ get_corona_br(
 \item{ibge_cod}{Numérico ou caractere. Código ibge do(s) município(s) ou estado(s) brasileiro(s). O código dos municípios tem 7 cifras e o código dos estados 2}
 
 \item{by_uf}{Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município}
+
+\item{save}{Lógico. Salva os dados na pasta `dir`}
 }
 \description{
 Esta função extrai os valores compilados pelo portal Brasil.io, que recolhe boletins informativos e casos do coronavírus por minicípio e por dia (disponível em: https://brasil.io/dataset/covid19/caso). A função salva o resultado no disco e escreve um arquivo com os metadados da requisição (metadado_corona_br.csv).

@@ -10,7 +10,8 @@
 #' @param by_uf Lógico. Padrão by_uf = FALSE. Usar by_uf = TRUE se quiser os dados apenas por UF independente do município. Usar apenas quando não fornecer `cidade` ou `ibge_cod` de um município
 #'
 #' @importFrom dplyr filter
-#' @importFrom utils read.csv write.csv
+#' @importFrom utils write.csv
+#' @importFrom readr read_csv
 #' @importFrom rlang .data
 #' @importFrom magrittr %>%
 #'
@@ -21,17 +22,18 @@ get_corona_br <- function(dir = "outputs",
                           cidade = NULL,
                           uf = NULL,
                           ibge_cod = NULL,
-                          by_uf = FALSE){
+                          by_uf = FALSE,
+                          save = TRUE) {
   # my_urls <- c('https://brasil.io/api/dataset/covid19/caso/data',
   #              'https://brasil.io/api/dataset/covid19/caso/data?page=2')
   # res_list <- lapply(my_urls, function(x) jsonlite::fromJSON(x)$results)
   # res <- dplyr::bind_rows(res_list)
   # baixando direto o csv pq api retorna datas diferentes a casa requisicao
-  res <- utils::read.csv("https://brasil.io/dataset/covid19/caso?format=csv")
+  res <- readr::read_csv("https://data.brasil.io/dataset/covid19/caso_full.csv.gz")
   res$date <- as.Date(res$date)
   # gravando metadados da requisicao
   metadado <- data.frame(intervalo = paste(range(res$date), collapse = ";"),
-                         fonte = "https://brasil.io/dataset/covid19/caso",
+                         fonte = "https://data.brasil.io/dataset/covid19/",
                          acesso_em = Sys.Date())
     if (!is.null(cidade) & is.null(uf)) {
     stop("Precisa fornecer um estado para evitar ambiguidade")
@@ -74,11 +76,13 @@ get_corona_br <- function(dir = "outputs",
 
   message(paste0("salvando ", filename, ".csv em ", dir))
 
+  if (save) {
   if (!dir.exists(dir)) dir.create(dir)
 
   utils::write.csv(res, paste0(dir, "/", filename, ".csv"),
                    row.names = FALSE)
   utils::write.csv(metadado, paste0(dir, "/", filename, "_metadado", ".csv"),
                    row.names = FALSE)
+}
   return(res)
 }

@@ -30,21 +30,20 @@ plot_uf <- function(df,
 
 
   # remove na
-  df <- na.omit(df)
   df$state <- as.character(df$state)
   if (tipo == "casos") {
-    df$var <- df$confirmed
+    df$var <- df$last_available_confirmed
     leg_y <- paste0("N", "\u00fa", "mero de casos confirmados")
     if (prop_pop) {
       leg_y <- paste(leg_y, "por cem mil habitantes")
-      df$var <- df$confirmed_per_100k_inhabitants
+      df$var <- df$last_available_confirmed_per_100k_inhabitants
     }
   } else {
-    df$var <- df$deaths
+    df$var <- df$last_available_deaths
     leg_y <- paste0("N", "\u00fa", "mero de ", "\u00f3", "bitos confirmados")
     if (prop_pop) {
       leg_y <- paste(leg_y, "por cem mil habitantes")
-      df$var <- df$deaths/df$estimated_population_2019 * 100000
+      df$var <- df$last_available_deaths/df$estimated_population_2019 * 100000
     }
   }
   leg_x <- "Data"

@@ -15,7 +15,7 @@ plot_corona_br <- function(df,
                            log = TRUE,
                            tipo = "numero") {
   # definindo data_max para plotr apenas atualizacoes completas
-  datas <- plyr::count(df$date[df$confirmed > 0 & !is.na(df$state)])
+  datas <- plyr::count(df$date[df$last_available_confirmed > 0 & !is.na(df$state)])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
     data_max <- max(datas$x, na.rm = TRUE) - 1
@@ -25,20 +25,23 @@ plot_corona_br <- function(df,
   # nomes dos eixos
   xlab <- "Data"
   ylab <- "Casos confirmados"
-  legenda <- "Fonte: https://brasil.io/dataset/covid19/caso"
+  legenda <- "Fonte: Brasil I/O"
+
+    # tipo = numero
+  if (tipo == "numero") {
+
   df <- df %>%
     dplyr::group_by(., .data$date) %>%
-    dplyr::summarise_at(dplyr::vars(.data$confirmed, .data$deaths),
+    dplyr::summarise_at(dplyr::vars(.data$last_available_confirmed, .data$last_available_deaths),
                         .funs = sum, na.rm = TRUE) %>%
     dplyr::filter(., .data$date <= data_max)
- # tipo = numero
-  if (tipo == "numero") {
+
     if (log == TRUE) {
-      df <- df %>% dplyr::mutate(confirmed = log(.data$confirmed))
+      df <- df %>% dplyr::mutate(last_available_confirmed = log(.data$last_available_confirmed))
       ylab <- paste(ylab, "(log)")
     }
     p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$date,
-                                          y = .data$confirmed,
+                                          y = .data$last_available_confirmed,
                                           color = "red")) +
       ggplot2::geom_line(alpha = .7) +
       ggplot2::geom_point(size = 2) +
@@ -53,13 +56,20 @@ plot_corona_br <- function(df,
                      legend.position = "none")
   }
   if (tipo == "aumento") {
-    df$delta_cases <- df$confirmed - dplyr::lag(df$confirmed)
+
+    df <- df %>%
+      dplyr::group_by(., .data$date) %>%
+      dplyr::summarise_at(dplyr::vars(.data$new_confirmed, .data$new_deaths),
+                          .funs = sum, na.rm = TRUE) %>%
+      dplyr::filter(., .data$date <= data_max)
+    #df$delta_cases <- df$last_available_confirmed - dplyr::lag(df$last_available_confirmed)
     # O.o tem valores negativos! por enquanto, deixei 0 nao bate com min saude
-    df$delta_cases <- ifelse(df$delta_cases < 0 , 0, df$delta_cases)
+
+    #df$delta_cases <- ifelse(df$delta_cases < 0 , 0, df$delta_cases)
     #df$diff_perc <- round(df$delta_cases/df$confirmed, 3) * 100
     #df$label <- paste(df$delta_cases, "%")
     p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$date,
-                                          y = .data$delta_cases,
+                                          y = .data$new_confirmed,
                                           color = "red")) +
       #ggplot2::geom_bar(stat = "identity", alpha = .7, color = "red", fill = "red")
       ggplot2::geom_line(alpha = .7) +

@@ -2,7 +2,7 @@
 title: "Download dos casos de COVID-19 no Brasil - Minsaúde"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{minsaude}
+  %\VignetteIndexEntry{Download dos casos de COVID-19 no Brasil - Minsaúde}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
