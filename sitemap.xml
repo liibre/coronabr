@@ -4,9 +4,6 @@
     <loc>https://liibre.github.io/coronabr/index.html</loc>
   </url>
   <url>
-    <loc>https://liibre.github.io/coronabr/reference/format_corona_br.html</loc>
-  </url>
-  <url>
     <loc>https://liibre.github.io/coronabr/reference/get_corona_br.html</loc>
   </url>
   <url>
@@ -25,6 +22,9 @@
     <loc>https://liibre.github.io/coronabr/reference/plot_uf.html</loc>
   </url>
   <url>
+    <loc>https://liibre.github.io/coronabr/articles/articles/graficos.html</loc>
+  </url>
+  <url>
     <loc>https://liibre.github.io/coronabr/articles/articles/lac.html</loc>
   </url>
   <url>
@@ -34,12 +34,9 @@
     <loc>https://liibre.github.io/coronabr/articles/articles/mapas_br.html</loc>
   </url>
   <url>
+    <loc>https://liibre.github.io/coronabr/articles/articles/minsaude.html</loc>
+  </url>
+  <url>
     <loc>https://liibre.github.io/coronabr/articles/coronabr.html</loc>
-  </url>
-  <url>
-    <loc>https://liibre.github.io/coronabr/articles/graficos.html</loc>
-  </url>
-  <url>
-    <loc>https://liibre.github.io/coronabr/articles/minsaude.html</loc>
   </url>
 </urlset>

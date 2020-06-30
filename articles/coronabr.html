@@ -63,10 +63,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/graficos.html">Visualização dos casos registrados de COVID-19 no Brasil</a>
+      <a href="../articles/articles/graficos.html">Visualização dos casos registrados de COVID-19 no Brasil</a>
     </li>
     <li>
-      <a href="../articles/minsaude.html">Dados do Ministério da Saúde</a>
+      <a href="../articles/articles/minsaude.html">Dados do Ministério da Saúde</a>
     </li>
     <li>
       <a href="../articles/articles/mapas_br.html">Mapa dos casos registrados de COVID-19 no Brasil com tmap</a>
@@ -126,32 +126,48 @@
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-oficiais-do-minist%C3%A9rio-de-sa%C3%BAde-do-brasil" class="anchor"></a>Baixando os dados oficiais do Ministério de Saúde do Brasil</h3>
 <p>A função <code><a href="../reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> extrai os dados oficiais do Ministério da Saúde.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados_ms</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>()</pre></body></html></div>
+<pre><code>## Baixando dados do Min. da Saude...</code></pre>
 <pre><code>## salvando minsaude.csv em outputs</code></pre>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
-<pre><code>## # A tibble: 6 x 18
-##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude
-##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;          
-## 1 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
-## 2 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
-## 3 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
-## 4 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
-## 5 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
-## 6 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
-## # … with 11 more variables: data &lt;dttm&gt;, semanaEpi &lt;dbl&gt;,
-## #   populacaoTCU2019 &lt;chr&gt;, casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;,
-## #   obitosAcumulado &lt;dbl&gt;, obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
-## #   emAcompanhamentoNovos &lt;dbl&gt;, FgMetro &lt;dbl&gt;, date &lt;date&gt;</code></pre>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_ms</span>)</pre></body></html></div>
+<pre><code>##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude
+## 1 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
+## 2 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
+## 3 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
+## 4 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
+## 5 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
+## 6 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
+##         data semanaEpi populacaoTCU2019 casosAcumulado casosNovos
+## 1 2020-02-25         9        210147125              0          0
+## 2 2020-02-26         9        210147125              1          1
+## 3 2020-02-27         9        210147125              1          0
+## 4 2020-02-28         9        210147125              1          0
+## 5 2020-02-29         9        210147125              2          1
+## 6 2020-03-01        10        210147125              2          0
+##   obitosAcumulado obitosNovos Recuperadosnovos emAcompanhamentoNovos
+## 1               0           0               NA                    NA
+## 2               0           0               NA                    NA
+## 3               0           0               NA                    NA
+## 4               0           0               NA                    NA
+## 5               0           0               NA                    NA
+## 6               0           0               NA                    NA
+##   interior/metropolitana
+## 1                     NA
+## 2                     NA
+## 3                     NA
+## 4                     NA
+## 5                     NA
+## 6                     NA</code></pre>
 </div>
 </div>
 <div id="baixando-os-dados-apenas-do-brasil-desde-o-brasil-io" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-apenas-do-brasil-desde-o-brasil-io" class="anchor"></a>Baixando os dados apenas do Brasil, desde o Brasil I/O</h3>
 <p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal Brasil I/O <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">dados_br</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   city = col_character(),
@@ -176,7 +192,7 @@
 <div id="inspecionando-os-dados-1" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados-1" class="anchor"></a>Inspecionando os dados</h4>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_br</span>)</pre></body></html></div>
 <pre><code>## # A tibble: 6 x 17
 ##   city  city_ibge_code date       epidemiological… estimated_popul… is_last
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;date&gt;                &lt;dbl&gt;            &lt;dbl&gt; &lt;lgl&gt;  
@@ -196,34 +212,34 @@
 <div id="baixando-os-dados-mundiais-do-portal-de-john-hopkins" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-mundiais-do-portal-de-john-hopkins" class="anchor"></a>Baixando os dados mundiais do portal de John Hopkins</h3>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">dados_jhu</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</pre></body></html></div>
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">dados_jhu</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</pre></body></html></div>
 <pre><code>## Baixando dados atualizados ...</code></pre>
 <pre><code>## salvando corona_jhu.csv em outputs</code></pre>
 <div id="inspecionando-os-dados-mundiais" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
-<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_jhu</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_jhu</span>)</pre></body></html></div>
 <pre><code>##    fips    admin2 province_state country_region         last_update      lat
-## 1 45001 Abbeville South Carolina             US 2020-06-29 04:33:44 34.22333
-## 2 22001    Acadia      Louisiana             US 2020-06-29 04:33:44 30.29506
-## 3 51001  Accomack       Virginia             US 2020-06-29 04:33:44 37.76707
-## 4 16001       Ada          Idaho             US 2020-06-29 04:33:44 43.45266
-## 5 19001     Adair           Iowa             US 2020-06-29 04:33:44 41.33076
-## 6 21001     Adair       Kentucky             US 2020-06-29 04:33:44 37.10460
+## 1 45001 Abbeville South Carolina             US 2020-06-30 04:33:48 34.22333
+## 2 22001    Acadia      Louisiana             US 2020-06-30 04:33:48 30.29506
+## 3 51001  Accomack       Virginia             US 2020-06-30 04:33:48 37.76707
+## 4 16001       Ada          Idaho             US 2020-06-30 04:33:48 43.45266
+## 5 19001     Adair           Iowa             US 2020-06-30 04:33:48 41.33076
+## 6 21001     Adair       Kentucky             US 2020-06-30 04:33:48 37.10460
 ##         long confirmed deaths recovered active                  combined_key
-## 1  -82.46171       103      0         0    103 Abbeville, South Carolina, US
-## 2  -92.41420       812     36         0    776         Acadia, Louisiana, US
+## 1  -82.46171       106      0         0    106 Abbeville, South Carolina, US
+## 2  -92.41420       850     37         0    813         Acadia, Louisiana, US
 ## 3  -75.63235      1039     14         0   1025        Accomack, Virginia, US
-## 4 -116.24155      1841     23         0   1818                Ada, Idaho, US
+## 4 -116.24155      2040     23         0   2017                Ada, Idaho, US
 ## 5  -94.47106        15      0         0     15               Adair, Iowa, US
-## 6  -85.28130       111     19         0     92           Adair, Kentucky, US
+## 6  -85.28130       115     19         0     96           Adair, Kentucky, US
 ##   incidence_rate case.fatality_ratio
-## 1       419.9454            0.000000
-## 2      1308.7275            4.433498
+## 1       432.1768            0.000000
+## 2      1369.9734            4.352941
 ## 3      3215.1256            1.347449
-## 4       382.2778            1.249321
+## 4       423.5995            1.127451
 ## 5       209.7315            0.000000
-## 6       578.0648           17.117117</code></pre>
+## 6       598.8959           16.521739</code></pre>
 </div>
 </div>
 </div>
