@@ -74,9 +74,9 @@ get_corona_br <- function(dir = "outputs",
   res$date <- as.Date(res$date)
   res$state <- as.factor(res$state)
 
-  message(paste0("salvando ", filename, ".csv em ", dir))
 
   if (save) {
+  message(paste0("salvando ", filename, ".csv em ", dir))
   if (!dir.exists(dir)) dir.create(dir)
 
   utils::write.csv(res, paste0(dir, "/", filename, ".csv"),
