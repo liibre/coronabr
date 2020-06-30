@@ -15,6 +15,7 @@ plot_corona_minsaude <- function(df,
                                  log = TRUE,
                                  tipo = "numero") {
   # definindo data_max para plotar apenas atualizacoes completas
+  df$date <- as.Date(df$data)
   datas <- plyr::count(df$date[df$casosAcumulado > 0 & !is.na(df$estado)])
   datas$lag <- datas$freq - dplyr::lag(datas$freq)
   if (datas$lag[which.max(datas$x)] < 0) {
