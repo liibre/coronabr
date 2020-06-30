@@ -14,7 +14,7 @@
 #' @importFrom utils read.csv write.csv
 #' @importFrom magrittr %>%
 #' @importFrom plyr .
-#' @importFrom readxl read_excel
+#' @importFrom openxlsx read.xlsx
 #'
 #' @export
 #'
@@ -34,11 +34,14 @@ get_corona_minsaude <- function(dir = "outputs",
     '[['("arquivo") %>%
     '[['("url")
 
-  tmp_data <- file.path(tempdir(), "temporary_data.xlsx")
+  #tmp_data <- file.path(tempdir(), "temporary_data.xlsx")
 
-  utils::download.file(url, tmp_data)
+  #utils::download.file(url, tmp_data)
 
-  res <- readxl::read_excel(path = tmp_data, guess_max = 10e6)
+  #res <- readxl::read_excel(path = tmp_data, guess_max = 10e6)
+  # now with read.xlsx because it is faster
+  message("Baixando dados do Min. da Saude...")
+  res <- openxlsx::read.xlsx(url, detectDates = TRUE)
   res <- dplyr::mutate_at(res, dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))), ~ as.numeric(.))
 
   #url <- "https://covid.saude.gov.br"
@@ -53,7 +56,7 @@ get_corona_minsaude <- function(dir = "outputs",
   # res$date <- as.Date(
   #   paste(datas$year, datas$month, datas$day, sep = "-"))
   # res <- res %>% dplyr::select(-.data$data)
-  res$date <- as.Date(res$data)
+  #res$date <- as.Date(res$data)
   # gravando metadados da requisicao
   metadado <- data.frame(intervalo = paste(range(res$data), collapse = ";"),
                          fonte = url,

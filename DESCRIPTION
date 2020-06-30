@@ -30,12 +30,12 @@ Imports:
     httr,
     jsonlite,
     magrittr,
+    openxlsx,
     plyr,
     readr,
     rlang,
     rvest,
     stringr,
-    readxl,
     tidyr,
     xml2
 Suggests: 
