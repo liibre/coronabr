@@ -16,7 +16,6 @@ reference:
   - title: Brasil.io
     contents:
     - get_corona_br
-    - format_corona_br
     - plot_corona_br
     - plot_uf
 
@@ -39,9 +38,9 @@ navbar:
     - text: mais exemplos e mapas
       menu:
       - text: Visualização dos casos registrados de COVID-19 no Brasil
-        href: articles/graficos.html
+        href: articles/articles/graficos.html
       - text: Dados do Ministério da Saúde
-        href: articles/minsaude.html
+        href: articles/articles/minsaude.html
       - text: Mapa dos casos registrados de COVID-19 no Brasil com tmap
         href: articles/articles/mapas_br.html
       - text: Casos de COVID-19 na América Latina e Caribe
