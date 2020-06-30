@@ -39,11 +39,11 @@ Os dados são referentes aos casos notificados. É sabido que temos subnotifica�
 
 ## Sobre os dados
 
-Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos alinhadxs com o [manifest-no](https://www.manifestno.com/), refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados.
+Antes de mais nada, declaramos nossa postura alinhada com as ideias de uma ciência de dados responsável, compromissada e feminista. Somos pessoas alinhadas com o [manifest-no](https://www.manifestno.com/), refutamos regimes de dados prejudiciais e nos comprometemos a novos futuros de dados.
 
 Apesar de acreditarmos no acesso sem distinção a dados abertos, não recomendamos que toda análise que possa ser feita o seja. Ao se tratar de uma situação de saúde pública delicada, visualizações, extrapolações, e predições devem ser feitas com todo cuidado, lembrando que a qualidade dos dados é incerta e que todo dado diz respeito a uma pessoa. 
 
-No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para ver modelos **responsáveis** de previsão do crescimento no número de casos veja o [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html) (um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
+No Brasil, a notificação de casos carrega consigo vieses espaciais, econômicos e de classe que não podem ser ignorados. Para ver modelos **responsáveis** de previsão do crescimento no número de casos veja o [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html) (um grupo colaborativo de pessoas cientistas brasileiras) e o [Mapa de previsão da propagação da COVID-19 por contágio comunitário no Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 ### Nota sobre os dados disponibilizados pelo Ministério da Saúde
 
@@ -61,16 +61,16 @@ Entre [aqui](https://liibre.github.io/coronabr/articles/lac.html) para acompanha
 
 ### Crescimento nacional no número de casos de COVID-19
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
 
 
 ### Entendendo o aumento diário de COVID-19
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
 ### Crescimento do número de casos de COVID-19 nos estados mais afetados
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
 
 <!---
 ### Número de casos por estado brasileiro

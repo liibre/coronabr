@@ -43,9 +43,9 @@ refletem a epidemia em si.
 
 Antes de mais nada, declaramos nossa postura alinhada com as ideias de
 uma ciência de dados responsável, compromissada e feminista. Somos
-alinhadxs com o [manifest-no](https://www.manifestno.com/), refutamos
-regimes de dados prejudiciais e nos comprometemos a novos futuros de
-dados.
+pessoas alinhadas com o [manifest-no](https://www.manifestno.com/),
+refutamos regimes de dados prejudiciais e nos comprometemos a novos
+futuros de dados.
 
 Apesar de acreditarmos no acesso sem distinção a dados abertos, não
 recomendamos que toda análise que possa ser feita o seja. Ao se tratar
@@ -57,8 +57,8 @@ No Brasil, a notificação de casos carrega consigo vieses espaciais,
 econômicos e de classe que não podem ser ignorados. Para ver modelos
 **responsáveis** de previsão do crescimento no número de casos veja o
 [Observatório COVID-19 Brasil](https://covid19br.github.io/index.html)
-(um grupo colaborativo de cientistas brasileirxs) e o [Mapa de previsão
-da propagação da COVID-19 por contágio comunitário no
+(um grupo colaborativo de pessoas cientistas brasileiras) e o [Mapa de
+previsão da propagação da COVID-19 por contágio comunitário no
 Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 ### Nota sobre os dados disponibilizados pelo Ministério da Saúde
@@ -99,15 +99,15 @@ acompanhar os casos na América Latina (versão em espanhol
 
 ### Crescimento nacional no número de casos de COVID-19
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/articles/graficos_files/figure-html/fig-casos-1.png" align="center" alt="" width="600" />
 
 ### Entendendo o aumento diário de COVID-19
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/articles/graficos_files/figure-html/fig-perc-1.png" align="center" alt="" width="600" />
 
 ### Crescimento do número de casos de COVID-19 nos estados mais afetados
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
+<img src="https://raw.githubusercontent.com/liibre/coronabr/master/docs/articles/articles/graficos_files/figure-html/estados-1.png" align="center" alt="" width="600" />
 
 <!---
 ### Número de casos por estado brasileiro
