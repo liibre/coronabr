@@ -122,63 +122,108 @@
 <h2 class="hasAnchor">
 <a href="#carregando-o-pacote" class="anchor"></a>Carregando o pacote</h2>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">coronabr</span>)</pre></body></html></div>
-<div id="baixando-os-dados-apenas-do-brasil" class="section level3">
+<div id="baixando-os-dados-oficiais-do-ministério-de-saúde-do-brasil" class="section level3">
 <h3 class="hasAnchor">
-<a href="#baixando-os-dados-apenas-do-brasil" class="anchor"></a>Baixando os dados apenas do Brasil</h3>
-<p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal Brasil I/O <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
-<pre><code>## salvando corona_brasil.csv em outputs</code></pre>
+<a href="#baixando-os-dados-oficiais-do-minist%C3%A9rio-de-sa%C3%BAde-do-brasil" class="anchor"></a>Baixando os dados oficiais do Ministério de Saúde do Brasil</h3>
+<p>A função <code><a href="../reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> extrai os dados oficiais do Ministério da Saúde.</p>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>()</pre></body></html></div>
+<pre><code>## salvando minsaude.csv em outputs</code></pre>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
-<pre><code>##         date state city place_type confirmed deaths is_last
-## 1 2020-05-28    AL           state      8056    385    True
-## 2 2020-05-28    AP           state      8152    198    True
-## 3 2020-05-28    CE           state     37821   2733    True
-## 4 2020-05-28    DF           state      8300    142    True
-## 5 2020-05-28    GO           state      3101    115    True
-## 6 2020-05-28    MG           state      8686    255    True
-##   estimated_population_2019 city_ibge_code confirmed_per_100k_inhabitants
-## 1                   3337357             27                      241.38862
-## 2                    845731             16                      963.89987
-## 3                   9132078             23                      414.15546
-## 4                   3015268             53                      275.26575
-## 5                   7018354             52                       44.18415
-## 6                  21168791             31                       41.03210
-##   death_rate
-## 1     0.0478
-## 2     0.0243
-## 3     0.0723
-## 4     0.0171
-## 5     0.0371
-## 6     0.0294</code></pre>
+<pre><code>## # A tibble: 6 x 18
+##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;          
+## 1 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
+## 2 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
+## 3 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
+## 4 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
+## 5 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
+## 6 Brasil &lt;NA&gt;   &lt;NA&gt;      76        NA             NA &lt;NA&gt;           
+## # … with 11 more variables: data &lt;dttm&gt;, semanaEpi &lt;dbl&gt;,
+## #   populacaoTCU2019 &lt;chr&gt;, casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;,
+## #   obitosAcumulado &lt;dbl&gt;, obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;,
+## #   emAcompanhamentoNovos &lt;dbl&gt;, FgMetro &lt;dbl&gt;, date &lt;date&gt;</code></pre>
 </div>
 </div>
-<div id="baixando-os-dados-mundiais" class="section level3">
+<div id="baixando-os-dados-apenas-do-brasil-desde-o-brasil-io" class="section level3">
 <h3 class="hasAnchor">
-<a href="#baixando-os-dados-mundiais" class="anchor"></a>Baixando os dados mundiais</h3>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">dados_jhu</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</pre></body></html></div>
+<a href="#baixando-os-dados-apenas-do-brasil-desde-o-brasil-io" class="anchor"></a>Baixando os dados apenas do Brasil, desde o Brasil I/O</h3>
+<p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal Brasil I/O <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
+<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">dados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span>(<span class="kw">by_uf</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   city = col_character(),
+##   city_ibge_code = col_double(),
+##   date = col_date(format = ""),
+##   epidemiological_week = col_double(),
+##   estimated_population_2019 = col_double(),
+##   is_last = col_logical(),
+##   is_repeated = col_logical(),
+##   last_available_confirmed = col_double(),
+##   last_available_confirmed_per_100k_inhabitants = col_double(),
+##   last_available_date = col_date(format = ""),
+##   last_available_death_rate = col_double(),
+##   last_available_deaths = col_double(),
+##   order_for_place = col_double(),
+##   place_type = col_character(),
+##   state = col_character(),
+##   new_confirmed = col_double(),
+##   new_deaths = col_double()
+## )</code></pre>
+<pre><code>## salvando corona_brasil.csv em outputs</code></pre>
+<div id="inspecionando-os-dados-1" class="section level4">
+<h4 class="hasAnchor">
+<a href="#inspecionando-os-dados-1" class="anchor"></a>Inspecionando os dados</h4>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados</span>)</pre></body></html></div>
+<pre><code>## # A tibble: 6 x 17
+##   city  city_ibge_code date       epidemiological… estimated_popul… is_last
+##   &lt;chr&gt;          &lt;dbl&gt; &lt;date&gt;                &lt;dbl&gt;            &lt;dbl&gt; &lt;lgl&gt;  
+## 1 &lt;NA&gt;              35 2020-02-25                9         45919049 FALSE  
+## 2 &lt;NA&gt;              35 2020-02-26                9         45919049 FALSE  
+## 3 &lt;NA&gt;              35 2020-02-27                9         45919049 FALSE  
+## 4 &lt;NA&gt;              35 2020-02-28                9         45919049 FALSE  
+## 5 &lt;NA&gt;              35 2020-02-29                9         45919049 FALSE  
+## 6 &lt;NA&gt;              35 2020-03-01               10         45919049 FALSE  
+## # … with 11 more variables: is_repeated &lt;lgl&gt;, last_available_confirmed &lt;dbl&gt;,
+## #   last_available_confirmed_per_100k_inhabitants &lt;dbl&gt;,
+## #   last_available_date &lt;date&gt;, last_available_death_rate &lt;dbl&gt;,
+## #   last_available_deaths &lt;dbl&gt;, order_for_place &lt;dbl&gt;, place_type &lt;chr&gt;,
+## #   state &lt;fct&gt;, new_confirmed &lt;dbl&gt;, new_deaths &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div id="baixando-os-dados-mundiais-do-portal-de-john-hopkins" class="section level3">
+<h3 class="hasAnchor">
+<a href="#baixando-os-dados-mundiais-do-portal-de-john-hopkins" class="anchor"></a>Baixando os dados mundiais do portal de John Hopkins</h3>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">dados_jhu</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span>()</pre></body></html></div>
 <pre><code>## Baixando dados atualizados ...</code></pre>
 <pre><code>## salvando corona_jhu.csv em outputs</code></pre>
 <div id="inspecionando-os-dados-mundiais" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_jhu</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">dados_jhu</span>)</pre></body></html></div>
 <pre><code>##    fips    admin2 province_state country_region         last_update      lat
-## 1 45001 Abbeville South Carolina             US 2020-05-29 02:32:50 34.22333
-## 2 22001    Acadia      Louisiana             US 2020-05-29 02:32:50 30.29506
-## 3 51001  Accomack       Virginia             US 2020-05-29 02:32:50 37.76707
-## 4 16001       Ada          Idaho             US 2020-05-29 02:32:50 43.45266
-## 5 19001     Adair           Iowa             US 2020-05-29 02:32:50 41.33076
-## 6 21001     Adair       Kentucky             US 2020-05-29 02:32:50 37.10460
+## 1 45001 Abbeville South Carolina             US 2020-06-29 04:33:44 34.22333
+## 2 22001    Acadia      Louisiana             US 2020-06-29 04:33:44 30.29506
+## 3 51001  Accomack       Virginia             US 2020-06-29 04:33:44 37.76707
+## 4 16001       Ada          Idaho             US 2020-06-29 04:33:44 43.45266
+## 5 19001     Adair           Iowa             US 2020-06-29 04:33:44 41.33076
+## 6 21001     Adair       Kentucky             US 2020-06-29 04:33:44 37.10460
 ##         long confirmed deaths recovered active                  combined_key
-## 1  -82.46171        37      0         0     37 Abbeville, South Carolina, US
-## 2  -92.41420       401     22         0    379         Acadia, Louisiana, US
-## 3  -75.63235       807     12         0    795        Accomack, Virginia, US
-## 4 -116.24155       803     22         0    781                Ada, Idaho, US
-## 5  -94.47106         8      0         0      8               Adair, Iowa, US
-## 6  -85.28130        96     19         0     77           Adair, Kentucky, US</code></pre>
+## 1  -82.46171       103      0         0    103 Abbeville, South Carolina, US
+## 2  -92.41420       812     36         0    776         Acadia, Louisiana, US
+## 3  -75.63235      1039     14         0   1025        Accomack, Virginia, US
+## 4 -116.24155      1841     23         0   1818                Ada, Idaho, US
+## 5  -94.47106        15      0         0     15               Adair, Iowa, US
+## 6  -85.28130       111     19         0     92           Adair, Kentucky, US
+##   incidence_rate case.fatality_ratio
+## 1       419.9454            0.000000
+## 2      1308.7275            4.433498
+## 3      3215.1256            1.347449
+## 4       382.2778            1.249321
+## 5       209.7315            0.000000
+## 6       578.0648           17.117117</code></pre>
 </div>
 </div>
 </div>
