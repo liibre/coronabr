@@ -27,13 +27,13 @@ library(coronabr)
 A função `get_corona_minsaude()` extrai os dados oficiais do Ministério da Saúde. 
 
 ```{r get-ms, error=TRUE}
-dados <- get_corona_minsaude()
+dados_ms <- get_corona_minsaude()
 ```
 
 #### Inspecionando os dados
 
 ```{r data-ms}
-head(dados)
+head(dados_ms)
 ```
 
 ### Baixando os dados apenas do Brasil, desde o Brasil I/O
@@ -42,13 +42,13 @@ Aqui está o exemplo usando a função `get_corona_br()` que extrai os dados do 
 https://brasil.io/, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil. 
 
 ```{r get-br, error=TRUE}
-dados <- get_corona_br(by_uf = TRUE)
+dados_br <- get_corona_br(by_uf = TRUE)
 ```
 
 #### Inspecionando os dados
 
 ```{r data-br}
-head(dados)
+head(dados_br)
 ```
 
 ### Baixando os dados mundiais do portal de John Hopkins
@@ -59,6 +59,6 @@ dados_jhu <- get_corona_jhu()
 
 #### Inspecionando os dados mundiais
 
-```{r}
+```{r data-jhu}
 head(dados_jhu)
 ```
