@@ -76,6 +76,8 @@ get_corona_minsaude <- function(dir = "outputs",
   utils::write.csv(metadado,
                    paste0(dir, "/", filename, "_metadado.csv"),
                    row.names = FALSE)
-  return(res)
   }
+
+  return(res)
+
 }

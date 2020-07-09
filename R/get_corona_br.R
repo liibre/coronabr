@@ -76,13 +76,15 @@ get_corona_br <- function(dir = "outputs",
 
 
   if (save) {
-  message(paste0("salvando ", filename, ".csv em ", dir))
-  if (!dir.exists(dir)) dir.create(dir)
+    message(paste0("salvando ", filename, ".csv em ", dir))
+    if (!dir.exists(dir)) dir.create(dir)
 
-  utils::write.csv(res, paste0(dir, "/", filename, ".csv"),
-                   row.names = FALSE)
-  utils::write.csv(metadado, paste0(dir, "/", filename, "_metadado", ".csv"),
-                   row.names = FALSE)
-}
-  return(res)
+    utils::write.csv(res, paste0(dir, "/", filename, ".csv"),
+                     row.names = FALSE)
+    utils::write.csv(metadado, paste0(dir, "/", filename, "_metadado", ".csv"),
+                     row.names = FALSE)
+  }
+
+    return(res)
+
 }

@@ -10,7 +10,8 @@
 #' @export
 #'
 get_corona_jhu <- function(dir = "outputs",
-                           filename = "corona_jhu") {
+                           filename = "corona_jhu",
+                           save = TRUE) {
 
   message("Baixando dados atualizados ...\n\n")
 
@@ -30,16 +31,18 @@ get_corona_jhu <- function(dir = "outputs",
                          fonte = "https://coronavirus.jhu.edu",
                          acesso_em = Sys.Date())
 
-  if (!dir.exists(dir)) dir.create(dir)
+  if (save) {
+    if (!dir.exists(dir)) dir.create(dir)
 
-  message(paste0("salvando ", filename, ".csv em ", dir))
+    message(paste0("salvando ", filename, ".csv em ", dir))
 
-  save_filename <- paste0(dir, "/", filename, ".csv")
+    save_filename <- paste0(dir, "/", filename, ".csv")
 
-  write.csv(covid_data, save_filename, row.names = FALSE)
-  write.csv(metadado,
-            paste0(dir, "/", filename, "_metadado.csv"),
-            row.names = FALSE)
+    write.csv(covid_data, save_filename, row.names = FALSE)
+    write.csv(metadado,
+              paste0(dir, "/", filename, "_metadado.csv"),
+              row.names = FALSE)
+  }
 
   return(covid_data)
 
