@@ -75,12 +75,13 @@ br <- brazilmaps::get_brmap(geo = "State",
                             class = "sf")
 # fazendo o merge dos dados e shapefile
 br_sf <- sf::st_as_sf(br) %>%
-  merge(dados_format, by = "State")
+  merge(dados_format, by = "State") %>% 
+  dplyr::relocate(nome)
 ```
 
 E agora fazendo o mapa com o pacote __tmap__.
 
-```{r mapa, fig.width = 4, fig.height = 6}
+```{r mapa, fig.width = 6, fig.height = 6}
 # mapa
 mapa <- tm_shape(br_sf) +
   #tm_fill() +
