@@ -37,7 +37,8 @@ Imports:
     rvest,
     stringr,
     tidyr,
-    xml2
+    xml2,
+    vroom
 Suggests: 
     rmarkdown,
     devtools,

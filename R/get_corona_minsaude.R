@@ -8,13 +8,14 @@
 #' @param uf Caractere indicando a abreviação do(s) estado(s) brasileiro(s)
 #' @param save Lógico. Salva os dados na pasta `dir`
 #'
-#' @importFrom utils write.csv
+#' @importFrom utils write.csv unzip
 #' @importFrom dplyr mutate_if bind_rows left_join
 #' @importFrom rlang .data
 #' @importFrom utils read.csv write.csv
 #' @importFrom magrittr %>%
 #' @importFrom plyr .
 #' @importFrom openxlsx read.xlsx
+#' @importFrom vroom vroom
 #'
 #' @export
 #'
@@ -41,7 +42,7 @@ get_corona_minsaude <- function(dir = "outputs",
   #it's a ZIP inside a csv again so we have to go back to donwload and unzip (unless...)
     tmp_data <- file.path(dir, "temporary_data")
     utils::download.file(url, tmp_data)
-    unzip(tmp_data, exdir = dir)
+    utils::unzip(tmp_data, exdir = dir)
     file <- list.files(dir, pattern = "HIST_PAINEL", full.names = T)
     res <- vroom::vroom(file)
 

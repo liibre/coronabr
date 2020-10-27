@@ -61,14 +61,18 @@ covid_lac$confirmed_per100k <- covid_lac$confirmed/covid_lac$pop_est * 100000
 
 Y ahora, visualicemos los datos en un mapa dinámico.
 
-```{r, echo = FALSE}
-maxi <- ceiling(max(covid_lac$confirmed_per100k)/100)*100
-breaks <- c(0, 50, 100, 200, 400, 800, 1600, maxi)
+Para obtener las clases y el texto de la leyenda: 
+
+```{r, echo = TRUE}
+#maxi <- ceiling(max(covid_lac$confirmed_per100k)/100)*100
+#breaks <- c(0, 500, 1000, 2000, 3000, maxi)
+h <- hist(covid_lac$confirmed_per100k, plot = F)
+breaks <- h$breaks
 text <- paste(breaks[1:length(breaks)-1], "a", breaks[2:length(breaks)])
 text[length(breaks)-1] <- paste(">", breaks[length(breaks)-1])
-text
-#hist(covid_lac$confirmed_per100k, breaks = )
 ```
+
+El mapa:
 
 
 

@@ -13,6 +13,7 @@ README.Rmd
 Makefile
 dev.mk
 .travis.yml
+outputs
 
 # vinhetas que viraram artigos
 vignettes/articles/
