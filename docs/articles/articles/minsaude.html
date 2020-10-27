@@ -100,7 +100,8 @@
 
       
 
-      </header><script src="minsaude_files/header-attrs-2.3.2/header-attrs.js"></script><div class="row">
+      </header><script src="minsaude_files/header-attrs-2.5/header-attrs.js"></script><link href="minsaude_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="minsaude_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil - Minsaúde</h1>
@@ -121,127 +122,123 @@
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#carregando-o-pacote" class="anchor"></a>Carregando o pacote</h2>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">coronabr</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://liibre.github.io/coronabr/">coronabr</a></span><span class="op">)</span></pre></div>
 <div id="baixando-os-dados-oficiais-do-ministério-da-saúde" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-oficiais-do-minist%C3%A9rio-da-sa%C3%BAde" class="anchor"></a>Baixando os dados oficiais do Ministério da Saúde</h3>
 <p>Aqui está o exemplo usando a função <code><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> que extrai os dados do portal <a href="https://covid.saude.gov.br" class="uri">https://covid.saude.gov.br</a>, usando o csv disponibilizado diariamente na página.</p>
 <p>Os dados podem ser procurados para todos os estados, ou para só um, ou para vários, usando o parâmetro uf e o código de duas letras de cada estado (ex. “PI”)</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="no">todos_estados</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>()</pre></body></html></div>
-<pre><code>## Baixando dados do Min. da Saude...</code></pre>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="va">todos_estados</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<pre><code>## Baixando dados do Min. da Saúde...</code></pre>
+<pre><code>## Rows: 1,203,334
+## Columns: 17
+## Delimiter: ";"
+## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
+## dbl  [10]: coduf, codmun, codRegiaoSaude, semanaEpi, populacaoTCU2019, casosAcumulado, cas...
+## lgl  [ 2]: Recuperadosnovos, emAcompanhamentoNovos
+## date [ 1]: data
+## 
+## Use `spec()` to retrieve the guessed column specification
+## Pass a specification to the `col_types` argument to quiet this message</code></pre>
 <pre><code>## salvando minsaude.csv em outputs</code></pre>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">rj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="st">"RJ"</span>, <span class="kw">filename</span> <span class="kw">=</span> <span class="st">"minsaude_RJ"</span>)</pre></body></html></div>
-<pre><code>## Baixando dados do Min. da Saude...</code></pre>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="va">rj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span>uf <span class="op">=</span> <span class="st">"RJ"</span>, filename <span class="op">=</span> <span class="st">"minsaude_RJ"</span><span class="op">)</span></pre></div>
+<pre><code>## Baixando dados do Min. da Saúde...</code></pre>
+<pre><code>## Rows: 1,203,334
+## Columns: 17
+## Delimiter: ";"
+## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
+## dbl  [10]: coduf, codmun, codRegiaoSaude, semanaEpi, populacaoTCU2019, casosAcumulado, cas...
+## lgl  [ 2]: Recuperadosnovos, emAcompanhamentoNovos
+## date [ 1]: data
+## 
+## Use `spec()` to retrieve the guessed column specification
+## Pass a specification to the `col_types` argument to quiet this message</code></pre>
 <pre><code>## salvando minsaude_RJ.csv em outputs</code></pre>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">sprj</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span>(<span class="kw">uf</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"SP"</span>, <span class="st">"RJ"</span>), <span class="kw">filename</span> <span class="kw">=</span> <span class="st">"minsaude_SP-RJ"</span>)</pre></body></html></div>
-<pre><code>## Baixando dados do Min. da Saude...</code></pre>
+<div class="sourceCode" id="cb10"><pre class="downlit">
+<span class="va">sprj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span>uf <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SP"</span>, <span class="st">"RJ"</span><span class="op">)</span>, filename <span class="op">=</span> <span class="st">"minsaude_SP-RJ"</span><span class="op">)</span></pre></div>
+<pre><code>## Baixando dados do Min. da Saúde...</code></pre>
+<pre><code>## Rows: 1,203,334
+## Columns: 17
+## Delimiter: ";"
+## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
+## dbl  [10]: coduf, codmun, codRegiaoSaude, semanaEpi, populacaoTCU2019, casosAcumulado, cas...
+## lgl  [ 2]: Recuperadosnovos, emAcompanhamentoNovos
+## date [ 1]: data
+## 
+## Use `spec()` to retrieve the guessed column specification
+## Pass a specification to the `col_types` argument to quiet this message</code></pre>
 <pre><code>## salvando minsaude_SP-RJ.csv em outputs</code></pre>
 </div>
 <div id="inspecionando-os-dados" class="section level3">
 <h3 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h3>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">todos_estados</span>)</pre></body></html></div>
-<pre><code>##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude
-## 1 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
-## 2 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
-## 3 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
-## 4 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
-## 5 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
-## 6 Brasil   &lt;NA&gt;      &lt;NA&gt;    76     NA             NA            &lt;NA&gt;
-##         data semanaEpi populacaoTCU2019 casosAcumulado casosNovos
-## 1 2020-02-25         9        210147125              0          0
-## 2 2020-02-26         9        210147125              1          1
-## 3 2020-02-27         9        210147125              1          0
-## 4 2020-02-28         9        210147125              1          0
-## 5 2020-02-29         9        210147125              2          1
-## 6 2020-03-01        10        210147125              2          0
-##   obitosAcumulado obitosNovos Recuperadosnovos emAcompanhamentoNovos
-## 1               0           0               NA                    NA
-## 2               0           0               NA                    NA
-## 3               0           0               NA                    NA
-## 4               0           0               NA                    NA
-## 5               0           0               NA                    NA
-## 6               0           0               NA                    NA
-##   interior/metropolitana
-## 1                     NA
-## 2                     NA
-## 3                     NA
-## 4                     NA
-## 5                     NA
-## 6                     NA</code></pre>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">rj</span>)</pre></body></html></div>
-<pre><code>##    regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude
-## 1 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 2 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 3 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 4 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 5 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 6 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-##         data semanaEpi populacaoTCU2019 casosAcumulado casosNovos
-## 1 2020-02-25         9         17264943              0          0
-## 2 2020-02-26         9         17264943              0          0
-## 3 2020-02-27         9         17264943              0          0
-## 4 2020-02-28         9         17264943              0          0
-## 5 2020-02-29         9         17264943              0          0
-## 6 2020-03-01        10         17264943              0          0
-##   obitosAcumulado obitosNovos Recuperadosnovos emAcompanhamentoNovos
-## 1               0           0               NA                    NA
-## 2               0           0               NA                    NA
-## 3               0           0               NA                    NA
-## 4               0           0               NA                    NA
-## 5               0           0               NA                    NA
-## 6               0           0               NA                    NA
-##   interior/metropolitana
-## 1                     NA
-## 2                     NA
-## 3                     NA
-## 4                     NA
-## 5                     NA
-## 6                     NA</code></pre>
-<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">rj</span>$<span class="no">estado</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb14"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">todos_estados</span><span class="op">)</span></pre></div>
+<pre><code>## # A tibble: 6 x 17
+##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data      
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;           &lt;date&gt;    
+## 1 Brasil &lt;NA&gt;   &lt;NA&gt;         76     NA             NA &lt;NA&gt;            2020-02-25
+## 2 Brasil &lt;NA&gt;   &lt;NA&gt;         76     NA             NA &lt;NA&gt;            2020-02-26
+## 3 Brasil &lt;NA&gt;   &lt;NA&gt;         76     NA             NA &lt;NA&gt;            2020-02-27
+## 4 Brasil &lt;NA&gt;   &lt;NA&gt;         76     NA             NA &lt;NA&gt;            2020-02-28
+## 5 Brasil &lt;NA&gt;   &lt;NA&gt;         76     NA             NA &lt;NA&gt;            2020-02-29
+## 6 Brasil &lt;NA&gt;   &lt;NA&gt;         76     NA             NA &lt;NA&gt;            2020-03-01
+## # … with 9 more variables: semanaEpi &lt;dbl&gt;, populacaoTCU2019 &lt;dbl&gt;,
+## #   casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;,
+## #   obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;, emAcompanhamentoNovos &lt;dbl&gt;,
+## #   `interior/metropolitana` &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rj</span><span class="op">)</span></pre></div>
+<pre><code>## # A tibble: 6 x 17
+##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data      
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;           &lt;date&gt;    
+## 1 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-25
+## 2 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-26
+## 3 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-27
+## 4 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-28
+## 5 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-29
+## 6 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-03-01
+## # … with 9 more variables: semanaEpi &lt;dbl&gt;, populacaoTCU2019 &lt;dbl&gt;,
+## #   casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;,
+## #   obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;, emAcompanhamentoNovos &lt;dbl&gt;,
+## #   `interior/metropolitana` &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">rj</span><span class="op">$</span><span class="va">estado</span><span class="op">)</span></pre></div>
 <pre><code>## [1] "RJ"</code></pre>
-<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">sprj</span>)</pre></body></html></div>
-<pre><code>##    regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude
-## 1 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 2 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 3 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 4 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 5 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-## 6 Sudeste     RJ      &lt;NA&gt;    33     NA             NA            &lt;NA&gt;
-##         data semanaEpi populacaoTCU2019 casosAcumulado casosNovos
-## 1 2020-02-25         9         17264943              0          0
-## 2 2020-02-26         9         17264943              0          0
-## 3 2020-02-27         9         17264943              0          0
-## 4 2020-02-28         9         17264943              0          0
-## 5 2020-02-29         9         17264943              0          0
-## 6 2020-03-01        10         17264943              0          0
-##   obitosAcumulado obitosNovos Recuperadosnovos emAcompanhamentoNovos
-## 1               0           0               NA                    NA
-## 2               0           0               NA                    NA
-## 3               0           0               NA                    NA
-## 4               0           0               NA                    NA
-## 5               0           0               NA                    NA
-## 6               0           0               NA                    NA
-##   interior/metropolitana
-## 1                     NA
-## 2                     NA
-## 3                     NA
-## 4                     NA
-## 5                     NA
-## 6                     NA</code></pre>
-<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span>(<span class="no">sprj</span>$<span class="no">estado</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb20"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">sprj</span><span class="op">)</span></pre></div>
+<pre><code>## # A tibble: 6 x 17
+##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data      
+##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;           &lt;date&gt;    
+## 1 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-25
+## 2 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-26
+## 3 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-27
+## 4 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-28
+## 5 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-02-29
+## 6 Sudes… RJ     &lt;NA&gt;         33     NA             NA &lt;NA&gt;            2020-03-01
+## # … with 9 more variables: semanaEpi &lt;dbl&gt;, populacaoTCU2019 &lt;dbl&gt;,
+## #   casosAcumulado &lt;dbl&gt;, casosNovos &lt;dbl&gt;, obitosAcumulado &lt;dbl&gt;,
+## #   obitosNovos &lt;dbl&gt;, Recuperadosnovos &lt;dbl&gt;, emAcompanhamentoNovos &lt;dbl&gt;,
+## #   `interior/metropolitana` &lt;dbl&gt;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">sprj</span><span class="op">$</span><span class="va">estado</span><span class="op">)</span></pre></div>
 <pre><code>## [1] "RJ" "SP"</code></pre>
 </div>
 <div id="plotando-os-dados-do-ministério-da-saúde" class="section level3">
 <h3 class="hasAnchor">
 <a href="#plotando-os-dados-do-minist%C3%A9rio-da-sa%C3%BAde" class="anchor"></a>Plotando os dados do Ministério da Saúde</h3>
-<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="fu"><a href="../../reference/plot_corona_minsaude.html">plot_corona_minsaude</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">todos_estados</span>,
-                     <span class="kw">log</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
-                     <span class="kw">tipo</span> <span class="kw">=</span> <span class="st">"numero"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb24"><pre class="downlit">
+<span class="fu"><a href="../../reference/plot_corona_minsaude.html">plot_corona_minsaude</a></span><span class="op">(</span>df <span class="op">=</span> <span class="va">todos_estados</span>,
+                     log <span class="op">=</span> <span class="cn">FALSE</span>,
+                     tipo <span class="op">=</span> <span class="st">"numero"</span><span class="op">)</span></pre></div>
 <p><img src="minsaude_files/figure-html/unnamed-chunk-1-1.png" width="576"></p>
-<div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="fu"><a href="../../reference/plot_corona_minsaude.html">plot_corona_minsaude</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">todos_estados</span>,
-                     <span class="kw">log</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-                     <span class="kw">tipo</span> <span class="kw">=</span> <span class="st">"numero"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb25"><pre class="downlit">
+<span class="fu"><a href="../../reference/plot_corona_minsaude.html">plot_corona_minsaude</a></span><span class="op">(</span>df <span class="op">=</span> <span class="va">todos_estados</span>,
+                     log <span class="op">=</span> <span class="cn">TRUE</span>,
+                     tipo <span class="op">=</span> <span class="st">"numero"</span><span class="op">)</span></pre></div>
 <p><img src="minsaude_files/figure-html/unnamed-chunk-2-1.png" width="576"></p>
 </div>
 </div>
@@ -262,7 +259,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
