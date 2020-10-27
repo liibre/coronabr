@@ -34,14 +34,17 @@ get_corona_minsaude <- function(dir = "outputs",
     '[['("arquivo") %>%
     '[['("url")
 
-  #tmp_data <- file.path(tempdir(), "temporary_data.xlsx")
 
-  #utils::download.file(url, tmp_data)
-
-  #res <- readxl::read_excel(path = tmp_data, guess_max = 10e6)
+  message("Baixando dados do Min. da Sa\u00fade...")
   # now with read.xlsx because it is faster
-  message("Baixando dados do Min. da Saude...")
-  res <- openxlsx::read.xlsx(url, detectDates = TRUE)
+  #res <- openxlsx::read.xlsx(url, detectDates = TRUE)
+  #it's a ZIP inside a csv again so we have to go back to donwload and unzip (unless...)
+    tmp_data <- file.path(dir, "temporary_data")
+    utils::download.file(url, tmp_data)
+    unzip(tmp_data, exdir = dir)
+    file <- list.files(dir, pattern = "HIST_PAINEL", full.names = T)
+    res <- vroom::vroom(file)
+
   res <- dplyr::mutate_at(res, dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))), ~ as.numeric(.))
 
   #url <- "https://covid.saude.gov.br"
