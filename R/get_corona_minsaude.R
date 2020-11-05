@@ -14,7 +14,6 @@
 #' @importFrom utils read.csv write.csv
 #' @importFrom magrittr %>%
 #' @importFrom plyr .
-#' @importFrom openxlsx read.xlsx
 #' @importFrom vroom vroom
 #'
 #' @export

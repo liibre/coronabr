@@ -1,6 +1,7 @@
 ---
 title: "Download dos casos de COVID-19 no Brasil - Minsaúde"
 output: rmarkdown::html_vignette
+date: "`r Sys.Date()`"
 vignette: >
   %\VignetteIndexEntry{Download dos casos de COVID-19 no Brasil - Minsaúde}
   %\VignetteEngine{knitr::rmarkdown}

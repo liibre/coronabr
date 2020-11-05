@@ -1,6 +1,7 @@
 ---
 title: "Visualização dos casos registrados de COVID-19 na América Latina"
 output: rmarkdown::html_vignette
+date: "`r Sys.Date()`"
 vignette: >
   %\VignetteIndexEntry{Visualização dos casos registrados de COVID-19 na América Latina}
   %\VignetteEngine{knitr::rmarkdown}

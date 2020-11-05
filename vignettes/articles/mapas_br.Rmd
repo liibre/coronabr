@@ -1,6 +1,7 @@
 ---
 title: "Mapa de COVID-19 no Brasil"
 output: rmarkdown::html_vignette
+date: "`r Sys.Date()`"
 vignette: >
   %\VignetteIndexEntry{Mapa de COVID-19 no Brasil}
   %\VignetteEngine{knitr::rmarkdown}
