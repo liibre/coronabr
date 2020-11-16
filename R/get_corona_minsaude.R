@@ -33,19 +33,17 @@ get_corona_minsaude <- function(dir = "outputs",
     '[['(1) %>%
     '[['("arquivo") %>%
     '[['("url")
-
-
   message("Baixando dados do Min. da Sa\u00fade...")
-  # now with read.xlsx because it is faster
-  #res <- openxlsx::read.xlsx(url, detectDates = TRUE)
-  #it's a ZIP inside a csv again so we have to go back to donwload and unzip (unless...)
     tmp_data <- file.path(dir, "temporary_data")
-    utils::download.file(url, tmp_data)
-    utils::unzip(tmp_data, exdir = dir)
+    utils::download.file(url, destfile = tmp_data)
+    if (endsWith(url, "zip")) {
+      utils::unzip(tmp_data, exdir = dir)
+      file.remove(tmp_data)
+    }
     file <- list.files(dir, pattern = "HIST_PAINEL", full.names = T)
     res <- vroom::vroom(file)
-
-  res <- dplyr::mutate_at(res, dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))), ~ as.numeric(.))
+    res <- dplyr::mutate_at(res, dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))),
+                            ~ as.numeric(.))
 
   #url <- "https://covid.saude.gov.br"
   #date <- format(Sys.Date(), "%Y%m%d")
@@ -69,15 +67,15 @@ get_corona_minsaude <- function(dir = "outputs",
   }
 
   if (save) {
-  message(paste0("salvando ", filename, ".csv em ", dir))
+  message(paste0("salvando ", filename,"_",Sys.Date(), ".csv em ", dir))
 
   if (!dir.exists(dir)) dir.create(dir)
 
   utils::write.csv(res,
-                   paste0(dir, "/", filename, ".csv"),
+                   paste0(dir, "/", filename,"_", Sys.Date(), ".csv"),
                    row.names = FALSE)
   utils::write.csv(metadado,
-                   paste0(dir, "/", filename, "_metadado.csv"),
+                   paste0(dir, "/", filename,"_",Sys.Date(), "_metadado.csv"),
                    row.names = FALSE)
   }
 
