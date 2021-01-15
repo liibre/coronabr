@@ -47,7 +47,7 @@ plot_corona_minsaude <- function(df,
                     y = ylab,
                     title = "Casos confirmados de COVID-19 no Brasil",
                     caption = legenda) +
-      ggplot2::scale_x_date(date_breaks = "15 day",
+      ggplot2::scale_x_date(date_breaks = "60 day",
                             date_labels = "%d/%b") +
       ggplot2::theme_minimal() +
       ggplot2::theme(#axis.text.x = ggplot2::element_text(angle = 90),
@@ -65,7 +65,7 @@ plot_corona_minsaude <- function(df,
       #ggplot2::geom_bar(stat = "identity", alpha = .7, color = "red", fill = "red")
       ggplot2::geom_line(alpha = .7) +
       ggplot2::geom_point(size = 2) +
-      ggplot2::scale_x_date(date_breaks = "15 day",
+      ggplot2::scale_x_date(date_breaks = "60 day",
                             date_labels = "%d/%b") +
       # ggplot2::scale_y_continuous(limits = c(0, max(df$delta_cases, na.rm = TRUE) + 3),
       #                             expand = c(0, 0)) +

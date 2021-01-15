@@ -35,12 +35,16 @@ get_corona_minsaude <- function(dir = "outputs",
     '[['("url")
   message("Baixando dados do Min. da Sa\u00fade...")
     tmp_data <- file.path(dir, "temporary_data")
-    utils::download.file(url, destfile = tmp_data)
+    if (!file.exists(dir)) dir.create(dir)
+    utils::download.file(url, destfile = paste(tmp_data))
+    file <- tmp_data
     if (endsWith(url, "zip")) {
       utils::unzip(tmp_data, exdir = dir)
       file.remove(tmp_data)
-    }
-    file <- list.files(dir, pattern = "HIST_PAINEL", full.names = T)
+      file <- list.files(dir, pattern = "HIST_PAINEL", full.names = T)
+
+      }
+
     res <- vroom::vroom(file)
     res <- dplyr::mutate_at(res, dplyr::vars(dplyr::contains(c("Acumulado", "Novos", "novos"))),
                             ~ as.numeric(.))
