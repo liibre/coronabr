@@ -45,7 +45,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -86,7 +86,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/liibre/coronabr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -100,13 +100,12 @@
 
       
 
-      </header><script src="minsaude_files/header-attrs-2.5/header-attrs.js"></script><link href="minsaude_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="minsaude_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><script src="minsaude_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil - Minsaúde</h1>
             
-            <h4 class="date">2020-11-19</h4>
+            <h4 class="date">2021-01-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/liibre/coronabr/blob/master/vignettes/articles/minsaude.Rmd"><code>vignettes/articles/minsaude.Rmd</code></a></small>
       <div class="hidden name"><code>minsaude.Rmd</code></div>
@@ -133,7 +132,7 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">todos_estados</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Baixando dados do Min. da Saúde...</code></pre>
-<pre><code>## Rows: 1,203,334
+<pre><code>## Rows: 1,652,856
 ## Columns: 17
 ## Delimiter: ";"
 ## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
@@ -143,11 +142,11 @@
 ## 
 ## Use `spec()` to retrieve the guessed column specification
 ## Pass a specification to the `col_types` argument to quiet this message</code></pre>
-<pre><code>## salvando minsaude_2020-11-19.csv em outputs</code></pre>
+<pre><code>## salvando minsaude_2021-01-14.csv em outputs</code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">rj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span>uf <span class="op">=</span> <span class="st">"RJ"</span>, filename <span class="op">=</span> <span class="st">"minsaude_RJ"</span><span class="op">)</span></code></pre></div>
 <pre><code>## Baixando dados do Min. da Saúde...</code></pre>
-<pre><code>## Rows: 1,203,334
+<pre><code>## Rows: 1,652,856
 ## Columns: 17
 ## Delimiter: ";"
 ## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
@@ -157,11 +156,11 @@
 ## 
 ## Use `spec()` to retrieve the guessed column specification
 ## Pass a specification to the `col_types` argument to quiet this message</code></pre>
-<pre><code>## salvando minsaude_RJ_2020-11-19.csv em outputs</code></pre>
+<pre><code>## salvando minsaude_RJ_2021-01-14.csv em outputs</code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sprj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span>uf <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"SP"</span>, <span class="st">"RJ"</span><span class="op">)</span>, filename <span class="op">=</span> <span class="st">"minsaude_SP-RJ"</span><span class="op">)</span></code></pre></div>
 <pre><code>## Baixando dados do Min. da Saúde...</code></pre>
-<pre><code>## Rows: 1,203,334
+<pre><code>## Rows: 1,652,856
 ## Columns: 17
 ## Delimiter: ";"
 ## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
@@ -171,7 +170,7 @@
 ## 
 ## Use `spec()` to retrieve the guessed column specification
 ## Pass a specification to the `col_types` argument to quiet this message</code></pre>
-<pre><code>## salvando minsaude_SP-RJ_2020-11-19.csv em outputs</code></pre>
+<pre><code>## salvando minsaude_SP-RJ_2021-01-14.csv em outputs</code></pre>
 </div>
 <div id="inspecionando-os-dados" class="section level3">
 <h3 class="hasAnchor">

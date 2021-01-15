@@ -64,7 +64,7 @@ plot_uf <- function(df,
       geom_point() +
       labs(y = leg_y, x = leg_x) +
       guides(color = guide_legend("UF")) +
-      scale_x_date(date_breaks = "15 day",
+      scale_x_date(date_breaks = "60 day",
                    date_labels = "%d/%b") +
       scale_color_viridis_d() +
       theme_minimal() +

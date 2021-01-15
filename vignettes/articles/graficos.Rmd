@@ -2,10 +2,6 @@
 title: "Visualização dos casos registrados de COVID-19 no Brasil"
 output: rmarkdown::html_vignette
 date: "`r Sys.Date()`"
-vignette: >
-  %\VignetteIndexEntry{Visualização dos casos registrados de COVID-19 no Brasil}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE}
