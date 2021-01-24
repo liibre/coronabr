@@ -100,7 +100,7 @@
 
       
 
-      </header><script src="coronabr_files/header-attrs-2.6/header-attrs.js"></script><div class="row">
+      </header><script src="coronabr_files/header-attrs-2.6.6/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil</h1>
@@ -130,7 +130,7 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dados_ms</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Baixando dados do Min. da Saúde...</code></pre>
-<pre><code>## Rows: 1,652,856
+<pre><code>## Rows: 1,703,427
 ## Columns: 17
 ## Delimiter: ";"
 ## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
@@ -140,7 +140,7 @@
 ## 
 ## Use `spec()` to retrieve the guessed column specification
 ## Pass a specification to the `col_types` argument to quiet this message</code></pre>
-<pre><code>## salvando minsaude_2021-01-14.csv em outputs</code></pre>
+<pre><code>## salvando minsaude_2021-01-23.csv em outputs</code></pre>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
@@ -225,26 +225,26 @@
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_jhu</span><span class="op">)</span></code></pre></div>
 <pre><code>##   fips admin2 province_state      country_region         last_update       lat
-## 1   NA                               Afghanistan 2021-01-14 05:22:32  33.93911
-## 2   NA                                   Albania 2021-01-14 05:22:32  41.15330
-## 3   NA                                   Algeria 2021-01-14 05:22:32  28.03390
-## 4   NA                                   Andorra 2021-01-14 05:22:32  42.50630
-## 5   NA                                    Angola 2021-01-14 05:22:32 -11.20270
-## 6   NA                       Antigua and Barbuda 2021-01-14 05:22:32  17.06080
+## 1   NA                               Afghanistan 2021-01-23 05:22:03  33.93911
+## 2   NA                                   Albania 2021-01-23 05:22:03  41.15330
+## 3   NA                                   Algeria 2021-01-23 05:22:03  28.03390
+## 4   NA                                   Andorra 2021-01-23 05:22:03  42.50630
+## 5   NA                                    Angola 2021-01-23 05:22:03 -11.20270
+## 6   NA                       Antigua and Barbuda 2021-01-23 05:22:03  17.06080
 ##        long confirmed deaths recovered active        combined_key incident_rate
-## 1  67.70995     53584   2301     44850   6433         Afghanistan     137.64779
-## 2  20.16830     65334   1256     38860  25218             Albania    2270.27591
-## 3   1.65960    102860   2819     69791  30250             Algeria     234.56683
-## 4   1.52180      8818     87      8070    661             Andorra   11412.67068
-## 5  17.87390     18425    424     15631   2370              Angola      56.06052
-## 6 -61.79640       176      5       152     19 Antigua and Barbuda     179.72388
+## 1  67.70995     54483   2370     46912   5201         Afghanistan      139.9572
+## 2  20.16830     70655   1303     42895  26457             Albania     2455.1741
+## 3   1.65960    105124   2856     71552  30716             Algeria      239.7298
+## 4   1.52180      9416     93      8537    786             Andorra    12186.6304
+## 5  17.87390     19269    452     17223   1594              Angola       58.6285
+## 6 -61.79640       195      6       162     27 Antigua and Barbuda      199.1259
 ##   case_fatality_ratio
-## 1           4.2941923
-## 2           1.9224294
-## 3           2.7406183
-## 4           0.9866183
-## 5           2.3012212
-## 6           2.8409091</code></pre>
+## 1           4.3499807
+## 2           1.8441724
+## 3           2.7167916
+## 4           0.9876805
+## 5           2.3457367
+## 6           3.0769231</code></pre>
 </div>
 </div>
 </div>
