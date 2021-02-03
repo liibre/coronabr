@@ -45,7 +45,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -86,7 +86,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/liibre/coronabr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -100,8 +100,7 @@
 
       
 
-      </header><script src="coronabr_files/header-attrs-2.5/header-attrs.js"></script><link href="coronabr_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
-<script src="coronabr_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil</h1>
@@ -122,16 +121,16 @@
 <div id="carregando-o-pacote" class="section level2">
 <h2 class="hasAnchor">
 <a href="#carregando-o-pacote" class="anchor"></a>Carregando o pacote</h2>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://liibre.github.io/coronabr/">coronabr</a></span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://liibre.github.io/coronabr/">coronabr</a></span><span class="op">)</span></code></pre></div>
 <div id="baixando-os-dados-oficiais-do-ministério-de-saúde-do-brasil" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-oficiais-do-minist%C3%A9rio-de-sa%C3%BAde-do-brasil" class="anchor"></a>Baixando os dados oficiais do Ministério de Saúde do Brasil</h3>
 <p>A função <code><a href="../reference/get_corona_minsaude.html">get_corona_minsaude()</a></code> extrai os dados oficiais do Ministério da Saúde.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="va">dados_ms</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dados_ms</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Baixando dados do Min. da Saúde...</code></pre>
-<pre><code>## Rows: 1,203,334
+<pre><code>## Rows: 1,759,617
 ## Columns: 17
 ## Delimiter: ";"
 ## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
@@ -141,12 +140,12 @@
 ## 
 ## Use `spec()` to retrieve the guessed column specification
 ## Pass a specification to the `col_types` argument to quiet this message</code></pre>
-<pre><code>## salvando minsaude.csv em outputs</code></pre>
+<pre><code>## salvando minsaude_2021-02-03.csv em outputs</code></pre>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_ms</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_ms</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 17
 ##   regiao estado municipio coduf codmun codRegiaoSaude nomeRegiaoSaude data      
 ##   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;           &lt;date&gt;    
@@ -166,8 +165,8 @@
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-apenas-do-brasil-desde-o-brasil-io" class="anchor"></a>Baixando os dados apenas do Brasil, desde o Brasil I/O</h3>
 <p>Aqui está o exemplo usando a função <code><a href="../reference/get_corona_br.html">get_corona_br()</a></code> que extrai os dados do portal Brasil I/O <a href="https://brasil.io/" class="uri">https://brasil.io/</a>, usando a API contendo os boletins informativos e casos de COVID-19 no Brasil.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit">
-<span class="va">dados_br</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span><span class="op">(</span>by_uf <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dados_br</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_br.html">get_corona_br</a></span><span class="op">(</span>by_uf <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
@@ -194,17 +193,17 @@
 <div id="inspecionando-os-dados-1" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados-1" class="anchor"></a>Inspecionando os dados</h4>
-<div class="sourceCode" id="cb11"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_br</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_br</span><span class="op">)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 18
 ##   city  city_ibge_code date       epidemiological… estimated_popul…
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;date&gt;                &lt;dbl&gt;            &lt;dbl&gt;
-## 1 &lt;NA&gt;              35 2020-02-25                9         46289333
-## 2 &lt;NA&gt;              35 2020-02-26                9         46289333
-## 3 &lt;NA&gt;              35 2020-02-27                9         46289333
-## 4 &lt;NA&gt;              35 2020-02-28                9         46289333
-## 5 &lt;NA&gt;              35 2020-02-29                9         46289333
-## 6 &lt;NA&gt;              35 2020-03-01               10         46289333
+## 1 &lt;NA&gt;              35 2020-02-25           202009         46289333
+## 2 &lt;NA&gt;              35 2020-02-26           202009         46289333
+## 3 &lt;NA&gt;              35 2020-02-27           202009         46289333
+## 4 &lt;NA&gt;              35 2020-02-28           202009         46289333
+## 5 &lt;NA&gt;              35 2020-02-29           202009         46289333
+## 6 &lt;NA&gt;              35 2020-03-01           202010         46289333
 ## # … with 13 more variables: estimated_population_2019 &lt;dbl&gt;, is_last &lt;lgl&gt;,
 ## #   is_repeated &lt;lgl&gt;, last_available_confirmed &lt;dbl&gt;,
 ## #   last_available_confirmed_per_100k_inhabitants &lt;dbl&gt;,
@@ -216,36 +215,36 @@
 <div id="baixando-os-dados-mundiais-do-portal-de-john-hopkins" class="section level3">
 <h3 class="hasAnchor">
 <a href="#baixando-os-dados-mundiais-do-portal-de-john-hopkins" class="anchor"></a>Baixando os dados mundiais do portal de John Hopkins</h3>
-<div class="sourceCode" id="cb13"><pre class="downlit">
-<span class="va">dados_jhu</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dados_jhu</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_jhu.html">get_corona_jhu</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Baixando dados atualizados ...</code></pre>
 <pre><code>## salvando corona_jhu.csv em outputs</code></pre>
 <div id="inspecionando-os-dados-mundiais" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados-mundiais" class="anchor"></a>Inspecionando os dados mundiais</h4>
-<div class="sourceCode" id="cb16"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_jhu</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_jhu</span><span class="op">)</span></code></pre></div>
 <pre><code>##   fips admin2 province_state      country_region         last_update       lat
-## 1   NA                               Afghanistan 2020-11-09 05:25:45  33.93911
-## 2   NA                                   Albania 2020-11-09 05:25:45  41.15330
-## 3   NA                                   Algeria 2020-11-09 05:25:45  28.03390
-## 4   NA                                   Andorra 2020-11-09 05:25:45  42.50630
-## 5   NA                                    Angola 2020-11-09 05:25:45 -11.20270
-## 6   NA                       Antigua and Barbuda 2020-11-09 05:25:45  17.06080
-##        long confirmed deaths recovered active        combined_key
-## 1  67.70995     42092   1558     34458   6076         Afghanistan
-## 2  20.16830     24206    559     12092  11555             Albania
-## 3   1.65960     62051   2048     42037  17966             Algeria
-## 4   1.52180      5383     75      4248   1060             Andorra
-## 5  17.87390     12433    307      5899   6227              Angola
-## 6 -61.79640       131      3       122      6 Antigua and Barbuda
-##   incidence_rate case.fatality_ratio
-## 1      108.12688            3.701416
-## 2      841.12864            2.309345
-## 3      141.50405            3.300511
-## 4     6966.93199            1.393275
-## 5       37.82906            2.469235
-## 6      133.77175            2.290076</code></pre>
+## 1   NA                               Afghanistan 2021-02-03 05:22:52  33.93911
+## 2   NA                                   Albania 2021-02-03 05:22:52  41.15330
+## 3   NA                                   Algeria 2021-02-03 05:22:52  28.03390
+## 4   NA                                   Andorra 2021-02-03 05:22:52  42.50630
+## 5   NA                                    Angola 2021-02-03 05:22:52 -11.20270
+## 6   NA                       Antigua and Barbuda 2021-02-03 05:22:52  17.06080
+##        long confirmed deaths recovered active        combined_key incident_rate
+## 1  67.70995     55121   2405     47798   4918         Afghanistan      141.5961
+## 2  20.16830     79934   1398     48377  30159             Albania     2777.6079
+## 3   1.65960    107841   2898     73732  31211             Algeria      245.9257
+## 4   1.52180     10017    102      9252    663             Andorra    12964.4729
+## 5  17.87390     19900    468     18232   1200              Angola       60.5484
+## 6 -61.79640       249      7       179     63 Antigua and Barbuda      254.2684
+##   case_fatality_ratio
+## 1            4.363128
+## 2            1.748943
+## 3            2.687290
+## 4            1.018269
+## 5            2.351759
+## 6            2.811245</code></pre>
 </div>
 </div>
 </div>
