@@ -1,4 +1,4 @@
-pandoc: 2.11.2
+pandoc: 2.3.1
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
@@ -8,7 +8,7 @@ articles:
   articles/mapas_br: mapas_br.html
   articles/minsaude: minsaude.html
   coronabr: coronabr.html
-last_built: 2021-01-24T04:49Z
+last_built: 2021-02-03T22:23Z
 urls:
   reference: https://liibre.github.io/coronabr/reference
   article: https://liibre.github.io/coronabr/articles

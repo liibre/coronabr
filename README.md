@@ -4,16 +4,16 @@ Status](https://travis-ci.com/liibre/coronabr.svg?branch=master)](https://travis
 
 # Download de dados de COVID-19 no Brasil
 
-<img src="https://raw.githubusercontent.com/liibre/coronabr/master/vignettes/figs/liibre.png" align="right" alt="" width="120" />
+<img src="https://raw.githubusercontent.com/liibre/pkg_logos/master/figs/logo_coronabr.png" align="right" alt="" width="120" />
 
 **coronabr** é um pacote de [R](https://www.r-project.org/) para fazer
 *download* e visualizar os dados dos casos diários de coronavírus
 (COVID-19) disponibilizados por diferentes fontes:
 
--   [Ministério da
+  - [Ministério da
     Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil);
--   [Brasil I/O](https://brasil.io/dataset/covid19/caso);
--   [Johns Hopkins
+  - [Brasil I/O](https://brasil.io/dataset/covid19/caso);
+  - [Johns Hopkins
     University](https://github.com/CSSEGISandData/COVID-19)
 
 ## Nosso objetivo
@@ -29,7 +29,7 @@ Fazemos ciência aberta, democrática e reprodutível. Este é um trabalho
 em desenvolvimento. Para entender como contribuir, clique
 [aqui](https://liibre.github.io/coronabr/CONTRIBUTING.html).
 
-## Aviso!
+## Aviso\!
 
 Disponibilizamos aqui atualizações dos gráficos. Sabemos que deve haver
 maneiras responsáveis de apresentar estes dados e que as comparações
@@ -63,23 +63,23 @@ Brasil](https://covid-19-risk.github.io/map/brazil/pt/).
 
 ### Nota sobre os dados disponibilizados pelo Ministério da Saúde
 
--   A partir de 2020-03-14, a notificação de casos graves de COVID-19
+  - A partir de 2020-03-14, a notificação de casos graves de COVID-19
     foca apenas nos casos graves que são atendidos nos hospitais.
--   Até 2020-03-18 o ministério de saúde brasileiro disponibilizou os
+  - Até 2020-03-18 o ministério de saúde brasileiro disponibilizou os
     dados de casos de coronavirus COVID-19 discriminados por estado na
     página
     <http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-brazil>
--   Entre 2020-03-18 e 2020-03-25, a página original do Ministério da
-    Saúde parou de funcionar e os dados de casos de coronavirus COVID-19
-    discriminados por estado foram divulgados em apresentações de
-    powerpoint e PDFs no blog do Ministério. [Adriano
+  - Entre 2020-03-18 e 2020-03-25, a página original do Ministério da
+    Saúde parou de funcionar e os dados de casos de coronavirus
+    COVID-19 discriminados por estado foram divulgados em apresentações
+    de powerpoint e PDFs no blog do Ministério. [Adriano
     Belisario](https://www.twitter.com/belisards) fez a compilação
     manual destes dados [neste
     repositório](https://github.com/belisards/coronabr)
--   A partir de 2020-03-26 o Ministério de Saúde brasileiro
+  - A partir de 2020-03-26 o Ministério de Saúde brasileiro
     disponibilizou os dados de casos de coronavirus COVID-19 na página
     <https://covid.saude.gov.br/>
--   A partir de 2020-03-28 a opção de fazer *download* da série
+  - A partir de 2020-03-28 a opção de fazer *download* da série
     histórica por casos voltou a estar disponível. Depois disso, o
     padrão tem mudado frequentemente, inclusive no formato de
     disponibilização dos dados que agora é em .xls e não mais .csv.
@@ -122,41 +122,41 @@ acompanhar os casos na América Latina (versão em espanhol
 
 ## Para saber mais:
 
--   [Observatório Covid-19 BR](https://covid19br.github.io/)
+  - [Observatório Covid-19 BR](https://covid19br.github.io/)
 
--   Dados compilados pelo Brasil I/O, [Álvaro
+  - Dados compilados pelo Brasil I/O, [Álvaro
     Justen](https://github.com/turicas/) e colaboradores
     [aqui](https://brasil.io/dataset/covid19/caso)
 
--   [John Hopkins Coronavirus COVID-19 Global
+  - [John Hopkins Coronavirus COVID-19 Global
     Cases](https://coronavirus.jhu.edu/map.html)
 
--   [Mapa de previsão da propagação da COVID-19 por contágio comunitário
+  - [Mapa de previsão da propagação da COVID-19 por contágio comunitário
     no Brasil](https://covid-19-risk.github.io/map/brazil/pt/)
 
--   [covid19br](https://paternogbc.github.io/covid19br/index.html), o
+  - [covid19br](https://paternogbc.github.io/covid19br/index.html), o
     pacote de R [Gustavo Palermo](https://github.com/paternogbc) para
     acompanhar os dados de novos casos no Brasil
 
--   [Portal da Fiocruz](https://portal.fiocruz.br/coronavirus)
+  - [Portal da Fiocruz](https://portal.fiocruz.br/coronavirus)
 
--   [Site oficial da Organização Mundial da Saúde (em
+  - [Site oficial da Organização Mundial da Saúde (em
     inglês)](https://www.who.int/emergencies/diseases/novel-coronavirus-2019)
 
--   [Tira dúvidas do Instituto
+  - [Tira dúvidas do Instituto
     Butantan](http://coronavirus.butantan.gov.br/)
 
--   [Banco de dados aberto COVID-19 (em
+  - [Banco de dados aberto COVID-19 (em
     inglês)](https://pages.semanticscholar.org/coronavirus-research%5D)
 
--   [Atualização mundial do número de
+  - [Atualização mundial do número de
     casos](https://www.worldometers.info/coronavirus/)
 
--   [Dez considerações antes de criar mais um gráfico sobre o COVID-19
+  - [Dez considerações antes de criar mais um gráfico sobre o COVID-19
     (em
     inglês)](https://medium.com/nightingale/ten-considerations-before-you-create-another-chart-about-covid-19-27d3bd691be8)
 
--   Siga o **Atila Iamarino** no
+  - Siga o **Atila Iamarino** no
     [youtube](https://www.youtube.com/channel/UCSTlOTcyUmzvhQi6F8lFi5w),
     [Instagram](www.instagram.com/oatila),
     [twitter](https://twitter.com/oatila) ou
@@ -164,7 +164,7 @@ acompanhar os casos na América Latina (versão em espanhol
     brasileiro de reddit](https://www.reddit.com/r/coronabr/) com muita
     informação.
 
--   Siga também o canal **Peixe Babel** no
+  - Siga também o canal **Peixe Babel** no
     [GitHub](https://github.com/peixebabel),
     [youtube](https://www.youtube.com/CanalPeixeBabel),
     [twitter](https://twitter.com/canalpeixebabel),

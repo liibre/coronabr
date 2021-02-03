@@ -100,7 +100,7 @@
 
       
 
-      </header><script src="coronabr_files/header-attrs-2.6.6/header-attrs.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Download dos casos de COVID-19 no Brasil</h1>
@@ -130,7 +130,7 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">dados_ms</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_corona_minsaude.html">get_corona_minsaude</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>## Baixando dados do Min. da Saúde...</code></pre>
-<pre><code>## Rows: 1,703,427
+<pre><code>## Rows: 1,759,617
 ## Columns: 17
 ## Delimiter: ";"
 ## chr  [ 4]: regiao, estado, municipio, nomeRegiaoSaude
@@ -140,7 +140,7 @@
 ## 
 ## Use `spec()` to retrieve the guessed column specification
 ## Pass a specification to the `col_types` argument to quiet this message</code></pre>
-<pre><code>## salvando minsaude_2021-01-23.csv em outputs</code></pre>
+<pre><code>## salvando minsaude_2021-02-03.csv em outputs</code></pre>
 <div id="inspecionando-os-dados" class="section level4">
 <h4 class="hasAnchor">
 <a href="#inspecionando-os-dados" class="anchor"></a>Inspecionando os dados</h4>
@@ -198,12 +198,12 @@
 <pre><code>## # A tibble: 6 x 18
 ##   city  city_ibge_code date       epidemiological… estimated_popul…
 ##   &lt;chr&gt;          &lt;dbl&gt; &lt;date&gt;                &lt;dbl&gt;            &lt;dbl&gt;
-## 1 &lt;NA&gt;              35 2020-02-25                9         46289333
-## 2 &lt;NA&gt;              35 2020-02-26                9         46289333
-## 3 &lt;NA&gt;              35 2020-02-27                9         46289333
-## 4 &lt;NA&gt;              35 2020-02-28                9         46289333
-## 5 &lt;NA&gt;              35 2020-02-29                9         46289333
-## 6 &lt;NA&gt;              35 2020-03-01               10         46289333
+## 1 &lt;NA&gt;              35 2020-02-25           202009         46289333
+## 2 &lt;NA&gt;              35 2020-02-26           202009         46289333
+## 3 &lt;NA&gt;              35 2020-02-27           202009         46289333
+## 4 &lt;NA&gt;              35 2020-02-28           202009         46289333
+## 5 &lt;NA&gt;              35 2020-02-29           202009         46289333
+## 6 &lt;NA&gt;              35 2020-03-01           202010         46289333
 ## # … with 13 more variables: estimated_population_2019 &lt;dbl&gt;, is_last &lt;lgl&gt;,
 ## #   is_repeated &lt;lgl&gt;, last_available_confirmed &lt;dbl&gt;,
 ## #   last_available_confirmed_per_100k_inhabitants &lt;dbl&gt;,
@@ -225,26 +225,26 @@
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dados_jhu</span><span class="op">)</span></code></pre></div>
 <pre><code>##   fips admin2 province_state      country_region         last_update       lat
-## 1   NA                               Afghanistan 2021-01-23 05:22:03  33.93911
-## 2   NA                                   Albania 2021-01-23 05:22:03  41.15330
-## 3   NA                                   Algeria 2021-01-23 05:22:03  28.03390
-## 4   NA                                   Andorra 2021-01-23 05:22:03  42.50630
-## 5   NA                                    Angola 2021-01-23 05:22:03 -11.20270
-## 6   NA                       Antigua and Barbuda 2021-01-23 05:22:03  17.06080
+## 1   NA                               Afghanistan 2021-02-03 05:22:52  33.93911
+## 2   NA                                   Albania 2021-02-03 05:22:52  41.15330
+## 3   NA                                   Algeria 2021-02-03 05:22:52  28.03390
+## 4   NA                                   Andorra 2021-02-03 05:22:52  42.50630
+## 5   NA                                    Angola 2021-02-03 05:22:52 -11.20270
+## 6   NA                       Antigua and Barbuda 2021-02-03 05:22:52  17.06080
 ##        long confirmed deaths recovered active        combined_key incident_rate
-## 1  67.70995     54483   2370     46912   5201         Afghanistan      139.9572
-## 2  20.16830     70655   1303     42895  26457             Albania     2455.1741
-## 3   1.65960    105124   2856     71552  30716             Algeria      239.7298
-## 4   1.52180      9416     93      8537    786             Andorra    12186.6304
-## 5  17.87390     19269    452     17223   1594              Angola       58.6285
-## 6 -61.79640       195      6       162     27 Antigua and Barbuda      199.1259
+## 1  67.70995     55121   2405     47798   4918         Afghanistan      141.5961
+## 2  20.16830     79934   1398     48377  30159             Albania     2777.6079
+## 3   1.65960    107841   2898     73732  31211             Algeria      245.9257
+## 4   1.52180     10017    102      9252    663             Andorra    12964.4729
+## 5  17.87390     19900    468     18232   1200              Angola       60.5484
+## 6 -61.79640       249      7       179     63 Antigua and Barbuda      254.2684
 ##   case_fatality_ratio
-## 1           4.3499807
-## 2           1.8441724
-## 3           2.7167916
-## 4           0.9876805
-## 5           2.3457367
-## 6           3.0769231</code></pre>
+## 1            4.363128
+## 2            1.748943
+## 3            2.687290
+## 4            1.018269
+## 5            2.351759
+## 6            2.811245</code></pre>
 </div>
 </div>
 </div>
